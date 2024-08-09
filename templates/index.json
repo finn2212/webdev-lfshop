@@ -171,7 +171,7 @@
         "default-first-split-block-2": {
           "type": "button",
           "settings": {
-            "button_text": "Jetzt Kaufen",
+            "button_text": "Zu den Karten",
             "button_url": "shopify:\/\/collections\/digitale-karten",
             "button_size": "btn--large",
             "button_style": "hero__btn btn",
