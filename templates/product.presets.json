@@ -154,7 +154,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Unsere_Bali_Geheomtipps.png",
             "overlay_opacity": 0,
-            "overlay_color": "#000",
+            "overlay_color": "#000000",
             "kicker": "",
             "title": "",
             "richtext": "",
@@ -186,7 +186,7 @@
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
-        "title": "Kulinarische Highlights in Bali",
+        "title": "Presets",
         "text_size": 7,
         "text": "<p>Entdecke die besten Restaurants der Insel mit über 70 empfohlenen Spots. Von traditionellen balinesischen Gerichten bis hin zu internationalen Küchen – für jeden Gaumen ist etwas dabei. <\/p>",
         "color_text_bg": "palette--light bg--accent",

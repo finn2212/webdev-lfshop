@@ -48,91 +48,61 @@
         "padding_bottom": 0
       }
     },
-    "default-collection-grid": {
-      "type": "section-collection-grid",
+    "section_icons_cedXqa": {
+      "type": "section-icons",
       "blocks": {
-        "default-collection-grid-0": {
-          "type": "featured_collection",
+        "icon_block_GfdgUw": {
+          "type": "icon_block",
           "settings": {
-            "collection": "",
-            "text": "<p>Bags & Purses<\/p>",
-            "link_override": "",
-            "content_color": "#333333",
-            "content_bg": "#f7f7f7"
+            "icon_name": "icon-award",
+            "icon_color": "#4f8bf2",
+            "title": "+ 250",
+            "text": "<p>zufriedene Kunden<\/p>"
           }
         },
-        "default-collection-grid-1": {
-          "type": "featured_collection",
+        "icon_block_7aXqkD": {
+          "type": "icon_block",
           "settings": {
-            "collection": "",
-            "text": "<p>Shoes & Loafers<\/p>",
-            "link_override": "",
-            "content_color": "#333333",
-            "content_bg": "#f7f7f7"
+            "icon_name": "icon-email",
+            "icon_color": "#51c88e",
+            "title": "Digitale Downloads",
+            "text": "<p>Nach Kauf herrunterladen <\/p>"
           }
         },
-        "default-collection-grid-2": {
-          "type": "featured_collection",
+        "icon_block_UL3Ede": {
+          "type": "icon_block",
           "settings": {
-            "collection": "",
-            "text": "<p>Glasses & Sunnies<\/p>",
-            "link_override": "",
-            "content_color": "#333333",
-            "content_bg": "#f7f7f7"
+            "icon_name": "icon-lock-shield",
+            "icon_color": "#ffc896",
+            "title": "Secure Checkout",
+            "text": ""
           }
         },
-        "default-collection-grid-3": {
-          "type": "featured_collection",
+        "icon_block_LjjWPz": {
+          "type": "icon_block",
           "settings": {
-            "collection": "",
-            "text": "<p>Hats & Caps<\/p>",
-            "link_override": "",
-            "content_color": "#333333",
-            "content_bg": "#f7f7f7"
-          }
-        },
-        "default-collection-grid-4": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "text": "<p>Watches & Chargers<\/p>",
-            "link_override": "",
-            "content_color": "#333333",
-            "content_bg": "#f7f7f7"
-          }
-        },
-        "default-collection-grid-5": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "text": "<p>Lamps & Tableware<\/p>",
-            "link_override": "",
-            "content_color": "#333333",
-            "content_bg": "#f7f7f7"
+            "icon_name": "icon-phone",
+            "icon_color": "#ff8484",
+            "title": "Dedicated support",
+            "text": ""
           }
         }
       },
       "block_order": [
-        "default-collection-grid-0",
-        "default-collection-grid-1",
-        "default-collection-grid-2",
-        "default-collection-grid-3",
-        "default-collection-grid-4",
-        "default-collection-grid-5"
+        "icon_block_GfdgUw",
+        "icon_block_7aXqkD",
+        "icon_block_UL3Ede",
+        "icon_block_LjjWPz"
       ],
       "settings": {
-        "title": "Collection list",
-        "description": "<p>Use this area to describe the collection.<\/p>",
-        "grid": 3,
-        "color_bg": "bg--neutral",
-        "enable_slider": true,
-        "aspect_ratio": 0.6,
-        "place_text": "flex-column",
-        "align_text": "text-center",
-        "use_font": "font-heading",
+        "bg": "palette--light bg--neutral",
+        "icon_size": "icon--medium",
+        "show_icon_bg": true,
+        "alignment": "text-center",
+        "grid": 4,
         "width": "wrapper",
-        "padding_top": 48,
-        "padding_bottom": 12
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "default-collection": {
@@ -149,6 +119,49 @@
         "width": "wrapper",
         "padding_top": 12,
         "padding_bottom": 36
+      }
+    },
+    "default-press": {
+      "type": "section-press",
+      "blocks": {
+        "press-block-0": {
+          "type": "quote",
+          "settings": {
+            "title": "<p>This is the first time I have reviewed a product in a long time and I have to say, it's well deserved.  I'm not sure how I got by before I use this constantly.  Solid five stars from me, I am a huge fan!<\/p>",
+            "image_max_limit": 140,
+            "image_padding": 40
+          }
+        },
+        "press-block-1": {
+          "type": "quote",
+          "settings": {
+            "title": "<p>I've been hesitant to review products before, but this one is an exception. It has made a significant impact on my life, and I can't imagine going without it. Easily a five-star product!<\/p>",
+            "image_max_limit": 140,
+            "image_padding": 40
+          }
+        },
+        "press-block-2": {
+          "type": "quote",
+          "settings": {
+            "title": "<p>I rarely write reviews, but this product truly blew me away. It's become an essential part of my daily routine and I have absolutely no regrets, five stars for the team all the way!<\/p>",
+            "image_max_limit": 140,
+            "image_padding": 40
+          }
+        }
+      },
+      "block_order": [
+        "press-block-0",
+        "press-block-1",
+        "press-block-2"
+      ],
+      "settings": {
+        "bg": "palette--light bg--neutral",
+        "inner_bg": "palette--light bg--accent",
+        "text_size": 8,
+        "font_type": "font-heading",
+        "width": "wrapper",
+        "padding_top": 10,
+        "padding_bottom": 24
       }
     },
     "default-split-collection": {
@@ -206,94 +219,6 @@
         "width": "wrapper",
         "padding_top": 12,
         "padding_bottom": 12
-      }
-    },
-    "default-second-split-collection": {
-      "type": "section-collection-split",
-      "blocks": {
-        "default-second-split-block-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Split collection<\/p>",
-            "text_size": 10
-          }
-        },
-        "default-second-split-block-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Shop the look with some of our favorite products<\/p>",
-            "text_size": 6
-          }
-        }
-      },
-      "block_order": [
-        "default-second-split-block-0",
-        "default-second-split-block-1"
-      ],
-      "settings": {
-        "collection": "",
-        "product_list": [
-
-        ],
-        "sticky_image_enable": false,
-        "swap": true,
-        "overlay_opacity": 30,
-        "overlay_color": "#181929",
-        "grid_large": 2,
-        "grid_small": 1.5,
-        "limit": 4,
-        "bg": "palette--light bg--neutral",
-        "video_link_bg": "",
-        "object_position": "center-center",
-        "flex_align": "align--middle-center",
-        "align_text": "text-center",
-        "color": "text--white",
-        "width": "wrapper",
-        "padding_top": 12,
-        "padding_bottom": 48
-      }
-    },
-    "default-press": {
-      "type": "section-press",
-      "blocks": {
-        "press-block-0": {
-          "type": "quote",
-          "settings": {
-            "title": "<p>This is the first time I have reviewed a product in a long time and I have to say, it's well deserved.  I'm not sure how I got by before I use this constantly.  Solid five stars from me, I am a huge fan!<\/p>",
-            "image_max_limit": 140,
-            "image_padding": 40
-          }
-        },
-        "press-block-1": {
-          "type": "quote",
-          "settings": {
-            "title": "<p>I've been hesitant to review products before, but this one is an exception. It has made a significant impact on my life, and I can't imagine going without it. Easily a five-star product!<\/p>",
-            "image_max_limit": 140,
-            "image_padding": 40
-          }
-        },
-        "press-block-2": {
-          "type": "quote",
-          "settings": {
-            "title": "<p>I rarely write reviews, but this product truly blew me away. It's become an essential part of my daily routine and I have absolutely no regrets, five stars for the team all the way!<\/p>",
-            "image_max_limit": 140,
-            "image_padding": 40
-          }
-        }
-      },
-      "block_order": [
-        "press-block-0",
-        "press-block-1",
-        "press-block-2"
-      ],
-      "settings": {
-        "bg": "palette--light bg--neutral",
-        "inner_bg": "palette--light bg--accent",
-        "text_size": 8,
-        "font_type": "font-heading",
-        "width": "wrapper",
-        "padding_top": 10,
-        "padding_bottom": 24
       }
     },
     "default-mosaic": {
@@ -501,11 +426,10 @@
   },
   "order": [
     "default-banner",
-    "default-collection-grid",
+    "section_icons_cedXqa",
     "default-collection",
-    "default-split-collection",
-    "default-second-split-collection",
     "default-press",
+    "default-split-collection",
     "default-mosaic",
     "default-blog",
     "default-rte-social",
