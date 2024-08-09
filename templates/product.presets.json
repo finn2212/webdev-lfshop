@@ -242,6 +242,27 @@
         "padding_bottom": 36
       }
     },
+    "section_row_LLXRjH": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/100_Restaurants_1.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Entdecke Bali's Traumstrände",
+        "text_size": 7,
+        "text": "<p>Mit dabei eine Auswahl der 20 schönsten Strände auf Bali, sorgfältig ausgewählt, um jedem Geschmack gerecht zu werden. Ob du die perfekten Wellen zum Surfen suchst, einen ruhigen Ort zum Sonnenbaden oder die atemberaubende Unterwasserwelt erkunden möchtest – Bali bietet dir den idealen Strand für dein persönliches Paradies.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_reviews_ECUnCA": {
       "type": "section-reviews",
       "blocks": {
@@ -403,6 +424,7 @@
     "image-left",
     "image-right",
     "section_row_nFGMMr",
+    "section_row_LLXRjH",
     "section_reviews_ECUnCA",
     "section_accordion_7E7iHh",
     "recent",
