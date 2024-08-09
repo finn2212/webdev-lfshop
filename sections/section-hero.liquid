@@ -9,6 +9,10 @@
   {% endif %}
   style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px; --overlay:{{ section.settings.overlay_color }};"
 >
+  {% if section.settings.collection %}
+    <a href="{{ section.settings.collection.url }}" class="hero__link">
+  {% endif %}
+  
   <div class="{{ section.settings.width }} section-padding">
     <div class="section--image fade-in-child js-overflow-container">
       <div class="hero__content__wrapper {{ section.settings.flex_align }}">
@@ -104,6 +108,10 @@
       {% endif %}
     </div>
   </div>
+
+  {% if section.settings.collection %}
+    </a>
+  {% endif %}
 </section>
 
 {% schema %}
@@ -119,6 +127,11 @@
       "type": "image_picker",
       "id": "mobile_image",
       "label": "Mobile image"
+    },
+    {
+      "label": "Verlinkte Hero Collection",
+      "id": "collection",
+      "type": "collection"
     },
     {
       "type": "select",
