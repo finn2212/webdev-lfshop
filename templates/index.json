@@ -157,14 +157,14 @@
         "default-first-split-block-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Map Guides<\/p>",
+            "heading": "<p>Digitale Karten<\/p>",
             "text_size": 10
           }
         },
         "default-first-split-block-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Shop the look with some of our favorite products<\/p>",
+            "text": "<p>Profitiere von unseren Tipps<\/p>",
             "text_size": 6
           }
         },
@@ -189,6 +189,7 @@
         "product_list": [
 
         ],
+        "image": "shopify:\/\/shop_images\/FCC5983.jpg",
         "sticky_image_enable": false,
         "swap": false,
         "overlay_opacity": 30,
