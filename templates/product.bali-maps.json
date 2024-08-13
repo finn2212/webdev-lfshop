@@ -259,7 +259,7 @@
         "layout": "right",
         "title": "Entdecke Bali's Traumstrände",
         "text_size": 7,
-        "text": "<p>Mit dabei eine Auswahl der 20 schönsten Strände auf Bali, sorgfältig ausgewählt, um jedem Geschmack gerecht zu werden. Ob du die perfekten Wellen zum Surfen suchst, einen ruhigen Ort zum Sonnenbaden oder die atemberaubende Unterwasserwelt erkunden möchtest – Bali bietet dir den idealen Strand für dein persönliches Paradies.<\/p>",
+        "text": "<p>Es ist gar nicht so einfach, den perfekten Traumstrand auf Bali zu finden – und genau das macht es so spannend! Unsere Auswahl der <strong>Top Strände<\/strong> zeigt dir die versteckten Highlights der Insel, die du nicht verpassen solltest. Von ruhigen, unentdeckten Buchten bis hin zu lebhaften Stränden mit angesagten Beach Clubs – hier findest du die besten Spots für deinen perfekten Tag am Meer. Egal, ob du entspannen, schnorcheln, surfen oder den Sonnenuntergang genießen möchtest, mit unseren Empfehlungen entdeckst du die Strände, die dir unvergessliche Erlebnisse bieten und die du sonst vielleicht übersehen würdest.<\/p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
@@ -280,79 +280,13 @@
         "layout": "left",
         "title": "Familienfreundliche Erlebnisse in Bali",
         "text_size": 7,
-        "text": "<p>Mit über 30 kinderfreundlichen Aktivitäten und Orten, bietet Bali jede Menge Spaß und Abenteuer für die ganze Familie.<\/p>",
+        "text": "<p><strong>Als Bonus<\/strong> haben wir auch familienfreundliche Restaurants, Aktivitäten und Beach Clubs hinzugefügt, damit jeder – ob groß oder klein – das Beste aus seinem Bali-Urlaub herausholen kann. Von kinderfreundlichen Restaurants mit leckeren Menüs über spannende Aktivitäten für die ganze Familie bis hin zu entspannten Beach Clubs, die auch für die Kleinen viel zu bieten haben. So wird euer Bali-Urlaub nicht nur erholsam, sondern auch voller Spaß und unvergesslicher Erlebnisse für die ganze Familie.<\/p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
         "button_style": "btn",
         "button_color": "btn--neutral",
         "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "section_reviews_ECUnCA": {
-      "type": "section-reviews",
-      "blocks": {
-        "review_jQ3fTe": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_Eayj6c": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_xpdzBt": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_EWzFfA": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_RqNYK7": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "review_jQ3fTe",
-        "review_Eayj6c",
-        "review_xpdzBt",
-        "review_EWzFfA",
-        "review_RqNYK7"
-      ],
-      "settings": {
-        "title": "Testimonials",
-        "description": "<p>Use this area to describe your testimonials.<\/p>",
-        "grid": 3,
-        "background_color": "palette--light bg--accent",
         "width": "wrapper",
         "padding_top": 36,
         "padding_bottom": 36
@@ -455,7 +389,6 @@
     "section_row_nFGMMr",
     "section_row_MQjPp7",
     "section_row_46iDmy",
-    "section_reviews_ECUnCA",
     "section_accordion_7E7iHh",
     "recent",
     "related"
