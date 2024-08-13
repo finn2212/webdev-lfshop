@@ -211,7 +211,7 @@
     "image-right": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/65_Hotels.png",
+        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_3.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "right",
@@ -232,7 +232,7 @@
     "section_row_nFGMMr": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_1.png",
+        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_5.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
