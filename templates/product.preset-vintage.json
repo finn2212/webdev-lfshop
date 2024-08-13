@@ -1,0 +1,411 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "navigation": "none",
+            "text_size": 7,
+            "product_show_cutline": true,
+            "show_rating": true,
+            "show_rating_count": false,
+            "padding_bottom": 20
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "padding_bottom": 20
+          }
+        },
+        "siblings": {
+          "type": "siblings",
+          "disabled": true,
+          "settings": {
+            "siblings_collection": "",
+            "cutline": "",
+            "padding_bottom": 32
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "variant_form": "auto",
+            "show_quantity": false,
+            "show_remaining": false,
+            "enable_payment_button": true,
+            "enable_gift_card_recipient": true,
+            "subscriptions_enable_selectors": true,
+            "info_page": "",
+            "padding_bottom": 20
+          }
+        },
+        "icon-1": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "icon-recycled",
+            "icon_size": 16,
+            "icon_color": "#5d9386",
+            "show_icon_bg": true,
+            "text": "<p>Made with recycled fabrics<\/p>",
+            "padding_bottom": 20
+          }
+        },
+        "icon-2": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "icon-sewing-machine",
+            "icon_size": 16,
+            "icon_color": "#5d9386",
+            "show_icon_bg": true,
+            "text": "<p>Certified fair trade product<\/p>",
+            "padding_bottom": 32
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "read_more": true,
+            "style": "accordions",
+            "description_icon": "",
+            "title_1": "Information",
+            "icon_name_1": "",
+            "raw_content_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "title_2": "Details",
+            "icon_name_2": "",
+            "raw_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.<\/p>",
+            "title_3": "",
+            "icon_name_3": "",
+            "raw_content_3": "",
+            "title_4": "",
+            "icon_name_4": "",
+            "raw_content_4": "",
+            "title_5": "",
+            "icon_name_5": "",
+            "raw_content_5": "",
+            "padding_bottom": 32
+          }
+        },
+        "upsell": {
+          "type": "upsell",
+          "disabled": true,
+          "settings": {
+            "product": "",
+            "padding_bottom": 32
+          }
+        },
+        "pickup": {
+          "type": "pickup",
+          "disabled": true,
+          "settings": {
+            "padding_bottom": 32
+          }
+        },
+        "sharing": {
+          "type": "sharing",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share",
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "siblings",
+        "form",
+        "icon-1",
+        "icon-2",
+        "description",
+        "upsell",
+        "pickup",
+        "sharing"
+      ],
+      "settings": {
+        "bg": "palette--light bg--neutral",
+        "product_sticky_enable": true,
+        "image_layout": "thumbnails",
+        "enable_video_looping": true,
+        "zoom_enable": true,
+        "width": "wrapper",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "section_custom_content_bTJ8iK": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image_7mb7ke": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Unsere_Bali_Geheomtipps.png",
+            "overlay_opacity": 0,
+            "overlay_color": "#000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_size": "btn--large",
+            "button_style": "hero__btn btn",
+            "button_color": "btn--white"
+          }
+        }
+      },
+      "block_order": [
+        "image_7mb7ke"
+      ],
+      "settings": {
+        "height": "use_screen_one_half",
+        "padding": true,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-left": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/100_Restaurants.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Kulinarische Highlights in Bali",
+        "text_size": 7,
+        "text": "<p>Entdecke die besten Restaurants der Insel mit über 70 empfohlenen Spots. Von traditionellen balinesischen Gerichten bis hin zu internationalen Küchen – für jeden Gaumen ist etwas dabei. <\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "image-right": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/65_Hotels.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Über 65 Hotels für jeden Geschmack",
+        "text_size": 7,
+        "text": "<p>Ob luxuriöse Resorts oder gemütliche Boutique-Hotels, unsere Auswahl bietet dir die besten Unterkünfte, um deinen Aufenthalt in Bali unvergesslich zu machen.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 24,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_nFGMMr": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Tauche ein in Balis natürliche Schönheit und Kultur",
+        "text_size": 8,
+        "text": "<p>Mit über 40 atemberaubenden Naturschauplätzen und kulturellen Highlights bietet Bali eine perfekte Mischung aus Naturwundern und kulturellen Erlebnissen.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_reviews_ECUnCA": {
+      "type": "section-reviews",
+      "blocks": {
+        "review_jQ3fTe": {
+          "type": "review",
+          "settings": {
+            "title": "Testimonial name",
+            "job": "Founder, Company",
+            "stars": 5,
+            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
+          }
+        },
+        "review_Eayj6c": {
+          "type": "review",
+          "settings": {
+            "title": "Testimonial name",
+            "job": "Founder, Company",
+            "stars": 5,
+            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
+          }
+        },
+        "review_xpdzBt": {
+          "type": "review",
+          "settings": {
+            "title": "Testimonial name",
+            "job": "Founder, Company",
+            "stars": 5,
+            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
+          }
+        },
+        "review_EWzFfA": {
+          "type": "review",
+          "settings": {
+            "title": "Testimonial name",
+            "job": "Founder, Company",
+            "stars": 5,
+            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
+          }
+        },
+        "review_RqNYK7": {
+          "type": "review",
+          "settings": {
+            "title": "Testimonial name",
+            "job": "Founder, Company",
+            "stars": 5,
+            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "review_jQ3fTe",
+        "review_Eayj6c",
+        "review_xpdzBt",
+        "review_EWzFfA",
+        "review_RqNYK7"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "description": "<p>Use this area to describe your testimonials.<\/p>",
+        "grid": 3,
+        "background_color": "palette--light bg--accent",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_accordion_7E7iHh": {
+      "type": "section-accordion",
+      "blocks": {
+        "text_pUtiRF": {
+          "type": "text",
+          "settings": {
+            "title": "Was sind Google Maps Punkte und wie funktionieren sie?",
+            "content": "<p>Google Maps Punkte sind gespeicherte Orte auf Google Maps, die du direkt in deiner App aufrufen kannst. Die Punkte sind kategorisiert und bieten dir eine enorme Erleichterung bei der Orientierung auf der Insel.<\/p>"
+          }
+        },
+        "text_BN79Rc": {
+          "type": "text",
+          "settings": {
+            "title": "Wie kann ich die Google Maps Punkte nutzen?",
+            "content": "<p>Nach dem Kauf erhältst du eine Datei, die du in Google Maps importieren kannst. So hast du sofort Zugriff auf alle gespeicherten Orte und kannst deine Reise planen.<\/p>"
+          }
+        },
+        "text_kzzCfy": {
+          "type": "text",
+          "settings": {
+            "title": "Kann ich die Google Maps Punkte offline nutzen?",
+            "content": "<p>Ja, du kannst die Karten und Punkte in Google Maps herunterladen und offline nutzen. Das ist besonders praktisch, wenn du in Gebieten ohne Internetverbindung unterwegs bist.<\/p>"
+          }
+        },
+        "text_eFcGjJ": {
+          "type": "text",
+          "settings": {
+            "title": "Welche Kategorien sind in den Google Maps Punkten enthalten?",
+            "content": "<p>Unsere Google Maps Punkte decken eine Vielzahl von Kategorien ab, darunter Strände, Abenteuer und Aktivitäten, Natur und Kultur, Restaurants, Hotels, Beachclubs und Nachtleben, Sunsets und Sundowner, Shopping, Lifestyle und Spa sowie kinderfreundliche Orte.<\/p>"
+          }
+        },
+        "text_HyCa86": {
+          "type": "text",
+          "settings": {
+            "title": "Sind die Google Maps Punkte aktuell und genau?",
+            "content": "<p>Ja, alle Punkte werden regelmäßig aktualisiert, um sicherzustellen, dass die Informationen präzise und aktuell sind. Wir überprüfen die Orte kontinuierlich, um dir die besten Erlebnisse zu garantieren. Sollte mal ein Punkt nicht akkurat sein, bitten wir natürlich um Feedback von euch.<\/p>"
+          }
+        },
+        "text_kGdHDD": {
+          "type": "text",
+          "settings": {
+            "title": "Was mache ich, wenn ein Ort nicht mehr existiert oder geschlossen ist?",
+            "content": "<p>Solltest du feststellen, dass ein Ort nicht mehr existiert oder geschlossen ist, kontaktiere uns bitte. Wir werden die Information überprüfen und gegebenenfalls die Punkte aktualisieren.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_pUtiRF",
+        "text_BN79Rc",
+        "text_kzzCfy",
+        "text_eFcGjJ",
+        "text_HyCa86",
+        "text_kGdHDD"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "height": "use_screen_full",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "recent": {
+      "type": "section-recent-products",
+      "settings": {
+        "product_recently_heading": "Recently viewed",
+        "product_recently_limit": 6,
+        "product_recently_minimum": 4,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related": {
+      "type": "related",
+      "settings": {
+        "related_products_enable": true,
+        "limit": 6,
+        "product_recommendations_heading": "Related products",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_custom_content_bTJ8iK",
+    "image-left",
+    "image-right",
+    "section_row_nFGMMr",
+    "section_reviews_ECUnCA",
+    "section_accordion_7E7iHh",
+    "recent",
+    "related"
+  ]
+}
