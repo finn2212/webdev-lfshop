@@ -81,18 +81,18 @@
             "read_more": true,
             "style": "accordions",
             "description_icon": "",
-            "title_1": "Information",
+            "title_1": "Besser und übersichtlicher als jeder Reiseführer",
             "icon_name_1": "",
-            "raw_content_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
-            "title_2": "Details",
+            "raw_content_1": "<p>Keine endlosen Texte, sondern klare Empfehlungen. Unsere sorgfältig ausgewählten Geheimtipps sind das Ergebnis von vier Jahren Lebenserfahrung auf Bali. Entdecke die Insel mit den Augen von Auswanderern, die Bali in- und auswendig kennen. <\/p>",
+            "title_2": "Unsere privaten Geheimtipps nur für dich",
             "icon_name_2": "",
-            "raw_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.<\/p>",
-            "title_3": "",
+            "raw_content_2": "<p>Erlebe Bali wie ein Insider – ohne Touristenfallen, dafür mit den besten Locations, die oft übersehen werden. Unsere Tipps sind persönlich getestet und handverlesen.<\/p>",
+            "title_3": "Einfache 1-Klick-Installation",
             "icon_name_3": "",
-            "raw_content_3": "",
-            "title_4": "",
+            "raw_content_3": "<p>Installiere die Punkte schnell und unkompliziert auf deinem Gerät und genieße die besten Spots direkt zur Hand. <\/p>",
+            "title_4": "Von Auswanderern für Abenteurer",
             "icon_name_4": "",
-            "raw_content_4": "",
+            "raw_content_4": "<p>Unsere Empfehlungen stammen von echten Auswanderern, die ihre Liebe zu Bali mit dir teilen möchten. Vertraue auf Experten, die die Insel ihr Zuhause nennen.<\/p>",
             "title_5": "",
             "icon_name_5": "",
             "raw_content_5": "",
@@ -121,6 +121,13 @@
             "share_label": "Share",
             "padding_bottom": 0
           }
+        },
+        "text_Vn9Jtk": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "padding_bottom": 8
+          }
         }
       },
       "block_order": [
@@ -133,7 +140,8 @@
         "description",
         "upsell",
         "pickup",
-        "sharing"
+        "sharing",
+        "text_Vn9Jtk"
       ],
       "settings": {
         "bg": "palette--light bg--neutral",
@@ -174,6 +182,49 @@
       "settings": {
         "height": "use_screen_one_half",
         "padding": true,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_press_dL3AdM": {
+      "type": "section-press",
+      "blocks": {
+        "quote_JKbpkM": {
+          "type": "quote",
+          "settings": {
+            "title": "<p>This is the first time I have reviewed a product in a long time and I have to say, it's well deserved. Solid five stars from me, I am a huge fan!<\/p>",
+            "image_max_limit": 140,
+            "image_padding": 40
+          }
+        },
+        "quote_VBQ84E": {
+          "type": "quote",
+          "settings": {
+            "title": "<p>This is the first time I have reviewed a product in a long time and I have to say, it's well deserved. Solid five stars from me, I am a huge fan!<\/p>",
+            "image_max_limit": 140,
+            "image_padding": 40
+          }
+        },
+        "quote_raDd3h": {
+          "type": "quote",
+          "settings": {
+            "title": "<p>This is the first time I have reviewed a product in a long time and I have to say, it's well deserved. Solid five stars from me, I am a huge fan!<\/p>",
+            "image_max_limit": 140,
+            "image_padding": 40
+          }
+        }
+      },
+      "block_order": [
+        "quote_JKbpkM",
+        "quote_VBQ84E",
+        "quote_raDd3h"
+      ],
+      "settings": {
+        "bg": "palette--light bg--neutral",
+        "inner_bg": "palette--light bg--accent",
+        "text_size": 8,
+        "font_type": "font-heading",
         "width": "wrapper",
         "padding_top": 36,
         "padding_bottom": 36
@@ -442,6 +493,7 @@
   "order": [
     "main",
     "section_custom_content_bTJ8iK",
+    "section_press_dL3AdM",
     "image-left",
     "image-right",
     "section_row_nFGMMr",

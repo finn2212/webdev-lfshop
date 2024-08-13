@@ -48,63 +48,6 @@
         "padding_bottom": 0
       }
     },
-    "section_icons_cedXqa": {
-      "type": "section-icons",
-      "blocks": {
-        "icon_block_GfdgUw": {
-          "type": "icon_block",
-          "settings": {
-            "icon_name": "icon-award",
-            "icon_color": "#4f8bf2",
-            "title": "+ 250",
-            "text": "<p>zufriedene Kunden<\/p>"
-          }
-        },
-        "icon_block_7aXqkD": {
-          "type": "icon_block",
-          "settings": {
-            "icon_name": "icon-email",
-            "icon_color": "#51c88e",
-            "title": "Digitale Downloads",
-            "text": "<p>Nach Kauf herrunterladen <\/p>"
-          }
-        },
-        "icon_block_UL3Ede": {
-          "type": "icon_block",
-          "settings": {
-            "icon_name": "icon-lock-shield",
-            "icon_color": "#ffc896",
-            "title": "Secure Checkout",
-            "text": ""
-          }
-        },
-        "icon_block_LjjWPz": {
-          "type": "icon_block",
-          "settings": {
-            "icon_name": "icon-phone",
-            "icon_color": "#ff8484",
-            "title": "Dedicated support",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "icon_block_GfdgUw",
-        "icon_block_7aXqkD",
-        "icon_block_UL3Ede",
-        "icon_block_LjjWPz"
-      ],
-      "settings": {
-        "bg": "palette--light bg--neutral",
-        "icon_size": "icon--medium",
-        "show_icon_bg": true,
-        "alignment": "text-center",
-        "grid": 4,
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "default-collection": {
       "type": "section-collection",
       "settings": {
@@ -426,7 +369,6 @@
   },
   "order": [
     "default-banner",
-    "section_icons_cedXqa",
     "default-collection",
     "default-press",
     "default-split-collection",
