@@ -64,56 +64,13 @@
         "padding_bottom": 36
       }
     },
-    "default-press": {
-      "type": "section-press",
-      "blocks": {
-        "press-block-0": {
-          "type": "quote",
-          "settings": {
-            "title": "<p>This is the first time I have reviewed a product in a long time and I have to say, it's well deserved.  I'm not sure how I got by before I use this constantly.  Solid five stars from me, I am a huge fan!<\/p>",
-            "image_max_limit": 140,
-            "image_padding": 40
-          }
-        },
-        "press-block-1": {
-          "type": "quote",
-          "settings": {
-            "title": "<p>I've been hesitant to review products before, but this one is an exception. It has made a significant impact on my life, and I can't imagine going without it. Easily a five-star product!<\/p>",
-            "image_max_limit": 140,
-            "image_padding": 40
-          }
-        },
-        "press-block-2": {
-          "type": "quote",
-          "settings": {
-            "title": "<p>I rarely write reviews, but this product truly blew me away. It's become an essential part of my daily routine and I have absolutely no regrets, five stars for the team all the way!<\/p>",
-            "image_max_limit": 140,
-            "image_padding": 40
-          }
-        }
-      },
-      "block_order": [
-        "press-block-0",
-        "press-block-1",
-        "press-block-2"
-      ],
-      "settings": {
-        "bg": "palette--light bg--neutral",
-        "inner_bg": "palette--light bg--accent",
-        "text_size": 8,
-        "font_type": "font-heading",
-        "width": "wrapper",
-        "padding_top": 10,
-        "padding_bottom": 24
-      }
-    },
     "default-split-collection": {
       "type": "section-collection-split",
       "blocks": {
         "default-first-split-block-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Digitale Karten<\/p>",
+            "heading": "<p>Digitale Reise Karten<\/p>",
             "text_size": 10
           }
         },
@@ -370,7 +327,6 @@
   "order": [
     "default-banner",
     "default-collection",
-    "default-press",
     "default-split-collection",
     "default-mosaic",
     "default-blog",
