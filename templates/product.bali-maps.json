@@ -271,13 +271,34 @@
         "padding_bottom": 36
       }
     },
-    "section_row_46iDmy": {
+    "section_row_y8QcNb": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/2_603db6b6-10d5-4195-a297-1bc3b630722b.png",
+        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_8.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
+        "title": "Shopping, Lifestyle & Spa",
+        "text_size": 7,
+        "text": "<p>In der Kategorie <strong>Shopping, Lifestyle & Spa<\/strong> haben wir die besten Spots auf Bali für dich zusammengestellt. Egal, ob du nach einzigartigen Souvenirs, stylischen Boutiquen oder einem luxuriösen Spa-Erlebnis suchst – unsere Empfehlungen bieten dir eine Vielfalt an Möglichkeiten, um deinen Bali-Aufenthalt in vollen Zügen zu genießen. Von entspannenden Wellness-Behandlungen über exklusive Einkaufserlebnisse bis hin zu den angesagtesten Lifestyle-Locations der Insel – hier findest du alles, um deinen Urlaub unvergesslich und erholsam zu gestalten.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_46iDmy": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Bilder_PDP_Bali_Maps.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
         "title": "Familienfreundliche Erlebnisse in Bali",
         "text_size": 7,
         "text": "<p>Es ist gar nicht so einfach, den perfekten Traumstrand auf Bali zu finden – und genau das macht es so spannend! Unsere Auswahl der Top Strände zeigt dir die versteckten Highlights der Insel, die du nicht verpassen solltest. Von ruhigen, unentdeckten Buchten bis hin zu lebhaften Stränden mit angesagten Beach Clubs – hier findest du die besten Spots für deinen perfekten Tag am Meer. Egal, ob du entspannen, schnorcheln, surfen oder den Sonnenuntergang genießen möchtest, mit unseren Empfehlungen entdeckst du die Strände, die dir unvergessliche Erlebnisse bieten und die du sonst vielleicht übersehen würdest.<\/p>",
@@ -388,6 +409,7 @@
     "image-right",
     "section_row_nFGMMr",
     "section_row_MQjPp7",
+    "section_row_y8QcNb",
     "section_row_46iDmy",
     "section_accordion_7E7iHh",
     "recent",
