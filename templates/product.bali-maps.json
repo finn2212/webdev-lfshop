@@ -395,7 +395,7 @@
       "settings": {
         "related_products_enable": true,
         "limit": 6,
-        "product_recommendations_heading": "Related products",
+        "product_recommendations_heading": "Ähnliche Produkte",
         "width": "wrapper",
         "padding_top": 36,
         "padding_bottom": 36
