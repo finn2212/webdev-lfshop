@@ -256,6 +256,26 @@
         "padding_bottom": 36
       }
     },
+    "section_row_CdQiYr": {
+      "type": "section-row",
+      "settings": {
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Image with text",
+        "text_size": 7,
+        "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_reviews_aVcWtY": {
       "type": "section-reviews",
       "blocks": {
@@ -339,6 +359,7 @@
     "section_custom_content_bTJ8iK",
     "section_accordion_7E7iHh",
     "recent",
+    "section_row_CdQiYr",
     "section_reviews_aVcWtY",
     "related"
   ]
