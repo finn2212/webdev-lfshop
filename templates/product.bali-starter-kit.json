@@ -266,6 +266,72 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "section_reviews_aVcWtY": {
+      "type": "section-reviews",
+      "blocks": {
+        "review_YnkVVY": {
+          "type": "review",
+          "settings": {
+            "title": "@Nina_life",
+            "job": "",
+            "stars": 5,
+            "text": "<p>Starterkit hat übrigens sehr geholfen. Haben alles vorher online gemacht (E-VOA), Tourism Tax und Zollerklärung, waren schwups diwups durch... danke<\/p>"
+          }
+        },
+        "review_UfnMag": {
+          "type": "review",
+          "settings": {
+            "title": "@Björn_travel",
+            "job": "",
+            "stars": 5,
+            "text": "<p>Wenn ich das sehe freue ich mich noch viel mehr auf Bali im 2 Monaten geht es los und dank eures Bali Kit habe ich bereits die Delfintour bei Captain Gede gebucht!<\/p>"
+          }
+        },
+        "review_QaizDm": {
+          "type": "review",
+          "settings": {
+            "title": "@Jasminee22",
+            "job": "",
+            "stars": 5,
+            "text": "<p>Vielen lieben Dank und PS: der Reiseführer ist wirklich toll!<\/p>"
+          }
+        },
+        "review_tUYYgC": {
+          "type": "review",
+          "settings": {
+            "title": "@Marry",
+            "job": "",
+            "stars": 5,
+            "text": "<p>Übrigens danke für euren Bali Guide kann ich nur weiterempfehlen. Sind vielen euren Tipps gefolgt :)<\/p>"
+          }
+        },
+        "review_83KMaY": {
+          "type": "review",
+          "settings": {
+            "title": "@stefanie433",
+            "job": "",
+            "stars": 5,
+            "text": "<p>Ach herrje, jetzt hab ich das Video 2x gesehen und das natürlich übersehen. Danke für die rasche Antwort!! Hab mir heute eurer Starter Kit gekauft, das ist furchtbar hilfreich, als Alleinreisende Mama mit Kind danke dafür!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "review_YnkVVY",
+        "review_UfnMag",
+        "review_QaizDm",
+        "review_tUYYgC",
+        "review_83KMaY"
+      ],
+      "settings": {
+        "title": "Feedback von unseren Follwern",
+        "description": "<p>Unser Bali Starter-Kit hat schon über 200 Leute auf ihre Bali Reise begleitet!<\/p>",
+        "grid": 4,
+        "background_color": "palette--light bg--accent",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -273,6 +339,7 @@
     "section_custom_content_bTJ8iK",
     "section_accordion_7E7iHh",
     "recent",
-    "related"
+    "related",
+    "section_reviews_aVcWtY"
   ]
 }
