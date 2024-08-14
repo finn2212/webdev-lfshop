@@ -87,13 +87,13 @@
             "title_2": "Einfache 1-Klick-Installation",
             "icon_name_2": "",
             "raw_content_2": "<p>Installiere die Google Maps Punkte schnell und unkompliziert auf deinem iPhone oder Android Smartphone und habe unsere Karte immer mit dabei, egal ob online oder offline.<\/p>",
-            "title_3": "Von Auswanderern für dich",
+            "title_3": "Geheimtipps von Auswandern für dich",
             "icon_name_3": "",
             "raw_content_3": "<p>Unsere Empfehlungen stammen von echten Auswanderern, die ihre Liebe zu Bali mit dir teilen möchten. Vertraue auf Experten, die die Insel ihr Zuhause nennen.<\/p>",
-            "title_4": "Bonus 1: Familienfreundliche Erlebnisse auf Bali",
+            "title_4": "BONUS 1: Bali mit Kind",
             "icon_name_4": "",
             "raw_content_4": "<p><strong>Als Bonus <\/strong>haben wir auch familienfreundliche Restaurants, Aktivitäten und Beach Clubs hinzugefügt, damit jeder – ob groß oder klein – das Beste aus seinem Bali-Urlaub herausholen kann. Von kinderfreundlichen Restaurants mit leckeren Menüs über spannende Aktivitäten für die ganze Familie bis hin zu entspannten Beach Clubs, die auch für die Kleinen viel zu bieten haben. So wird euer Bali-Urlaub nicht nur erholsam, sondern auch voller Spaß und unvergesslicher Erlebnisse für die ganze Familie.<\/p>",
-            "title_5": "Bonus 2: Nicht nur Bali, sonder viel mehr!",
+            "title_5": "BONUS 2: Mehr als nur Bali!",
             "icon_name_5": "",
             "raw_content_5": "<p>Eine Balireise ist nicht komplett, wenn du nicht auch die vorgelagerten Inseln erkundest. Zu den Highlights zählen die atemberaubenden Nusa-Inseln, allen voran Nusa Penida, die mit ihren endlosen Naturspektakeln beeindruckt. Nusa Lembongan und Nusa Ceningan verzaubern mit ihren charmanten Dörfern und versteckten Stränden. Und dann sind da noch die traumhaften Gili-Inseln – Gili Trawangan, Gili Meno und Gili Air, unsere persönliche Lieblingsinsel. Mit diesen Insidertipps kannst du nicht nur Bali, sondern auch die faszinierenden Schätze der Umgebung in vollen Zügen genießen.<\/p>",
             "padding_bottom": 32
@@ -187,34 +187,13 @@
         "padding_bottom": 36
       }
     },
-    "image-left": {
-      "type": "section-row",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/100_Restaurants.png",
-        "shape": "none",
-        "aspect_ratio": 1,
-        "layout": "left",
-        "title": "Kulinarische Highlights in Bali",
-        "text_size": 7,
-        "text": "<p>Ein Bali-Urlaub wäre nicht komplett, ohne dich durch die vielseitige Küche der Insel zu kosten. Wir haben für dich die Top 100 Restaurants zusammengestellt – von authentischen lokalen Spezialitäten bis hin zur besten Pizza der Welt. Um dir die Orientierung zu erleichtern, haben wir die Restaurants in zwei Kategorien unterteilt: Frühstück\/Lunch und Abendessen. So kannst du dich den ganzen Tag über durch die Insel schlemmen – von der Bali-Bowl am Morgen bis zum Nasi Goreng am Abend. Unsere Karten sind dein idealer Begleiter, um das Beste aus Balis kulinarischem Erlebnis herauszuholen.<\/p>",
-        "color_text_bg": "palette--light bg--accent",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "btn",
-        "button_color": "btn--neutral",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
     "image-right": {
       "type": "section-row",
       "settings": {
         "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_3.png",
         "shape": "none",
         "aspect_ratio": 1,
-        "layout": "right",
+        "layout": "left",
         "title": "Über 65 Hotels für jeden Geschmack",
         "text_size": 7,
         "text": "<p>Ein unvergesslicher Bali-Aufenthalt beginnt mit der perfekten Unterkunft. Wir haben für dich eine handverlesene Auswahl an Top-Hotels zusammengestellt – von luxuriösen Resorts über charmante, preiswerte Bambushäuser bis hin zu einzigartigen Unterkünften mit atemberaubenden Ausblicken. Egal, ob du dich in einem exklusiven Luxusresort verwöhnen lassen möchtest oder das authentische Bali in einer preisgünstigen, aber dennoch traumhaften Unterkunft erleben willst, unsere Empfehlungen bieten für jeden Reisestil das Richtige. Lass dich von unseren Tipps inspirieren und finde die ideale Unterkunft für deinen Traumurlaub auf Bali.<\/p>",
@@ -227,6 +206,27 @@
         "width": "wrapper",
         "padding_top": 24,
         "padding_bottom": 36
+      }
+    },
+    "image-left": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/100_Restaurants.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Kulinarische Highlights in Bali",
+        "text_size": 7,
+        "text": "<p>Ein Bali-Urlaub wäre nicht komplett, ohne dich durch die vielseitige Küche der Insel zu kosten. Wir haben für dich die Top 100 Restaurants zusammengestellt – von authentischen lokalen Spezialitäten bis hin zur besten Pizza der Welt. Um dir die Orientierung zu erleichtern, haben wir die Restaurants in zwei Kategorien unterteilt: Frühstück\/Lunch und Abendessen. So kannst du dich den ganzen Tag über durch die Insel schlemmen – von der Bali-Bowl am Morgen bis zum Nasi Goreng am Abend. Unsere Karten sind dein idealer Begleiter, um das Beste aus Balis kulinarischem Erlebnis herauszuholen.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 0
       }
     },
     "section_row_nFGMMr": {
@@ -405,8 +405,8 @@
   "order": [
     "main",
     "section_custom_content_bTJ8iK",
-    "image-left",
     "image-right",
+    "image-left",
     "section_row_nFGMMr",
     "section_row_MQjPp7",
     "section_row_y8QcNb",
