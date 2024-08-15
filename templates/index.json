@@ -151,8 +151,8 @@
       "settings": {
         "collection": "digitale-karten",
         "product_list": [
-          "bali-bundle-starterkit-digitale-karte",
-          "bali-digitale-karte"
+          "bali-digitale-karte",
+          "bali-bundle-starterkit-digitale-karte"
         ],
         "image": "shopify:\/\/shop_images\/FCC5983.jpg",
         "sticky_image_enable": false,
