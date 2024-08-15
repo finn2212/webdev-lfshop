@@ -204,6 +204,27 @@
         "padding_bottom": 36
       }
     },
+    "section_row_CdQiYr": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/BALI_STARTER-KIT.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Für wen ist dieser Guide genau der Richtige?",
+        "text_size": 7,
+        "text": "<p>Planst du aktuell deine Reise nach Bali und auf die umliegenden Inseln? Dann ist dieser Starter Guide genau der Richtige für dich!<\/p><p>Wir teilen <strong>ALLES<\/strong>, was du für deine erste Indonesien-Reise wissen musst.<\/p><p>Dies ist kein gewöhnlicher Reiseführer, in dem wir 08\/15 Unterkünfte, Restaurants und Aktivitäten teilen, die am Ende für dich dann nicht relevant sind. <\/p><p>Alle Infos in diesem Guide sind ganz allgemein auf DEINE BALI REISE abgestimmt. Von aktuellen Einreisebedingungen, über konkrete Tipps & Routenvorschläge, bis hin zu unseren vertrauenswürdigen Kontakten. <\/p><p>Mit diesem Starter Kit kann nichts mehr schief gehen!<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_accordion_7E7iHh": {
       "type": "section-accordion",
       "blocks": {
@@ -276,26 +297,6 @@
         "product_recently_heading": "Recently viewed",
         "product_recently_limit": 6,
         "product_recently_minimum": 4,
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "section_row_CdQiYr": {
-      "type": "section-row",
-      "settings": {
-        "shape": "none",
-        "aspect_ratio": 1,
-        "layout": "left",
-        "title": "Image with text",
-        "text_size": 7,
-        "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-        "color_text_bg": "palette--light bg--accent",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "btn",
-        "button_color": "btn--neutral",
-        "color_bg": "palette--light bg--neutral",
         "width": "wrapper",
         "padding_top": 36,
         "padding_bottom": 36
@@ -383,9 +384,9 @@
     "main",
     "section_hero_CNFVxH",
     "section_text_rxeAN8",
+    "section_row_CdQiYr",
     "section_accordion_7E7iHh",
     "recent",
-    "section_row_CdQiYr",
     "section_reviews_aVcWtY",
     "related"
   ]
