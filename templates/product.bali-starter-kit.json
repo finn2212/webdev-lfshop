@@ -291,17 +291,6 @@
         "padding_bottom": 36
       }
     },
-    "recent": {
-      "type": "section-recent-products",
-      "settings": {
-        "product_recently_heading": "Recently viewed",
-        "product_recently_limit": 6,
-        "product_recently_minimum": 4,
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "section_reviews_aVcWtY": {
       "type": "section-reviews",
       "blocks": {
@@ -368,6 +357,17 @@
         "padding_bottom": 36
       }
     },
+    "recent": {
+      "type": "section-recent-products",
+      "settings": {
+        "product_recently_heading": "Zuletzt gesehen",
+        "product_recently_limit": 6,
+        "product_recently_minimum": 4,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "related": {
       "type": "related",
       "settings": {
@@ -386,8 +386,8 @@
     "section_text_rxeAN8",
     "section_row_CdQiYr",
     "section_accordion_7E7iHh",
-    "recent",
     "section_reviews_aVcWtY",
+    "recent",
     "related"
   ]
 }
