@@ -164,6 +164,46 @@
         "padding_bottom": 0
       }
     },
+    "section_text_rxeAN8": {
+      "type": "section-text",
+      "blocks": {
+        "kicker_hzxMXK": {
+          "type": "kicker",
+          "settings": {
+            "kicker": "<p>BALI CALLING<\/p>",
+            "enable_caps": false,
+            "text_size": 5
+          }
+        },
+        "heading_FTqm8c": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h3>Alles für deine Indonesien Reise<\/h3>",
+            "text_size": 9
+          }
+        },
+        "text_XpmPeW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Planst du aktuell deine erste Reise nach Bali oder auf die umliegenden Inseln? Dann ist dieser Guide genau der Richtige für dich!<\/p><p>Nach über drei Jahren, in welchen wir Bali unser Zuhause nennen, teilen wir jetzt all unsere Tipps, Empfehlungen und Kontakte, um deine Bali Reise unvergesslich zu machen. Unser Bali Starterkit ist kein gewöhnlicher Reiseführer mit veralteten Empfehlungen. Wir teilen alle allgemeinen Informationen zu Bali und Beyond!<\/p><p>Egal ob zur aktuellen Einreise 2024, welche Dokumente du unbedingt benötigst, wie du am Besten von A nach B auf Bali kommst, was du auf keinen Fall verpassen darfst, wie du richtig verhandelst und bezahlst, was zu tun ist, wenn es dich auf deiner Reise erwischt, Alles was du zum Reisen in der Schwangerschaft und Urlaub mit Kind auf Bali beachten musst und sogar konkrete Routenvorschläge für JEDEN Urlaubstyp.<\/p><p>Und das Beste - in diesem Starter Kit teilen wir unsere privaten Kontakte und Empfehlungen von Fahrern, Tourguides, Fähren-Anbietern etc., dass du ganz entspannt deinen Urlaub geniessen kannst.<\/p><p>Lebenslange kostenlose Updates! Einmal gekauft, erhältst du jede aktualisierte Version des Starter Kits. Wenn sich etwas an der Einreise ändert, wir neue Kapitel hinzufügen oder es sonstige wichtige Informationen gibt, werden wir diese in eine neue Version inkludieren, zu der du ebenfalls KOSTENLOSEN ZUGRIFF erhältst.<\/p>",
+            "text_size": 5,
+            "text_columns": 1
+          }
+        }
+      },
+      "block_order": [
+        "kicker_hzxMXK",
+        "heading_FTqm8c",
+        "text_XpmPeW"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_accordion_7E7iHh": {
       "type": "section-accordion",
       "blocks": {
@@ -342,6 +382,7 @@
   "order": [
     "main",
     "section_hero_CNFVxH",
+    "section_text_rxeAN8",
     "section_accordion_7E7iHh",
     "recent",
     "section_row_CdQiYr",
