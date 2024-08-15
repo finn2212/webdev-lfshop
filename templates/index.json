@@ -70,22 +70,22 @@
         "default-first-split-block-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Digitale Reise Karten<\/p>",
+            "heading": "<p>Digitale Reise Karte<\/p>",
             "text_size": 10
           }
         },
         "default-first-split-block-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Profitiere von unseren Tipps<\/p>",
+            "text": "<p>Plane deine Bali Reise<\/p>",
             "text_size": 6
           }
         },
         "default-first-split-block-2": {
           "type": "button",
           "settings": {
-            "button_text": "Zu den Karten",
-            "button_url": "shopify:\/\/collections\/digitale-karten",
+            "button_text": "Zur Bali Map",
+            "button_url": "shopify:\/\/products\/bali-digitale-karte",
             "button_size": "btn--large",
             "button_style": "hero__btn btn",
             "button_color": "btn--white"
