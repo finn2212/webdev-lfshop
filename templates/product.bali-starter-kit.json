@@ -215,7 +215,7 @@
     "section_row_CdQiYr": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/BALI_STARTER-KIT.png",
+        "image": "shopify:\/\/shop_images\/BALI_STARTER-KIT_1.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
@@ -239,43 +239,36 @@
         "text_pUtiRF": {
           "type": "text",
           "settings": {
-            "title": "Was genau beinhaltet das Bali Starter Kit?",
-            "content": "<p>Das Bali Starter Kit ist ein umfassender Guide, der alle wichtigen Informationen für deine Reise nach Bali und die umliegenden Inseln enthält. Es deckt alles ab, von Einreisebestimmungen und Visainformationen über Transportoptionen, Impfungen und Dokumente bis hin zu Routenvorschlägen, Gesundheitstipps und vertrauenswürdigen Kontakten vor Ort.<\/p>"
+            "title": "Was genau beinhaltet das Bali Starterkit?",
+            "content": "<p>Das Bali Starterkit ist ein umfassender Guide, der alle wichtigen Informationen für deine Reise nach Bali und die umliegenden Inseln enthält. Es deckt alles ab, von Einreisebestimmungen und Visainformationen über Transportoptionen, Impfungen und Dokumente bis hin zu Routenvorschlägen, Gesundheitstipps und vertrauenswürdigen Kontakten vor Ort.<\/p>"
           }
         },
         "text_BN79Rc": {
           "type": "text",
           "settings": {
-            "title": "Wie unterscheidet sich dieses Starter Kit von einem herkömmlichen Reiseführer?",
-            "content": "<p>Im Gegensatz zu einem herkömmlichen Reiseführer bietet das Bali Starter Kit aktuelle, praxisnahe Informationen und Insider-Tipps von Auswanderern, die seit Jahren auf Bali leben. Es enthält keine veralteten Empfehlungen, sondern maßgeschneiderte Inhalte, die speziell auf deine Bedürfnisse und die aktuellen Gegebenheiten abgestimmt sind.<\/p>"
+            "title": "Wie unterscheidet sich dieses Starterkit von einem herkömmlichen Reiseführer?",
+            "content": "<p>Im Gegensatz zu einem herkömmlichen Reiseführer bietet das Bali Starterkit aktuelle, praxisnahe Informationen und Insider-Tipps von Auswanderern, die seit Jahren auf Bali leben. Es enthält keine veralteten Empfehlungen, sondern maßgeschneiderte Inhalte, die speziell auf deine Bedürfnisse und die aktuellen Gegebenheiten abgestimmt sind.<\/p>"
           }
         },
         "text_kzzCfy": {
           "type": "text",
           "settings": {
-            "title": "Welche besonderen Extras bietet das Starter Kit?",
-            "content": "<p>Als Bonus enthält das Starter Kit lebenslange kostenlose Updates. Das bedeutet, dass du bei jeder Änderung der Einreisebestimmungen, bei neuen Tipps oder hinzugefügten Kapiteln automatisch Zugang zur neuesten Version des Guides erhältst. Außerdem teilen wir unsere persönlichen Kontakte zu Fahrern, Tourguides und Fähranbietern, um deinen Urlaub so entspannt wie möglich zu gestalten.<\/p>"
+            "title": "Welche besonderen Extras bietet das Starterkit?",
+            "content": "<p>Als Bonus enthält das Starterkit lebenslange kostenlose Updates. Das bedeutet, dass du bei jeder Änderung der Einreisebestimmungen, bei neuen Tipps oder hinzugefügten Kapiteln automatisch Zugang zur neuesten Version des Guides erhältst. Außerdem teilen wir unsere persönlichen Kontakte zu Fahrern, Tourguides und Fähranbietern, um deinen Urlaub so entspannt wie möglich zu gestalten.<\/p>"
           }
         },
         "text_eFcGjJ": {
           "type": "text",
           "settings": {
-            "title": "Für wen ist das Bali Starter Kit geeignet?",
-            "content": "<p>Das Starter Kit richtet sich an alle, die eine Reise nach Bali und den umliegenden Inseln planen, egal ob zum ersten Mal oder als erfahrene Bali-Reisende. Es ist besonders hilfreich für diejenigen, die sich umfassend vorbereiten und von den Erfahrungen von Auswanderern profitieren möchten.<\/p>"
+            "title": "Für wen ist das Bali Starterkit geeignet?",
+            "content": "<p>Das Starterkit richtet sich an alle, die eine Reise nach Bali und den umliegenden Inseln planen, egal ob zum ersten Mal oder als erfahrene Bali-Reisende. Es ist besonders hilfreich für diejenigen, die sich umfassend vorbereiten und von den Erfahrungen von Auswanderern profitieren möchten.<\/p>"
           }
         },
         "text_HyCa86": {
           "type": "text",
           "settings": {
-            "title": "Wie kann ich sicherstellen, dass ich immer die aktuellsten Informationen im Starter Kit habe?",
+            "title": "Wie kann ich sicherstellen, dass ich immer die aktuellsten Informationen im Starterkit habe?",
             "content": "<p>Nach dem Kauf erhältst du lebenslangen Zugang zu kostenlosen Updates des Bali Starter Kits. Sobald sich etwas Wesentliches ändert, wie zum Beispiel die Einreisebestimmungen oder wir neue Kapitel hinzufügen, wirst du über die Aktualisierungen informiert und kannst die neueste Version direkt herunterladen.<\/p>"
-          }
-        },
-        "text_kGdHDD": {
-          "type": "text",
-          "settings": {
-            "title": "Was mache ich, wenn ein Ort nicht mehr existiert oder geschlossen ist?",
-            "content": "<p>Solltest du feststellen, dass ein Ort nicht mehr existiert oder geschlossen ist, kontaktiere uns bitte. Wir werden die Information überprüfen und gegebenenfalls die Punkte aktualisieren.<\/p>"
           }
         }
       },
@@ -284,8 +277,7 @@
         "text_BN79Rc",
         "text_kzzCfy",
         "text_eFcGjJ",
-        "text_HyCa86",
-        "text_kGdHDD"
+        "text_HyCa86"
       ],
       "settings": {
         "title": "",
