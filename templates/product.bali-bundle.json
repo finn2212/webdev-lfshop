@@ -343,7 +343,7 @@
         "collection": "",
         "height": "use_screen_two_thirds",
         "overlay_opacity": 0,
-        "overlay_color": "#000",
+        "overlay_color": "#000000",
         "flex_align": "align--middle-left",
         "align_text": "text-left",
         "color": "text--white",
@@ -559,7 +559,7 @@
     "recent": {
       "type": "section-recent-products",
       "settings": {
-        "product_recently_heading": "Recently viewed",
+        "product_recently_heading": "Zuletzt gesehen",
         "product_recently_limit": 6,
         "product_recently_minimum": 4,
         "width": "wrapper",
