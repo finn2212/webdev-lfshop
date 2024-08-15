@@ -103,7 +103,7 @@
           "type": "upsell",
           "disabled": true,
           "settings": {
-            "product": "",
+            "product": "bali-bundle-starterkit-digitale-karte",
             "padding_bottom": 32
           }
         },
@@ -154,7 +154,7 @@
         "collection": "",
         "height": "use_screen_two_thirds",
         "overlay_opacity": 0,
-        "overlay_color": "#000",
+        "overlay_color": "#000000",
         "flex_align": "align--middle-left",
         "align_text": "text-left",
         "color": "text--white",
