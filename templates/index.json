@@ -124,13 +124,6 @@
     "section_gallery_fHthRT": {
       "type": "section-gallery",
       "blocks": {
-        "image_GE43R7": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/FCC0840-2.jpg",
-            "link": ""
-          }
-        },
         "image_hybiwz": {
           "type": "image",
           "settings": {
@@ -138,10 +131,10 @@
             "link": ""
           }
         },
-        "image_MLHeNe": {
+        "image_GE43R7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FCC0494.jpg",
+            "image": "shopify:\/\/shop_images\/FCC0840-2.jpg",
             "link": ""
           }
         },
@@ -151,13 +144,20 @@
             "image": "shopify:\/\/shop_images\/DJI_0556.jpg",
             "link": ""
           }
+        },
+        "image_MLHeNe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FCC0494.jpg",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "image_GE43R7",
         "image_hybiwz",
-        "image_MLHeNe",
-        "image_DMeCkn"
+        "image_GE43R7",
+        "image_DMeCkn",
+        "image_MLHeNe"
       ],
       "settings": {
         "scale_image": true,
