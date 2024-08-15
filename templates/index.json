@@ -51,15 +51,24 @@
     "section_text_yprYxk": {
       "type": "section-text",
       "blocks": {
+        "kicker_VhxKM4": {
+          "type": "kicker",
+          "settings": {
+            "kicker": "<p>JETZT NEU:<\/p>",
+            "enable_caps": false,
+            "text_size": 5
+          }
+        },
         "heading_KwimHz": {
           "type": "heading",
           "settings": {
-            "heading": "<p><em>Create a Life you don't need Vacation from<\/em><\/p>",
+            "heading": "<p>Das Bali Starterkit<\/p>",
             "text_size": 9
           }
         }
       },
       "block_order": [
+        "kicker_VhxKM4",
         "heading_KwimHz"
       ],
       "settings": {
