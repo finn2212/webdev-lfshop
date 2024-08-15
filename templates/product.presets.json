@@ -152,7 +152,7 @@
         "kicker_MyJXYQ": {
           "type": "kicker",
           "settings": {
-            "kicker": "<p>Introducing<\/p>",
+            "kicker": "<p>{{ product.title }}<\/p>",
             "enable_caps": false,
             "text_size": 5
           }
