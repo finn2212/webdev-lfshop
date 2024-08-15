@@ -121,6 +121,45 @@
         "padding_bottom": 36
       }
     },
+    "section_gallery_fHthRT": {
+      "type": "section-gallery",
+      "blocks": {
+        "image_GE43R7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FCC0840-2.jpg",
+            "link": ""
+          }
+        },
+        "image_hybiwz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FCC0562.jpg",
+            "link": ""
+          }
+        },
+        "image_MLHeNe": {
+          "type": "image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_GE43R7",
+        "image_hybiwz",
+        "image_MLHeNe"
+      ],
+      "settings": {
+        "scale_image": true,
+        "aspect_ratio": 1,
+        "padding": true,
+        "bg": "palette--light bg--neutral",
+        "width": "wrapper--full",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "default-collection": {
       "type": "section-collection",
       "settings": {
@@ -200,6 +239,7 @@
     "default-banner",
     "section_text_yprYxk",
     "section_collection_split_CG3phx",
+    "section_gallery_fHthRT",
     "default-collection",
     "default-split-collection"
   ]
