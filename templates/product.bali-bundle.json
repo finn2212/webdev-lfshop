@@ -255,24 +255,6 @@
         "padding_bottom": 36
       }
     },
-    "section_hero_KXm7Ue": {
-      "type": "section-hero",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Unsere_Bali_Geheomtipps_1.png",
-        "mobile_image": "shopify:\/\/shop_images\/C6CDBB_1.png",
-        "collection": "",
-        "height": "use_screen_two_thirds",
-        "overlay_opacity": 0,
-        "overlay_color": "#000",
-        "flex_align": "align--middle-left",
-        "align_text": "text-left",
-        "color": "text--white",
-        "color_bg": "hero__content--transparent",
-        "width": "wrapper",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "section_accordion_7E7iHh": {
       "type": "section-accordion",
       "blocks": {
@@ -329,6 +311,46 @@
         "width": "wrapper",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "section_text_Rhmxgp": {
+      "type": "section-text",
+      "blocks": {
+        "heading_aNKG3A": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Die Digitale Reise Karte<\/p>",
+            "text_size": 11
+          }
+        }
+      },
+      "block_order": [
+        "heading_aNKG3A"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
+    "section_hero_KXm7Ue": {
+      "type": "section-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Unsere_Bali_Geheomtipps_1.png",
+        "mobile_image": "shopify:\/\/shop_images\/C6CDBB_1.png",
+        "collection": "",
+        "height": "use_screen_two_thirds",
+        "overlay_opacity": 0,
+        "overlay_color": "#000",
+        "flex_align": "align--middle-left",
+        "align_text": "text-left",
+        "color": "text--white",
+        "color_bg": "hero__content--transparent",
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "recent": {
@@ -419,26 +441,130 @@
         "padding_bottom": 36
       }
     },
-    "section_text_Rhmxgp": {
-      "type": "section-text",
-      "blocks": {
-        "heading_aNKG3A": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Die Digitale Reise Karte<\/p>",
-            "text_size": 11
-          }
-        }
-      },
-      "block_order": [
-        "heading_aNKG3A"
-      ],
+    "section_row_dQfrUy": {
+      "type": "section-row",
       "settings": {
-        "align_text": "text-left",
+        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_3.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Über 65 Hotels für jeden Geschmack",
+        "text_size": 7,
+        "text": "<p>Ein unvergesslicher Bali-Aufenthalt beginnt mit der perfekten Unterkunft. Wir haben für dich eine handverlesene Auswahl an Top-Hotels zusammengestellt – von luxuriösen Resorts über charmante, preiswerte Bambushäuser bis hin zu einzigartigen Unterkünften mit atemberaubenden Ausblicken. Egal, ob du dich in einem exklusiven Luxusresort verwöhnen lassen möchtest oder das authentische Bali in einer preisgünstigen, aber dennoch traumhaften Unterkunft erleben willst, unsere Empfehlungen bieten für jeden Reisestil das Richtige. Lass dich von unseren Tipps inspirieren und finde die ideale Unterkunft für deinen Traumurlaub auf Bali.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
         "color_bg": "palette--light bg--neutral",
         "width": "wrapper",
-        "padding_top": 0,
-        "padding_bottom": 20
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_nTdCnR": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/100_Restaurants.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Kulinarische Highlights in Bali",
+        "text_size": 7,
+        "text": "<p>Ein Bali-Urlaub wäre nicht komplett, ohne dich durch die vielseitige Küche der Insel zu kosten. Wir haben für dich die Top 100 Restaurants zusammengestellt – von authentischen lokalen Spezialitäten bis hin zur besten Pizza der Welt. Um dir die Orientierung zu erleichtern, haben wir die Restaurants in zwei Kategorien unterteilt: Frühstück\/Lunch und Abendessen. So kannst du dich den ganzen Tag über durch die Insel schlemmen – von der Bali-Bowl am Morgen bis zum Nasi Goreng am Abend. Unsere Karten sind dein idealer Begleiter, um das Beste aus Balis kulinarischem Erlebnis herauszuholen.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_cGDMJU": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_5.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Tauche ein in Balis natürliche Schönheit und Kultur",
+        "text_size": 7,
+        "text": "<p>Bali ist nicht nur ein Paradies für Genießer, sondern auch ein Ort voller kultureller und natürlicher Schätze. Unsere Auswahl an Kultur- und Natur-Highlights führt dich zu den beeindruckendsten Wasserfällen, den atemberaubendsten Aussichtspunkten und den schönsten Tempeln der Insel. Entdecke die magische Vielfalt Balis, von majestätischen Wasserfällen, die tief im Dschungel verborgen liegen, über spektakuläre Viewpoints mit Panoramablick, bis hin zu heiligen Tempeln, die dich in die spirituelle Kultur der Insel eintauchen lassen. Unsere Empfehlungen zeigen dir die besten Spots, um Balis natürliche Schönheit und kulturelle Tiefe in vollen Zügen zu erleben.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_ygXjXm": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/100_Restaurants_1.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Entdecke Bali's Traumstrände",
+        "text_size": 7,
+        "text": "<p>Es ist gar nicht so einfach, den perfekten Traumstrand auf Bali zu finden – und genau das macht es so spannend! Unsere Auswahl der Top Strände zeigt dir die versteckten Highlights der Insel, die du nicht verpassen solltest. Von ruhigen, unentdeckten Buchten bis hin zu lebhaften Stränden mit angesagten Beach Clubs – hier findest du die besten Spots für deinen perfekten Tag am Meer. Egal, ob du entspannen, schnorcheln, surfen oder den Sonnenuntergang genießen möchtest, mit unseren Empfehlungen entdeckst du die Strände, die dir unvergessliche Erlebnisse bieten und die du sonst vielleicht übersehen würdest.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_Q6Ezt4": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_8.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Shopping, Lifestyle & Spa",
+        "text_size": 7,
+        "text": "<p>In der Kategorie <strong>Shopping, Lifestyle & Spa<\/strong> haben wir die besten Spots auf Bali für dich zusammengestellt. Egal, ob du nach einzigartigen Souvenirs, stylischen Boutiquen oder einem luxuriösen Spa-Erlebnis suchst – unsere Empfehlungen bieten dir eine Vielfalt an Möglichkeiten, um deinen Bali-Aufenthalt in vollen Zügen zu genießen. Von entspannenden Wellness-Behandlungen über exklusive Einkaufserlebnisse bis hin zu den angesagtesten Lifestyle-Locations der Insel – hier findest du alles, um deinen Urlaub unvergesslich und erholsam zu gestalten.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_k7QrTR": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Bilder_PDP_Bali_Maps.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Familienfreundliche Erlebnisse in Bali",
+        "text_size": 7,
+        "text": "<p>Es ist gar nicht so einfach, den perfekten Traumstrand auf Bali zu finden – und genau das macht es so spannend! Unsere Auswahl der Top Strände zeigt dir die versteckten Highlights der Insel, die du nicht verpassen solltest. Von ruhigen, unentdeckten Buchten bis hin zu lebhaften Stränden mit angesagten Beach Clubs – hier findest du die besten Spots für deinen perfekten Tag am Meer. Egal, ob du entspannen, schnorcheln, surfen oder den Sonnenuntergang genießen möchtest, mit unseren Empfehlungen entdeckst du die Strände, die dir unvergessliche Erlebnisse bieten und die du sonst vielleicht übersehen würdest.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -448,11 +574,17 @@
     "section_hero_CNFVxH",
     "section_text_rxeAN8",
     "section_row_CdQiYr",
-    "section_hero_KXm7Ue",
     "section_accordion_7E7iHh",
+    "section_text_Rhmxgp",
+    "section_hero_KXm7Ue",
     "recent",
     "section_reviews_aVcWtY",
     "related",
-    "section_text_Rhmxgp"
+    "section_row_dQfrUy",
+    "section_row_nTdCnR",
+    "section_row_cGDMJU",
+    "section_row_ygXjXm",
+    "section_row_Q6Ezt4",
+    "section_row_k7QrTR"
   ]
 }
