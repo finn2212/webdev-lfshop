@@ -124,8 +124,8 @@
     "default-collection": {
       "type": "section-collection",
       "settings": {
-        "title": "Level up Deine Nächste Reise",
-        "description": "<p>Ob Bali Guide, Google Maps Punkte oder Presets<\/p>",
+        "title": "Edit like a PRO",
+        "description": "<p>Unsere Lightroom Presets<\/p>",
         "collection": "presets",
         "grid": 4,
         "limit": 8,
