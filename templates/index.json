@@ -48,6 +48,56 @@
         "padding_bottom": 0
       }
     },
+    "section_collection_split_CG3phx": {
+      "type": "section-collection-split",
+      "blocks": {
+        "heading_GB7fwp": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Bali Starterkit<\/p>",
+            "text_size": 10
+          }
+        },
+        "button_BjwhBN": {
+          "type": "button",
+          "settings": {
+            "button_text": "Zum E-Guide",
+            "button_url": "shopify:\/\/products\/bali-starterkit",
+            "button_size": "btn--large",
+            "button_style": "hero__btn btn",
+            "button_color": "btn--white"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GB7fwp",
+        "button_BjwhBN"
+      ],
+      "settings": {
+        "collection": "",
+        "product_list": [
+          "bali-starterkit"
+        ],
+        "image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_2048_x_2048_px.png",
+        "mobile_image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_2048_x_2048_px_1.png",
+        "sticky_image_enable": false,
+        "swap": false,
+        "overlay_opacity": 15,
+        "overlay_color": "#000000",
+        "grid_large": 1,
+        "grid_small": 1,
+        "limit": 4,
+        "bg": "palette--light bg--neutral",
+        "video_link_bg": "",
+        "object_position": "center-center",
+        "flex_align": "align--middle-center",
+        "align_text": "text-center",
+        "color": "text--white",
+        "width": "wrapper--full",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "default-collection": {
       "type": "section-collection",
       "settings": {
@@ -104,10 +154,10 @@
         ],
         "image": "shopify:\/\/shop_images\/FCC5983.jpg",
         "sticky_image_enable": false,
-        "swap": false,
+        "swap": true,
         "overlay_opacity": 30,
         "overlay_color": "#181929",
-        "grid_large": 2,
+        "grid_large": 1,
         "grid_small": 1.5,
         "limit": 4,
         "bg": "palette--light bg--neutral",
@@ -120,61 +170,12 @@
         "padding_top": 12,
         "padding_bottom": 12
       }
-    },
-    "section_collection_split_CG3phx": {
-      "type": "section-collection-split",
-      "blocks": {
-        "heading_GB7fwp": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Bali Starterkit<\/p>",
-            "text_size": 10
-          }
-        },
-        "button_BjwhBN": {
-          "type": "button",
-          "settings": {
-            "button_text": "Zum E-Guide",
-            "button_url": "shopify:\/\/products\/bali-starterkit",
-            "button_size": "btn--large",
-            "button_style": "hero__btn btn",
-            "button_color": "btn--white"
-          }
-        }
-      },
-      "block_order": [
-        "heading_GB7fwp",
-        "button_BjwhBN"
-      ],
-      "settings": {
-        "collection": "",
-        "product_list": [
-          "bali-starterkit"
-        ],
-        "image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_2048_x_2048_px.png",
-        "sticky_image_enable": false,
-        "swap": false,
-        "overlay_opacity": 15,
-        "overlay_color": "#000000",
-        "grid_large": 2,
-        "grid_small": 1.5,
-        "limit": 4,
-        "bg": "palette--light bg--neutral",
-        "video_link_bg": "",
-        "object_position": "center-center",
-        "flex_align": "align--middle-center",
-        "align_text": "text-center",
-        "color": "text--white",
-        "width": "wrapper--full",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "default-banner",
+    "section_collection_split_CG3phx",
     "default-collection",
-    "default-split-collection",
-    "section_collection_split_CG3phx"
+    "default-split-collection"
   ]
 }
