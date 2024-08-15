@@ -93,7 +93,7 @@
         "flex_align": "align--middle-center",
         "align_text": "text-center",
         "color": "text--white",
-        "width": "wrapper--full",
+        "width": "wrapper",
         "padding_top": 36,
         "padding_bottom": 36
       }
