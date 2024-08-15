@@ -209,7 +209,7 @@
     "recent": {
       "type": "section-recent-products",
       "settings": {
-        "product_recently_heading": "Ähnliche Produkte",
+        "product_recently_heading": "Zuletzt gesehen",
         "product_recently_limit": 6,
         "product_recently_minimum": 4,
         "width": "wrapper",
@@ -222,7 +222,7 @@
       "settings": {
         "related_products_enable": true,
         "limit": 6,
-        "product_recommendations_heading": "Related products",
+        "product_recommendations_heading": "Ähnliche Produkte",
         "width": "wrapper",
         "padding_top": 36,
         "padding_bottom": 36
