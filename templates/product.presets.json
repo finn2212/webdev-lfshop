@@ -79,14 +79,14 @@
           "type": "description",
           "settings": {
             "read_more": true,
-            "style": "accordions",
+            "style": "none",
             "description_icon": "",
-            "title_1": "Information",
+            "title_1": "",
             "icon_name_1": "",
-            "raw_content_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
-            "title_2": "Details",
+            "raw_content_1": "",
+            "title_2": "",
             "icon_name_2": "",
-            "raw_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.<\/p>",
+            "raw_content_2": "",
             "title_3": "",
             "icon_name_3": "",
             "raw_content_3": "",
@@ -153,7 +153,7 @@
           "type": "kicker",
           "settings": {
             "kicker": "<p>{{ product.title }}<\/p>",
-            "enable_caps": false,
+            "enable_caps": true,
             "text_size": 5
           }
         },
