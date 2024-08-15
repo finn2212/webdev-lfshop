@@ -78,7 +78,7 @@
         "description": {
           "type": "description",
           "settings": {
-            "read_more": true,
+            "read_more": false,
             "style": "none",
             "description_icon": "",
             "title_1": "",
