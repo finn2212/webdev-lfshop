@@ -48,7 +48,7 @@
     "cart_show_quantity": false,
     "cart_notes_enable": false,
     "cart_continue_browsing": "shopify:\/\/collections\/all",
-    "show_free_shipping_message": true,
+    "show_free_shipping_message": false,
     "cart_custom_message_enable": false,
     "cart_show_additional_buttons": false,
     "collection_text_alignment": "text-center",
