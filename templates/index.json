@@ -53,7 +53,7 @@
       "settings": {
         "title": "Level up Deine Nächste Reise",
         "description": "<p>Ob Bali Guide, Google Maps Punkte oder Presets<\/p>",
-        "collection": "featured-home",
+        "collection": "presets",
         "grid": 4,
         "limit": 8,
         "enable_slider": true,
@@ -121,204 +121,51 @@
         "padding_bottom": 12
       }
     },
-    "default-mosaic": {
-      "type": "section-mosaic",
+    "section_collection_split_CG3phx": {
+      "type": "section-collection-split",
       "blocks": {
-        "mosaic_index_block-0": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "text": "",
-            "link_override": "",
-            "content_color": "#333333",
-            "content_bg": "#f7f7f7"
-          }
-        },
-        "mosaic_index_block-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "text": "",
-            "link_override": "",
-            "content_color": "#333333",
-            "content_bg": "#f7f7f7"
-          }
-        },
-        "mosaic_index_block-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "text": "",
-            "link_override": "",
-            "content_color": "#333333",
-            "content_bg": "#f7f7f7"
-          }
-        }
-      },
-      "block_order": [
-        "mosaic_index_block-0",
-        "mosaic_index_block-1",
-        "mosaic_index_block-2"
-      ],
-      "settings": {
-        "title": "",
-        "description": "",
-        "color_bg": "palette--light bg--neutral",
-        "aspect_ratio": 0.6,
-        "place_text": "flex-column",
-        "align_text": "text-center",
-        "use_font": "font-heading",
-        "width": "wrapper",
-        "padding_top": 0,
-        "padding_bottom": 36
-      }
-    },
-    "default-blog": {
-      "type": "section-blog",
-      "settings": {
-        "title": "News",
-        "index_blog": "",
-        "limit": 6,
-        "grid": 3,
-        "aspect_ratio": 1,
-        "show_meta": true,
-        "show_excerpt": false,
-        "show_tags": false,
-        "show_view_all": false,
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "default-rte-social": {
-      "type": "section-text",
-      "blocks": {
-        "main-index_default-rte-social-kicker-1": {
-          "type": "kicker",
-          "settings": {
-            "kicker": "<p><a href=\"https:\/\/www.instagram.com\/groupthought\/\" target=\"_blank\" title=\"Instagram link\">@social_handle<\/a><\/p>",
-            "enable_caps": true,
-            "text_size": 1
-          }
-        },
-        "main-index_default-rte-social-heading-1": {
+        "heading_GB7fwp": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Stay in touch<\/p>",
-            "text_size": 6
+            "heading": "<p>Bali Starterkit<\/p>",
+            "text_size": 10
+          }
+        },
+        "button_BjwhBN": {
+          "type": "button",
+          "settings": {
+            "button_text": "Zum E-Guide",
+            "button_url": "shopify:\/\/products\/bali-starterkit",
+            "button_size": "btn--large",
+            "button_style": "hero__btn btn",
+            "button_color": "btn--white"
           }
         }
       },
       "block_order": [
-        "main-index_default-rte-social-kicker-1",
-        "main-index_default-rte-social-heading-1"
+        "heading_GB7fwp",
+        "button_BjwhBN"
       ],
       "settings": {
-        "align_text": "text-left",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
-    "default-gallery-social": {
-      "type": "section-gallery",
-      "blocks": {
-        "main-index_default-gallery-social-image-1": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "main-index_default-gallery-social-image-2": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "main-index_default-gallery-social-image-3": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "main-index_default-gallery-social-image-4": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "main-index_default-gallery-social-image-5": {
-          "type": "image",
-          "settings": {
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "main-index_default-gallery-social-image-1",
-        "main-index_default-gallery-social-image-2",
-        "main-index_default-gallery-social-image-3",
-        "main-index_default-gallery-social-image-4",
-        "main-index_default-gallery-social-image-5"
-      ],
-      "settings": {
-        "scale_image": true,
-        "aspect_ratio": 1,
-        "padding": true,
+        "collection": "",
+        "product_list": [
+          "bali-starterkit"
+        ],
+        "image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_2048_x_2048_px.png",
+        "sticky_image_enable": false,
+        "swap": false,
+        "overlay_opacity": 15,
+        "overlay_color": "#000000",
+        "grid_large": 2,
+        "grid_small": 1.5,
+        "limit": 4,
         "bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    },
-    "default-accordion-group": {
-      "type": "section-accordion",
-      "blocks": {
-        "accordion-block-1": {
-          "type": "text",
-          "settings": {
-            "title": "Our policy for returns and refunds",
-            "content": "<p>Our customers' satisfaction is our number one priority.<\/p><p>We offer a full refund when the product has not been opened and is unused and a partial refund when the packaging can not be accounted for.<\/p><p>Please note that customers will be responsible for shipping costs.<\/p><p>Any returns must be in the original packaging with proof of purchase.<\/p>"
-          }
-        },
-        "accordion-block-2": {
-          "type": "text",
-          "settings": {
-            "title": "Our commitment to payment security",
-            "content": "<p>All direct payment gateways adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express, and Discover.<\/p>"
-          }
-        },
-        "accordion-block-3": {
-          "type": "text",
-          "settings": {
-            "title": "Product delivery times",
-            "content": "<p>Standard delivery usually takes around 7 business days. Please note that with the state of the global pandemic, orders may arrive later than usual.<\/p><p>If your order hasn't arrived after two weeks, please contact us and we will look into the details.<\/p>"
-          }
-        },
-        "accordion-block-4": {
-          "type": "text",
-          "settings": {
-            "title": "Our warranty policy",
-            "content": "<p>Products under warranty should be handled with care.<\/p><p>If the products arrive with visible defects, please take photos of them and send them our way. We will reach back out to clear up all the details.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "accordion-block-1",
-        "accordion-block-2",
-        "accordion-block-3",
-        "accordion-block-4"
-      ],
-      "settings": {
-        "title": "A few things you might be wondering",
-        "align_text": "text-left",
-        "text_size": 2,
-        "text_color": "text--neutral",
-        "bg": "palette--light bg--neutral",
-        "height": "use_screen_full",
-        "width": "wrapper",
+        "video_link_bg": "",
+        "object_position": "center-center",
+        "flex_align": "align--middle-center",
+        "align_text": "text-center",
+        "color": "text--white",
+        "width": "wrapper--full",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -328,10 +175,6 @@
     "default-banner",
     "default-collection",
     "default-split-collection",
-    "default-mosaic",
-    "default-blog",
-    "default-rte-social",
-    "default-gallery-social",
-    "default-accordion-group"
+    "section_collection_split_CG3phx"
   ]
 }
