@@ -146,250 +146,49 @@
         "padding_bottom": 64
       }
     },
-    "section_custom_content_bTJ8iK": {
-      "type": "section-custom-content",
+    "section_text_YAtxYn": {
+      "type": "section-text",
       "blocks": {
-        "image_7mb7ke": {
-          "type": "image",
+        "kicker_MyJXYQ": {
+          "type": "kicker",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Unsere_Bali_Geheomtipps.png",
-            "overlay_opacity": 0,
-            "overlay_color": "#000000",
-            "kicker": "",
-            "title": "",
-            "richtext": "",
-            "text_align": "align--middle-center",
-            "text_color": "text--white",
-            "link_text": "",
-            "link": "",
-            "button_size": "btn--large",
-            "button_style": "hero__btn btn",
-            "button_color": "btn--white"
+            "kicker": "<p>Introducing<\/p>",
+            "enable_caps": false,
+            "text_size": 5
+          }
+        },
+        "heading_FLAMEq": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h3>Alles Was du wissen musst<\/h3>",
+            "text_size": 9
+          }
+        },
+        "text_jAx3qc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Unsere Presets sind kompatibel mit Adobe Lightroom, Adobe Lightroom Classic und Adobe Lightroom Mobile, sodass du die volle Kontrolle über deine Bearbeitung hast. Egal, ob am Computer, Mac, iPad oder Handy, unsere Tropical Presets sind das perfekte Werkzeug, um mit deinen Bilder aus der Masse herauszustechen.<\/p><p>Die Tropical Presets bieten eine hervorragende Grundlage, um deine Bilder zu bearbeiten und ihnen einen professionellen Look zu verleihen. Wir haben unser Bestes getan, um eine breite Palette von Effekten und Stilen abzudecken, die zu verschiedenen Arten von Bildern passen.<\/p><p>Es ist jedoch wichtig zu beachten, dass nicht jedes Preset perfekt auf jedes Bild passt. Jedes Bild ist einzigartig und erfordert möglicherweise geringfügige Anpassungen, um das gewünschte Ergebnis zu erzielen. Verwende unsere Presets als Ausgangspunkt und passe sie bei Bedarf an, um das Beste aus deinen Bildern herauszuholen.<\/p><p>Um die bestmögliche Erfahrung zu erzielen, empfehlen wir, die neueste Version von Lightroom zu verwenden. Auf diese Weise kannst du sicherstellen, dass die Presets ordnungsgemäß funktionieren und du die volle Kontrolle über deine Bearbeitung hast.<\/p><p>Also wenn es für dich bald in die Tropen, unter Palmen, auf wunderschöne Inseln oder Wasserfälle geht, lade unsere Tropical Presets herunter, um deine Bilder auf das nächste Level zu bringen!<\/p><p>Wenn du Fragen hast, kannst du gerne uns jederzeit auf Instagram schreiben oder via Mail an hello@laurandfinn.com<\/p><p>So installierst du die Presets: https:\/\/adobe.ly\/3Hls4Jz<\/p>",
+            "text_size": 5,
+            "text_columns": 1
+          }
+        },
+        "heading_4temQw": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "text_size": 1
           }
         }
       },
       "block_order": [
-        "image_7mb7ke"
+        "kicker_MyJXYQ",
+        "heading_FLAMEq",
+        "text_jAx3qc",
+        "heading_4temQw"
       ],
       "settings": {
-        "height": "use_screen_one_half",
-        "padding": true,
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image-left": {
-      "type": "section-row",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/100_Restaurants.png",
-        "shape": "none",
-        "aspect_ratio": 1,
-        "layout": "left",
-        "title": "Presets",
-        "text_size": 7,
-        "text": "<p>Entdecke die besten Restaurants der Insel mit über 70 empfohlenen Spots. Von traditionellen balinesischen Gerichten bis hin zu internationalen Küchen – für jeden Gaumen ist etwas dabei. <\/p>",
-        "color_text_bg": "palette--light bg--accent",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "btn",
-        "button_color": "btn--neutral",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
-    "image-right": {
-      "type": "section-row",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/65_Hotels.png",
-        "shape": "none",
-        "aspect_ratio": 1,
-        "layout": "right",
-        "title": "Über 65 Hotels für jeden Geschmack",
-        "text_size": 7,
-        "text": "<p>Ob luxuriöse Resorts oder gemütliche Boutique-Hotels, unsere Auswahl bietet dir die besten Unterkünfte, um deinen Aufenthalt in Bali unvergesslich zu machen.<\/p>",
-        "color_text_bg": "palette--light bg--accent",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "btn",
-        "button_color": "btn--neutral",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 24,
-        "padding_bottom": 36
-      }
-    },
-    "section_row_nFGMMr": {
-      "type": "section-row",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur.png",
-        "shape": "none",
-        "aspect_ratio": 1,
-        "layout": "left",
-        "title": "Tauche ein in Balis natürliche Schönheit und Kultur",
-        "text_size": 8,
-        "text": "<p>Mit über 40 atemberaubenden Naturschauplätzen und kulturellen Highlights bietet Bali eine perfekte Mischung aus Naturwundern und kulturellen Erlebnissen.<\/p>",
-        "color_text_bg": "palette--light bg--accent",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "btn",
-        "button_color": "btn--neutral",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "section_row_LLXRjH": {
-      "type": "section-row",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/100_Restaurants_1.png",
-        "shape": "none",
-        "aspect_ratio": 1,
-        "layout": "right",
-        "title": "Entdecke Bali's Traumstrände",
-        "text_size": 7,
-        "text": "<p>Mit dabei eine Auswahl der 20 schönsten Strände auf Bali, sorgfältig ausgewählt, um jedem Geschmack gerecht zu werden. Ob du die perfekten Wellen zum Surfen suchst, einen ruhigen Ort zum Sonnenbaden oder die atemberaubende Unterwasserwelt erkunden möchtest – Bali bietet dir den idealen Strand für dein persönliches Paradies.<\/p>",
-        "color_text_bg": "palette--light bg--accent",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "btn",
-        "button_color": "btn--neutral",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "section_reviews_ECUnCA": {
-      "type": "section-reviews",
-      "blocks": {
-        "review_jQ3fTe": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_Eayj6c": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_xpdzBt": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_EWzFfA": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_RqNYK7": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "review_jQ3fTe",
-        "review_Eayj6c",
-        "review_xpdzBt",
-        "review_EWzFfA",
-        "review_RqNYK7"
-      ],
-      "settings": {
-        "title": "Testimonials",
-        "description": "<p>Use this area to describe your testimonials.<\/p>",
-        "grid": 3,
-        "background_color": "palette--light bg--accent",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "section_accordion_7E7iHh": {
-      "type": "section-accordion",
-      "blocks": {
-        "text_pUtiRF": {
-          "type": "text",
-          "settings": {
-            "title": "Was sind Google Maps Punkte und wie funktionieren sie?",
-            "content": "<p>Google Maps Punkte sind gespeicherte Orte auf Google Maps, die du direkt in deiner App aufrufen kannst. Die Punkte sind kategorisiert und bieten dir eine enorme Erleichterung bei der Orientierung auf der Insel.<\/p>"
-          }
-        },
-        "text_BN79Rc": {
-          "type": "text",
-          "settings": {
-            "title": "Wie kann ich die Google Maps Punkte nutzen?",
-            "content": "<p>Nach dem Kauf erhältst du eine Datei, die du in Google Maps importieren kannst. So hast du sofort Zugriff auf alle gespeicherten Orte und kannst deine Reise planen.<\/p>"
-          }
-        },
-        "text_kzzCfy": {
-          "type": "text",
-          "settings": {
-            "title": "Kann ich die Google Maps Punkte offline nutzen?",
-            "content": "<p>Ja, du kannst die Karten und Punkte in Google Maps herunterladen und offline nutzen. Das ist besonders praktisch, wenn du in Gebieten ohne Internetverbindung unterwegs bist.<\/p>"
-          }
-        },
-        "text_eFcGjJ": {
-          "type": "text",
-          "settings": {
-            "title": "Welche Kategorien sind in den Google Maps Punkten enthalten?",
-            "content": "<p>Unsere Google Maps Punkte decken eine Vielzahl von Kategorien ab, darunter Strände, Abenteuer und Aktivitäten, Natur und Kultur, Restaurants, Hotels, Beachclubs und Nachtleben, Sunsets und Sundowner, Shopping, Lifestyle und Spa sowie kinderfreundliche Orte.<\/p>"
-          }
-        },
-        "text_HyCa86": {
-          "type": "text",
-          "settings": {
-            "title": "Sind die Google Maps Punkte aktuell und genau?",
-            "content": "<p>Ja, alle Punkte werden regelmäßig aktualisiert, um sicherzustellen, dass die Informationen präzise und aktuell sind. Wir überprüfen die Orte kontinuierlich, um dir die besten Erlebnisse zu garantieren. Sollte mal ein Punkt nicht akkurat sein, bitten wir natürlich um Feedback von euch.<\/p>"
-          }
-        },
-        "text_kGdHDD": {
-          "type": "text",
-          "settings": {
-            "title": "Was mache ich, wenn ein Ort nicht mehr existiert oder geschlossen ist?",
-            "content": "<p>Solltest du feststellen, dass ein Ort nicht mehr existiert oder geschlossen ist, kontaktiere uns bitte. Wir werden die Information überprüfen und gegebenenfalls die Punkte aktualisieren.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "text_pUtiRF",
-        "text_BN79Rc",
-        "text_kzzCfy",
-        "text_eFcGjJ",
-        "text_HyCa86",
-        "text_kGdHDD"
-      ],
-      "settings": {
-        "title": "",
         "align_text": "text-left",
-        "text_size": 1,
-        "text_color": "text--neutral",
-        "bg": "palette--light bg--neutral",
-        "height": "use_screen_full",
+        "color_bg": "palette--light bg--neutral",
         "width": "wrapper",
         "padding_top": 36,
         "padding_bottom": 36
@@ -420,13 +219,7 @@
   },
   "order": [
     "main",
-    "section_custom_content_bTJ8iK",
-    "image-left",
-    "image-right",
-    "section_row_nFGMMr",
-    "section_row_LLXRjH",
-    "section_reviews_ECUnCA",
-    "section_accordion_7E7iHh",
+    "section_text_YAtxYn",
     "recent",
     "related"
   ]
