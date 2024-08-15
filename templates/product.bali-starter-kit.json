@@ -149,11 +149,11 @@
     "section_hero_CNFVxH": {
       "type": "section-hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_2.png",
+        "image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_3.png",
         "mobile_image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_2048_x_2048_px.png",
         "collection": "",
         "height": "use_screen_two_thirds",
-        "overlay_opacity": 15,
+        "overlay_opacity": 0,
         "overlay_color": "#000",
         "flex_align": "align--middle-left",
         "align_text": "text-left",
