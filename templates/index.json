@@ -141,6 +141,14 @@
         "image_MLHeNe": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/FCC0494.jpg",
+            "link": ""
+          }
+        },
+        "image_DMeCkn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DJI_0556.jpg",
             "link": ""
           }
         }
@@ -148,7 +156,8 @@
       "block_order": [
         "image_GE43R7",
         "image_hybiwz",
-        "image_MLHeNe"
+        "image_MLHeNe",
+        "image_DMeCkn"
       ],
       "settings": {
         "scale_image": true,
