@@ -76,7 +76,8 @@
       "settings": {
         "collection": "",
         "product_list": [
-          "bali-starterkit"
+          "bali-starterkit",
+          "bali-bundle-starterkit-digitale-karte"
         ],
         "image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_2048_x_2048_px_1.png",
         "mobile_image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_2048_x_2048_px_1.png",
@@ -84,8 +85,8 @@
         "swap": false,
         "overlay_opacity": 15,
         "overlay_color": "#000000",
-        "grid_large": 1,
-        "grid_small": 1,
+        "grid_large": 2,
+        "grid_small": 1.5,
         "limit": 4,
         "bg": "palette--light bg--neutral",
         "video_link_bg": "",
@@ -150,14 +151,15 @@
       "settings": {
         "collection": "digitale-karten",
         "product_list": [
-
+          "bali-bundle-starterkit-digitale-karte",
+          "bali-digitale-karte"
         ],
         "image": "shopify:\/\/shop_images\/FCC5983.jpg",
         "sticky_image_enable": false,
         "swap": true,
         "overlay_opacity": 30,
         "overlay_color": "#181929",
-        "grid_large": 1,
+        "grid_large": 2,
         "grid_small": 1.5,
         "limit": 4,
         "bg": "palette--light bg--neutral",
