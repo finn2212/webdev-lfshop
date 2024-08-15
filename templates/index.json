@@ -48,6 +48,28 @@
         "padding_bottom": 0
       }
     },
+    "section_text_yprYxk": {
+      "type": "section-text",
+      "blocks": {
+        "heading_KwimHz": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p><em>Create a Life you don't need Vacation from<\/em><\/p>",
+            "text_size": 9
+          }
+        }
+      },
+      "block_order": [
+        "heading_KwimHz"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_collection_split_CG3phx": {
       "type": "section-collection-split",
       "blocks": {
@@ -176,6 +198,7 @@
   },
   "order": [
     "default-banner",
+    "section_text_yprYxk",
     "section_collection_split_CG3phx",
     "default-collection",
     "default-split-collection"
