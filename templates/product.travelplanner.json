@@ -209,7 +209,7 @@
     "recent": {
       "type": "section-recent-products",
       "settings": {
-        "product_recently_heading": "Recently viewed",
+        "product_recently_heading": "Ähnliche Produkte",
         "product_recently_limit": 6,
         "product_recently_minimum": 4,
         "width": "wrapper",
