@@ -1,0 +1,418 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "navigation": "none",
+            "text_size": 7,
+            "product_show_cutline": true,
+            "show_rating": true,
+            "show_rating_count": false,
+            "padding_bottom": 20
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "padding_bottom": 20
+          }
+        },
+        "siblings": {
+          "type": "siblings",
+          "disabled": true,
+          "settings": {
+            "siblings_collection": "",
+            "cutline": "",
+            "padding_bottom": 32
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "variant_form": "auto",
+            "show_quantity": false,
+            "show_remaining": false,
+            "enable_payment_button": true,
+            "enable_gift_card_recipient": true,
+            "subscriptions_enable_selectors": true,
+            "info_page": "",
+            "padding_bottom": 20
+          }
+        },
+        "icon-1": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "icon-recycled",
+            "icon_size": 16,
+            "icon_color": "#5d9386",
+            "show_icon_bg": true,
+            "text": "<p>Made with recycled fabrics<\/p>",
+            "padding_bottom": 20
+          }
+        },
+        "icon-2": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "icon-sewing-machine",
+            "icon_size": 16,
+            "icon_color": "#5d9386",
+            "show_icon_bg": true,
+            "text": "<p>Certified fair trade product<\/p>",
+            "padding_bottom": 32
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "read_more": true,
+            "style": "accordions",
+            "description_icon": "",
+            "title_1": "Besser und übersichtlicher als jeder Reiseführer",
+            "icon_name_1": "",
+            "raw_content_1": "<p>Keine endlosen Texte, sondern klare Empfehlungen. Unsere sorgfältig ausgewählten Geheimtipps sind das Ergebnis von vier Jahren Lebenserfahrung auf Bali. Entdecke die Insel mit den Augen von Auswanderern, die Bali in- und auswendig kennen. <\/p>",
+            "title_2": "Einfache 1-Klick-Installation",
+            "icon_name_2": "",
+            "raw_content_2": "<p>Installiere die Google Maps Punkte schnell und unkompliziert auf deinem iPhone oder Android Smartphone und habe unsere Karte immer mit dabei, egal ob online oder offline.<\/p>",
+            "title_3": "Geheimtipps von Auswandern für dich",
+            "icon_name_3": "",
+            "raw_content_3": "<p>Unsere Empfehlungen stammen von echten Auswanderern, die ihre Liebe zu Bali mit dir teilen möchten. Vertraue auf Experten, die die Insel ihr Zuhause nennen.<\/p>",
+            "title_4": "BONUS 1: Bali mit Kind",
+            "icon_name_4": "",
+            "raw_content_4": "<p><strong>Als Bonus <\/strong>haben wir auch familienfreundliche Restaurants, Aktivitäten und Beach Clubs hinzugefügt, damit jeder – ob groß oder klein – das Beste aus seinem Bali-Urlaub herausholen kann. Von kinderfreundlichen Restaurants mit leckeren Menüs über spannende Aktivitäten für die ganze Familie bis hin zu entspannten Beach Clubs, die auch für die Kleinen viel zu bieten haben. So wird euer Bali-Urlaub nicht nur erholsam, sondern auch voller Spaß und unvergesslicher Erlebnisse für die ganze Familie.<\/p>",
+            "title_5": "BONUS 2: Mehr als nur Bali!",
+            "icon_name_5": "",
+            "raw_content_5": "<p>Eine Balireise ist nicht komplett, wenn du nicht auch die vorgelagerten Inseln erkundest. Zu den Highlights zählen die atemberaubenden Nusa-Inseln, allen voran Nusa Penida, die mit ihren endlosen Naturspektakeln beeindruckt. Nusa Lembongan und Nusa Ceningan verzaubern mit ihren charmanten Dörfern und versteckten Stränden. Und dann sind da noch die traumhaften Gili-Inseln – Gili Trawangan, Gili Meno und Gili Air, unsere persönliche Lieblingsinsel. Mit diesen Insidertipps kannst du nicht nur Bali, sondern auch die faszinierenden Schätze der Umgebung in vollen Zügen genießen.<\/p>",
+            "padding_bottom": 32
+          }
+        },
+        "upsell": {
+          "type": "upsell",
+          "disabled": true,
+          "settings": {
+            "product": "",
+            "padding_bottom": 32
+          }
+        },
+        "pickup": {
+          "type": "pickup",
+          "disabled": true,
+          "settings": {
+            "padding_bottom": 32
+          }
+        },
+        "sharing": {
+          "type": "sharing",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share",
+            "padding_bottom": 0
+          }
+        },
+        "text_Vn9Jtk": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "padding_bottom": 8
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "siblings",
+        "form",
+        "icon-1",
+        "icon-2",
+        "description",
+        "upsell",
+        "pickup",
+        "sharing",
+        "text_Vn9Jtk"
+      ],
+      "settings": {
+        "bg": "palette--light bg--neutral",
+        "product_sticky_enable": true,
+        "image_layout": "thumbnails",
+        "enable_video_looping": true,
+        "zoom_enable": true,
+        "width": "wrapper",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "section_custom_content_bTJ8iK": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image_7mb7ke": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Unsere_Bali_Geheomtipps_1.png",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_size": "btn--large",
+            "button_style": "hero__btn btn",
+            "button_color": "btn--white"
+          }
+        }
+      },
+      "block_order": [
+        "image_7mb7ke"
+      ],
+      "settings": {
+        "height": "use_screen_one_half",
+        "padding": true,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image-right": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_3.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Über 65 Hotels für jeden Geschmack",
+        "text_size": 7,
+        "text": "<p>Ein unvergesslicher Bali-Aufenthalt beginnt mit der perfekten Unterkunft. Wir haben für dich eine handverlesene Auswahl an Top-Hotels zusammengestellt – von luxuriösen Resorts über charmante, preiswerte Bambushäuser bis hin zu einzigartigen Unterkünften mit atemberaubenden Ausblicken. Egal, ob du dich in einem exklusiven Luxusresort verwöhnen lassen möchtest oder das authentische Bali in einer preisgünstigen, aber dennoch traumhaften Unterkunft erleben willst, unsere Empfehlungen bieten für jeden Reisestil das Richtige. Lass dich von unseren Tipps inspirieren und finde die ideale Unterkunft für deinen Traumurlaub auf Bali.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 24,
+        "padding_bottom": 36
+      }
+    },
+    "image-left": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/100_Restaurants.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Kulinarische Highlights in Bali",
+        "text_size": 7,
+        "text": "<p>Ein Bali-Urlaub wäre nicht komplett, ohne dich durch die vielseitige Küche der Insel zu kosten. Wir haben für dich die Top 100 Restaurants zusammengestellt – von authentischen lokalen Spezialitäten bis hin zur besten Pizza der Welt. Um dir die Orientierung zu erleichtern, haben wir die Restaurants in zwei Kategorien unterteilt: Frühstück\/Lunch und Abendessen. So kannst du dich den ganzen Tag über durch die Insel schlemmen – von der Bali-Bowl am Morgen bis zum Nasi Goreng am Abend. Unsere Karten sind dein idealer Begleiter, um das Beste aus Balis kulinarischem Erlebnis herauszuholen.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "section_row_nFGMMr": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_5.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Tauche ein in Balis natürliche Schönheit und Kultur",
+        "text_size": 8,
+        "text": "<p>Bali ist nicht nur ein Paradies für Genießer, sondern auch ein Ort voller kultureller und natürlicher Schätze. Unsere Auswahl an Kultur- und Natur-Highlights führt dich zu den beeindruckendsten Wasserfällen, den atemberaubendsten Aussichtspunkten und den schönsten Tempeln der Insel. Entdecke die magische Vielfalt Balis, von majestätischen Wasserfällen, die tief im Dschungel verborgen liegen, über spektakuläre Viewpoints mit Panoramablick, bis hin zu heiligen Tempeln, die dich in die spirituelle Kultur der Insel eintauchen lassen. Unsere Empfehlungen zeigen dir die besten Spots, um Balis natürliche Schönheit und kulturelle Tiefe in vollen Zügen zu erleben.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_MQjPp7": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/100_Restaurants_1.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Entdecke Bali's Traumstrände",
+        "text_size": 7,
+        "text": "<p>Es ist gar nicht so einfach, den perfekten Traumstrand auf Bali zu finden – und genau das macht es so spannend! Unsere Auswahl der Top Strände zeigt dir die versteckten Highlights der Insel, die du nicht verpassen solltest. Von ruhigen, unentdeckten Buchten bis hin zu lebhaften Stränden mit angesagten Beach Clubs – hier findest du die besten Spots für deinen perfekten Tag am Meer. Egal, ob du entspannen, schnorcheln, surfen oder den Sonnenuntergang genießen möchtest, mit unseren Empfehlungen entdeckst du die Strände, die dir unvergessliche Erlebnisse bieten und die du sonst vielleicht übersehen würdest.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_y8QcNb": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_8.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Shopping, Lifestyle & Spa",
+        "text_size": 7,
+        "text": "<p>In der Kategorie <strong>Shopping, Lifestyle & Spa<\/strong> haben wir die besten Spots auf Bali für dich zusammengestellt. Egal, ob du nach einzigartigen Souvenirs, stylischen Boutiquen oder einem luxuriösen Spa-Erlebnis suchst – unsere Empfehlungen bieten dir eine Vielfalt an Möglichkeiten, um deinen Bali-Aufenthalt in vollen Zügen zu genießen. Von entspannenden Wellness-Behandlungen über exklusive Einkaufserlebnisse bis hin zu den angesagtesten Lifestyle-Locations der Insel – hier findest du alles, um deinen Urlaub unvergesslich und erholsam zu gestalten.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_46iDmy": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Bilder_PDP_Bali_Maps.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Familienfreundliche Erlebnisse in Bali",
+        "text_size": 7,
+        "text": "<p>Es ist gar nicht so einfach, den perfekten Traumstrand auf Bali zu finden – und genau das macht es so spannend! Unsere Auswahl der Top Strände zeigt dir die versteckten Highlights der Insel, die du nicht verpassen solltest. Von ruhigen, unentdeckten Buchten bis hin zu lebhaften Stränden mit angesagten Beach Clubs – hier findest du die besten Spots für deinen perfekten Tag am Meer. Egal, ob du entspannen, schnorcheln, surfen oder den Sonnenuntergang genießen möchtest, mit unseren Empfehlungen entdeckst du die Strände, die dir unvergessliche Erlebnisse bieten und die du sonst vielleicht übersehen würdest.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_accordion_7E7iHh": {
+      "type": "section-accordion",
+      "blocks": {
+        "text_pUtiRF": {
+          "type": "text",
+          "settings": {
+            "title": "Was sind Google Maps Punkte und wie funktionieren sie?",
+            "content": "<p>Google Maps Punkte sind gespeicherte Orte auf Google Maps, die du direkt in deiner App aufrufen kannst. Die Punkte sind kategorisiert und bieten dir eine enorme Erleichterung bei der Orientierung auf der Insel.<\/p>"
+          }
+        },
+        "text_BN79Rc": {
+          "type": "text",
+          "settings": {
+            "title": "Wie kann ich die Google Maps Punkte nutzen?",
+            "content": "<p>Nach dem Kauf erhältst du eine Datei, die du in Google Maps importieren kannst. So hast du sofort Zugriff auf alle gespeicherten Orte und kannst deine Reise planen.<\/p>"
+          }
+        },
+        "text_kzzCfy": {
+          "type": "text",
+          "settings": {
+            "title": "Kann ich die Google Maps Punkte offline nutzen?",
+            "content": "<p>Ja, du kannst die Karten und Punkte in Google Maps herunterladen und offline nutzen. Das ist besonders praktisch, wenn du in Gebieten ohne Internetverbindung unterwegs bist.<\/p>"
+          }
+        },
+        "text_eFcGjJ": {
+          "type": "text",
+          "settings": {
+            "title": "Welche Kategorien sind in den Google Maps Punkten enthalten?",
+            "content": "<p>Unsere Google Maps Punkte decken eine Vielzahl von Kategorien ab, darunter Strände, Abenteuer und Aktivitäten, Natur und Kultur, Restaurants, Hotels, Beachclubs und Nachtleben, Sunsets und Sundowner, Shopping, Lifestyle und Spa sowie kinderfreundliche Orte.<\/p>"
+          }
+        },
+        "text_HyCa86": {
+          "type": "text",
+          "settings": {
+            "title": "Sind die Google Maps Punkte aktuell und genau?",
+            "content": "<p>Ja, alle Punkte werden regelmäßig aktualisiert, um sicherzustellen, dass die Informationen präzise und aktuell sind. Wir überprüfen die Orte kontinuierlich, um dir die besten Erlebnisse zu garantieren. Sollte mal ein Punkt nicht akkurat sein, bitten wir natürlich um Feedback von euch.<\/p>"
+          }
+        },
+        "text_kGdHDD": {
+          "type": "text",
+          "settings": {
+            "title": "Was mache ich, wenn ein Ort nicht mehr existiert oder geschlossen ist?",
+            "content": "<p>Solltest du feststellen, dass ein Ort nicht mehr existiert oder geschlossen ist, kontaktiere uns bitte. Wir werden die Information überprüfen und gegebenenfalls die Punkte aktualisieren.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_pUtiRF",
+        "text_BN79Rc",
+        "text_kzzCfy",
+        "text_eFcGjJ",
+        "text_HyCa86",
+        "text_kGdHDD"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "height": "use_screen_full",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "recent": {
+      "type": "section-recent-products",
+      "settings": {
+        "product_recently_heading": "Zuletzt gesehen",
+        "product_recently_limit": 6,
+        "product_recently_minimum": 4,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related": {
+      "type": "related",
+      "settings": {
+        "related_products_enable": true,
+        "limit": 6,
+        "product_recommendations_heading": "Ähnliche Produkte",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_custom_content_bTJ8iK",
+    "image-right",
+    "image-left",
+    "section_row_nFGMMr",
+    "section_row_MQjPp7",
+    "section_row_y8QcNb",
+    "section_row_46iDmy",
+    "section_accordion_7E7iHh",
+    "recent",
+    "related"
+  ]
+}
