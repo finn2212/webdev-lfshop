@@ -211,7 +211,7 @@
     "image-left": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/100_Restaurants.png",
+        "image": "shopify:\/\/shop_images\/PDP_Bangkok-Maps.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "right",
@@ -232,12 +232,12 @@
     "section_row_nFGMMr": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_5.png",
+        "image": "shopify:\/\/shop_images\/PDP_Bangkok-Maps_5.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
-        "title": "Bangkok Food Highlights: Restaurants und Nachtmärkte",
-        "text_size": 8,
+        "title": "All about Food: Restaurants und Nachtmärkte",
+        "text_size": 7,
         "text": "<p>Bangkok ist ein wahres Paradies für Food-Liebhaber, doch bei einem kurzen Aufenthalt kann es eine echte Herausforderung sein, die wirklich guten Restaurants und Nachtmärkte zu finden. Wir selbst hatten anfangs Schwierigkeiten, die besten Spots zu entdecken. Doch nach viel Ausprobieren sind wir stolz darauf, unsere persönlichen Geheimtipps mit dir zu teilen, damit du das Beste aus Bangkoks kulinarischer Vielfalt herausholen kannst.<\/p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
@@ -253,7 +253,7 @@
     "section_row_MQjPp7": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/100_Restaurants_1.png",
+        "image": "shopify:\/\/shop_images\/PDP_Bangkok-Maps_6.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "right",
@@ -274,34 +274,13 @@
     "section_row_y8QcNb": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur_8.png",
+        "image": "shopify:\/\/shop_images\/PDP_Bangkok-Maps_7.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
-        "title": "Shopping, Lifestyle & Spa",
+        "title": "Mighty Nightlife",
         "text_size": 7,
-        "text": "<p>In der Kategorie <strong>Shopping, Lifestyle & Spa<\/strong> haben wir die besten Spots auf Bali für dich zusammengestellt. Egal, ob du nach einzigartigen Souvenirs, stylischen Boutiquen oder einem luxuriösen Spa-Erlebnis suchst – unsere Empfehlungen bieten dir eine Vielfalt an Möglichkeiten, um deinen Bali-Aufenthalt in vollen Zügen zu genießen. Von entspannenden Wellness-Behandlungen über exklusive Einkaufserlebnisse bis hin zu den angesagtesten Lifestyle-Locations der Insel – hier findest du alles, um deinen Urlaub unvergesslich und erholsam zu gestalten.<\/p>",
-        "color_text_bg": "palette--light bg--accent",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "btn",
-        "button_color": "btn--neutral",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "section_row_46iDmy": {
-      "type": "section-row",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Bilder_PDP_Bali_Maps.png",
-        "shape": "none",
-        "aspect_ratio": 1,
-        "layout": "right",
-        "title": "Familienfreundliche Erlebnisse in Bali",
-        "text_size": 7,
-        "text": "<p>Es ist gar nicht so einfach, den perfekten Traumstrand auf Bali zu finden – und genau das macht es so spannend! Unsere Auswahl der Top Strände zeigt dir die versteckten Highlights der Insel, die du nicht verpassen solltest. Von ruhigen, unentdeckten Buchten bis hin zu lebhaften Stränden mit angesagten Beach Clubs – hier findest du die besten Spots für deinen perfekten Tag am Meer. Egal, ob du entspannen, schnorcheln, surfen oder den Sonnenuntergang genießen möchtest, mit unseren Empfehlungen entdeckst du die Strände, die dir unvergessliche Erlebnisse bieten und die du sonst vielleicht übersehen würdest.<\/p>",
+        "text": "<p>Bangkok ist weltbekannt für sein pulsierendes Nachtleben, und die Khao San Road steht dabei im Mittelpunkt. Diese legendäre Straße bietet alles, was das Party-Herz begehrt: lebhafte Straßenpartys, coole Bars und angesagte Clubs. Gleichzeitig bietet Bangkok einige der beeindruckendsten Rooftop-Bars der Welt, darunter die berühmte Sky Bar im Lebua State Tower, die durch den Film <em>Hangover 2<\/em> internationale Berühmtheit erlangte. Von hier aus kannst du bei einem Drink die atemberaubende Skyline der Stadt genießen. In unserer digitalen Karte findest du die besten Locations, von der vibrierenden Khao San Road bis hin zu den exklusivsten Rooftop-Bars, um das volle Nightlife-Erlebnis in Bangkok auszukosten.<\/p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
@@ -410,7 +389,6 @@
     "section_row_nFGMMr",
     "section_row_MQjPp7",
     "section_row_y8QcNb",
-    "section_row_46iDmy",
     "section_accordion_7E7iHh",
     "recent",
     "related"
