@@ -81,18 +81,18 @@
             "read_more": true,
             "style": "accordions",
             "description_icon": "",
-            "title_1": "Information",
+            "title_1": "Was beinhalten die Karten?",
             "icon_name_1": "",
-            "raw_content_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
-            "title_2": "Details",
+            "raw_content_1": "<p>Unsere digitalen Google Maps Karten beinhalten eine sorgfältig kuratierte Auswahl an Orten, die dir das Beste von Koh Samui, Koh Phangan und Koh Tao zeigen. Von versteckten Stränden über beeindruckende Aussichtspunkte bis hin zu wichtigen Adressen wie Krankenhäusern und Fährenticketbüros – alles, was du für deine Reise brauchst, ist enthalten.<\/p>",
+            "title_2": "Wie benutze ich die Karten?",
             "icon_name_2": "",
-            "raw_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.<\/p>",
-            "title_3": "",
+            "raw_content_2": "<p>Nach dem Kauf erhältst du einen Download-Link, mit dem du die Karte direkt in deine Google Maps App importieren kannst. Die Karten sind einfach zu navigieren und enthalten detaillierte Informationen zu jedem Standort. So kannst du deine Reise bequem planen und unterwegs jederzeit auf alle wichtigen Informationen zugreifen.<\/p>",
+            "title_3": "Warum digitale Karten?",
             "icon_name_3": "",
-            "raw_content_3": "",
-            "title_4": "",
+            "raw_content_3": "<p>Digitale Karten bieten den Vorteil, dass sie stets aktuell sind und du sie immer bei dir hast. Keine schweren Reiseführer, kein mühsames Suchen – mit unseren Karten findest du alle Highlights und nützlichen Informationen direkt auf deinem Smartphone. Perfekt für spontane Ausflüge und flexible Reiseplanung.<\/p>",
+            "title_4": "Updates und Erweiterungen",
             "icon_name_4": "",
-            "raw_content_4": "",
+            "raw_content_4": "<p>Unsere Karten werden regelmäßig aktualisiert, um sicherzustellen, dass du immer die neuesten Informationen zur Verfügung hast. Sollten neue Sehenswürdigkeiten, Restaurants oder wichtige Adressen hinzukommen, wirst du per E-Mail informiert. Du kannst die neueste Version deiner Karte dann ganz einfach selbstständig in deiner Google Maps App aktualisieren und bleibst so immer auf dem neuesten Stand.<\/p>",
             "title_5": "",
             "icon_name_5": "",
             "raw_content_5": "",
@@ -152,9 +152,9 @@
         "image_7mb7ke": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Unsere_Bali_Geheomtipps.png",
+            "image": "shopify:\/\/shop_images\/2_f4245b3d-f17b-47da-816b-d3e22081fe32.png",
             "overlay_opacity": 0,
-            "overlay_color": "#000",
+            "overlay_color": "#000000",
             "kicker": "",
             "title": "",
             "richtext": "",
@@ -182,13 +182,13 @@
     "image-left": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/100_Restaurants.png",
+        "image": "shopify:\/\/shop_images\/2_77f01671-2e1a-4ef8-9cfb-6e3316fe8073.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
-        "title": "Kulinarische Highlights in Bali",
+        "title": "Island Highlights",
         "text_size": 7,
-        "text": "<p>Entdecke die besten Restaurants der Insel mit über 70 empfohlenen Spots. Von traditionellen balinesischen Gerichten bis hin zu internationalen Küchen – für jeden Gaumen ist etwas dabei. <\/p>",
+        "text": "<p>Erlebe die Essenz von Koh Samui, Koh Phangan und Koh Tao mit unseren digitalen Karten. Sie führen dich zu den beeindruckendsten Aussichtspunkten, majestätischen Tempeln und den schönsten Nationalparks. Entdecke nachhaltige Elefantenaktivitäten, bei denen das Wohl der Tiere im Vordergrund steht, und genieße die atemberaubenden Viewpoints, die dir unvergessliche Ausblicke bieten. Perfekt für Reisende, die mehr als nur die Oberfläche der Inseln erkunden möchten.<\/p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
@@ -203,13 +203,13 @@
     "image-right": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/65_Hotels.png",
+        "image": "shopify:\/\/shop_images\/3_6f05a73a-5aca-4494-ba4a-e6895335db88.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "right",
-        "title": "Über 65 Hotels für jeden Geschmack",
+        "title": "Unterkünfte",
         "text_size": 7,
-        "text": "<p>Ob luxuriöse Resorts oder gemütliche Boutique-Hotels, unsere Auswahl bietet dir die besten Unterkünfte, um deinen Aufenthalt in Bali unvergesslich zu machen.<\/p>",
+        "text": "<p>Ganz gleich, ob du nach luxuriösen Resorts, gemütlichen Boutique-Hotels oder budgetfreundlichen Unterkünften suchst – unsere digitalen Karten bieten dir eine Auswahl an Übernachtungsmöglichkeiten für jedes Budget. Finde das perfekte Zuhause auf Zeit, das genau zu deinen Bedürfnissen und deinem Reisestil passt.<\/p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
@@ -224,13 +224,13 @@
     "section_row_nFGMMr": {
       "type": "section-row",
       "settings": {
-        "image": "shopify:\/\/shop_images\/65_Natur_und_Kultur.png",
+        "image": "shopify:\/\/shop_images\/5_2dc8948c-ebe9-4291-8b1e-62e35788228a.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
-        "title": "Tauche ein in Balis natürliche Schönheit und Kultur",
+        "title": "Top Strände",
         "text_size": 8,
-        "text": "<p>Mit über 40 atemberaubenden Naturschauplätzen und kulturellen Highlights bietet Bali eine perfekte Mischung aus Naturwundern und kulturellen Erlebnissen.<\/p>",
+        "text": "<p>Entdecke die schönsten Strände auf Koh Samui, Koh Phangan und Koh Tao. Unsere digitalen Karten führen dich zu weißen Sandstränden, kristallklaren Buchten und den besten Spots zum Entspannen oder Schnorcheln. Mit etwas Glück kannst du sogar Haie sehen oder von spektakulären Klippen ins Meer springen. Ob einsame Strandabschnitte oder lebhafte Beachclubs – für jeden Strandliebhaber ist etwas dabei.<\/p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
@@ -242,67 +242,107 @@
         "padding_bottom": 36
       }
     },
-    "section_reviews_ECUnCA": {
-      "type": "section-reviews",
-      "blocks": {
-        "review_jQ3fTe": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_Eayj6c": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_xpdzBt": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_EWzFfA": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        },
-        "review_RqNYK7": {
-          "type": "review",
-          "settings": {
-            "title": "Testimonial name",
-            "job": "Founder, Company",
-            "stars": 5,
-            "text": "<p>Use this text to showcase a review from one of your customers.  A great review is honest and relatable.  A great reviewer is a person who represents your target audience and can speak to concerns that might block your customers from buying.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "review_jQ3fTe",
-        "review_Eayj6c",
-        "review_xpdzBt",
-        "review_EWzFfA",
-        "review_RqNYK7"
-      ],
+    "section_row_GLWc9Y": {
+      "type": "section-row",
       "settings": {
-        "title": "Testimonials",
-        "description": "<p>Use this area to describe your testimonials.<\/p>",
-        "grid": 3,
-        "background_color": "palette--light bg--accent",
+        "image": "shopify:\/\/shop_images\/6_e9840cd2-e34a-4b52-94d9-071a2ecfed48.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Nützliche Adressen",
+        "text_size": 7,
+        "text": "<p>Unsere digitalen Karten bieten dir eine umfassende Übersicht über die wichtigsten Anlaufstellen auf Koh Samui, Koh Phangan und Koh Tao. Finde problemlos Orte für die Visa-Verlängerung, vertrauenswürdige Rollerverleihe, Fährenticketbüros oder gut ausgestattete Krankenhäuser. So bist du bestens vorbereitet und kannst deine Reise sorgenfrei genießen.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_eAAXwB": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/4_d0bfa38f-04b9-49e3-bcc5-381cc04d1ef6.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Restaurants und Nachtmärkte",
+        "text_size": 7,
+        "text": "<p>Tauche ein in die kulinarische Vielfalt von Koh Samui, Koh Phangan und Koh Tao. Unsere digitalen Karten zeigen dir die besten Restaurants, von authentischen thailändischen Garküchen bis hin zu internationalen Spitzenrestaurants. Vom Avocado-Toast bis zum Pad Thai – hier findest du alles, was das Herz begehrt. Entdecke zudem die lebendigen Nachtmärkte, wo du lokale Spezialitäten probieren und einzigartige Souvenirs finden kannst. Ein Muss für jeden Feinschmecker und Entdecker.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_t68k9d": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/7_2eb28a08-b009-46cd-b5b7-cccd1320a0a2.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Shopping, Spas und Lifestyle",
+        "text_size": 7,
+        "text": "<p>Erlebe das Beste, was Koh Samui, Koh Phangan und Koh Tao zu bieten haben, wenn es um Shopping, Wellness und Lifestyle geht. Unsere digitalen Karten führen dich zu den angesagtesten Boutiquen, entspannendsten Spas und coolsten Lifestyle-Hotspots. Egal, ob du nach handgemachten Souvenirs, luxuriösen Wellness-Behandlungen oder trendigen Cafés suchst – hier findest du alles, um deinen Aufenthalt unvergesslich zu machen.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_89QpLA": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/8_923ab8c4-b93f-4228-bc86-b43c45de9ff3.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Bars, Clubs und Nightlife",
+        "text_size": 7,
+        "text": "<p>Erlebe das pulsierende Nachtleben von Koh Samui, Koh Phangan und Koh Tao, wo jede Insel ihren eigenen Charme versprüht. Von stilvollen Strandbars über pulsierende Clubs bis hin zu entspannten Lounges – das Angebot ist vielfältig und geht weit über die bekannte Full Moon Party auf Phangan hinaus. Entdecke versteckte Hotspots und genieße unvergessliche Nächte unter dem Sternenhimmel.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "recent": {
+      "type": "section-recent-products",
+      "settings": {
+        "product_recently_heading": "Recently viewed",
+        "product_recently_limit": 6,
+        "product_recently_minimum": 4,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related": {
+      "type": "related",
+      "settings": {
+        "related_products_enable": true,
+        "limit": 6,
+        "product_recommendations_heading": "Related products",
         "width": "wrapper",
         "padding_top": 36,
         "padding_bottom": 36
@@ -373,28 +413,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "recent": {
-      "type": "section-recent-products",
-      "settings": {
-        "product_recently_heading": "Recently viewed",
-        "product_recently_limit": 6,
-        "product_recently_minimum": 4,
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "related": {
-      "type": "related",
-      "settings": {
-        "related_products_enable": true,
-        "limit": 6,
-        "product_recommendations_heading": "Related products",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -403,9 +421,12 @@
     "image-left",
     "image-right",
     "section_row_nFGMMr",
-    "section_reviews_ECUnCA",
-    "section_accordion_7E7iHh",
+    "section_row_GLWc9Y",
+    "section_row_eAAXwB",
+    "section_row_t68k9d",
+    "section_row_89QpLA",
     "recent",
-    "related"
+    "related",
+    "section_accordion_7E7iHh"
   ]
 }
