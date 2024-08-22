@@ -62,7 +62,7 @@
         "heading_KwimHz": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Das Bali Starterkit<\/p>",
+            "heading": "<p>Alles rund um BALI<\/p>",
             "text_size": 9
           }
         }
@@ -105,7 +105,7 @@
         "button_BjwhBN"
       ],
       "settings": {
-        "collection": "",
+        "collection": "bali",
         "product_list": [
           "bali-starterkit",
           "bali-bundle-starterkit-digitale-karte"
@@ -127,7 +127,7 @@
         "color": "text--white",
         "width": "wrapper",
         "padding_top": 0,
-        "padding_bottom": 36
+        "padding_bottom": 76
       }
     },
     "section_gallery_fHthRT": {
@@ -174,7 +174,7 @@
         "padding": true,
         "bg": "palette--light bg--neutral",
         "width": "wrapper--full",
-        "padding_top": 20,
+        "padding_top": 72,
         "padding_bottom": 20
       }
     },
@@ -190,7 +190,7 @@
         "color_bg": "palette--light bg--neutral",
         "show_view_all": false,
         "width": "wrapper",
-        "padding_top": 12,
+        "padding_top": 72,
         "padding_bottom": 36
       }
     },
@@ -248,8 +248,8 @@
         "align_text": "text-center",
         "color": "text--white",
         "width": "wrapper",
-        "padding_top": 12,
-        "padding_bottom": 12
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     }
   },
