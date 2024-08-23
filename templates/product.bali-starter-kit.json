@@ -291,6 +291,27 @@
         "padding_bottom": 36
       }
     },
+    "section_row_eeyGEg": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Dein_Abschnittstext_3.png",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Jetzt als Bundle!",
+        "text_size": 7,
+        "text": "<p>Sichere dir nicht nur das Bali Starterkit, sondern auch die Digitale Reise Karte als Bundle. Spare jetzt bei deiner Reiseplanung und erlebe die Vielfalt Balis.<\/p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "Zum Bundle",
+        "button_link": "shopify:\/\/products\/bali-bundle-starterkit-digitale-karte",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_reviews_aVcWtY": {
       "type": "section-reviews",
       "blocks": {
@@ -386,6 +407,7 @@
     "section_text_rxeAN8",
     "section_row_CdQiYr",
     "section_accordion_7E7iHh",
+    "section_row_eeyGEg",
     "section_reviews_aVcWtY",
     "recent",
     "related"
