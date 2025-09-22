@@ -11,7 +11,16 @@
   "sections": {
     "main": {
       "type": "page-default",
-      "settings": {}
+      "settings": {
+        "show_title": true,
+        "show_content": true,
+        "alignment": "text-center",
+        "page_nav": "",
+        "bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
