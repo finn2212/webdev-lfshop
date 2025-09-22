@@ -1,21 +1,43 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "Footer",
   "sections": {
+    "section_row_iif4Jx": {
+      "type": "section-row",
+      "name": "Image with text",
+      "settings": {
+        "image": "shopify://shop_images/DSC00859-2.jpg",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Hey There :)",
+        "text_size": 7,
+        "text": "<p>Unsere Reise begann 2020 – mit einem <strong>Oneway-Ticket nach Bali</strong>. Damals wussten wir noch nicht, dass aus diesem Schritt ein ganz neues Leben entstehen würde. Bali wurde zu unserer Base, von wo aus wir die Welt erkundeten: neue Länder entdecken, Abenteuer erleben, Geschichten sammeln.</p><p>Im August 2020 starteten wir unseren<a href=\"https://www.instagram.com/Laurandfinn\" target=\"_blank\" title=\"Instagram Kanal\"><strong> Instagram-Kanal</strong></a>, zunächst als kleines Reisetagebuch für Freunde und Familie. Doch schnell merkten wir, dass unsere Erfahrungen auch anderen helfen konnten. Seit 2022 teilen wir zusätzlich auf<strong> </strong><a href=\"https://www.youtube.com/@Laurandfinn\" target=\"_blank\" title=\"Youtube Kanal\"><strong>YouTube</strong></a> unsere Abenteuer und unseren Alltag – noch persönlicher, noch näher dran.</p><p>Warum wir das machen? <br/>Ganz einfach: Wir möchten Menschen <strong>das Reisen näherbringen</strong>. Wir wollen zeigen,<strong> wie schön und vielseitig die Welt ist</strong>, Inspiration für die <strong>Reiseplanung</strong> geben und Destinationen <strong>durch unsere Augen erlebbar machen</strong>. Gleichzeitig ist es uns wichtig, uns mit Menschen zu <strong>verbinden</strong>, die die gleiche Leidenschaft teilen wie wir.</p><p>Unsere Wege führten uns schon nach Indonesien, die Philippinen, Thailand, Kambodscha, Vietnam, Australien, Dubai, Südafrika, Namibia, Griechenland, Spanien, Island, die Seychellen und Japan. Jede dieser Reisen hat uns geprägt – und jede Destination hat uns ein Stück mehr gezeigt, wie großartig die Welt ist.</p><p>Ein ganz besonderer Meilenstein war dann die Schwangerschaft und die Geburt unserer Tochter Tilda. Mit ihr an unserer Seite hat sich unser Fokus verändert: Reisen bedeutet für uns heute vor allem <strong>familienfreundlich unterwegs sein</strong> – Abenteuer erleben, die auch mit Kind möglich sind. Denn mit dem Reisen ist es nicht vorbei, wenn man Kinder hat! Eigentlich fangen die wahren Abenteuer dann erst an.</p><p>2024 folgte die vielleicht größte Entscheidung:  <strong>die Auswanderung nach Südafrika</strong>. Hier haben wir in einer Kleinstadt am Meer unser neues Zuhause gefunden – und gleichzeitig einen Ort, von dem aus wir weiterhin die Welt entdecken.</p><p>Mit unserem Blog und unseren Kanälen möchten wir euch mitnehmen: auf unsere Reisen, durch  unsere <strong>Guides</strong>, <strong>Maps</strong>, <strong>Geheimtipps</strong> und natürlich auch in unsere Erfahrungen rund um die Themen <strong>Reisen mit Kind & Auswandern</strong>.</p><p>Wir sind Laura, Finn & Tilda – und wir freuen uns, wenn ihr uns auf dieser Reise begleitet.</p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {
         "logo_max_width": 250,
-        "footer_description": "<p>Gefällt dir unser Content auf Instagram, Youtube & auf dem Reiseblog? <br\/>Dann supporte uns doch gerne mit einer Spende für unsere <a href=\"https:\/\/buymeacoffee.com\/laurandfinn\" target=\"_blank\" title=\"https:\/\/buymeacoffee.com\/laurandfinn\">Kaffeekasse<\/a>! <\/p>",
+        "footer_description": "<p>Gefällt dir unser Content auf Instagram, Youtube & auf dem Reiseblog? <br/>Dann supporte uns doch gerne mit einer Spende für unsere <a href=\"https://buymeacoffee.com/laurandfinn\" target=\"_blank\" title=\"https://buymeacoffee.com/laurandfinn\">Kaffeekasse</a>! </p>",
         "footer_linklist": "main-menu",
         "footer_second_linklist": "rechtliches",
         "width": "wrapper",
@@ -40,6 +62,7 @@
     }
   },
   "order": [
+    "section_row_iif4Jx",
     "footer",
     "subfooter"
   ]
