@@ -133,10 +133,10 @@
     "section_gallery_fHthRT": {
       "type": "section-gallery",
       "blocks": {
-        "image_hzVmg8": {
+        "image_fwweVh": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/DSC04341-5.jpg",
+            "image": "shopify://shop_images/janan-OoW1DMDCV1Y-unsplash.jpg",
             "link": ""
           }
         },
@@ -147,17 +147,17 @@
             "link": ""
           }
         },
-        "image_qDgjbK": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC02020-3.jpg",
-            "link": ""
-          }
-        },
         "image_DFG4Up": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/DSC01168-2.jpg",
+            "link": ""
+          }
+        },
+        "image_qDgjbK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC02020-3.jpg",
             "link": ""
           }
         },
@@ -167,14 +167,22 @@
             "image": "shopify://shop_images/DSC02014-3.jpg",
             "link": ""
           }
+        },
+        "image_hzVmg8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC04341-5.jpg",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "image_hzVmg8",
+        "image_fwweVh",
         "image_L7UezA",
-        "image_qDgjbK",
         "image_DFG4Up",
-        "image_ztUkKU"
+        "image_qDgjbK",
+        "image_ztUkKU",
+        "image_hzVmg8"
       ],
       "settings": {
         "scale_image": true,
