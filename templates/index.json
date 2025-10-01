@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "default-banner": {
@@ -33,8 +33,8 @@
         "banner-text"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Hero_Banner_Promo_4.png",
-        "mobile_image": "shopify:\/\/shop_images\/C6CDBB_1.png",
+        "image": "shopify://shop_images/Hero_Banner_Promo_4.png",
+        "mobile_image": "shopify://shop_images/C6CDBB_1.png",
         "collection": "digitale-karten",
         "height": "use_screen_three_quarters",
         "overlay_opacity": 0,
@@ -54,7 +54,7 @@
         "kicker_VhxKM4": {
           "type": "kicker",
           "settings": {
-            "kicker": "<p>JETZT NEU:<\/p>",
+            "kicker": "<p>JETZT NEU:</p>",
             "enable_caps": false,
             "text_size": 5
           }
@@ -62,7 +62,7 @@
         "heading_KwimHz": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Alles rund um BALI<\/p>",
+            "heading": "<p>Alles rund um BALI</p>",
             "text_size": 9
           }
         }
@@ -85,7 +85,7 @@
         "heading_GB7fwp": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Bali Starterkit<\/p>",
+            "heading": "<p>Bali Starterkit</p>",
             "text_size": 10
           }
         },
@@ -93,7 +93,7 @@
           "type": "button",
           "settings": {
             "button_text": "Zum E-Guide",
-            "button_url": "shopify:\/\/products\/bali-starterkit",
+            "button_url": "shopify://products/bali-starterkit",
             "button_size": "btn--large",
             "button_style": "hero__btn btn",
             "button_color": "btn--white"
@@ -110,8 +110,8 @@
           "bali-starterkit",
           "bali-bundle-starterkit-digitale-karte"
         ],
-        "image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_2048_x_2048_px_1.png",
-        "mobile_image": "shopify:\/\/shop_images\/Bali_Starter_Kit_PDP_2048_x_2048_px_1.png",
+        "image": "shopify://shop_images/Bali_Starter_Kit_PDP_2048_x_2048_px_1.png",
+        "mobile_image": "shopify://shop_images/Bali_Starter_Kit_PDP_2048_x_2048_px_1.png",
         "sticky_image_enable": false,
         "swap": false,
         "overlay_opacity": 15,
@@ -133,40 +133,48 @@
     "section_gallery_fHthRT": {
       "type": "section-gallery",
       "blocks": {
-        "image_hybiwz": {
+        "image_hzVmg8": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FCC0562.jpg",
+            "image": "shopify://shop_images/DSC04341-5.jpg",
             "link": ""
           }
         },
-        "image_GE43R7": {
+        "image_L7UezA": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FCC0840-2.jpg",
+            "image": "shopify://shop_images/DSC01849-2.jpg",
             "link": ""
           }
         },
-        "image_DMeCkn": {
+        "image_qDgjbK": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DJI_0556.jpg",
+            "image": "shopify://shop_images/DSC02020-3.jpg",
             "link": ""
           }
         },
-        "image_MLHeNe": {
+        "image_DFG4Up": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FCC0494.jpg",
+            "image": "shopify://shop_images/DSC01168-2.jpg",
+            "link": ""
+          }
+        },
+        "image_ztUkKU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC02014-3.jpg",
             "link": ""
           }
         }
       },
       "block_order": [
-        "image_hybiwz",
-        "image_GE43R7",
-        "image_DMeCkn",
-        "image_MLHeNe"
+        "image_hzVmg8",
+        "image_L7UezA",
+        "image_qDgjbK",
+        "image_DFG4Up",
+        "image_ztUkKU"
       ],
       "settings": {
         "scale_image": true,
@@ -182,7 +190,7 @@
       "type": "section-collection",
       "settings": {
         "title": "Edit like a PRO",
-        "description": "<p>Unsere Lightroom Presets<\/p>",
+        "description": "<p>Unsere Lightroom Presets</p>",
         "collection": "presets",
         "grid": 4,
         "limit": 8,
@@ -200,14 +208,14 @@
         "default-first-split-block-0": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Digitale Reise Karte<\/p>",
+            "heading": "<p>Digitale Reise Karte</p>",
             "text_size": 10
           }
         },
         "default-first-split-block-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Plane deine Bali Reise<\/p>",
+            "text": "<p>Plane deine Bali Reise</p>",
             "text_size": 6
           }
         },
@@ -215,7 +223,7 @@
           "type": "button",
           "settings": {
             "button_text": "Zur Bali Map",
-            "button_url": "shopify:\/\/products\/bali-digitale-karte",
+            "button_url": "shopify://products/bali-digitale-karte",
             "button_size": "btn--large",
             "button_style": "hero__btn btn",
             "button_color": "btn--white"
@@ -233,7 +241,7 @@
           "bali-digitale-karte",
           "bali-bundle-starterkit-digitale-karte"
         ],
-        "image": "shopify:\/\/shop_images\/FCC5983.jpg",
+        "image": "shopify://shop_images/FCC5983.jpg",
         "sticky_image_enable": false,
         "swap": true,
         "overlay_opacity": 30,
