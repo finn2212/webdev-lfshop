@@ -265,24 +265,17 @@
             "content": "<p>Der Südafrika Guide ist ein umfassender Begleiter, der alle wichtigen Informationen für deine Reise nach Südafrika enthält. Er deckt alles ab – von Einreisebestimmungen und Visainformationen über Transportoptionen, Impfungen und benötigte Dokumente bis hin zu Routenvorschlägen, Gesundheitstipps, Sicherheitstipps, Verhaltensregeln und Budgetplanung.</p>"
           }
         },
-        "text_B4xeBt": {
-          "type": "text",
-          "settings": {
-            "title": "Frequently asked question",
-            "content": "<p>Share details about your shipping policies, item returns, or customer service.</p>"
-          }
-        },
         "text_BN79Rc": {
           "type": "text",
           "settings": {
-            "title": "Wie unterscheidet sich dieses Starterkit von einem herkömmlichen Reiseführer?",
-            "content": "<p>Im Gegensatz zu einem herkömmlichen Reiseführer bietet das Bali Starterkit aktuelle, praxisnahe Informationen und Insider-Tipps von Auswanderern, die seit Jahren auf Bali leben. Es enthält keine veralteten Empfehlungen, sondern maßgeschneiderte Inhalte, die speziell auf deine Bedürfnisse und die aktuellen Gegebenheiten abgestimmt sind.</p>"
+            "title": "Wie unterscheidet sich dieser Guide von einem herkömmlichen Reiseführer?",
+            "content": "<p>Im Gegensatz zu einem herkömmlichen Reiseführer bietet der Südafrika Guide aktuelle, praxisnahe Informationen und Insider-Tipps von Reisenden, die längere Zeit im Land unterwegs waren und jetzt hier leben. Statt veralteter Empfehlungen findest du hier maßgeschneiderte Inhalte, die speziell auf deine Bedürfnisse und die aktuellen Gegebenheiten in Südafrika abgestimmt sind.</p>"
           }
         },
         "text_kzzCfy": {
           "type": "text",
           "settings": {
-            "title": "Welche besonderen Extras bietet das Starterkit?",
+            "title": "Welche besonderen Extras bietet der Guide?",
             "content": "<p>Als Bonus enthält das Starterkit lebenslange kostenlose Updates. Das bedeutet, dass du bei jeder Änderung der Einreisebestimmungen, bei neuen Tipps oder hinzugefügten Kapiteln automatisch Zugang zur neuesten Version des Guides erhältst. Außerdem teilen wir unsere persönlichen Kontakte zu Fahrern, Tourguides und Fähranbietern, um deinen Urlaub so entspannt wie möglich zu gestalten.</p>"
           }
         },
@@ -303,7 +296,6 @@
       },
       "block_order": [
         "text_pUtiRF",
-        "text_B4xeBt",
         "text_BN79Rc",
         "text_kzzCfy",
         "text_eFcGjJ",
