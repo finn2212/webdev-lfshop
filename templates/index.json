@@ -85,7 +85,7 @@
         "heading_GB7fwp": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Bali Starterkit</p>",
+            "heading": "",
             "text_size": 10
           }
         },
@@ -93,7 +93,7 @@
           "type": "button",
           "settings": {
             "button_text": "Zum E-Guide",
-            "button_url": "shopify://products/bali-starterkit",
+            "button_url": "shopify://products/suedafrika-guide",
             "button_size": "btn--large",
             "button_style": "hero__btn btn",
             "button_color": "btn--white"
