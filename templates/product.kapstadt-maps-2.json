@@ -211,13 +211,13 @@
     "image-left": {
       "type": "section-row",
       "settings": {
-        "image": "shopify://shop_images/100_Restaurants.png",
+        "image": "shopify://shop_images/Bilder_PDP_Maps_3.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "right",
-        "title": "Kulinarische Highlights in Bali",
+        "title": "Kulinarische Highlights in Kapstadt",
         "text_size": 7,
-        "text": "<p>Ein Bali-Urlaub wäre nicht komplett, ohne dich durch die vielseitige Küche der Insel zu kosten. Wir haben für dich die Top 100 Restaurants zusammengestellt – von authentischen lokalen Spezialitäten bis hin zur besten Pizza der Welt. Um dir die Orientierung zu erleichtern, haben wir die Restaurants in zwei Kategorien unterteilt: Frühstück/Lunch und Abendessen. So kannst du dich den ganzen Tag über durch die Insel schlemmen – von der Bali-Bowl am Morgen bis zum Nasi Goreng am Abend. Unsere Karten sind dein idealer Begleiter, um das Beste aus Balis kulinarischem Erlebnis herauszuholen.</p>",
+        "text": "<p>Ein Kapstadt-Trip wäre nicht komplett, ohne dich durch die vielseitige Küche der Mother City zu probieren. Wir haben für dich die Top Restaurants zusammengestellt – von authentischen südafrikanischen Spezialitäten bis hin zu internationaler Spitzenküche und den besten Cafés am Atlantik. Um dir die Orientierung zu erleichtern, haben wir die Restaurants in zwei Kategorien unterteilt: Cafes und Dinner. So kannst du dich den ganzen Tag über durch Kapstadt schlemmen – vom Flat White mit Croissant am Morgen bis zum frisch gegrillten Fisch oder Braai und einem Glas Wino am Abend. Unsere Karten sind dein idealer Begleiter, um das Beste aus Kapstadts kulinarischer Szene herauszuholen.</p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
