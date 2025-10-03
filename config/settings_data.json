@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "type_heading_font": "din_neuzeit_grotesk_n3",
@@ -31,7 +31,7 @@
     "color_secondary_inverse": "#323945",
     "color_border_inverse": "#ccd5ae",
     "color_bg_accent_inverse": "#ffffff",
-    "color_footer_bg": "#151515",
+    "color_footer_bg": "#f5bd09",
     "color_footer_text": "#ffffff",
     "color_success": "#51c88e",
     "color_warn": "#ffc896",
@@ -42,12 +42,12 @@
     "radius_buttons": "pill",
     "decoration_style": "decoration-none",
     "parallax_enable": false,
-    "social_instagram_link": "https:\/\/instagram.com\/laurandfinn",
-    "social_youtube_link": "https:\/\/www.youtube.com\/laurandfinn",
+    "social_instagram_link": "https://instagram.com/laurandfinn",
+    "social_youtube_link": "https://www.youtube.com/laurandfinn",
     "cart_shipping_enable": false,
     "cart_show_quantity": true,
     "cart_notes_enable": false,
-    "cart_continue_browsing": "shopify:\/\/collections\/all",
+    "cart_continue_browsing": "shopify://collections/all",
     "show_free_shipping_message": false,
     "cart_custom_message_enable": false,
     "cart_show_additional_buttons": false,
@@ -56,14 +56,12 @@
     "color_badge_text": "#060f9e",
     "product_grid_show_rating": true,
     "currency_code_enable": false,
-    "favicon": "shopify:\/\/shop_images\/Bildschirmfoto_2022-02-11_um_15.57.14-removebg-preview_1.png",
+    "favicon": "shopify://shop_images/Bildschirmfoto_2022-02-11_um_15.57.14-removebg-preview_1.png",
     "tag_sellout": true,
     "tag_sale": true,
     "tag_new": true,
     "tag_new_limit": 14,
-    "content_for_index": [
-
-    ]
+    "content_for_index": []
   },
   "presets": {
     "Bright": {
@@ -102,7 +100,7 @@
       "parallax_enable": false,
       "cart_shipping_enable": true,
       "cart_notes_enable": true,
-      "cart_continue_browsing": "shopify:\/\/collections\/all",
+      "cart_continue_browsing": "shopify://collections/all",
       "show_free_shipping_message": true,
       "cart_custom_message_enable": false,
       "cart_show_additional_buttons": false,
@@ -149,7 +147,7 @@
       "layout_container_enable": false,
       "decoration_style": "decoration-none",
       "cart_shipping_enable": true,
-      "cart_continue_browsing": "shopify:\/\/collections\/all",
+      "cart_continue_browsing": "shopify://collections/all",
       "cart_notes_enable": true,
       "show_free_shipping_message": true,
       "cart_custom_message_enable": false,
@@ -202,7 +200,7 @@
       "cart_style": "pop",
       "cart_shipping_enable": true,
       "cart_notes_enable": true,
-      "cart_continue_browsing": "shopify:\/\/collections\/all",
+      "cart_continue_browsing": "shopify://collections/all",
       "show_free_shipping_message": true,
       "free_shipping_limit": "200",
       "cart_custom_message_enable": false,
@@ -244,7 +242,7 @@
       "decoration_style": "decoration-none",
       "cart_shipping_enable": true,
       "cart_notes_enable": true,
-      "cart_continue_browsing": "shopify:\/\/collections\/all",
+      "cart_continue_browsing": "shopify://collections/all",
       "cart_show_additional_buttons": false,
       "collection_text_alignment": "text-center",
       "product_grid_aspect_ratio": 1.2,
