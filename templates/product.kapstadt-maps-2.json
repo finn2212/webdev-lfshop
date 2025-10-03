@@ -190,13 +190,13 @@
     "image-right": {
       "type": "section-row",
       "settings": {
-        "image": "shopify://shop_images/65_Natur_und_Kultur_3.png",
+        "image": "shopify://shop_images/Bilder_PDP_Maps_2.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
-        "title": "Über 65 Hotels für jeden Geschmack",
+        "title": "Über 27 Hotels für jeden Geschmack und jedes Budget",
         "text_size": 7,
-        "text": "<p>Ein unvergesslicher Bali-Aufenthalt beginnt mit der perfekten Unterkunft. Wir haben für dich eine handverlesene Auswahl an Top-Hotels zusammengestellt – von luxuriösen Resorts über charmante, preiswerte Bambushäuser bis hin zu einzigartigen Unterkünften mit atemberaubenden Ausblicken. Egal, ob du dich in einem exklusiven Luxusresort verwöhnen lassen möchtest oder das authentische Bali in einer preisgünstigen, aber dennoch traumhaften Unterkunft erleben willst, unsere Empfehlungen bieten für jeden Reisestil das Richtige. Lass dich von unseren Tipps inspirieren und finde die ideale Unterkunft für deinen Traumurlaub auf Bali.</p>",
+        "text": "<p>Ein unvergesslicher Kapstadt-Aufenthalt beginnt mit der perfekten Unterkunft. Wir haben für dich eine handverlesene Auswahl an Top-Hotels und Apartments zusammengestellt – von luxuriösen Resorts in Camps Bay über charmante Boutique-Hotels in Sea Point bis hin zu einzigartigen Unterkünften mit atemberaubendem Blick auf den Tafelberg oder den Atlantik. Egal, ob du dich in einem exklusiven Luxusresort verwöhnen lassen möchtest oder Kapstadt lieber in einer stilvollen, aber preisgünstigen Unterkunft erleben willst – unsere Empfehlungen bieten für jeden Reisestil das Richtige. Lass dich von unseren Tipps inspirieren und finde die ideale Unterkunft für deinen Traumurlaub in Kapstadt.</p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
