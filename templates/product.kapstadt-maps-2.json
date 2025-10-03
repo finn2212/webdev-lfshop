@@ -232,13 +232,13 @@
     "section_row_nFGMMr": {
       "type": "section-row",
       "settings": {
-        "image": "shopify://shop_images/65_Natur_und_Kultur_5.png",
+        "image": "shopify://shop_images/Bilder_PDP_Maps_4.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
-        "title": "Tauche ein in Balis natürliche Schönheit und Kultur",
+        "title": "Besuche die tollsten Aktivitäten",
         "text_size": 8,
-        "text": "<p>Bali ist nicht nur ein Paradies für Genießer, sondern auch ein Ort voller kultureller und natürlicher Schätze. Unsere Auswahl an Kultur- und Natur-Highlights führt dich zu den beeindruckendsten Wasserfällen, den atemberaubendsten Aussichtspunkten und den schönsten Tempeln der Insel. Entdecke die magische Vielfalt Balis, von majestätischen Wasserfällen, die tief im Dschungel verborgen liegen, über spektakuläre Viewpoints mit Panoramablick, bis hin zu heiligen Tempeln, die dich in die spirituelle Kultur der Insel eintauchen lassen. Unsere Empfehlungen zeigen dir die besten Spots, um Balis natürliche Schönheit und kulturelle Tiefe in vollen Zügen zu erleben.</p>",
+        "text": "<p>Kapstadt ist nicht nur ein Paradies für Genießer, sondern auch ein Ort voller kultureller und natürlicher Schätze. Unsere Auswahl an Kultur-, Natur- & Shopping-Highlights führt dich zu den eindrucksvollsten Stränden, den atemberaubendsten Aussichtspunkten und den spannendsten kulturellen Orten der Stadt. Entdecke die Vielfalt Kapstadts – vom majestätischen Tafelberg über spektakuläre Viewpoints wie Signal Hill oder Chapman's Peak Drive bis hin zu historischen Vierteln wie Bo-Kaap, die dich in die bunte Kultur der Mother City eintauchen lassen. Unsere Empfehlungen zeigen dir die besten Spots, um Kapstadts natürliche Schönheit und kulturelle Tiefe in vollen Zügen zu erleben.</p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
@@ -253,13 +253,13 @@
     "section_row_MQjPp7": {
       "type": "section-row",
       "settings": {
-        "image": "shopify://shop_images/100_Restaurants_1.png",
+        "image": "shopify://shop_images/Bilder_PDP_Maps_5.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "right",
-        "title": "Entdecke Bali's Traumstrände",
+        "title": "Entdecke Kapstadts Traumstrände & Daytrips",
         "text_size": 7,
-        "text": "<p>Es ist gar nicht so einfach, den perfekten Traumstrand auf Bali zu finden – und genau das macht es so spannend! Unsere Auswahl der Top Strände zeigt dir die versteckten Highlights der Insel, die du nicht verpassen solltest. Von ruhigen, unentdeckten Buchten bis hin zu lebhaften Stränden mit angesagten Beach Clubs – hier findest du die besten Spots für deinen perfekten Tag am Meer. Egal, ob du entspannen, schnorcheln, surfen oder den Sonnenuntergang genießen möchtest, mit unseren Empfehlungen entdeckst du die Strände, die dir unvergessliche Erlebnisse bieten und die du sonst vielleicht übersehen würdest.</p>",
+        "text": "<p>Kapstadt begeistert nicht nur mit seiner Stadtvielfalt, sondern auch mit unzähligen Ausflugsmöglichkeiten in die Umgebung. Unsere Empfehlungen führen dich zu den schönsten Stränden und spannendsten Daytrips – vom legendären Camps Bay und dem familienfreundlichen Muizenberg bis hin zu den Pinguinen am berühmten Boulders Beach. Weiter südlich erwartet dich das Kap der Guten Hoffnung mit seiner spektakulären Küstenlandschaft, die zu den absoluten Must-Sees jeder Reise gehört. Auch die Winelands rund um Stellenbosch, Paarl und Franschhoek sind nur einen Katzensprung entfernt: Hier kannst du durch malerische Weinberge spazieren, edle Tropfen verkosten und die kulinarische Seite der Region entdecken. Ob Strandtag, Naturabenteuer oder Genussreise – unsere Tipps zeigen dir die schönsten Daytrips, die deinen Kapstadt-Aufenthalt unvergesslich machen.</p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
