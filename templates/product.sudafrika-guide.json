@@ -263,21 +263,13 @@
             "title": "Für wen ist der Südafrika Guide geeignet?",
             "content": "<p>Der Südafrika Guide richtet sich an alle, die eine Reise nach Südafrika planen – egal, ob es deine erste Reise ist oder du bereits Erfahrung im Land gesammelt hast. Besonders hilfreich ist er für alle, die sich umfassend vorbereiten möchten und von praxisnahen Tipps profitieren wollen, um Südafrika sicher, entspannt und in seiner ganzen Vielfalt zu erleben.</p>"
           }
-        },
-        "text_HyCa86": {
-          "type": "text",
-          "settings": {
-            "title": "Wie kann ich sicherstellen, dass ich immer die aktuellsten Informationen im Starterkit habe?",
-            "content": "<p>Nach dem Kauf erhältst du lebenslangen Zugang zu kostenlosen Updates des Bali Starter Kits. Sobald sich etwas Wesentliches ändert, wie zum Beispiel die Einreisebestimmungen oder wir neue Kapitel hinzufügen, wirst du über die Aktualisierungen informiert und kannst die neueste Version direkt herunterladen.</p>"
-          }
         }
       },
       "block_order": [
         "text_pUtiRF",
         "text_BN79Rc",
         "text_kzzCfy",
-        "text_eFcGjJ",
-        "text_HyCa86"
+        "text_eFcGjJ"
       ],
       "settings": {
         "title": "",
@@ -360,13 +352,13 @@
     "section_row_eeyGEg": {
       "type": "section-row",
       "settings": {
-        "image": "shopify://shop_images/Dein_Abschnittstext_3.png",
+        "image": "shopify://shop_images/Bundle_Bilder_1.png",
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
         "title": "Jetzt als Bundle!",
         "text_size": 7,
-        "text": "<p>Sichere dir nicht nur das Bali Starterkit, sondern auch die Digitale Reise Karte als Bundle. Spare jetzt bei deiner Reiseplanung und erlebe die Vielfalt Balis.</p>",
+        "text": "<p>Sichere dir nicht nur den Südafrika Reiseguide, sondern auch die Digitale Reise Karte von Kapstadt als Bundle. So kannst du nicht nur sparen, sondern das meiste aus deiner Südafrika Reise rausholen.</p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "Zum Bundle",
         "button_link": "shopify://products/bali-bundle-starterkit-digitale-karte",
