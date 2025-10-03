@@ -35,7 +35,7 @@
       "settings": {
         "image": "shopify://shop_images/Hero_Banner_Promo_5.png",
         "mobile_image": "shopify://shop_images/Hero_Banner_Mobile_1.png",
-        "collection": "digitale-karten",
+        "collection": "sudafrika",
         "height": "use_screen_three_quarters",
         "overlay_opacity": 0,
         "overlay_color": "#181929",
@@ -70,28 +70,6 @@
       "block_order": [
         "kicker_VhxKM4",
         "heading_KwimHz"
-      ],
-      "settings": {
-        "align_text": "text-left",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "section_text_egAHJT": {
-      "type": "section-text",
-      "blocks": {
-        "heading_rrae6X": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Lieber nach Bali oder Thailand?</p>",
-            "text_size": 9
-          }
-        }
-      },
-      "block_order": [
-        "heading_rrae6X"
       ],
       "settings": {
         "align_text": "text-left",
@@ -215,6 +193,28 @@
         "padding_bottom": 20
       }
     },
+    "section_text_egAHJT": {
+      "type": "section-text",
+      "blocks": {
+        "heading_rrae6X": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Lieber nach Bali oder Thailand?</p>",
+            "text_size": 9
+          }
+        }
+      },
+      "block_order": [
+        "heading_rrae6X"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "default-split-collection": {
       "type": "section-collection-split",
       "blocks": {
@@ -293,9 +293,9 @@
   "order": [
     "default-banner",
     "section_text_yprYxk",
-    "section_text_egAHJT",
     "section_collection_split_CG3phx",
     "section_gallery_fHthRT",
+    "section_text_egAHJT",
     "default-split-collection",
     "default-collection"
   ]
