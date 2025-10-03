@@ -221,7 +221,7 @@
         "layout": "left",
         "title": "Für wen ist dieser Guide genau der Richtige?",
         "text_size": 7,
-        "text": "<p>Planst du aktuell deine Reise nach Südafrika? Dann hast du bestimmt tausend Fragen.</p><p>Wir teilen ALLES, was du für deine erste Südafrika-Reise wissen musst.</p><p>Dies ist kein gewöhnlicher Reiseführer, in dem wir dir 08/15 Unterkünfte, Restaurants und Aktivitäten vorstellen, die am Ende für dich nicht relevant sind.</p><p>Alle Infos in diesem Guide sind praxisnah und direkt auf DEINE SÜDAFRIKA-REISE abgestimmt – von den aktuellen Einreisebedingungen über konkrete Tipps & Routenvorschläge bis hin zu unseren Budget und Sicherheitsvorschlägen.</p><p>Mit diesem Guide kann nichts mehr schiefgehen!</p>",
+        "text": "<p>Planst du aktuell deine Reise nach Südafrika? Dann hast du bestimmt tausend Fragen.</p><p>Wir teilen ALLES, was du für deine erste Südafrika-Reise wissen musst.Dies ist kein gewöhnlicher Reiseführer, in dem wir dir 08/15 Unterkünfte, Restaurants und Aktivitäten vorstellen, die am Ende für dich nicht relevant sind.Alle Infos in diesem Guide sind praxisnah und direkt auf DEINE SÜDAFRIKA-REISE abgestimmt – von den aktuellen Einreisebedingungen über konkrete Tipps & Routenvorschläge bis hin zu unseren Budget und Sicherheitsvorschlägen.Mit diesem Guide kann nichts mehr schiefgehen!</p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
@@ -239,8 +239,8 @@
         "text_pUtiRF": {
           "type": "text",
           "settings": {
-            "title": "Was genau beinhaltet das Bali Starterkit?",
-            "content": "<p>Das Bali Starterkit ist ein umfassender Guide, der alle wichtigen Informationen für deine Reise nach Bali und die umliegenden Inseln enthält. Es deckt alles ab, von Einreisebestimmungen und Visainformationen über Transportoptionen, Impfungen und Dokumente bis hin zu Routenvorschlägen, Gesundheitstipps und vertrauenswürdigen Kontakten vor Ort.</p>"
+            "title": "Was genau beinhaltet der Südafrika Guide?",
+            "content": "<p>Der Südafrika Guide ist ein umfassender Begleiter, der alle wichtigen Informationen für deine Reise nach Südafrika enthält. Er deckt alles ab – von Einreisebestimmungen und Visainformationen über Transportoptionen, Impfungen und benötigte Dokumente bis hin zu Routenvorschlägen, Gesundheitstipps, Sicherheitstipps, Verhaltensregeln und Budgetplanung.</p>"
           }
         },
         "text_BN79Rc": {
