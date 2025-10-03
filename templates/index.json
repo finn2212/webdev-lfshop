@@ -33,8 +33,8 @@
         "banner-text"
       ],
       "settings": {
-        "image": "shopify://shop_images/Hero_Banner_Promo_4.png",
-        "mobile_image": "shopify://shop_images/C6CDBB_1.png",
+        "image": "shopify://shop_images/Hero_Banner_Promo_5.png",
+        "mobile_image": "shopify://shop_images/Hero_Banner_Mobile_cd91ede1-eb33-4f19-b8e4-cefd7e1870ed.png",
         "collection": "digitale-karten",
         "height": "use_screen_three_quarters",
         "overlay_opacity": 0,
