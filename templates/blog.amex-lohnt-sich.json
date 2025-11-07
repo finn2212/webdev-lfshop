@@ -15,7 +15,7 @@
         "blog-text-block-1": {
           "type": "heading",
           "settings": {
-            "heading": "<p>News</p>",
+            "heading": "<p>News{{ blog.title }}</p>",
             "text_size": 9
           }
         }
@@ -38,11 +38,17 @@
           "type": "image",
           "settings": {
             "overlay_opacity": 0,
+            "overlay_color": "#000000",
             "kicker": "",
             "title": "",
             "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
             "link_text": "",
-            "link": ""
+            "link": "",
+            "button_size": "btn--large",
+            "button_style": "hero__btn btn",
+            "button_color": "btn--white"
           }
         },
         "blog-custom-article": {
