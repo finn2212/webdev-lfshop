@@ -11,10 +11,71 @@
   "sections": {
     "main": {
       "type": "article",
-      "settings": {}
+      "settings": {
+        "meta": true,
+        "tags": false,
+        "arrows": false,
+        "social": true,
+        "share_label": "Share",
+        "image_height": "use_image",
+        "sidebar_tags": true,
+        "recent": true,
+        "recent_author": true,
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 64,
+        "padding_bottom": 36
+      }
+    },
+    "section_text_kEYUJH": {
+      "type": "section-text",
+      "blocks": {
+        "text_ddmjcC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nachdem wir die American Express Gold seit vielen Jahren in Gebrauch hatten, haben wir uns Ende 2022 dazu entscheiden, auf die <a href=\"https://americanexpress.com/de-de/referral/platinum?ref=fINNSKA7y&XL=MIMNS\" target=\"_blank\">American Express Platinum</a> upzugraden. Wir haben sehr lange mit dem Upgrade gehadert, uns dann aber letztendlich doch dafür entscheiden. Unsere Mission ist es nun, die <a href=\"https://americanexpress.com/de-de/referral/platinum?ref=fINNSKA7y&XL=MIMNS\" target=\"_blank\">American Express Platinum </a><strong>aus der Sicht von (Welt-) Reisenden</strong> zu testen und dir alle Vor- und Nachteile objektiv und möglichst neutral zu schildern. </p><p>Eines vorweg, solltest du dich nach diesem Artikel dazu entscheiden die Karte zu beantragen, kannst du dir die Bonus-Punkte sichern, in dem du die Karte über unseren <a href=\"https://americanexpress.com/de-de/referral/platinum?ref=fINNSKA7y&XL=MIMNS\" target=\"_blank\">Empfehlungs-Link beantragst</a>. <br/><strong>So erhältst du aktuell 75.000 extra Meilen beim Beantragen der Karte, das ist meistens schon ein einzelner Business-Class Flug!</strong></p>",
+            "text_size": 5,
+            "text_columns": 1
+          }
+        }
+      },
+      "block_order": [
+        "text_ddmjcC"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "align_text": "text-left",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_row_YhdLjR": {
+      "type": "section-row",
+      "name": "Image with text",
+      "settings": {
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "left",
+        "title": "Image with text",
+        "text_size": 7,
+        "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "color_text_bg": "palette--light bg--accent",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn",
+        "button_color": "btn--neutral",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "section_text_kEYUJH",
+    "section_row_YhdLjR"
   ]
 }
