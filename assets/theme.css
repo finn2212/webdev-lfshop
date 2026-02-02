@@ -8997,7 +8997,6 @@ a:hover, a:focus,
 
 .rte a:not([class]) {
   text-decoration: underline;
-  color: var(--secondary);
 }
 .rte a:not([class]):hover, .rte a:not([class]):focus {
   color: var(--secondary-hover);
