@@ -79,56 +79,6 @@
         "padding_bottom": 36
       }
     },
-    "section_collection_split_CG3phx": {
-      "type": "section-collection-split",
-      "blocks": {
-        "heading_GB7fwp": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "text_size": 10
-          }
-        },
-        "button_BjwhBN": {
-          "type": "button",
-          "settings": {
-            "button_text": "Zum E-Guide",
-            "button_url": "shopify://products/suedafrika-guide",
-            "button_size": "btn--large",
-            "button_style": "hero__btn btn",
-            "button_color": "btn--white"
-          }
-        }
-      },
-      "block_order": [
-        "heading_GB7fwp",
-        "button_BjwhBN"
-      ],
-      "settings": {
-        "collection": "bali",
-        "product_list": [
-          "suedafrika-guide",
-          "sudafrika-kaptstadt"
-        ],
-        "image": "shopify://shop_images/Bali_Starter_Kit_PDP_2048_x_2048_px_124a9541-59be-452f-a75b-ffa66ca2d979.png",
-        "sticky_image_enable": false,
-        "swap": false,
-        "overlay_opacity": 15,
-        "overlay_color": "#000000",
-        "grid_large": 2,
-        "grid_small": 1.5,
-        "limit": 4,
-        "bg": "palette--light bg--neutral",
-        "video_link_bg": "",
-        "object_position": "center-center",
-        "flex_align": "align--middle-center",
-        "align_text": "text-center",
-        "color": "text--white",
-        "width": "wrapper",
-        "padding_top": 0,
-        "padding_bottom": 76
-      }
-    },
     "section_collection_row_3Vf4pL": {
       "type": "section-collection-row",
       "name": "Collection row",
@@ -218,86 +168,6 @@
         "padding_bottom": 20
       }
     },
-    "section_text_egAHJT": {
-      "type": "section-text",
-      "blocks": {
-        "heading_rrae6X": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Lieber nach Bali oder Thailand?</p>",
-            "text_size": 9
-          }
-        }
-      },
-      "block_order": [
-        "heading_rrae6X"
-      ],
-      "settings": {
-        "align_text": "text-left",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "default-split-collection": {
-      "type": "section-collection-split",
-      "blocks": {
-        "default-first-split-block-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Digitale Reise Karte</p>",
-            "text_size": 10
-          }
-        },
-        "default-first-split-block-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Plane deine Bali Reise</p>",
-            "text_size": 6
-          }
-        },
-        "default-first-split-block-2": {
-          "type": "button",
-          "settings": {
-            "button_text": "Zur Bali Map",
-            "button_url": "shopify://products/bali-digitale-karte",
-            "button_size": "btn--large",
-            "button_style": "hero__btn btn",
-            "button_color": "btn--white"
-          }
-        }
-      },
-      "block_order": [
-        "default-first-split-block-0",
-        "default-first-split-block-1",
-        "default-first-split-block-2"
-      ],
-      "settings": {
-        "collection": "digitale-karten",
-        "product_list": [
-          "bali-bundle-starterkit-digitale-karte",
-          "koh-samui-phangan-tao-karten"
-        ],
-        "image": "shopify://shop_images/FCC5983.jpg",
-        "sticky_image_enable": false,
-        "swap": true,
-        "overlay_opacity": 30,
-        "overlay_color": "#181929",
-        "grid_large": 2,
-        "grid_small": 1.5,
-        "limit": 4,
-        "bg": "palette--light bg--neutral",
-        "video_link_bg": "",
-        "object_position": "center-center",
-        "flex_align": "align--middle-center",
-        "align_text": "text-center",
-        "color": "text--white",
-        "width": "wrapper",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
     "default-collection": {
       "type": "section-collection",
       "settings": {
@@ -318,11 +188,8 @@
   "order": [
     "default-banner",
     "section_text_yprYxk",
-    "section_collection_split_CG3phx",
     "section_collection_row_3Vf4pL",
     "section_gallery_fHthRT",
-    "section_text_egAHJT",
-    "default-split-collection",
     "default-collection"
   ]
 }
