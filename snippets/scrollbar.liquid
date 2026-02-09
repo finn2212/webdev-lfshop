@@ -1,0 +1,192 @@
+{%- comment -%}
+  Scrollbar navigation snippet
+  Renders scroll arrow buttons (< >) with a progress indicator bar.
+
+  Parameters:
+  - container_id: (required) The ID of the scrollable container element
+  - scroll_amount: (optional) Pixels to scroll per click, default: container width
+{%- endcomment -%}
+
+{%- liquid
+  assign unique_id = container_id | default: section.id
+-%}
+
+<div
+  class="scrollbar"
+  data-scrollbar="{{ unique_id }}"
+  style="
+    --scrollbar-btn-color: {{ section.settings.scrollbar_btn_color | default: settings.scrollbar_btn_color | default: '#000000' }};
+    --scrollbar-btn-color-disabled: {{ section.settings.scrollbar_btn_color | default: settings.scrollbar_btn_color | default: '#000000' }};
+    --scrollbar-track-color: {{ section.settings.scrollbar_track_color | default: settings.scrollbar_track_color | default: '#e0e0e0' }};
+    --scrollbar-progress-color: {{ section.settings.scrollbar_progress_color | default: settings.scrollbar_progress_color | default: '#000000' }};
+  "
+>
+  <div class="scrollbar__buttons">
+    <button
+      class="scrollbar__btn scrollbar__btn--prev"
+      data-scrollbar-prev="{{ unique_id }}"
+      disabled
+      aria-label="Scroll left"
+    >
+      <svg aria-hidden="true" focusable="false" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.5 2L3.5 6L7.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button
+      class="scrollbar__btn scrollbar__btn--next"
+      data-scrollbar-next="{{ unique_id }}"
+      aria-label="Scroll right"
+    >
+      <svg aria-hidden="true" focusable="false" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.5 2L8.5 6L4.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="scrollbar__track" data-scrollbar-track="{{ unique_id }}">
+    <div class="scrollbar__progress" data-scrollbar-progress="{{ unique_id }}"></div>
+  </div>
+</div>
+
+<style>
+  .scrollbar {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0 0;
+  }
+
+  .scrollbar.is-visible {
+    display: flex;
+  }
+
+  .scrollbar__buttons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .scrollbar__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--scrollbar-btn-color);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--scrollbar-btn-color);
+    cursor: pointer;
+    transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    padding: 0;
+  }
+
+  .scrollbar__btn:hover:not(:disabled) {
+    background-color: var(--scrollbar-btn-color);
+    color: var(--scrollbar-track-color);
+  }
+
+  .scrollbar__btn:disabled {
+    opacity: 0.25;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .scrollbar__track {
+    flex: 1;
+    height: 3px;
+    background-color: var(--scrollbar-track-color);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .scrollbar__progress {
+    height: 100%;
+    background-color: var(--scrollbar-progress-color);
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.15s ease;
+  }
+</style>
+
+<script>
+  (function() {
+    var SCROLLBAR_INITIALIZED = 'scrollbar-initialized';
+
+    function initScrollbar(scrollbarEl) {
+      if (scrollbarEl.hasAttribute(SCROLLBAR_INITIALIZED)) return;
+      scrollbarEl.setAttribute(SCROLLBAR_INITIALIZED, '');
+
+      var id = scrollbarEl.getAttribute('data-scrollbar');
+      var container = document.getElementById(id);
+      if (!container) return;
+
+      var prevBtn = scrollbarEl.querySelector('[data-scrollbar-prev]');
+      var nextBtn = scrollbarEl.querySelector('[data-scrollbar-next]');
+      var progress = scrollbarEl.querySelector('[data-scrollbar-progress]');
+
+      function updateState() {
+        var scrollLeft = container.scrollLeft;
+        var scrollWidth = container.scrollWidth;
+        var clientWidth = container.clientWidth;
+        var maxScroll = scrollWidth - clientWidth;
+        var isScrollable = maxScroll > 1;
+
+        if (isScrollable) {
+          scrollbarEl.classList.add('is-visible');
+        } else {
+          scrollbarEl.classList.remove('is-visible');
+          return;
+        }
+
+        prevBtn.disabled = scrollLeft <= 1;
+        nextBtn.disabled = scrollLeft >= maxScroll - 1;
+
+        var percent = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0;
+        progress.style.width = Math.max(5, Math.min(100, percent)) + '%';
+
+        if (scrollLeft <= 1) {
+          var visibleRatio = clientWidth / scrollWidth;
+          progress.style.width = Math.max(5, visibleRatio * 100) + '%';
+        }
+      }
+
+      function scrollBy(direction) {
+        var amount = container.clientWidth * 0.8;
+        container.scrollBy({
+          left: direction * amount,
+          behavior: 'smooth'
+        });
+      }
+
+      prevBtn.addEventListener('click', function() { scrollBy(-1); });
+      nextBtn.addEventListener('click', function() { scrollBy(1); });
+
+      container.addEventListener('scroll', updateState, { passive: true });
+
+      var resizeObserver = new ResizeObserver(function() {
+        updateState();
+      });
+      resizeObserver.observe(container);
+
+      updateState();
+    }
+
+    function initAll() {
+      var scrollbars = document.querySelectorAll('[data-scrollbar]');
+      scrollbars.forEach(initScrollbar);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAll);
+    } else {
+      initAll();
+    }
+
+    if (window.Shopify && window.Shopify.designMode) {
+      document.addEventListener('shopify:section:load', function() {
+        setTimeout(initAll, 100);
+      });
+    }
+  })();
+</script>

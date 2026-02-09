@@ -823,6 +823,37 @@
     ]
   },
   {
+    "name": "Scrollbar",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Default scrollbar colors"
+      },
+      {
+        "type": "paragraph",
+        "content": "These are the default colors for the scrollbar snippet. Individual sections can override these."
+      },
+      {
+        "type": "color",
+        "id": "scrollbar_btn_color",
+        "label": "Button color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "scrollbar_track_color",
+        "label": "Track color",
+        "default": "#e0e0e0"
+      },
+      {
+        "type": "color",
+        "id": "scrollbar_progress_color",
+        "label": "Progress color",
+        "default": "#000000"
+      }
+    ]
+  },
+  {
     "name": "Favicon",
     "settings": [
       {
