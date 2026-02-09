@@ -33,9 +33,9 @@
         "banner-text"
       ],
       "settings": {
-        "image": "shopify://shop_images/Hero_Banner_Promo_6.png",
+        "image": "shopify://shop_images/Hero_Banner_Promo_2.png",
         "mobile_image": "shopify://shop_images/Hero_Banner_Mobile_1.png",
-        "collection": "sudafrika",
+        "collection": "",
         "height": "use_screen_three_quarters",
         "overlay_opacity": 0,
         "overlay_color": "#181929",
