@@ -129,6 +129,31 @@
         "padding_bottom": 76
       }
     },
+    "section_collection_row_3Vf4pL": {
+      "type": "section-collection-row",
+      "name": "Collection row",
+      "settings": {
+        "heading": "",
+        "collection": "",
+        "product_list": [
+          "bali-starterkit",
+          "suedafrika-guide",
+          "bali-digitale-karte",
+          "sudafrika-kaptstadt"
+        ],
+        "grid_large": 4,
+        "grid_small": 1.5,
+        "limit": 4,
+        "align_text": "text-left",
+        "bg": "palette--light bg--neutral",
+        "scrollbar_btn_color": "#000000",
+        "scrollbar_track_color": "#e0e0e0",
+        "scrollbar_progress_color": "#000000",
+        "width": "wrapper--full",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_gallery_fHthRT": {
       "type": "section-gallery",
       "blocks": {
@@ -294,6 +319,7 @@
     "default-banner",
     "section_text_yprYxk",
     "section_collection_split_CG3phx",
+    "section_collection_row_3Vf4pL",
     "section_gallery_fHthRT",
     "section_text_egAHJT",
     "default-split-collection",
