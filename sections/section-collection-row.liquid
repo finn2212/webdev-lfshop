@@ -3,8 +3,17 @@
   assign collection_products = collections[section.settings.collection].products
   assign product_list = section.settings.product_list
   assign products = product_list | default: collection_products
+  assign desktop_grid = ''
   assign mobile_grid = section.settings.grid_small | default: 2
-  assign desktop_columns = section.settings.grid_large | default: 4
+
+  if section.settings.grid_large == 2
+    assign desktop_grid = 'large-up--one-half'
+  elsif section.settings.grid_large == 3
+    assign desktop_grid = 'large-up--one-third'
+  elsif section.settings.grid_large == 4
+    assign desktop_grid = 'large-up--one-quarter'
+  endif
+
   assign scroll_id = 'collection-row-' | append: section.id
 -%}
 
@@ -22,22 +31,19 @@
     {%- endif -%}
 
     <div
-      class="collection-row__products"
+      class="collection-split__products grid"
       id="{{ scroll_id }}"
-      style="--product-width-mobile: calc({{ 100 | divided_by: mobile_grid | append: 'vw' }} - var(--gutter)*2); --product-columns: {{ desktop_columns }};"
+      style="--product-width: calc({{ 100 | divided_by: mobile_grid | append: 'vw' }} - var(--gutter)*2);"
     >
       {%- if products != blank -%}
         {%- for _product in products limit: section.settings.limit -%}
-          <div class="collection-row__product">
+          <div class="collection-split__product grid__item {{ desktop_grid }}">
             {% render 'product-grid-item', product: _product, text_align: 'text-left' %}
           </div>
         {%- endfor -%}
       {%- else -%}
-        {%- for i in (1..section.settings.limit) -%}
-          <div class="collection-row__product">
-            {%- render 'onboarding-product-grid-item' -%}
-          </div>
-        {%- endfor -%}
+        {%- assign wrap_class = 'collection-split__product grid__item ' | append: desktop_grid -%}
+        {%- render 'onboarding-product-grid-item', limit: section.settings.limit, wrap: wrap_class -%}
       {%- endif -%}
     </div>
 
@@ -50,35 +56,12 @@
     margin-bottom: 16px;
   }
 
-  [data-section-id="{{ section.id }}"] .collection-row__products {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: var(--gutter);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  [data-section-id="{{ section.id }}"] .collection-split__products {
     scrollbar-width: none;
-    scroll-behavior: smooth;
   }
 
-  [data-section-id="{{ section.id }}"] .collection-row__products::-webkit-scrollbar {
+  [data-section-id="{{ section.id }}"] .collection-split__products::-webkit-scrollbar {
     display: none;
-  }
-
-  [data-section-id="{{ section.id }}"] .collection-row__product {
-    flex: 0 0 var(--product-width-mobile);
-    min-width: 0;
-  }
-
-  @media only screen and (min-width: 768px) {
-    [data-section-id="{{ section.id }}"] .collection-row__product {
-      flex: 0 0 calc((100% - var(--gutter) * (var(--product-columns) - 1)) / var(--product-columns));
-    }
-  }
-
-  [data-section-id="{{ section.id }}"] .collection-row__product .product-grid-item .lazy-image,
-  [data-section-id="{{ section.id }}"] .collection-row__product .product-grid-item .placeholder-svg {
-    overflow: hidden;
-    border-radius: var(--RADIUS-LG);
   }
 </style>
 
@@ -113,11 +96,11 @@
     {
       "type": "range",
       "id": "grid_large",
-      "min": 2,
-      "max": 6,
+      "min": 1,
+      "max": 4,
       "step": 1,
       "label": "Products per row (desktop)",
-      "default": 4
+      "default": 2
     },
     {
       "type": "range",
@@ -135,7 +118,7 @@
       "max": 20,
       "step": 1,
       "label": "Product limit",
-      "default": 8
+      "default": 4
     },
     {
       "type": "select",
