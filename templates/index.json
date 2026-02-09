@@ -33,8 +33,8 @@
         "banner-text"
       ],
       "settings": {
-        "image": "shopify://shop_images/Hero_Banner_Promo_2.png",
-        "mobile_image": "shopify://shop_images/Hero_Banner_Mobile_1.png",
+        "image": "shopify://shop_images/Hero_Banner_Promo_3.png",
+        "mobile_image": "shopify://shop_images/Hero_Banner_Mobile_2.png",
         "collection": "",
         "height": "use_screen_three_quarters",
         "overlay_opacity": 0,
