@@ -91,9 +91,10 @@
           "bali-starterkit",
           "bali-digitale-karte"
         ],
-        "grid_large": 2,
+        "grid_large": 4,
         "grid_small": 1.5,
         "limit": 4,
+        "max_height": 0,
         "align_text": "text-left",
         "bg": "palette--light bg--neutral",
         "scrollbar_btn_color": "#000000",
