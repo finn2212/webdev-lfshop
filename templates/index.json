@@ -85,7 +85,12 @@
       "settings": {
         "heading": "",
         "collection": "",
-        "product_list": [],
+        "product_list": [
+          "suedafrika-guide",
+          "sudafrika-kaptstadt",
+          "bali-starterkit",
+          "bali-digitale-karte"
+        ],
         "grid_large": 2,
         "grid_small": 1.5,
         "limit": 4,
