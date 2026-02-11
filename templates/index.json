@@ -79,6 +79,26 @@
         "padding_bottom": 36
       }
     },
+    "section_collection_row_R3GW43": {
+      "type": "section-collection-row",
+      "name": "Collection row",
+      "settings": {
+        "heading": "",
+        "collection": "",
+        "product_list": [],
+        "grid_large": 2,
+        "grid_small": 1.5,
+        "limit": 4,
+        "align_text": "text-left",
+        "bg": "palette--light bg--neutral",
+        "scrollbar_btn_color": "#000000",
+        "scrollbar_track_color": "#e0e0e0",
+        "scrollbar_progress_color": "#000000",
+        "width": "wrapper--full",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_blog_9p7rAX": {
       "type": "section-blog",
       "name": "Blog posts",
@@ -364,6 +384,7 @@
   "order": [
     "default-banner",
     "section_text_yprYxk",
+    "section_collection_row_R3GW43",
     "section_blog_9p7rAX",
     "section_text_Q47ECw",
     "section_collection_split_CG3phx",
