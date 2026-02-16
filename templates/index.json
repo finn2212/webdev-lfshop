@@ -107,6 +107,7 @@
     },
     "section_blog_9p7rAX": {
       "type": "section-blog",
+      "disabled": true,
       "name": "Blog posts",
       "settings": {
         "title": "Reiseblog",
@@ -167,6 +168,7 @@
         "text_86tzeW",
         "button_3rN6M7"
       ],
+      "disabled": true,
       "name": "Rich text",
       "settings": {
         "align_text": "text-left",
