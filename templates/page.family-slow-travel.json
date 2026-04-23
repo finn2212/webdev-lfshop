@@ -1,0 +1,99 @@
+{
+  "sections": {
+    "spotlight": {
+      "type": "section-bundle-spotlight",
+      "blocks": {
+        "i-1": {
+          "type": "item",
+          "settings": {
+            "product": "sudafrika-bundle",
+            "reason": "Die Komplett-Box für die ersten Wochen vor Ort – damit ihr nicht jeden Abend im Hotel googeln müsst."
+          }
+        },
+        "i-2": {
+          "type": "item",
+          "settings": {
+            "product": "sudafrika-guide",
+            "reason": "Tagesrouten mit Pausen, kindertauglichen Stops und Ausweichzielen bei Wetterumschwung."
+          }
+        },
+        "i-3": {
+          "type": "item",
+          "settings": {
+            "product": "preset-vintage",
+            "reason": "Für eure Familienfotos – warm, körnig, nicht überschärft."
+          }
+        }
+      },
+      "block_order": ["i-1", "i-2", "i-3"],
+      "settings": {
+        "kicker": "Family Slow-Travel",
+        "title": "Reisen mit Kind. Ohne Stress.",
+        "lead": "<p>Wir reisen seit 2022 als Familie – mit Tilda, mittlerweile drei Jahren, und einer Lernkurve, die wir hier mit euch teilen. Diese Auswahl ist für Eltern, die nicht 14 Tage im Resort sitzen wollen, aber auch nicht jeden Tag Bus-Verbindungen googeln möchten.</p>",
+        "bundle_product": "sudafrika-bundle",
+        "cta_label": "Bundle ansehen",
+        "savings_label": "Spart 25 %",
+        "trust_promise": "14 Tage Geld zurück · Updates für 12 Monate · Sofort-Download als PDF + Google-Maps-Liste",
+        "contents_kicker": "Was drin ist",
+        "contents_title": "Drei Komponenten, kuratiert für Familien",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 100,
+        "padding_bottom": 80
+      }
+    },
+    "principles": {
+      "type": "section-principles",
+      "blocks": {
+        "p-1": {
+          "type": "principle",
+          "settings": {
+            "title": "Echte Family-Tipps",
+            "body": "<p>Spots, an denen wir mit Kind tatsächlich waren – inklusive Wickel-Optionen, Pausen-Zeiten, Notausgänge.</p>"
+          }
+        },
+        "p-2": {
+          "type": "principle",
+          "settings": {
+            "title": "Slow statt Bucket-List",
+            "body": "<p>Wir empfehlen weniger Spots pro Tag – aber dafür durchdacht. Damit ihr ankommt, statt nur durchzureisen.</p>"
+          }
+        },
+        "p-3": {
+          "type": "principle",
+          "settings": {
+            "title": "Updates aus dem echten Leben",
+            "body": "<p>Wir aktualisieren Family-Inhalte nach jeder Reise neu. Was 2024 mit Tilda als Baby ging, geht mit ihr als Dreijähriger oft anders – das sagen wir.</p>"
+          }
+        }
+      },
+      "block_order": ["p-1", "p-2", "p-3"],
+      "settings": {
+        "kicker": "Versprechen",
+        "title": "Was wir anders machen",
+        "lead": "<p>Drei Punkte, die uns von generischen Family-Travel-Listen unterscheiden.</p>",
+        "signature": "— Laura & Finn (& Tilda)",
+        "width": "wrapper--narrow",
+        "color_bg": "bg--accent",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "reels": {
+      "type": "section-reels",
+      "settings": {
+        "kicker": "Aus dem Family-Alltag",
+        "title": "Wie reisen mit Kind aussieht.",
+        "subtitle": "<p>Ehrliche Reels – die schönen Momente und die anstrengenden.</p>",
+        "text_size": "medium",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 60,
+        "padding_bottom": 100
+      },
+      "blocks": {},
+      "block_order": []
+    }
+  },
+  "order": ["spotlight", "principles", "reels"]
+}
