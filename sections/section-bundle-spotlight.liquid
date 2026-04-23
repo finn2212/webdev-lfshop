@@ -1,0 +1,329 @@
+{%- comment -%}
+  section-bundle-spotlight.liquid — Hero für eine Bundle-Landingpage.
+
+  Zeigt:
+    - Editorial Headline + Sub + Promise (Trust-Anchor)
+    - Großes Bundle-Bild ODER Hero-Image
+    - Bundle-Produkt-Kachel mit Preis + Kaufen-Button + "Was drin ist"
+    - Liste der Bundle-Bestandteile als kleine Karten mit Begründung
+      ("Warum diese Karte im Bundle ist")
+
+  Verwendet als Top-Section in page.honeymoon.json und page.family-slow-travel.json.
+{%- endcomment -%}
+
+{%- liquid
+  assign bundle = section.settings.bundle_product
+  assign hero   = section.settings.hero_image
+  if hero == blank and bundle != blank and bundle.featured_media != blank
+    assign hero = bundle.featured_media.preview_image
+  endif
+-%}
+
+<section
+  class="bundle-spotlight {{ section.settings.color_bg }}"
+  style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="{{ section.settings.width }} section-padding">
+    <div class="bundle-spotlight__grid">
+
+      <div class="bundle-spotlight__media">
+        {%- if hero != blank -%}
+          <img
+            src="{{ hero | image_url: width: 1600 }}"
+            srcset="{{ hero | image_url: width: 600 }} 600w, {{ hero | image_url: width: 1000 }} 1000w, {{ hero | image_url: width: 1600 }} 1600w, {{ hero | image_url: width: 2200 }} 2200w"
+            sizes="(min-width: 990px) 55vw, 95vw"
+            alt="{{ hero.alt | default: bundle.title | escape }}"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="{{ hero.width }}"
+            height="{{ hero.height }}"
+          >
+        {%- else -%}
+          <span class="bundle-spotlight__placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+        {%- endif -%}
+      </div>
+
+      <div class="bundle-spotlight__copy">
+        {%- if section.settings.kicker != blank -%}
+          <p class="bundle-spotlight__kicker font-mono-2030">{{ section.settings.kicker | escape }}</p>
+        {%- endif -%}
+        <h1 class="bundle-spotlight__title font-display-2030">{{ section.settings.title | escape | default: 'Für eure Reise.' }}</h1>
+        {%- if section.settings.lead != blank -%}
+          <div class="bundle-spotlight__lead font-editorial-2030">{{ section.settings.lead }}</div>
+        {%- endif -%}
+
+        {%- if bundle != blank -%}
+          <div class="bundle-spotlight__buybox">
+            <div class="bundle-spotlight__buybox-meta">
+              <p class="bundle-spotlight__product-name font-display-2030">{{ bundle.title | escape }}</p>
+              <p class="bundle-spotlight__price font-body-2030">
+                {%- if bundle.compare_at_price > bundle.price -%}
+                  <s>{{ bundle.compare_at_price | money }}</s>
+                {%- endif -%}
+                <strong>{{ bundle.price | money }}</strong>
+                {%- if section.settings.savings_label != blank -%}
+                  <span class="bundle-spotlight__savings">{{ section.settings.savings_label | escape }}</span>
+                {%- endif -%}
+              </p>
+            </div>
+            <div class="bundle-spotlight__buybox-cta">
+              <a href="{{ bundle.url }}" class="bundle-spotlight__cta">
+                {{ section.settings.cta_label | default: 'Bundle ansehen' }}
+              </a>
+              <a href="#bundle-contents" class="bundle-spotlight__secondary">
+                Was drin ist
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </a>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.trust_promise != blank -%}
+          <p class="bundle-spotlight__promise font-body-2030">{{ section.settings.trust_promise }}</p>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="bundle-spotlight__contents" id="bundle-contents">
+        <p class="bundle-spotlight__contents-kicker font-mono-2030">{{ section.settings.contents_kicker | default: 'Was drin ist' | escape }}</p>
+        <h2 class="bundle-spotlight__contents-title font-display-2030">{{ section.settings.contents_title | default: 'Komponenten im Bundle' | escape }}</h2>
+
+        <ul class="bundle-spotlight__items" role="list">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign p = block.settings.product
+              assign reason = block.settings.reason
+              assign override_image = block.settings.image
+              assign image = override_image
+              if image == blank and p != blank and p.featured_media != blank
+                assign image = p.featured_media.preview_image
+              endif
+            -%}
+            <li class="bundle-item" {{ block.shopify_attributes }}>
+              <a href="{{ p.url | default: '#' }}" class="bundle-item__media">
+                {%- if image != blank -%}
+                  <img
+                    src="{{ image | image_url: width: 800 }}"
+                    srcset="{{ image | image_url: width: 400 }} 400w, {{ image | image_url: width: 800 }} 800w, {{ image | image_url: width: 1200 }} 1200w"
+                    sizes="(min-width: 990px) 24vw, 45vw"
+                    alt="{{ image.alt | default: p.title | escape }}"
+                    loading="lazy"
+                    decoding="async"
+                    width="{{ image.width }}"
+                    height="{{ image.height }}"
+                  >
+                {%- else -%}
+                  <span class="bundle-item__placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+                {%- endif -%}
+              </a>
+              <div class="bundle-item__body">
+                <p class="bundle-item__title font-display-2030">
+                  <a href="{{ p.url | default: '#' }}">{{ p.title | default: block.settings.title | escape }}</a>
+                </p>
+                {%- if reason != blank -%}
+                  <p class="bundle-item__reason font-body-2030">{{ reason | escape }}</p>
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<style>
+  .bundle-spotlight { padding-top: var(--PT, 80px); padding-bottom: var(--PB, 80px); }
+
+  .bundle-spotlight__grid {
+    display: grid; gap: 2rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  @media (min-width: 990px) {
+    .bundle-spotlight__grid {
+      grid-template-columns: 1.15fr 1fr;
+      gap: 3.5rem;
+    }
+  }
+  .bundle-spotlight__media {
+    position: relative;
+    border-radius: var(--RADIUS-LG, 16px);
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: var(--COLOR-BODY-TEXT-A05, #f0eee9);
+  }
+  @media (min-width: 990px) {
+    .bundle-spotlight__media { aspect-ratio: 4 / 5; }
+  }
+  .bundle-spotlight__media img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+
+  .bundle-spotlight__copy { display: grid; gap: 1rem; }
+  .bundle-spotlight__kicker {
+    text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 0.78rem; color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    margin: 0;
+  }
+  .bundle-spotlight__title {
+    font-weight: 500; line-height: 1.02;
+    font-size: clamp(2.2rem, 1.4rem + 3vw, 4rem);
+    margin: 0;
+  }
+  .bundle-spotlight__lead {
+    font-size: clamp(1.05rem, 0.95rem + 0.6vw, 1.3rem);
+    line-height: 1.5;
+    color: var(--COLOR-BODY-TEXT-A85, #2a2a2a);
+  }
+  .bundle-spotlight__lead p { margin: 0 0 0.7rem; }
+
+  .bundle-spotlight__buybox {
+    margin-top: 0.5rem;
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--COLOR-BODY-TEXT-A15, rgba(0,0,0,0.12));
+    border-radius: var(--RADIUS-LG, 14px);
+    background: var(--COLOR-BG, #fff);
+    display: grid; gap: 1rem;
+  }
+  @media (min-width: 540px) {
+    .bundle-spotlight__buybox { grid-template-columns: 1fr auto; align-items: center; }
+  }
+  .bundle-spotlight__product-name { font-weight: 500; font-size: 1.1rem; margin: 0 0 0.2rem; line-height: 1.2; }
+  .bundle-spotlight__price { margin: 0; font-size: 1.05rem; display: flex; gap: 0.6rem; align-items: baseline; flex-wrap: wrap; }
+  .bundle-spotlight__price s { color: var(--COLOR-BODY-TEXT-A55, rgba(0,0,0,0.5)); font-weight: 400; }
+  .bundle-spotlight__savings {
+    font-size: 0.78rem; padding: 0.2rem 0.55rem; border-radius: 999px;
+    background: color-mix(in oklch, var(--COLOR-ACCENT-COOL, #3aa77b) 20%, transparent);
+    color: var(--COLOR-ACCENT-COOL, #3aa77b);
+    font-family: var(--font-2030-mono, ui-monospace, monospace);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .bundle-spotlight__buybox-cta { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+  .bundle-spotlight__cta {
+    padding: 0.75rem 1.4rem; border-radius: 999px;
+    background: var(--COLOR-ACCENT-WARM, #a73a3a); color: #fff;
+    font-family: var(--font-2030-body, system-ui); font-weight: 500;
+    text-decoration: none; display: inline-block;
+    transition: filter 200ms ease;
+  }
+  .bundle-spotlight__cta:hover { filter: brightness(1.08); }
+  .bundle-spotlight__secondary {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    color: var(--COLOR-BODY-TEXT, #1a1a1a); text-decoration: none;
+    font-family: var(--font-2030-body, system-ui); font-size: 0.92rem;
+    border-bottom: 1px solid currentColor;
+  }
+  .bundle-spotlight__promise {
+    margin: 0; padding-top: 0.6rem;
+    font-size: 0.92rem; color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+  }
+
+  /* Contents grid ===================================================== */
+  .bundle-spotlight__contents {
+    margin-top: 4.5rem; padding-top: 2.5rem;
+    border-top: 1px solid var(--COLOR-BODY-TEXT-A10, rgba(0,0,0,0.08));
+    scroll-margin-top: 80px;
+  }
+  .bundle-spotlight__contents-kicker {
+    text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 0.78rem; color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    margin: 0 0 0.5rem;
+  }
+  .bundle-spotlight__contents-title {
+    font-weight: 500; line-height: 1.05;
+    font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem);
+    margin: 0 0 1.6rem;
+  }
+  .bundle-spotlight__items {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 1.6rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+  .bundle-item {
+    display: grid; gap: 0.7rem;
+  }
+  .bundle-item__media {
+    display: block; aspect-ratio: 4 / 5;
+    border-radius: var(--RADIUS-LG, 14px);
+    overflow: hidden;
+    background: var(--COLOR-BODY-TEXT-A05, #f0eee9);
+  }
+  .bundle-item__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 400ms ease; }
+  .bundle-item__media:hover img { transform: scale(1.04); }
+  .bundle-item__title { margin: 0; font-size: 1.05rem; font-weight: 500; line-height: 1.2; }
+  .bundle-item__title a { color: inherit; text-decoration: none; }
+  .bundle-item__title a:hover { text-decoration: underline; }
+  .bundle-item__reason {
+    margin: 0; font-size: 0.92rem; line-height: 1.45;
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Bundle-Spotlight",
+  "tag": "section",
+  "class": "section-section",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Honeymoon Bundle" },
+    { "type": "text", "id": "title", "label": "Überschrift", "default": "Für eure Reise." },
+    { "type": "richtext", "id": "lead", "label": "Lead-Text", "default": "<p>Eine kuratierte Auswahl unserer Karten und Guides – zusammengestellt für Paare, die ihre Hochzeitsreise nicht auf eine Bucket-List reduzieren wollen.</p>" },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero-Bild (optional, sonst Bundle-Produktbild)" },
+    { "type": "header", "content": "Bundle-Produkt" },
+    { "type": "product", "id": "bundle_product", "label": "Bundle-Produkt" },
+    { "type": "text", "id": "cta_label", "label": "CTA-Text", "default": "Bundle ansehen" },
+    { "type": "text", "id": "savings_label", "label": "Spar-Badge", "default": "Spart 20 %" },
+    { "type": "text", "id": "trust_promise", "label": "Trust-Hinweis", "default": "14 Tage Geld zurück · Updates für 12 Monate · Sofort-Download" },
+    { "type": "header", "content": "Was drin ist" },
+    { "type": "text", "id": "contents_kicker", "label": "Kicker", "default": "Was drin ist" },
+    { "type": "text", "id": "contents_title", "label": "Überschrift", "default": "Komponenten im Bundle" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select", "id": "width", "label": "Breite", "default": "wrapper",
+      "options": [
+        { "value": "wrapper",         "label": "Standard" },
+        { "value": "wrapper--narrow", "label": "Schmal" },
+        { "value": "wrapper--full",   "label": "Volle Breite" }
+      ]
+    },
+    {
+      "type": "select", "id": "color_bg", "label": "Hintergrund", "default": "bg--neutral",
+      "options": [
+        { "value": "bg--neutral", "label": "Neutral" },
+        { "value": "bg--accent",  "label": "Akzent" }
+      ]
+    },
+    { "type": "range", "id": "padding_top",    "label": "Abstand oben",  "min": 0, "max": 200, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Abstand unten", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Bundle-Bestandteil",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Produkt" },
+        { "type": "image_picker", "id": "image", "label": "Bild-Override (optional)" },
+        { "type": "text", "id": "title", "label": "Titel-Override (optional)", "info": "Falls leer, wird der Produkt-Titel genommen." },
+        { "type": "text", "id": "reason", "label": "Warum es im Bundle ist", "default": "Für die ersten Tage zur Orientierung." }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Bundle-Spotlight",
+      "blocks": [
+        { "type": "item" },
+        { "type": "item" },
+        { "type": "item" }
+      ]
+    }
+  ]
+}
+{% endschema %}

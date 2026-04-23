@@ -1,0 +1,99 @@
+{
+  "sections": {
+    "spotlight": {
+      "type": "section-bundle-spotlight",
+      "blocks": {
+        "i-1": {
+          "type": "item",
+          "settings": {
+            "product": "bali-bundle",
+            "reason": "Für die erste Woche – damit ihr euch von Anfang an orientieren könnt, ohne TripAdvisor-Hopping."
+          }
+        },
+        "i-2": {
+          "type": "item",
+          "settings": {
+            "product": "bali-maps",
+            "reason": "Die Detail-Karte für Insider-Spots und ruhige Ecken jenseits der bekannten Postkarten-Orte."
+          }
+        },
+        "i-3": {
+          "type": "item",
+          "settings": {
+            "product": "preset-tropical",
+            "reason": "Damit eure Hochzeitsreise-Fotos auch wie eure Hochzeitsreise aussehen."
+          }
+        }
+      },
+      "block_order": ["i-1", "i-2", "i-3"],
+      "settings": {
+        "kicker": "Honeymoon Edition",
+        "title": "Eure Reise. Kuratiert.",
+        "lead": "<p>Eine Auswahl unserer Karten und Guides, zusammengestellt für Paare auf ihrer Hochzeitsreise. Mit Fokus auf ruhige Strände, kleine Restaurants und Sonnenuntergänge, die niemand auf Instagram kennt.</p>",
+        "bundle_product": "bali-bundle",
+        "cta_label": "Bundle ansehen",
+        "savings_label": "Spart 20 %",
+        "trust_promise": "14 Tage Geld zurück · Updates für 12 Monate · Sofort-Download als PDF + Google-Maps-Liste",
+        "contents_kicker": "Was drin ist",
+        "contents_title": "Drei Komponenten, ein Reise-Begleiter",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 100,
+        "padding_bottom": 80
+      }
+    },
+    "principles": {
+      "type": "section-principles",
+      "blocks": {
+        "p-1": {
+          "type": "principle",
+          "settings": {
+            "title": "Selbst gewesen",
+            "body": "<p>Jeder Spot in unseren Honeymoon-Empfehlungen wurde von uns persönlich besucht – meist gleich mehrfach.</p>"
+          }
+        },
+        "p-2": {
+          "type": "principle",
+          "settings": {
+            "title": "Updates inklusive",
+            "body": "<p>Restaurants schließen, Strände werden voll, neue Geheimtipps kommen dazu. Ihr bekommt jede Aktualisierung kostenlos per E-Mail.</p>"
+          }
+        },
+        "p-3": {
+          "type": "principle",
+          "settings": {
+            "title": "Geld zurück, wenn's nicht passt",
+            "body": "<p>14 Tage Rückgaberecht. Schreibt uns – ohne Begründung, ohne Formular.</p>"
+          }
+        }
+      },
+      "block_order": ["p-1", "p-2", "p-3"],
+      "settings": {
+        "kicker": "Versprechen",
+        "title": "Warum wir glauben, dass das funktioniert",
+        "lead": "<p>Drei Versprechen, die wir auf jeder Honeymoon-Karte einlösen.</p>",
+        "signature": "— Laura & Finn",
+        "width": "wrapper--narrow",
+        "color_bg": "bg--accent",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "reels": {
+      "type": "section-reels",
+      "settings": {
+        "kicker": "Live aus Bali",
+        "title": "Wie es vor Ort wirklich aussieht.",
+        "subtitle": "<p>Tap das Video an für Vollbild und Ton.</p>",
+        "text_size": "medium",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 60,
+        "padding_bottom": 100
+      },
+      "blocks": {},
+      "block_order": []
+    }
+  },
+  "order": ["spotlight", "principles", "reels"]
+}
