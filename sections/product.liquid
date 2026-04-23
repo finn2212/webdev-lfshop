@@ -199,6 +199,7 @@
               {% when 'form' %}
                 <div class="product__block product__details" {{ block_style }}>
                   {% render 'product-form', product: product, block: block %}
+                  {% render 'trust-signals', product: product %}
                 </div>
               {% when 'description' %}
                 <div class="product__block product-description rte rte--column accordion-neighbor" {{ block_style }} {{ block.shopify_attributes }}>
