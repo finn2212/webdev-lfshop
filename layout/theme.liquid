@@ -11,7 +11,7 @@
   {%- if canonical_url != blank -%}
     <link rel="canonical" href="{{ canonical_url }}">
   {%- endif -%}
-<script type="text/javascript" src="https://staging.gettermscmp.com/cookie-consent/embed/abad9d70-d180-486f-a77d-1fc252cd88a8/en-us"></script>
+
   <!-- ======================= Story Theme V4.2.0 ========================= -->
 
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
@@ -201,6 +201,8 @@
     {%- endcomment -%}
 
     <!-- Paste third party scripts below this comment line ============== -->
+
+    {% render 'cookie-consent' %}
 
     <!-- And above this comment line ================================================== -->
   </body>

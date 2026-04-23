@@ -1,0 +1,256 @@
+{%- comment -%}
+  Cookie-Consent (vanilla-cookieconsent v3 by orestbida, MIT)
+  Replaces the old synchronous gettermscmp loader.
+
+  - Loaded async, no render-blocking.
+  - Categories: necessary (read-only), analytics, marketing, ai.
+  - Theme variables mapped to existing Story-theme color tokens.
+  - Multilang DE/EN.
+  - To wire a tracker: add its loader inside the `loadTrackers()` function below
+    and gate it with `CookieConsent.acceptedCategory('analytics' | 'marketing' | 'ai')`.
+
+  Tracker audit (gettermscmp replacement) is still pending — placeholders are
+  marked with TODO inside loadTrackers().
+{%- endcomment -%}
+
+<link rel="stylesheet" href="{{ 'cookieconsent.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{{ 'cookieconsent.css' | asset_url }}"></noscript>
+
+<script src="{{ 'cookieconsent.js' | asset_url }}" defer></script>
+
+<style>
+  #cc-main {
+    --cc-bg: var(--COLOR-BG, #ffffff);
+    --cc-primary-color: var(--COLOR-BODY-TEXT, #1a1a1a);
+    --cc-secondary-color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    --cc-btn-primary-bg: var(--COLOR-ACCENT-WARM, #a73a3a);
+    --cc-btn-primary-color: #ffffff;
+    --cc-btn-primary-hover-bg: var(--COLOR-ACCENT-WARM, #8a2c2c);
+    --cc-btn-secondary-bg: transparent;
+    --cc-btn-secondary-color: var(--COLOR-BODY-TEXT, #1a1a1a);
+    --cc-btn-secondary-border-color: var(--COLOR-BODY-TEXT-A20, rgba(0,0,0,0.2));
+    --cc-btn-secondary-hover-bg: var(--COLOR-BODY-TEXT-A05, rgba(0,0,0,0.05));
+    --cc-toggle-on-bg: var(--COLOR-ACCENT-COOL, #3aa77b);
+    --cc-toggle-off-bg: var(--COLOR-BODY-TEXT-A20, rgba(0,0,0,0.2));
+    --cc-modal-border-radius: var(--RADIUS-LG, 12px);
+    --cc-btn-border-radius: var(--RADIUS, 6px);
+    --cc-font-family: var(--FONT-STACK-BODY, system-ui, sans-serif);
+    --cc-z-index: 2147483646;
+  }
+  #cc-main .pm__title,
+  #cc-main .cm__title { font-family: var(--FONT-STACK-HEADING, var(--FONT-STACK-BODY, system-ui)); }
+</style>
+
+<script>
+window.addEventListener('cc:init-fallback', function () {
+  // Defensive fallback if script load fails — never block site.
+  console.info('[cookie-consent] script not loaded yet; retrying once.');
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (typeof CookieConsent === 'undefined') {
+    // script may load slightly after DOMContentLoaded due to defer + async patterns
+    var tryInit = function () {
+      if (typeof CookieConsent !== 'undefined') initCookieConsent();
+      else setTimeout(tryInit, 50);
+    };
+    tryInit();
+  } else {
+    initCookieConsent();
+  }
+});
+
+function initCookieConsent() {
+  CookieConsent.run({
+    guiOptions: {
+      consentModal: {
+        layout: 'box inline',
+        position: 'bottom left',
+        equalWeightButtons: false,
+        flipButtons: false
+      },
+      preferencesModal: {
+        layout: 'box',
+        position: 'right',
+        equalWeightButtons: true,
+        flipButtons: false
+      }
+    },
+
+    categories: {
+      necessary: {
+        enabled: true,
+        readOnly: true
+      },
+      analytics: {
+        enabled: false,
+        autoClear: {
+          cookies: [
+            { name: /^_ga/ },
+            { name: '_gid' },
+            { name: /^_clck|_clsk/ },
+            { name: /^_hj/ }
+          ]
+        }
+      },
+      marketing: {
+        enabled: false,
+        autoClear: {
+          cookies: [
+            { name: /^_fbp|_fbc/ },
+            { name: '_pin_unauth' },
+            { name: /^_ttp|_ttclid/ },
+            { name: /^__kla_id/ }
+          ]
+        }
+      },
+      ai: {
+        enabled: false
+      }
+    },
+
+    onConsent: function () { loadTrackers(); },
+    onChange: function () { loadTrackers(); },
+
+    language: {
+      default: '{{ request.locale.iso_code | default: "de" }}',
+      autoDetect: 'browser',
+      translations: {
+        de: {
+          consentModal: {
+            title: 'Cookies & Datenschutz',
+            description: 'Wir nutzen Cookies, damit der Shop funktioniert, und – mit deiner Zustimmung – um zu verstehen, welche Inhalte gut ankommen und um dir relevante Empfehlungen auszuspielen. Du kannst jederzeit unter "Einstellungen" frei entscheiden.',
+            acceptAllBtn: 'Alle akzeptieren',
+            acceptNecessaryBtn: 'Nur notwendige',
+            showPreferencesBtn: 'Einstellungen',
+            footer: '<a href="/policies/privacy-policy">Datenschutz</a> · <a href="/policies/legal-notice">Impressum</a>'
+          },
+          preferencesModal: {
+            title: 'Cookie-Einstellungen',
+            acceptAllBtn: 'Alle akzeptieren',
+            acceptNecessaryBtn: 'Nur notwendige',
+            savePreferencesBtn: 'Auswahl speichern',
+            closeIconLabel: 'Schließen',
+            sections: [
+              {
+                title: 'Was wir tun',
+                description: 'Wir verarbeiten so wenig Daten wie nötig. Diese Übersicht erklärt, wofür welche Kategorie steht. Details findest du in unserer <a href="/policies/privacy-policy">Datenschutzerklärung</a>.'
+              },
+              {
+                title: 'Notwendig',
+                description: 'Diese Cookies sind für den Shop technisch erforderlich (Warenkorb, Login, Sicherheit). Sie können nicht deaktiviert werden.',
+                linkedCategory: 'necessary'
+              },
+              {
+                title: 'Statistik',
+                description: 'Hilft uns zu verstehen, welche Karten, Guides und Stories gut ankommen. Anonymisierte Auswertung.',
+                linkedCategory: 'analytics'
+              },
+              {
+                title: 'Marketing',
+                description: 'Damit wir dir relevante Inhalte zeigen können – auf Instagram, Pinterest oder im Newsletter. Ohne ist die Werbung zufällig, mehr nicht.',
+                linkedCategory: 'marketing'
+              },
+              {
+                title: 'KI-Funktionen',
+                description: 'Aktiviert den AI-Reiseplaner. Deine Eingaben werden an unseren EU-Verarbeiter (Anthropic Claude) weitergegeben, um einen personalisierten Plan zu erstellen.',
+                linkedCategory: 'ai'
+              }
+            ]
+          }
+        },
+        en: {
+          consentModal: {
+            title: 'Cookies & privacy',
+            description: 'We use cookies so the shop works and — with your consent — to understand which content resonates and to send you relevant recommendations. You can change your mind anytime under "Settings".',
+            acceptAllBtn: 'Accept all',
+            acceptNecessaryBtn: 'Only necessary',
+            showPreferencesBtn: 'Settings',
+            footer: '<a href="/policies/privacy-policy">Privacy</a> · <a href="/policies/legal-notice">Imprint</a>'
+          },
+          preferencesModal: {
+            title: 'Cookie settings',
+            acceptAllBtn: 'Accept all',
+            acceptNecessaryBtn: 'Only necessary',
+            savePreferencesBtn: 'Save selection',
+            closeIconLabel: 'Close',
+            sections: [
+              {
+                title: 'What we do',
+                description: 'We process as little data as needed. This overview explains each category. Details in our <a href="/policies/privacy-policy">privacy policy</a>.'
+              },
+              {
+                title: 'Necessary',
+                description: 'Required for the shop to work (cart, login, security). Cannot be disabled.',
+                linkedCategory: 'necessary'
+              },
+              {
+                title: 'Analytics',
+                description: 'Helps us understand which maps, guides and stories resonate. Anonymised reporting.',
+                linkedCategory: 'analytics'
+              },
+              {
+                title: 'Marketing',
+                description: 'Lets us show you relevant content on Instagram, Pinterest or via newsletter.',
+                linkedCategory: 'marketing'
+              },
+              {
+                title: 'AI features',
+                description: 'Enables the AI trip planner. Your inputs are sent to our EU processor (Anthropic Claude) to generate a personalised plan.',
+                linkedCategory: 'ai'
+              }
+            ]
+          }
+        }
+      }
+    }
+  });
+}
+
+function loadTrackers() {
+  if (typeof CookieConsent === 'undefined') return;
+
+  // ANALYTICS — wire after gettermscmp tracker audit (see _redesign-2030/03_content_checklist.md §9)
+  if (CookieConsent.acceptedCategory('analytics')) {
+    // TODO: GA4
+    // TODO: Microsoft Clarity / Hotjar (Phase 0 discovery)
+    document.dispatchEvent(new CustomEvent('cc:analytics-granted'));
+  }
+
+  // MARKETING
+  if (CookieConsent.acceptedCategory('marketing')) {
+    // TODO: Klaviyo onsite tracking
+    // TODO: Pinterest pixel (if running)
+    // TODO: Meta pixel (if running)
+    // TODO: TikTok pixel (if running)
+    document.dispatchEvent(new CustomEvent('cc:marketing-granted'));
+  }
+
+  // AI (Phase 3) — gates the AI itinerary endpoint
+  if (CookieConsent.acceptedCategory('ai')) {
+    document.dispatchEvent(new CustomEvent('cc:ai-granted'));
+  }
+
+  // Shopify Customer Privacy API bridge — informs Shopify-apps that respect it.
+  // See: https://shopify.dev/docs/api/consent-tracking
+  if (window.Shopify && window.Shopify.customerPrivacy) {
+    try {
+      window.Shopify.customerPrivacy.setTrackingConsent({
+        analytics: CookieConsent.acceptedCategory('analytics'),
+        marketing: CookieConsent.acceptedCategory('marketing'),
+        preferences: CookieConsent.acceptedCategory('necessary'),
+        sale_of_data: false
+      }, function () {});
+    } catch (e) { /* silent — Shopify API may not be ready yet */ }
+  }
+}
+
+// Re-open settings: any element with [data-cc="show-preferences"]
+document.addEventListener('click', function (e) {
+  var t = e.target.closest('[data-cc="show-preferences"]');
+  if (t && typeof CookieConsent !== 'undefined') {
+    e.preventDefault();
+    CookieConsent.showPreferences();
+  }
+});
+</script>
