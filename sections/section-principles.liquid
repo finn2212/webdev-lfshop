@@ -1,0 +1,175 @@
+{%- comment -%}
+  section-principles.liquid — Editorial-style "Principles"-Liste.
+
+  Genutzt für die Redaktionsprinzipien-Seite (/redaktionsprinzipien),
+  kann aber auch für "Unsere Werte" oder ähnliche Trust-Seiten verwendet werden.
+{%- endcomment -%}
+
+<div
+  class="section-principles {{ section.settings.color_bg }}"
+  style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="{{ section.settings.width }} section-padding">
+
+    <header class="principles__header">
+      {%- if section.settings.kicker != blank -%}
+        <p class="principles__kicker font-mono-2030">{{ section.settings.kicker | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h1 class="principles__title font-display-2030">{{ section.settings.title | escape }}</h1>
+      {%- endif -%}
+      {%- if section.settings.lead != blank -%}
+        <div class="principles__lead font-editorial-2030">{{ section.settings.lead }}</div>
+      {%- endif -%}
+    </header>
+
+    {%- if section.blocks.size > 0 -%}
+      <ol class="principles__list" role="list">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign number = forloop.index | prepend: '0' | slice: -2, 2
+          -%}
+          <li class="principles__item" {{ block.shopify_attributes }}>
+            <div class="principles__number font-mono-2030">{{ number }}</div>
+            <div class="principles__body">
+              <h2 class="principles__item-title font-display-2030">{{ block.settings.title | escape }}</h2>
+              <div class="principles__item-text font-body-2030">{{ block.settings.body }}</div>
+              {%- if block.settings.example != blank -%}
+                <p class="principles__example font-body-2030"><span>Beispiel:</span> {{ block.settings.example }}</p>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+
+    {%- if section.settings.signature != blank -%}
+      <p class="principles__signature font-hand-2030">{{ section.settings.signature | escape }}</p>
+    {%- endif -%}
+
+  </div>
+</div>
+
+<style>
+  .section-principles { padding-top: var(--PT, 80px); padding-bottom: var(--PB, 80px); }
+  .principles__header { max-width: 720px; margin: 0 auto 3.5rem; text-align: center; }
+  .principles__kicker {
+    text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 0.78rem; color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    margin: 0 0 0.7rem;
+  }
+  .principles__title {
+    font-weight: 500; line-height: 1.05;
+    font-size: clamp(2rem, 1.4rem + 2.6vw, 3.4rem);
+    margin: 0 0 1rem;
+  }
+  .principles__lead {
+    font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem);
+    line-height: 1.55;
+    color: var(--COLOR-BODY-TEXT-A85, #2a2a2a);
+  }
+
+  .principles__list {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 2.5rem;
+    max-width: 820px; margin-inline: auto;
+  }
+  .principles__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.4rem;
+    align-items: start;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--COLOR-BODY-TEXT-A10, rgba(0,0,0,0.08));
+  }
+  .principles__item:last-child { border-bottom: 0; padding-bottom: 0; }
+  .principles__number {
+    font-size: 1.05rem;
+    color: var(--COLOR-ACCENT-WARM, #a73a3a);
+    letter-spacing: 0.06em;
+    padding-top: 0.4rem;
+  }
+  .principles__item-title {
+    font-weight: 500; line-height: 1.15;
+    font-size: clamp(1.3rem, 1rem + 0.9vw, 1.7rem);
+    margin: 0 0 0.7rem;
+  }
+  .principles__item-text {
+    line-height: 1.55;
+    color: var(--COLOR-BODY-TEXT-A85, #2a2a2a);
+  }
+  .principles__item-text p { margin: 0 0 0.7rem; }
+  .principles__item-text p:last-child { margin-bottom: 0; }
+  .principles__example {
+    margin: 0.9rem 0 0;
+    padding: 0.7rem 0.9rem;
+    background: var(--COLOR-BODY-TEXT-A05, #f3f1ec);
+    border-radius: var(--RADIUS, 6px);
+    font-size: 0.92rem;
+    color: var(--COLOR-BODY-TEXT-A85, #2a2a2a);
+  }
+  .principles__example span { font-weight: 600; }
+
+  .principles__signature {
+    text-align: center; margin: 3rem 0 0;
+    font-size: clamp(1.3rem, 1rem + 1vw, 1.8rem);
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Prinzipien",
+  "tag": "section",
+  "class": "section-section",
+  "settings": [
+    { "type": "header", "content": "Inhalt" },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Wofür wir stehen" },
+    { "type": "text", "id": "title", "label": "Überschrift", "default": "Unsere Redaktionsprinzipien" },
+    { "type": "richtext", "id": "lead", "label": "Lead-Absatz", "default": "<p>Wir verkaufen Karten und Guides, in denen wir selbst gewesen sind. Damit das so bleibt, gelten folgende Regeln – für uns, nicht für unsere Leser.</p>" },
+    { "type": "text", "id": "signature", "label": "Unterschrift", "default": "— Laura & Finn" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select", "id": "width", "label": "Breite", "default": "wrapper",
+      "options": [
+        { "value": "wrapper",         "label": "Standard" },
+        { "value": "wrapper--narrow", "label": "Schmal" }
+      ]
+    },
+    {
+      "type": "select", "id": "color_bg", "label": "Hintergrund", "default": "bg--neutral",
+      "options": [
+        { "value": "bg--neutral", "label": "Neutral" },
+        { "value": "bg--accent",  "label": "Akzent" }
+      ]
+    },
+    { "type": "range", "id": "padding_top",    "label": "Abstand oben",  "min": 0, "max": 180, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Abstand unten", "min": 0, "max": 180, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "principle",
+      "name": "Prinzip",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titel", "default": "Selbst gewesen" },
+        { "type": "richtext", "id": "body", "label": "Text", "default": "<p>Jeder empfohlene Spot wurde von uns persönlich besucht. Wenn wir nicht da waren, kommt er nicht in den Guide.</p>" },
+        { "type": "text", "id": "example", "label": "Beispiel (optional)", "default": "" }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Prinzipien",
+      "blocks": [
+        { "type": "principle", "settings": { "title": "Selbst gewesen", "body": "<p>Jeder empfohlene Spot wurde von uns persönlich besucht. Wenn wir nicht da waren, kommt er nicht in den Guide.</p>" } },
+        { "type": "principle", "settings": { "title": "Keine bezahlten Top-Listen", "body": "<p>Hotels, Restaurants oder Aktivitäten landen niemals in einer Empfehlung, weil sie dafür gezahlt haben. Punkt.</p>" } },
+        { "type": "principle", "settings": { "title": "Affiliates kennzeichnen wir", "body": "<p>Wenn ein Link uns Provision bringt, sagen wir das. Es ändert nichts an der Empfehlung – aber du sollst es wissen.</p>" } },
+        { "type": "principle", "settings": { "title": "Updates statt Re-Releases", "body": "<p>Käufer mit aktivem Konto bekommen jede neue Version automatisch. Keine neue Auflage, keine erneute Bezahlung.</p>" } },
+        { "type": "principle", "settings": { "title": "Trennung von Social und Shop", "body": "<p>Sponsored Content auf Instagram ist gekennzeichnet und beeinflusst niemals Empfehlungen im Shop. Beides läuft strikt getrennt.</p>" } },
+        { "type": "principle", "settings": { "title": "14 Tage Geld zurück", "body": "<p>Bringt der Guide dich nicht weiter, gibt es dein Geld zurück. Ohne Wenn und Aber, ohne Begründung.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
