@@ -1,0 +1,505 @@
+{%- comment -%}
+  section-reels.liquid — 9:16 Vertical-Video-Grid mit Fullscreen-Lightbox.
+
+  Pure HTML/CSS/Vanilla-JS. Nutzt:
+    - native <dialog> für Fullscreen-Lightbox (a11y, ESC schließt)
+    - IntersectionObserver für autoplay/pause beim Scroll
+    - prefers-reduced-motion stoppt Auto-Play
+    - Pointer-Events für Tap-to-Sound + Swipe-Navigation in Fullscreen
+
+  Block enthält Video-File (Shopify File-Reference), Poster-Image,
+  optional ein verlinktes Produkt für Tag-Overlay, und Destination-Label.
+
+  Verwendung: PDP "More from this trip" / Homepage / Destination-Pages.
+{%- endcomment -%}
+
+<div
+  class="section-reels {{ section.settings.color_bg }}"
+  style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;"
+  data-reels-section
+>
+  <div class="{{ section.settings.width }} section-padding">
+
+    {%- if section.settings.title != blank or section.settings.kicker != blank -%}
+      <header class="reels__header">
+        {%- if section.settings.kicker != blank -%}
+          <p class="reels__kicker font-mono-2030">{{ section.settings.kicker | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="reels__title heading-size-{{ section.settings.text_size }}">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subtitle != blank -%}
+          <div class="reels__subtitle rte-setting">{{ section.settings.subtitle }}</div>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ul class="reels__grid" data-reels-grid role="list">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign video      = block.settings.video_file
+            assign poster     = block.settings.poster
+            assign label      = block.settings.label
+            assign caption    = block.settings.caption
+            assign linked     = block.settings.linked_product
+            assign cta_text   = block.settings.cta_text | default: 'Zum Produkt'
+          -%}
+          <li
+            class="reels__item"
+            data-reel
+            data-index="{{ forloop.index0 }}"
+            data-label="{{ label | escape }}"
+            data-caption="{{ caption | escape }}"
+            {%- if linked != blank %}
+              data-product-url="{{ linked.url }}"
+              data-product-title="{{ linked.title | escape }}"
+              data-product-price="{{ linked.price | money }}"
+              data-product-cta="{{ cta_text | escape }}"
+            {%- endif -%}
+            {{ block.shopify_attributes }}
+          >
+            <button class="reels__tile" type="button" data-reel-open aria-label="Video „{{ label | default: caption | escape }}\" in Vollbild öffnen">
+              <span class="reels__media">
+                {%- if poster != blank -%}
+                  <img
+                    class="reels__poster"
+                    src="{{ poster | image_url: width: 720 }}"
+                    srcset="{{ poster | image_url: width: 360 }} 360w, {{ poster | image_url: width: 720 }} 720w, {{ poster | image_url: width: 1080 }} 1080w"
+                    sizes="(min-width: 990px) 25vw, 50vw"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    width="{{ poster.width }}"
+                    height="{{ poster.height }}"
+                  >
+                {%- endif -%}
+
+                {%- if video != blank -%}
+                  <video
+                    class="reels__video"
+                    data-reel-video
+                    {%- if poster != blank %} poster="{{ poster | image_url: width: 720 }}"{% endif %}
+                    muted
+                    loop
+                    playsinline
+                    preload="none"
+                    aria-hidden="true"
+                  >
+                    {%- for source in video.sources -%}
+                      <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                    {%- endfor -%}
+                  </video>
+                {%- elsif poster == blank -%}
+                  <span class="reels__placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+                {%- endif -%}
+
+                <span class="reels__play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+
+                {%- if label != blank -%}
+                  <span class="reels__pin font-mono-2030" aria-hidden="true">{{ label | escape }}</span>
+                {%- endif -%}
+              </span>
+              {%- if caption != blank -%}
+                <span class="reels__caption font-body-2030">{{ caption | escape }}</span>
+              {%- endif -%}
+            </button>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+  </div>
+</div>
+
+<dialog class="reels__dialog" data-reels-dialog aria-labelledby="reelsDialogLabel">
+  <div class="reels__dialog-inner">
+    <video
+      class="reels__dialog-video"
+      data-reels-dialog-video
+      controls
+      playsinline
+      preload="metadata"
+    ></video>
+    <div class="reels__dialog-meta">
+      <p class="reels__dialog-label font-mono-2030" id="reelsDialogLabel" data-reels-dialog-label></p>
+      <p class="reels__dialog-caption font-body-2030" data-reels-dialog-caption></p>
+      <a class="reels__dialog-cta" data-reels-dialog-cta hidden>
+        <span data-reels-dialog-cta-text></span>
+        <span class="reels__dialog-cta-price" data-reels-dialog-cta-price></span>
+      </a>
+    </div>
+    <nav class="reels__dialog-nav" aria-label="Reel-Navigation">
+      <button type="button" class="reels__dialog-nav-btn" data-reels-dialog-prev aria-label="Vorheriges Video">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="reels__dialog-nav-btn" data-reels-dialog-next aria-label="Nächstes Video">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </nav>
+    <button type="button" class="reels__dialog-close" data-reels-dialog-close aria-label="Schließen">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</dialog>
+
+<style>
+  .section-reels { padding-top: var(--PT, 60px); padding-bottom: var(--PB, 60px); }
+  .reels__header { text-align: center; max-width: 720px; margin: 0 auto 2.2rem; }
+  .reels__kicker {
+    text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 0.78rem; color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    margin: 0 0 0.6rem;
+  }
+  .reels__title {
+    font-family: var(--font-2030-display, ui-serif, Georgia, serif);
+    font-weight: 500; line-height: 1.05; margin: 0 0 0.6rem;
+  }
+  .reels__subtitle {
+    font-family: var(--font-2030-body, system-ui, sans-serif);
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+  }
+
+  .reels__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    list-style: none; padding: 0; margin: 0;
+  }
+  @media (min-width: 720px) { .reels__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 990px) { .reels__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; } }
+
+  .reels__item { margin: 0; }
+  .reels__tile {
+    width: 100%; padding: 0; border: 0; background: transparent;
+    cursor: pointer; display: flex; flex-direction: column; gap: 0.55rem;
+    text-align: left; color: inherit;
+    font: inherit;
+  }
+  .reels__media {
+    position: relative; display: block; overflow: hidden;
+    border-radius: var(--RADIUS-LG, 14px);
+    background: var(--COLOR-BODY-TEXT-A05, #f0eee9);
+    aspect-ratio: 9 / 16;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+  }
+  .reels__poster, .reels__video, .reels__placeholder {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .reels__video { opacity: 0; transition: opacity 240ms ease; }
+  [data-reel].is-playing .reels__video { opacity: 1; }
+  .reels__play {
+    position: absolute; right: 0.7rem; bottom: 0.7rem;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.92); color: #1a1a1a;
+    display: grid; place-items: center;
+    backdrop-filter: blur(6px);
+    transition: transform 200ms ease;
+  }
+  .reels__tile:hover .reels__play,
+  .reels__tile:focus-visible .reels__play { transform: scale(1.08); }
+  .reels__pin {
+    position: absolute; top: 0.7rem; left: 0.7rem;
+    background: rgba(0,0,0,0.55); color: #fff;
+    padding: 0.22rem 0.55rem; border-radius: 999px;
+    font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+    backdrop-filter: blur(6px);
+  }
+  .reels__caption {
+    font-size: 0.92rem;
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+    line-height: 1.35;
+  }
+
+  .reels__tile:focus-visible {
+    outline: 2px solid var(--COLOR-ACCENT-COOL, #3aa77b);
+    outline-offset: 4px;
+    border-radius: var(--RADIUS-LG, 14px);
+  }
+
+  /* Dialog ============================================================ */
+  .reels__dialog[open] {
+    border: 0; padding: 0; background: transparent;
+    inset: 0; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh;
+    overflow: hidden;
+  }
+  .reels__dialog::backdrop { background: rgba(10, 12, 16, 0.92); }
+  .reels__dialog-inner {
+    position: relative; width: 100%; height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    color: #fff;
+    background: #0a0c10;
+  }
+  .reels__dialog-video {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    background: #000;
+  }
+  .reels__dialog-meta {
+    padding: 1rem 1.1rem 1.4rem;
+    display: grid; gap: 0.45rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  }
+  .reels__dialog-label {
+    text-transform: uppercase; letter-spacing: 0.16em;
+    font-size: 0.74rem; opacity: 0.8; margin: 0;
+  }
+  .reels__dialog-caption { margin: 0; font-size: 1.05rem; }
+  .reels__dialog-cta {
+    display: inline-flex; gap: 0.6rem; align-items: center;
+    margin-top: 0.4rem; padding: 0.55rem 0.9rem; border-radius: 999px;
+    background: #fff; color: #0a0c10; text-decoration: none; font-weight: 500;
+    width: max-content;
+  }
+  .reels__dialog-cta-price { opacity: 0.7; }
+
+  .reels__dialog-nav {
+    position: absolute; top: 50%; left: 0; right: 0;
+    display: flex; justify-content: space-between; padding: 0 0.6rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .reels__dialog-nav-btn {
+    pointer-events: auto;
+    width: 44px; height: 44px; border-radius: 50%; border: 0;
+    background: rgba(255,255,255,0.12); color: #fff; cursor: pointer;
+    display: grid; place-items: center; backdrop-filter: blur(6px);
+  }
+  .reels__dialog-nav-btn:hover { background: rgba(255,255,255,0.22); }
+  .reels__dialog-close {
+    position: absolute; top: 0.7rem; right: 0.7rem;
+    width: 40px; height: 40px; border-radius: 50%; border: 0;
+    background: rgba(255,255,255,0.14); color: #fff; cursor: pointer;
+    display: grid; place-items: center; backdrop-filter: blur(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reels__video { transition: none; }
+  }
+</style>
+
+<script>
+(function () {
+  if (window.__reelsInit) return;
+  window.__reelsInit = true;
+
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function autoplayObserver() {
+    if (prefersReduced) return null;
+    return new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var item = entry.target;
+        var v = item.querySelector('[data-reel-video]');
+        if (!v) return;
+        if (entry.isIntersecting) {
+          v.play().then(function () { item.classList.add('is-playing'); }).catch(function () {});
+        } else {
+          v.pause();
+          item.classList.remove('is-playing');
+        }
+      });
+    }, { threshold: 0.55 });
+  }
+
+  function getReels(scope) {
+    return Array.from((scope || document).querySelectorAll('[data-reel]'));
+  }
+
+  function openDialog(allReels, idx) {
+    var dlg = document.querySelector('[data-reels-dialog]');
+    var v   = document.querySelector('[data-reels-dialog-video]');
+    var labelEl = document.querySelector('[data-reels-dialog-label]');
+    var capEl   = document.querySelector('[data-reels-dialog-caption]');
+    var ctaEl   = document.querySelector('[data-reels-dialog-cta]');
+    var ctaTextEl = document.querySelector('[data-reels-dialog-cta-text]');
+    var ctaPriceEl = document.querySelector('[data-reels-dialog-cta-price]');
+    if (!dlg || !v) return;
+
+    function show(i) {
+      var reel = allReels[i];
+      if (!reel) return;
+      var srcVideo = reel.querySelector('[data-reel-video]');
+      v.innerHTML = srcVideo ? srcVideo.innerHTML : '';
+      v.load();
+      v.play().catch(function () {});
+
+      labelEl.textContent = reel.dataset.label || '';
+      capEl.textContent = reel.dataset.caption || '';
+      var url = reel.dataset.productUrl;
+      if (url) {
+        ctaEl.href = url;
+        ctaTextEl.textContent = reel.dataset.productCta || 'Zum Produkt';
+        ctaPriceEl.textContent = reel.dataset.productPrice || '';
+        ctaEl.hidden = false;
+      } else {
+        ctaEl.hidden = true;
+      }
+      dlg.dataset.currentIndex = i;
+    }
+
+    dlg.dataset.currentIndex = idx;
+    if (typeof dlg.showModal === 'function') dlg.showModal();
+    else dlg.setAttribute('open', '');
+    show(idx);
+
+    var prevBtn = document.querySelector('[data-reels-dialog-prev]');
+    var nextBtn = document.querySelector('[data-reels-dialog-next]');
+    var closeBtn = document.querySelector('[data-reels-dialog-close]');
+
+    function nav(delta) {
+      var i = parseInt(dlg.dataset.currentIndex, 10) || 0;
+      i = (i + delta + allReels.length) % allReels.length;
+      show(i);
+    }
+    prevBtn.onclick = function () { nav(-1); };
+    nextBtn.onclick = function () { nav(1); };
+    closeBtn.onclick = function () { dlg.close(); };
+
+    function onKey(e) {
+      if (!dlg.open) { document.removeEventListener('keydown', onKey); return; }
+      if (e.key === 'ArrowLeft') nav(-1);
+      if (e.key === 'ArrowRight') nav(1);
+    }
+    document.addEventListener('keydown', onKey);
+
+    // swipe
+    var startX = null;
+    function ts(e) { startX = e.touches[0].clientX; }
+    function te(e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 60) nav(dx < 0 ? 1 : -1);
+      startX = null;
+    }
+    v.addEventListener('touchstart', ts, { passive: true });
+    v.addEventListener('touchend', te, { passive: true });
+
+    dlg.addEventListener('close', function () {
+      v.pause(); v.removeAttribute('src'); v.innerHTML = '';
+      v.removeEventListener('touchstart', ts);
+      v.removeEventListener('touchend', te);
+    }, { once: true });
+  }
+
+  function bootstrap(scope) {
+    var observer = autoplayObserver();
+    var reels = getReels(scope);
+    reels.forEach(function (reel) {
+      if (observer) observer.observe(reel);
+      var btn = reel.querySelector('[data-reel-open]');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var allReels = getReels(reel.closest('[data-reels-section]'));
+          var idx = allReels.indexOf(reel);
+          openDialog(allReels, Math.max(0, idx));
+        });
+      }
+    });
+  }
+
+  if (document.readyState !== 'loading') bootstrap();
+  else document.addEventListener('DOMContentLoaded', function () { bootstrap(); });
+
+  document.addEventListener('shopify:section:load', function (e) { bootstrap(e.target); });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Reels",
+  "tag": "section",
+  "class": "section-section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "header", "content": "Inhalt" },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Live aus dem Trip" },
+    { "type": "text", "id": "title", "label": "Überschrift", "default": "Reels von Laura & Finn" },
+    { "type": "richtext", "id": "subtitle", "label": "Untertitel", "default": "<p>Tipp das Video an, um Ton und Vollbild zu öffnen.</p>" },
+    {
+      "type": "select", "id": "text_size", "label": "Textgröße", "default": "medium",
+      "options": [
+        { "value": "small",  "label": "Klein" },
+        { "value": "medium", "label": "Mittel" },
+        { "value": "large",  "label": "Groß" }
+      ]
+    },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select", "id": "width", "label": "Breite", "default": "wrapper",
+      "options": [
+        { "value": "wrapper",         "label": "Standard" },
+        { "value": "wrapper--narrow", "label": "Schmal" },
+        { "value": "wrapper--full",   "label": "Volle Breite" }
+      ]
+    },
+    {
+      "type": "select", "id": "color_bg", "label": "Hintergrund", "default": "bg--neutral",
+      "options": [
+        { "value": "bg--neutral",            "label": "Neutral" },
+        { "value": "bg--accent",             "label": "Akzent" },
+        { "value": "bg--invert palette--dark","label": "Dunkel" }
+      ]
+    },
+    { "type": "range", "id": "padding_top",    "label": "Abstand oben",  "min": 0, "max": 180, "step": 4, "unit": "px", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "label": "Abstand unten", "min": 0, "max": 180, "step": 4, "unit": "px", "default": 60 }
+  ],
+  "blocks": [
+    {
+      "type": "reel",
+      "name": "Reel",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video_file",
+          "label": "Video-Datei (9:16 empfohlen)"
+        },
+        {
+          "type": "image_picker",
+          "id": "poster",
+          "label": "Poster-Bild"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Pin-Label (z. B. „Bali · Sunset\")",
+          "default": "Bali"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Bildunterschrift",
+          "default": "Sonnenuntergang in Uluwatu"
+        },
+        {
+          "type": "product",
+          "id": "linked_product",
+          "label": "Verlinktes Produkt (optional)"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA-Text",
+          "default": "Zum Produkt"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Reels",
+      "blocks": [
+        { "type": "reel" },
+        { "type": "reel" },
+        { "type": "reel" },
+        { "type": "reel" }
+      ]
+    }
+  ]
+}
+{% endschema %}
