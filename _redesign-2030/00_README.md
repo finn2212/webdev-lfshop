@@ -5,14 +5,34 @@ Mehragenten-Analyse und Redesign-Vorschlag für laurandfinn.com.
 ## Dateien
 
 | # | Datei | Zweck |
-|---|---|---|
+| --- | --- | --- |
 | 0 | [00_README.md](00_README.md) | Diese Übersicht |
 | 1 | [01_synthesis_brief.md](01_synthesis_brief.md) | **V1** — Synthese aus 3 Persona-Reviews + Code-Audit (Big-Bang-Plan, 51 PT) |
 | 2 | [02_final_proposal.md](02_final_proposal.md) | **V2 (final)** — Iterativer 4-Phasen-Plan mit eingearbeitetem Challenger-Pushback (85 PT) |
+| 3 | [03_content_checklist.md](03_content_checklist.md) | Was Finn an Content / Zugängen / Antworten liefert |
+| 4 | [04_metafields.md](04_metafields.md) | Shopify-Admin-Metafields für Trust-Signals |
+| 5 | [05_localization.md](05_localization.md) | DE → EN Übersetzungs-Plan + Vorab-Übersetzungen aller neuen Strings |
+
+## Code-Stand auf `redesign-2030`-Branch
+
+**Phase 0 (alle merged):**
+
+- `feat/p0-cookie-consent` → vanilla-cookieconsent v3 ersetzt gettermscmp ([snippets/cookie-consent.liquid](../snippets/cookie-consent.liquid))
+- `feat/p0-fonts` → 4 Open-Source-Variable-Fonts via Fontsource self-hosted ([snippets/fonts-2030.liquid](../snippets/fonts-2030.liquid))
+- `feat/p0-trust-signals` → Update-Datum + Geld-zurück + Lieferumfang auf PDPs ([snippets/trust-signals.liquid](../snippets/trust-signals.liquid))
+
+**Phase 1 (alle merged):**
+
+- `feat/p1-before-after-slider` → Drag-Reveal-Slider für Preset-PDPs ([sections/section-before-after.liquid](../sections/section-before-after.liquid))
+- `feat/p1-pdp-reels` → 9:16-Reels-Grid mit `<dialog>`-Fullscreen ([sections/section-reels.liquid](../sections/section-reels.liquid))
+- `feat/p1-newsletter-magnet` → Lead-Magnet-Popup, consent-aware ([sections/section-lead-magnet.liquid](../sections/section-lead-magnet.liquid))
+- `feat/p1-redaktionsprinzipien` → Trust-Page mit 6 Default-Prinzipien ([sections/section-principles.liquid](../sections/section-principles.liquid) + [templates/page.redaktionsprinzipien.json](../templates/page.redaktionsprinzipien.json))
+- `feat/p1-bundle-landings` → Honeymoon + Family-Slow-Travel-Landings ([sections/section-bundle-spotlight.liquid](../sections/section-bundle-spotlight.liquid) + [templates/page.honeymoon.json](../templates/page.honeymoon.json) + [templates/page.family-slow-travel.json](../templates/page.family-slow-travel.json))
+- `feat/p1-en-locales` → Übersetzungs-Plan + Vorab-Strings (Doku)
 
 ## Workflow (Runde 1 abgeschlossen)
 
-```
+```text
 [Persona-Review Gen Z] ─┐
 [Persona-Review Couple] ┼─→ V1 Synthese ─→ [Challenger-Review] ─→ V2 Final
 [Persona-Review Nomad]  ┤
