@@ -1,0 +1,552 @@
+{%- comment -%}
+  section-before-after.liquid — Drag-Reveal Vorher-/Nachher-Slider.
+
+  Pure CSS + vanilla JS, keine externe Dependency. Touch + Pointer + Tastatur-A11y
+  (per <input type="range">). Bei mehreren Blöcken: CSS-Scroll-Snap-Carousel.
+
+  Speziell für Lightroom-Preset-PDPs entwickelt — ist aber auch auf der Homepage
+  oder einer Landing-Page einbettbar (über Theme-Editor).
+{%- endcomment -%}
+
+{%- liquid
+  assign block_count = section.blocks.size
+  assign is_single = false
+  if block_count == 1
+    assign is_single = true
+  endif
+-%}
+
+<div
+  class="section-before-after {{ section.settings.color_bg }}"
+  style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;"
+  data-ba-section
+>
+  <div class="{{ section.settings.width }} section-padding">
+
+    {%- if section.settings.title != blank or section.settings.subtitle != blank -%}
+      <header class="section-before-after__header">
+        {%- if section.settings.kicker != blank -%}
+          <p class="section-before-after__kicker font-mono-2030">{{ section.settings.kicker | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="section-before-after__title heading-size-{{ section.settings.text_size }}">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subtitle != blank -%}
+          <div class="section-before-after__subtitle rte-setting">{{ section.settings.subtitle }}</div>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- if block_count > 0 -%}
+      <div
+        class="section-before-after__track {% if is_single %}is-single{% else %}is-carousel{% endif %}"
+        data-ba-track
+      >
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign before = block.settings.image_before
+            assign after  = block.settings.image_after
+            assign label_before = block.settings.label_before | default: 'Original'
+            assign label_after  = block.settings.label_after  | default: 'Mit Preset'
+            assign caption = block.settings.caption
+            assign initial = block.settings.initial_position | default: 50
+            assign aspect_ratio = block.settings.aspect_ratio | default: 0.6667
+            assign aspect_pct = aspect_ratio | times: 100
+          -%}
+
+          <figure
+            class="ba-card"
+            data-ba
+            style="--ba-aspect: {{ aspect_pct }}%; --ba-initial: {{ initial }}%;"
+            {{ block.shopify_attributes }}
+          >
+            <div class="ba-stage" data-ba-stage>
+              {%- if after != blank -%}
+                <img
+                  class="ba-img ba-img--after"
+                  src="{{ after | image_url: width: 1600 }}"
+                  srcset="{{ after | image_url: width: 600 }} 600w, {{ after | image_url: width: 1000 }} 1000w, {{ after | image_url: width: 1600 }} 1600w, {{ after | image_url: width: 2200 }} 2200w"
+                  sizes="(min-width: 990px) 60vw, 95vw"
+                  alt="{{ after.alt | default: label_after | escape }}"
+                  loading="lazy"
+                  decoding="async"
+                  width="{{ after.width }}"
+                  height="{{ after.height }}"
+                >
+              {%- else -%}
+                <span class="ba-img ba-img--placeholder ba-img--after">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+              {%- endif -%}
+
+              {%- if before != blank -%}
+                <div class="ba-clip" data-ba-clip>
+                  <img
+                    class="ba-img ba-img--before"
+                    src="{{ before | image_url: width: 1600 }}"
+                    srcset="{{ before | image_url: width: 600 }} 600w, {{ before | image_url: width: 1000 }} 1000w, {{ before | image_url: width: 1600 }} 1600w, {{ before | image_url: width: 2200 }} 2200w"
+                    sizes="(min-width: 990px) 60vw, 95vw"
+                    alt="{{ before.alt | default: label_before | escape }}"
+                    loading="lazy"
+                    decoding="async"
+                    width="{{ before.width }}"
+                    height="{{ before.height }}"
+                  >
+                </div>
+              {%- else -%}
+                <div class="ba-clip" data-ba-clip>
+                  <span class="ba-img ba-img--placeholder ba-img--before">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+                </div>
+              {%- endif -%}
+
+              <span class="ba-label ba-label--before font-mono-2030" aria-hidden="true">{{ label_before | escape }}</span>
+              <span class="ba-label ba-label--after font-mono-2030" aria-hidden="true">{{ label_after | escape }}</span>
+
+              <div class="ba-handle" data-ba-handle aria-hidden="true">
+                <span class="ba-handle__line"></span>
+                <span class="ba-handle__knob">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M9 6l-5 6 5 6"/>
+                    <path d="M15 6l5 6-5 6"/>
+                  </svg>
+                </span>
+              </div>
+
+              <label class="ba-range">
+                <span class="visually-hidden">Vorher-/Nachher-Vergleich verschieben — {{ label_before | escape }} bis {{ label_after | escape }}</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="0.5"
+                  value="{{ initial }}"
+                  data-ba-input
+                  aria-valuetext="{{ initial }}% {{ label_after | escape }}"
+                >
+              </label>
+            </div>
+
+            {%- if caption != blank -%}
+              <figcaption class="ba-caption font-body-2030">{{ caption | escape }}</figcaption>
+            {%- endif -%}
+          </figure>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="section-before-after__empty">
+        <p>{{ 'sections.before_after.empty' | t | default: 'Füge im Theme-Editor mindestens einen Block hinzu (Bild vorher + Bild nachher).' }}</p>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+<style>
+  .section-before-after {
+    padding-top: var(--PT, 60px);
+    padding-bottom: var(--PB, 60px);
+  }
+  .section-before-after__header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+  }
+  .section-before-after__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    margin: 0 0 0.6rem;
+  }
+  .section-before-after__title {
+    font-family: var(--font-2030-display, ui-serif, Georgia, serif);
+    font-weight: 500;
+    margin: 0 0 0.6rem;
+    line-height: 1.05;
+  }
+  .section-before-after__subtitle {
+    font-family: var(--font-2030-body, system-ui, sans-serif);
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+  }
+
+  .section-before-after__track {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .section-before-after__track.is-carousel {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(85%, 60ch);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+    padding-bottom: 0.75rem;
+  }
+  @media (min-width: 990px) {
+    .section-before-after__track.is-carousel {
+      grid-auto-columns: minmax(60%, 720px);
+    }
+  }
+  .section-before-after__track.is-single {
+    max-width: 920px;
+    margin-inline: auto;
+  }
+  .section-before-after__track.is-carousel > .ba-card {
+    scroll-snap-align: center;
+  }
+
+  .ba-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .ba-stage {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--RADIUS-LG, 14px);
+    background: var(--COLOR-BODY-TEXT-A05, #f0eee9);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.10);
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    user-select: none;
+    touch-action: pan-y;
+  }
+  @supports not (aspect-ratio: 3/2) {
+    .ba-stage::before { content: ""; display: block; padding-top: var(--ba-aspect, 66.67%); }
+  }
+  .ba-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    display: block;
+  }
+  .ba-img--placeholder {
+    display: grid;
+    place-items: center;
+    background: var(--COLOR-BODY-TEXT-A05, #f0eee9);
+  }
+  .ba-clip {
+    position: absolute;
+    inset: 0;
+    width: var(--ba-pos, 50%);
+    overflow: hidden;
+    will-change: width;
+  }
+  .ba-clip .ba-img {
+    width: 100vw;
+    max-width: none;
+  }
+  .ba-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--ba-pos, 50%);
+    width: 2px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 0 14px rgba(0,0,0,0.2);
+    transform: translateX(-1px);
+    pointer-events: none;
+    will-change: left;
+  }
+  .ba-handle__knob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  }
+  .ba-label {
+    position: absolute;
+    top: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    backdrop-filter: blur(6px);
+    pointer-events: none;
+  }
+  .ba-label--before { left: 0.7rem; }
+  .ba-label--after  { right: 0.7rem; }
+
+  .ba-range {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    cursor: ew-resize;
+  }
+  .ba-range input[type="range"] {
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: ew-resize;
+    margin: 0;
+    opacity: 0;
+  }
+  .ba-range input[type="range"]:focus-visible + * {
+    outline: 2px solid var(--COLOR-ACCENT-COOL, #3aa77b);
+    outline-offset: 4px;
+  }
+  /* visible focus ring on the knob via parent focus-within trick */
+  .ba-stage:focus-within .ba-handle__knob {
+    outline: 2px solid var(--COLOR-ACCENT-COOL, #3aa77b);
+    outline-offset: 3px;
+  }
+
+  .ba-caption {
+    text-align: center;
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ba-handle, .ba-clip { transition: none !important; }
+  }
+
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<script>
+(function () {
+  if (window.__baInit) return;
+  window.__baInit = true;
+
+  function setPos(card, pct) {
+    var p = Math.max(0, Math.min(100, pct));
+    card.style.setProperty('--ba-pos', p + '%');
+    var input = card.querySelector('[data-ba-input]');
+    if (input && parseFloat(input.value) !== p) input.value = p;
+    if (input) input.setAttribute('aria-valuetext', Math.round(p) + '%');
+  }
+
+  function pctFromEvent(stage, clientX) {
+    var rect = stage.getBoundingClientRect();
+    return ((clientX - rect.left) / rect.width) * 100;
+  }
+
+  function init(card) {
+    var stage = card.querySelector('[data-ba-stage]');
+    var input = card.querySelector('[data-ba-input]');
+    if (!stage || !input) return;
+
+    setPos(card, parseFloat(input.value) || 50);
+
+    input.addEventListener('input', function () {
+      setPos(card, parseFloat(input.value));
+    });
+
+    var dragging = false;
+    var pointerDown = function (e) {
+      dragging = true;
+      stage.setPointerCapture && stage.setPointerCapture(e.pointerId);
+      setPos(card, pctFromEvent(stage, e.clientX));
+    };
+    var pointerMove = function (e) {
+      if (!dragging) return;
+      setPos(card, pctFromEvent(stage, e.clientX));
+    };
+    var pointerUp = function (e) {
+      dragging = false;
+      stage.releasePointerCapture && stage.releasePointerCapture(e.pointerId);
+    };
+
+    stage.addEventListener('pointerdown', pointerDown);
+    stage.addEventListener('pointermove', pointerMove);
+    stage.addEventListener('pointerup', pointerUp);
+    stage.addEventListener('pointercancel', pointerUp);
+  }
+
+  function bootstrap(scope) {
+    (scope || document).querySelectorAll('[data-ba]').forEach(init);
+  }
+  bootstrap();
+
+  // Re-init when Shopify theme-editor reloads the section
+  document.addEventListener('shopify:section:load', function (e) { bootstrap(e.target); });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Vorher / Nachher",
+  "tag": "section",
+  "class": "section-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Inhalt"
+    },
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker (klein)",
+      "default": "Mit & ohne Preset"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Überschrift",
+      "default": "Sieh den Unterschied."
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Untertitel",
+      "default": "<p>Schiebe den Regler. Links: dein Original. Rechts: das Bild mit unserem Lightroom-Preset.</p>"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Textgröße",
+      "default": "medium",
+      "options": [
+        { "value": "small", "label": "Klein" },
+        { "value": "medium", "label": "Mittel" },
+        { "value": "large", "label": "Groß" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Breite",
+      "default": "wrapper",
+      "options": [
+        { "value": "wrapper", "label": "Standard" },
+        { "value": "wrapper--narrow", "label": "Schmal" },
+        { "value": "wrapper--full", "label": "Volle Breite" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_bg",
+      "label": "Hintergrund",
+      "default": "bg--neutral",
+      "options": [
+        { "value": "bg--neutral", "label": "Neutral" },
+        { "value": "bg--accent", "label": "Akzent" },
+        { "value": "bg--invert palette--dark", "label": "Dunkel" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Abstand oben",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Abstand unten",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pair",
+      "name": "Bildpaar",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_before",
+          "label": "Bild – Vorher (Original)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_after",
+          "label": "Bild – Nachher (Mit Preset)"
+        },
+        {
+          "type": "text",
+          "id": "label_before",
+          "label": "Label „Vorher\"",
+          "default": "Original"
+        },
+        {
+          "type": "text",
+          "id": "label_after",
+          "label": "Label „Nachher\"",
+          "default": "Mit Preset"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Bildunterschrift",
+          "default": "Bali · Tegallalang Reisterrassen"
+        },
+        {
+          "type": "range",
+          "id": "initial_position",
+          "label": "Startposition Slider",
+          "min": 10,
+          "max": 90,
+          "step": 5,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "select",
+          "id": "aspect_ratio",
+          "label": "Bildverhältnis",
+          "default": "0.6667",
+          "options": [
+            { "value": "1.0",    "label": "1:1 Quadrat" },
+            { "value": "0.8",    "label": "5:4 Editorial" },
+            { "value": "0.6667", "label": "3:2 Klassisch" },
+            { "value": "0.5625", "label": "16:9 Cinematic" },
+            { "value": "1.25",   "label": "4:5 Hochformat" },
+            { "value": "1.7777", "label": "9:16 Reels" }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Vorher / Nachher",
+      "blocks": [
+        { "type": "pair" }
+      ]
+    }
+  ]
+}
+{% endschema %}
