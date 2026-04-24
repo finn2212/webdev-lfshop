@@ -99,5 +99,5 @@
       }
     }
   },
-  "order": ["hero", "intro", "blog-custom", "main", "lead-magnet"]
+  "order": ["hero", "intro", "main", "lead-magnet"]
 }
