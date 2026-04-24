@@ -43,13 +43,13 @@ Alle anderen Seiten sollen dieses Muster visuell/strukturell matchen:
 
 | Seite | Template | Gap zur Baseline |
 |---|---|---|
-| Bali (Destination-Hub) | [page.bali.json](../templates/page.bali.json) | ⚠️ **Kein Hero** — startet direkt mit Bundle-Spotlight. Kein Editorial-Intro. |
-| Südafrika | [page.suedafrika.json](../templates/page.suedafrika.json) | ⚠️ Gleiches Muster wie Bali |
-| Thailand | [page.thailand.json](../templates/page.thailand.json) | ⚠️ Gleiches Muster wie Bali |
-| Australien | [page.australien.json](../templates/page.australien.json) | ⚠️ Kein Hero, keine Reels (Content fehlt?) |
+| Bali (Destination-Hub) | [page.bali.json](../templates/page.bali.json) | ✅ Hero + Intro + Lead-Magnet + 3 YouTube-Reels (Commit `8ef70b7`). Hero-Bild im Admin noch auf besseren Landscape-Shot stellen. |
+| Südafrika | [page.suedafrika.json](../templates/page.suedafrika.json) | ⚠️ Kein Hero, kein Intro, keine Reels befüllt |
+| Thailand | [page.thailand.json](../templates/page.thailand.json) | ⚠️ Kein Hero, kein Intro, keine Reels befüllt |
+| Australien | [page.australien.json](../templates/page.australien.json) | ⚠️ Kein Hero, keine Reels-Section |
 | Familienreisen | [page.familienreisen.json](../templates/page.familienreisen.json) | ⚠️ Kein Hero |
 
-**Fix-Muster für alle 5:** `section-editorial-hero` (Destination-Cover) + `section-editorial-text` (kurzer Lead) davorschalten. Rest bleibt.
+**Fix-Muster für alle 4 verbleibenden:** `section-editorial-hero` + `section-editorial-text` davor, YouTube-Reels in `section-reels` einhängen (Section unterstützt ab `a2f16d7` YouTube-URLs), Lead-Magnet ans Ende. Rest bleibt.
 
 ### ⚠️ Nur P0-Trust-Signals, sonst Alt-Look
 
