@@ -1,0 +1,84 @@
+{%- comment -%}
+  fonts-2030.liquid — Open-Source Variable-Font-Stack für das Travel-2030-Redesign.
+
+  Geladen parallel zum bestehenden font-settings.css des Story-Themes — bricht
+  also nichts. Die neuen Tokens (--font-2030-*) werden in neuen Sections /
+  Snippets verwendet (z. B. Trust-Banner, später Horizon-Sections).
+
+  Sources: alle via Fontsource (https://fontsource.org/), MIT/OFL.
+  Files in /assets/:
+    - fraunces-vf.woff2          (Display, wght 100..900)
+    - fraunces-vf-italic.woff2   (Display italic)
+    - inter-vf.woff2             (Body, wght 100..900)
+    - caveat-vf.woff2            (Hand, "Laura's Note", wght 400..700)
+    - jetbrains-mono-vf.woff2    (Mono, POI codes / coordinates)
+{%- endcomment -%}
+
+<link rel="preload" as="font" type="font/woff2" href="{{ 'inter-vf.woff2' | asset_url }}" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="{{ 'fraunces-vf.woff2' | asset_url }}" crossorigin>
+
+<style>
+  @font-face {
+    font-family: 'Fraunces VF';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('{{ "fraunces-vf.woff2" | asset_url }}') format('woff2-variations');
+  }
+  @font-face {
+    font-family: 'Fraunces VF';
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('{{ "fraunces-vf-italic.woff2" | asset_url }}') format('woff2-variations');
+  }
+  @font-face {
+    font-family: 'Inter VF';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('{{ "inter-vf.woff2" | asset_url }}') format('woff2-variations');
+  }
+  @font-face {
+    font-family: 'Caveat VF';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('{{ "caveat-vf.woff2" | asset_url }}') format('woff2-variations');
+  }
+  @font-face {
+    font-family: 'JetBrains Mono VF';
+    font-style: normal;
+    font-weight: 100 800;
+    font-display: swap;
+    src: url('{{ "jetbrains-mono-vf.woff2" | asset_url }}') format('woff2-variations');
+  }
+
+  :root {
+    --font-2030-display:   'Fraunces VF', 'Fraunces', ui-serif, Georgia, serif;
+    --font-2030-editorial: 'Fraunces VF', 'Fraunces', ui-serif, Georgia, serif;
+    --font-2030-body:      'Inter VF', 'Inter', system-ui, -apple-system, sans-serif;
+    --font-2030-hand:      'Caveat VF', 'Caveat', cursive;
+    --font-2030-mono:      'JetBrains Mono VF', ui-monospace, 'SF Mono', Menlo, monospace;
+
+    /* Global override of Story-theme font tokens — applies brand-wide
+       (header, footer, homepage, PDPs, blog, all legacy sections). The
+       theme-editor settings under "Typography" are bypassed but still
+       safe to leave on (they only affect old --FONT-WEIGHT-* values which
+       work fine with variable fonts).
+       This block must render AFTER snippets/css-variables.liquid — see
+       layout/theme.liquid load order. */
+    --FONT-STACK-BODY:    var(--font-2030-body);
+    --FONT-STACK-HEADING: var(--font-2030-display);
+    --FONT-STACK-NAV:     var(--font-2030-body);
+    --FONT-STACK-ACCENT:  var(--font-2030-hand);
+  }
+
+  /* Utility classes — explicit opt-in for new sections that want
+     direct token access without going through the Story aliases. */
+  .font-display-2030    { font-family: var(--font-2030-display); font-feature-settings: "ss01", "ss02"; }
+  .font-editorial-2030  { font-family: var(--font-2030-editorial); }
+  .font-body-2030       { font-family: var(--font-2030-body); font-feature-settings: "cv11", "ss03"; }
+  .font-hand-2030       { font-family: var(--font-2030-hand); }
+  .font-mono-2030       { font-family: var(--font-2030-mono); }
+</style>

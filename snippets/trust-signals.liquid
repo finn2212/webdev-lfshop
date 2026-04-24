@@ -1,0 +1,157 @@
+{%- comment -%}
+  trust-signals.liquid — PDP Trust-Layer (Phase 0).
+
+  Zeigt:
+    1. Letzte Überarbeitung & nächstes Update aus product.metafields.lf.*
+    2. 14-Tage-Geld-zurück-Garantie als statisches Banner
+
+  Setup-Vorgabe siehe _redesign-2030/04_metafields.md
+  Render-Stelle: sections/product.liquid, direkt nach {% render 'product-form' %}.
+
+  Nutzt die neuen Open-Source-Variable-Fonts (siehe snippets/fonts-2030.liquid),
+  damit der Trust-Block bewusst eine andere optische Spur einschlägt als das
+  bestehende Story-Theme-Layout — das ist Phase-0-Probelauf für die spätere
+  Editorial-Aesthetic.
+
+  Sicher: rendert nichts, wenn keines der drei Trust-Elemente aktiv ist.
+{%- endcomment -%}
+
+{%- liquid
+  assign last_updated   = product.metafields.lf.last_updated
+  assign next_update    = product.metafields.lf.next_update
+  assign poi_count      = product.metafields.lf.poi_count
+  assign delivery_items = product.metafields.lf.delivery_items
+
+  assign show_update_info  = false
+  assign show_money_back   = true
+  assign show_delivery     = false
+
+  if last_updated != blank
+    assign show_update_info = true
+  endif
+  if delivery_items != blank
+    assign show_delivery = true
+  endif
+
+  assign any_trust = false
+  if show_update_info or show_money_back or show_delivery
+    assign any_trust = true
+  endif
+-%}
+
+{%- if any_trust -%}
+<style>
+  .trust-2030 {
+    margin-top: 1.25rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--COLOR-BODY-TEXT-A15, rgba(0,0,0,0.12));
+    border-radius: var(--RADIUS-LG, 12px);
+    background: var(--COLOR-BG, #fff);
+    font-family: var(--font-2030-body, system-ui, sans-serif);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+  }
+  .trust-2030__row {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    padding: 0.45rem 0;
+  }
+  .trust-2030__row + .trust-2030__row {
+    border-top: 1px dashed var(--COLOR-BODY-TEXT-A10, rgba(0,0,0,0.08));
+  }
+  .trust-2030__icon {
+    flex: 0 0 1.15rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.15rem;
+    color: var(--COLOR-ACCENT-COOL, #3aa77b);
+  }
+  .trust-2030__text { flex: 1 1 auto; }
+  .trust-2030__text strong {
+    font-family: var(--font-2030-display, ui-serif, Georgia, serif);
+    font-weight: 600;
+    font-size: 1rem;
+    display: block;
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+    margin-bottom: 0.1rem;
+  }
+  .trust-2030__meta {
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    font-size: 0.85rem;
+  }
+  .trust-2030__delivery-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0.3rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .trust-2030__delivery-list li {
+    background: var(--COLOR-BODY-TEXT-A05, rgba(0,0,0,0.04));
+    border-radius: 999px;
+    padding: 0.18rem 0.6rem;
+    font-size: 0.78rem;
+    font-family: var(--font-2030-mono, ui-monospace, monospace);
+    letter-spacing: 0.01em;
+  }
+</style>
+
+<div class="product__block trust-2030" aria-label="{{ 'products.product.trust_aria' | t | default: 'Vertrauenssignale' }}">
+
+  {%- if show_update_info -%}
+    <div class="trust-2030__row">
+      <svg class="trust-2030__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false">
+        <circle cx="10" cy="10" r="8"/>
+        <path d="M10 5.5v4.7l3 1.8"/>
+      </svg>
+      <div class="trust-2030__text">
+        <strong>Letzte Überarbeitung: {{ last_updated | date: "%B %Y" }}</strong>
+        <span class="trust-2030__meta">
+          {%- if next_update != blank -%}
+            Nächstes geplantes Update: {{ next_update | date: "%B %Y" }}.
+          {%- endif -%}
+          {%- if poi_count != blank %} · {{ poi_count }} kuratierte Spots.{% endif -%}
+          Käufer mit Konto bekommen neue Versionen automatisch per E-Mail.
+        </span>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if show_money_back -%}
+    <div class="trust-2030__row">
+      <svg class="trust-2030__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false">
+        <path d="M3 10a7 7 0 1 1 2 4.9"/>
+        <path d="M3 14v-4h4"/>
+      </svg>
+      <div class="trust-2030__text">
+        <strong>14 Tage Geld zurück</strong>
+        <span class="trust-2030__meta">Wenn der Guide dich nicht weiterbringt, bekommst du dein Geld zurück. Ohne Wenn und Aber.</span>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if show_delivery -%}
+    <div class="trust-2030__row">
+      <svg class="trust-2030__icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false">
+        <path d="M3 5h11l3 4v6h-2"/>
+        <path d="M3 5v10h2"/>
+        <circle cx="7" cy="15" r="2"/>
+        <circle cx="15" cy="15" r="2"/>
+      </svg>
+      <div class="trust-2030__text">
+        <strong>Was du bekommst</strong>
+        <ul class="trust-2030__delivery-list">
+          {%- assign items = delivery_items | split: "," -%}
+          {%- for item in items -%}
+            <li>{{ item | strip }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  {%- endif -%}
+
+</div>
+{%- endif -%}
