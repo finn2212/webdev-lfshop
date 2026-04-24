@@ -15,21 +15,20 @@
 {%- endcomment -%}
 
 {%- liquid
+  assign on_collection = false
   assign target = null
   if template contains 'collection' and collection != blank
     assign target = collection
+    assign on_collection = true
   elsif section.settings.collection != blank
     assign target = collections[section.settings.collection]
   endif
 
-  assign products = null
-  if target != blank
-    assign products = target.products
-  endif
-
   assign show_filters = section.settings.show_filters
+  assign show_sort = section.settings.show_sort
   assign columns = section.settings.columns | default: 3
   assign limit = section.settings.limit | default: 12
+  assign pagination_count = section.settings.pagination_count | default: 24
   assign padding_top = section.settings.padding_top | default: 60
   assign padding_bottom = section.settings.padding_bottom | default: 60
 -%}
@@ -54,6 +53,29 @@
           <div class="cgv2__subtitle font-body-2030 rte-setting">{{ section.settings.subtitle }}</div>
         {%- endif -%}
       </header>
+    {%- endif -%}
+
+    {%- if on_collection and show_sort and target.sort_options != blank -%}
+      <form class="cgv2__sort" method="get">
+        {%- comment -%} Persist existing filter params across sort changes {%- endcomment -%}
+        {%- for filter in target.filters -%}
+          {%- for value in filter.active_values -%}
+            <input type="hidden" name="{{ value.param_name }}" value="{{ value.value }}">
+          {%- endfor -%}
+          {%- if filter.type == 'price_range' -%}
+            {%- if filter.min_value.value != blank -%}<input type="hidden" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value }}">{%- endif -%}
+            {%- if filter.max_value.value != blank -%}<input type="hidden" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value }}">{%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+        <label class="cgv2__sort-label">
+          <span class="font-mono-2030">Sortieren</span>
+          <select name="sort_by" class="cgv2__sort-select" onchange="this.form.submit()">
+            {%- for option in target.sort_options -%}
+              <option value="{{ option.value }}" {% if target.sort_by == option.value %}selected{% endif %}>{{ option.name | escape }}</option>
+            {%- endfor -%}
+          </select>
+        </label>
+      </form>
     {%- endif -%}
 
     {%- if show_filters and target != blank and target.filters.size > 0 -%}
@@ -104,65 +126,62 @@
       </nav>
     {%- endif -%}
 
-    {%- if products != blank and products.size > 0 -%}
-      <ul class="cgv2__grid cgv2__grid--cols-{{ columns }}" role="list">
-        {%- for product in products limit: limit -%}
-          {%- assign featured_image = product.featured_image -%}
-          <li class="cgv2__item">
-            <a class="cgv2__card" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
-              <span class="cgv2__media">
-                {%- if featured_image != blank -%}
-                  <img
-                    class="cgv2__img"
-                    src="{{ featured_image | image_url: width: 800 }}"
-                    srcset="{{ featured_image | image_url: width: 400 }} 400w, {{ featured_image | image_url: width: 800 }} 800w, {{ featured_image | image_url: width: 1200 }} 1200w"
-                    sizes="(min-width: 990px) 25vw, (min-width: 720px) 33vw, 50vw"
-                    alt="{{ featured_image.alt | default: product.title | escape }}"
-                    loading="lazy"
-                    decoding="async"
-                    width="{{ featured_image.width }}"
-                    height="{{ featured_image.height }}"
-                  >
+    {%- if on_collection and target != blank -%}
+      {%- comment -%} Collection-Template: paginate für korrektes Seiten-Handling {%- endcomment -%}
+      {% paginate target.products by pagination_count %}
+        {%- if target.products.size > 0 -%}
+          <ul class="cgv2__grid cgv2__grid--cols-{{ columns }}" role="list">
+            {%- for product in target.products -%}
+              {%- render 'cgv2-card', product: product -%}
+            {%- endfor -%}
+          </ul>
+
+          {%- if paginate.pages > 1 -%}
+            <nav class="cgv2__pagination" aria-label="Seitennavigation">
+              {%- if paginate.previous -%}
+                <a class="cgv2__page-btn cgv2__page-btn--nav" href="{{ paginate.previous.url }}" rel="prev">← Vorherige</a>
+              {%- endif -%}
+              {%- for part in paginate.parts -%}
+                {%- if part.is_link -%}
+                  <a class="cgv2__page-btn" href="{{ part.url }}">{{ part.title }}</a>
+                {%- elsif part.title == paginate.current_page -%}
+                  <span class="cgv2__page-btn cgv2__page-btn--current" aria-current="page">{{ part.title }}</span>
                 {%- else -%}
-                  <span class="cgv2__placeholder">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+                  <span class="cgv2__page-btn cgv2__page-btn--gap">{{ part.title }}</span>
                 {%- endif -%}
-                {%- if product.compare_at_price > product.price -%}
-                  <span class="cgv2__badge cgv2__badge--sale font-mono-2030">Sale</span>
-                {%- elsif product.available == false -%}
-                  <span class="cgv2__badge cgv2__badge--sold font-mono-2030">Ausverkauft</span>
-                {%- endif -%}
-              </span>
-              <span class="cgv2__body">
-                <span class="cgv2__name font-display-2030">{{ product.title | escape }}</span>
-                <span class="cgv2__price font-hand-2030">
-                  {%- if product.compare_at_price > product.price -%}
-                    <s class="cgv2__price-old">{{ product.compare_at_price | money }}</s>
-                  {%- endif -%}
-                  {{ product.price | money }}
-                </span>
-              </span>
-            </a>
-          </li>
+              {%- endfor -%}
+              {%- if paginate.next -%}
+                <a class="cgv2__page-btn cgv2__page-btn--nav" href="{{ paginate.next.url }}" rel="next">Nächste →</a>
+              {%- endif -%}
+            </nav>
+          {%- endif -%}
+        {%- else -%}
+          <div class="cgv2__empty">
+            <p class="font-body-2030">Keine Produkte gefunden.</p>
+            {%- if target.url != blank -%}
+              <a class="cgv2__btn cgv2__btn--ghost" href="{{ target.url }}">Filter zurücksetzen</a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {% endpaginate %}
+
+    {%- elsif target != blank and target.products.size > 0 -%}
+      {%- comment -%} Standalone-Modus: limit + view-all-Link {%- endcomment -%}
+      <ul class="cgv2__grid cgv2__grid--cols-{{ columns }}" role="list">
+        {%- for product in target.products limit: limit -%}
+          {%- render 'cgv2-card', product: product -%}
         {%- endfor -%}
       </ul>
 
-      {%- if target.products_count > limit and target != collection -%}
-        {%- comment -%} Standalone-Modus: Link zur vollen Collection {%- endcomment -%}
+      {%- if target.products_count > limit -%}
         <div class="cgv2__view-all">
           <a class="cgv2__btn cgv2__btn--ghost" href="{{ target.url }}">Alle {{ target.products_count }} ansehen</a>
         </div>
       {%- endif -%}
 
-      {%- if template contains 'collection' and paginate_by != blank -%}
-        {%- comment -%} Pagination handled by parent paginate tag in collection template {%- endcomment -%}
-      {%- endif -%}
-
     {%- else -%}
       <div class="cgv2__empty">
         <p class="font-body-2030">Keine Produkte gefunden.</p>
-        {%- if target.url != blank -%}
-          <a class="cgv2__btn cgv2__btn--ghost" href="{{ target.url }}">Filter zurücksetzen</a>
-        {%- endif -%}
       </div>
     {%- endif -%}
   </div>
@@ -393,6 +412,70 @@
   }
   .cgv2__btn--ghost:hover { background: rgba(0, 0, 0, 0.04); filter: none; }
 
+  /* Sort */
+  .cgv2__sort {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 1rem;
+  }
+  .cgv2__sort-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .cgv2__sort-select {
+    padding: 0.45rem 2rem 0.45rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a1a1a' stroke-width='1.4' fill='none'/%3E%3C/svg%3E") no-repeat right 0.8rem center/10px 8px;
+    font-family: var(--font-2030-body, 'Inter VF', system-ui);
+    font-size: 0.9rem;
+    text-transform: none;
+    letter-spacing: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+  /* Pagination */
+  .cgv2__pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 2.4rem;
+  }
+  .cgv2__page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 0.7rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+    text-decoration: none;
+    font-family: var(--font-2030-body, 'Inter VF', system-ui);
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: background 150ms ease;
+  }
+  .cgv2__page-btn:hover { background: rgba(0, 0, 0, 0.09); }
+  .cgv2__page-btn--current {
+    background: var(--COLOR-BODY-TEXT, #1a1a1a);
+    color: #fff;
+  }
+  .cgv2__page-btn--gap {
+    background: transparent;
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    cursor: default;
+  }
+  .cgv2__page-btn--nav { padding: 0 1rem; }
+
   @media (prefers-reduced-motion: reduce) {
     .cgv2__card, .cgv2__img { transition: none; }
   }
@@ -413,10 +496,12 @@
     { "type": "header", "content": "Quelle" },
     { "type": "paragraph", "content": "Auf einem Collection-Template wird automatisch die aktuelle Collection genutzt. Optional: hier manuell eine Collection wählen (z. B. für Page-Einbau)." },
     { "type": "collection", "id": "collection", "label": "Collection (optional)" },
-    { "type": "range", "id": "limit", "label": "Max. Produkte (pro Seite)", "min": 4, "max": 48, "step": 4, "default": 12 },
+    { "type": "range", "id": "limit", "label": "Max. Produkte (Standalone-Modus)", "min": 4, "max": 48, "step": 4, "default": 12, "info": "Nur relevant, wenn oben manuell eine Collection gewählt ist." },
+    { "type": "range", "id": "pagination_count", "label": "Produkte pro Seite (Collection-Template)", "min": 8, "max": 60, "step": 4, "default": 24, "info": "Pagination via Shopify-URL-Parameter." },
 
-    { "type": "header", "content": "Filter" },
+    { "type": "header", "content": "Filter & Sortierung" },
     { "type": "checkbox", "id": "show_filters", "label": "Shopify-Filter anzeigen (nur auf Collection-Templates)", "default": true },
+    { "type": "checkbox", "id": "show_sort", "label": "Sortier-Dropdown anzeigen (nur auf Collection-Templates)", "default": true },
 
     { "type": "header", "content": "Layout" },
     {

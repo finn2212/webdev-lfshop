@@ -1,1 +1,29 @@
-{"sections":{"main":{"type":"cart","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Dein Warenkorb. Sofortiger Download nach Zahlung, 14 Tage Geld zurück – ohne Wenn und Aber.</p>"
+          }
+        }
+      },
+      "block_order": ["b-1"],
+      "settings": {
+        "eyebrow": "Warenkorb",
+        "heading": "<p>Gleich ist alles dein.</p>",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 56,
+        "padding_bottom": 16
+      }
+    },
+    "main": {
+      "type": "cart",
+      "settings": {}
+    }
+  },
+  "order": ["intro", "main"]
+}

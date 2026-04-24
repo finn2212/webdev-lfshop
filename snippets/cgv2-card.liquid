@@ -1,0 +1,43 @@
+{%- comment -%}
+  cgv2-card.liquid — Produkt-Tile für section-collection-grid-v2.
+
+  Parameter:
+    - product (required): Product-Objekt
+{%- endcomment -%}
+
+{%- assign featured_image = product.featured_image -%}
+<li class="cgv2__item">
+  <a class="cgv2__card" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+    <span class="cgv2__media">
+      {%- if featured_image != blank -%}
+        <img
+          class="cgv2__img"
+          src="{{ featured_image | image_url: width: 800 }}"
+          srcset="{{ featured_image | image_url: width: 400 }} 400w, {{ featured_image | image_url: width: 800 }} 800w, {{ featured_image | image_url: width: 1200 }} 1200w"
+          sizes="(min-width: 990px) 25vw, (min-width: 720px) 33vw, 50vw"
+          alt="{{ featured_image.alt | default: product.title | escape }}"
+          loading="lazy"
+          decoding="async"
+          width="{{ featured_image.width }}"
+          height="{{ featured_image.height }}"
+        >
+      {%- else -%}
+        <span class="cgv2__placeholder">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+      {%- endif -%}
+      {%- if product.compare_at_price > product.price -%}
+        <span class="cgv2__badge cgv2__badge--sale font-mono-2030">Sale</span>
+      {%- elsif product.available == false -%}
+        <span class="cgv2__badge cgv2__badge--sold font-mono-2030">Ausverkauft</span>
+      {%- endif -%}
+    </span>
+    <span class="cgv2__body">
+      <span class="cgv2__name font-display-2030">{{ product.title | escape }}</span>
+      <span class="cgv2__price font-hand-2030">
+        {%- if product.compare_at_price > product.price -%}
+          <s class="cgv2__price-old">{{ product.compare_at_price | money }}</s>
+        {%- endif -%}
+        {{ product.price | money }}
+      </span>
+    </span>
+  </a>
+</li>

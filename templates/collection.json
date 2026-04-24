@@ -51,19 +51,14 @@
       }
     },
     "main": {
-      "type": "collection",
+      "type": "section-collection-grid-v2",
       "settings": {
-        "bg": "palette--light bg--neutral",
-        "pagination_count": 12,
-        "grid_setting_large": 4,
-        "grid_setting_medium": 2,
-        "grid_setting_small": 2,
-        "show_collection_nav": true,
-        "collection_custom_nav_list": "",
-        "align_nav": "inline-nav inline-nav--center",
-        "collection_sorting": true,
-        "filters": true,
+        "columns": "4",
+        "pagination_count": 24,
+        "show_filters": true,
+        "show_sort": true,
         "width": "wrapper",
+        "color_bg": "bg--neutral",
         "padding_top": 24,
         "padding_bottom": 64
       }
