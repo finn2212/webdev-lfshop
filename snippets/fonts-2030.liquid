@@ -60,10 +60,22 @@
     --font-2030-body:      'Inter VF', 'Inter', system-ui, -apple-system, sans-serif;
     --font-2030-hand:      'Caveat VF', 'Caveat', cursive;
     --font-2030-mono:      'JetBrains Mono VF', ui-monospace, 'SF Mono', Menlo, monospace;
+
+    /* Global override of Story-theme font tokens — applies brand-wide
+       (header, footer, homepage, PDPs, blog, all legacy sections). The
+       theme-editor settings under "Typography" are bypassed but still
+       safe to leave on (they only affect old --FONT-WEIGHT-* values which
+       work fine with variable fonts).
+       This block must render AFTER snippets/css-variables.liquid — see
+       layout/theme.liquid load order. */
+    --FONT-STACK-BODY:    var(--font-2030-body);
+    --FONT-STACK-HEADING: var(--font-2030-display);
+    --FONT-STACK-NAV:     var(--font-2030-body);
+    --FONT-STACK-ACCENT:  var(--font-2030-hand);
   }
 
-  /* Utility classes — opt-in, used in new Trust/Editorial snippets only.
-     Story-theme defaults remain untouched. */
+  /* Utility classes — explicit opt-in for new sections that want
+     direct token access without going through the Story aliases. */
   .font-display-2030    { font-family: var(--font-2030-display); font-feature-settings: "ss01", "ss02"; }
   .font-editorial-2030  { font-family: var(--font-2030-editorial); }
   .font-body-2030       { font-family: var(--font-2030-body); font-feature-settings: "cv11", "ss03"; }
