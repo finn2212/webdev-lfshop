@@ -38,16 +38,33 @@
       <ul class="reels__grid" data-reels-grid role="list">
         {%- for block in section.blocks -%}
           {%- liquid
-            assign video      = block.settings.video_file
-            assign poster     = block.settings.poster
-            assign label      = block.settings.label
-            assign caption    = block.settings.caption
-            assign linked     = block.settings.linked_product
-            assign cta_text   = block.settings.cta_text | default: 'Zum Produkt'
+            assign video       = block.settings.video_file
+            assign youtube_url = block.settings.youtube_url
+            assign poster      = block.settings.poster
+            assign label       = block.settings.label
+            assign caption     = block.settings.caption
+            assign linked      = block.settings.linked_product
+            assign cta_text    = block.settings.cta_text | default: 'Zum Produkt'
+
+            assign yt_id = ''
+            if youtube_url != blank
+              assign _tmp = youtube_url | split: 'v=' | last
+              assign _tmp = _tmp | split: '/' | last
+              assign _tmp = _tmp | split: '&' | first
+              assign _tmp = _tmp | split: '?' | first
+              assign yt_id = _tmp
+            endif
+
+            assign reel_type = 'file'
+            if yt_id != blank
+              assign reel_type = 'youtube'
+            endif
           -%}
           <li
-            class="reels__item"
+            class="reels__item reels__item--{{ reel_type }}"
             data-reel
+            data-reel-type="{{ reel_type }}"
+            {%- if yt_id != blank %} data-youtube-id="{{ yt_id }}"{%- endif %}
             data-index="{{ forloop.index0 }}"
             data-label="{{ label | escape }}"
             data-caption="{{ caption | escape }}"
@@ -59,7 +76,7 @@
             {%- endif -%}
             {{ block.shopify_attributes }}
           >
-            <button class="reels__tile" type="button" data-reel-open aria-label="Video „{{ label | default: caption | escape }}\" in Vollbild öffnen">
+            <button class="reels__tile" type="button" data-reel-open aria-label="Video {{ label | default: caption | escape }} in Vollbild öffnen">
               <span class="reels__media">
                 {%- if poster != blank -%}
                   <img
@@ -73,9 +90,19 @@
                     width="{{ poster.width }}"
                     height="{{ poster.height }}"
                   >
+                {%- elsif reel_type == 'youtube' -%}
+                  <img
+                    class="reels__poster"
+                    src="https://i.ytimg.com/vi/{{ yt_id }}/hqdefault.jpg"
+                    srcset="https://i.ytimg.com/vi/{{ yt_id }}/hqdefault.jpg 480w, https://i.ytimg.com/vi/{{ yt_id }}/maxresdefault.jpg 1280w"
+                    sizes="(min-width: 990px) 25vw, 50vw"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  >
                 {%- endif -%}
 
-                {%- if video != blank -%}
+                {%- if reel_type == 'file' and video != blank -%}
                   <video
                     class="reels__video"
                     data-reel-video
@@ -90,7 +117,7 @@
                       <source src="{{ source.url }}" type="{{ source.mime_type }}">
                     {%- endfor -%}
                   </video>
-                {%- elsif poster == blank -%}
+                {%- elsif poster == blank and reel_type != 'youtube' -%}
                   <span class="reels__placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</span>
                 {%- endif -%}
 
@@ -116,13 +143,7 @@
 
 <dialog class="reels__dialog" data-reels-dialog aria-labelledby="reelsDialogLabel">
   <div class="reels__dialog-inner">
-    <video
-      class="reels__dialog-video"
-      data-reels-dialog-video
-      controls
-      playsinline
-      preload="metadata"
-    ></video>
+    <div class="reels__dialog-stage" data-reels-dialog-stage></div>
     <div class="reels__dialog-meta">
       <p class="reels__dialog-label font-mono-2030" id="reelsDialogLabel" data-reels-dialog-label></p>
       <p class="reels__dialog-caption font-body-2030" data-reels-dialog-caption></p>
@@ -234,11 +255,22 @@
     color: #fff;
     background: #0a0c10;
   }
-  .reels__dialog-video {
+  .reels__dialog-stage {
+    position: relative;
     width: 100%; height: 100%;
-    object-fit: contain;
+    background: #000;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .reels__dialog-stage video,
+  .reels__dialog-stage iframe {
+    width: 100%; height: 100%;
+    border: 0;
+    display: block;
     background: #000;
   }
+  .reels__dialog-stage video { object-fit: contain; }
   .reels__dialog-meta {
     padding: 1rem 1.1rem 1.4rem;
     display: grid; gap: 0.45rem;
@@ -312,21 +344,49 @@
 
   function openDialog(allReels, idx) {
     var dlg = document.querySelector('[data-reels-dialog]');
-    var v   = document.querySelector('[data-reels-dialog-video]');
+    var stage = document.querySelector('[data-reels-dialog-stage]');
     var labelEl = document.querySelector('[data-reels-dialog-label]');
     var capEl   = document.querySelector('[data-reels-dialog-caption]');
     var ctaEl   = document.querySelector('[data-reels-dialog-cta]');
     var ctaTextEl = document.querySelector('[data-reels-dialog-cta-text]');
     var ctaPriceEl = document.querySelector('[data-reels-dialog-cta-price]');
-    if (!dlg || !v) return;
+    if (!dlg || !stage) return;
+
+    function clearStage() {
+      stage.innerHTML = '';
+    }
 
     function show(i) {
       var reel = allReels[i];
       if (!reel) return;
-      var srcVideo = reel.querySelector('[data-reel-video]');
-      v.innerHTML = srcVideo ? srcVideo.innerHTML : '';
-      v.load();
-      v.play().catch(function () {});
+
+      clearStage();
+
+      var type = reel.dataset.reelType || 'file';
+      if (type === 'youtube') {
+        var ytId = reel.dataset.youtubeId;
+        if (ytId) {
+          var iframe = document.createElement('iframe');
+          iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(ytId) + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+          iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.setAttribute('title', reel.dataset.caption || reel.dataset.label || 'YouTube-Video');
+          stage.appendChild(iframe);
+        }
+      } else {
+        var srcVideo = reel.querySelector('[data-reel-video]');
+        if (srcVideo) {
+          var v = document.createElement('video');
+          v.controls = true;
+          v.playsInline = true;
+          v.autoplay = true;
+          v.preload = 'metadata';
+          v.innerHTML = srcVideo.innerHTML;
+          stage.appendChild(v);
+          v.load();
+          v.play().catch(function () {});
+        }
+      }
 
       labelEl.textContent = reel.dataset.label || '';
       capEl.textContent = reel.dataset.caption || '';
@@ -367,7 +427,7 @@
     }
     document.addEventListener('keydown', onKey);
 
-    // swipe
+    // swipe (MP4-reels only — iframes swallow touch events)
     var startX = null;
     function ts(e) { startX = e.touches[0].clientX; }
     function te(e) {
@@ -376,13 +436,13 @@
       if (Math.abs(dx) > 60) nav(dx < 0 ? 1 : -1);
       startX = null;
     }
-    v.addEventListener('touchstart', ts, { passive: true });
-    v.addEventListener('touchend', te, { passive: true });
+    stage.addEventListener('touchstart', ts, { passive: true });
+    stage.addEventListener('touchend', te, { passive: true });
 
     dlg.addEventListener('close', function () {
-      v.pause(); v.removeAttribute('src'); v.innerHTML = '';
-      v.removeEventListener('touchstart', ts);
-      v.removeEventListener('touchend', te);
+      clearStage();
+      stage.removeEventListener('touchstart', ts);
+      stage.removeEventListener('touchend', te);
     }, { once: true });
   }
 
@@ -456,12 +516,20 @@
         {
           "type": "video",
           "id": "video_file",
-          "label": "Video-Datei (9:16 empfohlen)"
+          "label": "Video-Datei (MP4, 9:16 für Grid-Autoplay)",
+          "info": "Shopify-Video-Asset. Spielt im Grid automatisch stumm und geloopt, Vollbild-Lightbox mit Ton."
+        },
+        {
+          "type": "text",
+          "id": "youtube_url",
+          "label": "YouTube-URL (Alternative zur Video-Datei)",
+          "info": "Beispiel: https://www.youtube.com/watch?v=… — Grid zeigt das YouTube-Thumbnail (9:16 cropped), Lightbox öffnet den YouTube-Player in 16:9. Hat Vorrang vor einer Video-Datei."
         },
         {
           "type": "image_picker",
           "id": "poster",
-          "label": "Poster-Bild"
+          "label": "Poster-Bild (9:16 empfohlen, optional)",
+          "info": "Überschreibt das YouTube-Thumbnail bzw. das Video-Poster im Grid."
         },
         {
           "type": "text",
