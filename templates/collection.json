@@ -1,12 +1,3 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "sections": {
     "banner": {
@@ -25,18 +16,15 @@
           }
         }
       },
-      "block_order": [
-        "collections",
-        "filters"
-      ],
+      "block_order": ["collections", "filters"],
       "settings": {
         "flex_align": "align--middle-left",
         "show_title_below": false,
         "show_description_below": false,
         "show_image": true,
-        "image_height": "use_screen_one_fifth",
-        "overlay_opacity": 20,
-        "overlay_color": "#000000",
+        "image_height": "use_screen_one_third",
+        "overlay_opacity": 30,
+        "overlay_color": "#181929",
         "color": "text--white",
         "color_bg": "hero__content--transparent",
         "width": "wrapper--none",
@@ -44,27 +32,61 @@
         "padding_bottom": 0
       }
     },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Alle Produkte aus dieser Kollektion – sofort zum Download, mit 14 Tagen Geld-zurück und kostenlosen Updates für Käufer.</p>"
+          }
+        }
+      },
+      "block_order": ["b-1"],
+      "settings": {
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 40,
+        "padding_bottom": 24
+      }
+    },
     "main": {
       "type": "collection",
       "settings": {
         "bg": "palette--light bg--neutral",
         "pagination_count": 12,
-        "grid_setting_large": 5,
+        "grid_setting_large": 4,
         "grid_setting_medium": 2,
         "grid_setting_small": 2,
         "show_collection_nav": true,
         "collection_custom_nav_list": "",
         "align_nav": "inline-nav inline-nav--center",
-        "collection_sorting": false,
-        "filters": false,
+        "collection_sorting": true,
+        "filters": true,
         "width": "wrapper",
-        "padding_top": 36,
+        "padding_top": 24,
         "padding_bottom": 64
+      }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Geschenk für dich",
+        "title": "Hol dir unser Mini-Preset.",
+        "subtitle": "<p>Ein kostenloses Lightroom-Preset – probier den Look aus, bevor du kaufst.</p>",
+        "image": "shopify://shop_images/DSC04341-5.jpg",
+        "button_label": "Mini-Preset holen",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – der Download-Link ist unterwegs.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_collection"
       }
     }
   },
-  "order": [
-    "banner",
-    "main"
-  ]
+  "order": ["banner", "intro", "main", "lead-magnet"]
 }

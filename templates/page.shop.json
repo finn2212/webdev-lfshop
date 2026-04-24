@@ -186,19 +186,19 @@
       }
     },
     "default-collection": {
-      "type": "section-collection",
+      "type": "section-collection-grid-v2",
       "settings": {
-        "title": "Edit like a PRO",
-        "description": "<p>Unsere Lightroom Presets</p>",
+        "kicker": "Edit like a Pro",
+        "title": "Lightroom-Presets",
+        "subtitle": "<p>Unsere Presets aus drei Kontinenten – warm, körnig, ohne überschärften Insta-Look.</p>",
         "collection": "presets",
-        "grid": 4,
-        "limit": 8,
-        "enable_slider": true,
-        "color_bg": "palette--light bg--neutral",
-        "show_view_all": false,
+        "limit": 12,
+        "show_filters": false,
+        "columns": "4",
         "width": "wrapper",
+        "color_bg": "bg--neutral",
         "padding_top": 72,
-        "padding_bottom": 36
+        "padding_bottom": 40
       }
     },
     "lead-magnet": {

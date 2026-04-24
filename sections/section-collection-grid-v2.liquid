@@ -1,0 +1,453 @@
+{%- comment -%}
+  section-collection-grid-v2.liquid — Editorial Product Grid.
+
+  Arbeitet in zwei Modi:
+    - Auf einem collection-Template: nutzt das globale `collection`-Objekt
+      und `collection.filters` (Shopify native filtering via URL-Params).
+    - Als Standalone auf einer Page (z. B. page.shop.json): nutzt
+      section.settings.collection als manuell gewählte Collection.
+
+  Design:
+    - Kicker + H2 (Fraunces) + Subtitle, optional
+    - Product-Cards: 4:5 Portrait-Image, Display-Title, Caveat-Preis
+    - Responsive Grid 1→2→3→4 Spalten
+    - Keine JS-Abhängigkeit (v1) — Filter via URL-Params über Shopify-Links
+{%- endcomment -%}
+
+{%- liquid
+  assign target = null
+  if template contains 'collection' and collection != blank
+    assign target = collection
+  elsif section.settings.collection != blank
+    assign target = collections[section.settings.collection]
+  endif
+
+  assign products = null
+  if target != blank
+    assign products = target.products
+  endif
+
+  assign show_filters = section.settings.show_filters
+  assign columns = section.settings.columns | default: 3
+  assign limit = section.settings.limit | default: 12
+  assign padding_top = section.settings.padding_top | default: 60
+  assign padding_bottom = section.settings.padding_bottom | default: 60
+-%}
+
+<section
+  class="cgv2 {{ section.settings.color_bg }}"
+  style="--PT: {{ padding_top }}px; --PB: {{ padding_bottom }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-grid-v2"
+>
+  <div class="{{ section.settings.width | default: 'wrapper' }} section-padding">
+
+    {%- if section.settings.kicker != blank or section.settings.title != blank or section.settings.subtitle != blank -%}
+      <header class="cgv2__header">
+        {%- if section.settings.kicker != blank -%}
+          <p class="cgv2__kicker font-mono-2030">{{ section.settings.kicker | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="cgv2__title font-display-2030">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subtitle != blank -%}
+          <div class="cgv2__subtitle font-body-2030 rte-setting">{{ section.settings.subtitle }}</div>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- if show_filters and target != blank and target.filters.size > 0 -%}
+      <nav class="cgv2__filters" aria-label="Produkt-Filter">
+        <form class="cgv2__filters-form" data-cgv2-filters>
+          {%- for filter in target.filters -%}
+            {%- case filter.type -%}
+              {%- when 'list' -%}
+                <details class="cgv2__filter">
+                  <summary class="cgv2__filter-trigger font-mono-2030">{{ filter.label | escape }}</summary>
+                  <ul class="cgv2__filter-options">
+                    {%- for value in filter.values -%}
+                      <li>
+                        <label class="cgv2__filter-option">
+                          <input type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" {% if value.active %}checked{% endif %} {% if value.count == 0 and value.active == false %}disabled{% endif %}>
+                          <span>{{ value.label | escape }}</span>
+                          {%- if value.count > 0 -%}
+                            <small>({{ value.count }})</small>
+                          {%- endif -%}
+                        </label>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </details>
+              {%- when 'price_range' -%}
+                <details class="cgv2__filter">
+                  <summary class="cgv2__filter-trigger font-mono-2030">{{ filter.label | escape }}</summary>
+                  <div class="cgv2__filter-range">
+                    <label>
+                      <span>Ab</span>
+                      <input type="number" name="{{ filter.min_value.param_name }}" placeholder="{{ filter.range_min | money_without_currency }}" value="{{ filter.min_value.value }}" min="0">
+                    </label>
+                    <label>
+                      <span>Bis</span>
+                      <input type="number" name="{{ filter.max_value.param_name }}" placeholder="{{ filter.range_max | money_without_currency }}" value="{{ filter.max_value.value }}" min="0">
+                    </label>
+                  </div>
+                </details>
+            {%- endcase -%}
+          {%- endfor -%}
+          <div class="cgv2__filters-actions">
+            <button type="submit" class="cgv2__btn">Anwenden</button>
+            {%- if target.url != blank -%}
+              <a href="{{ target.url }}" class="cgv2__btn cgv2__btn--ghost">Zurücksetzen</a>
+            {%- endif -%}
+          </div>
+        </form>
+      </nav>
+    {%- endif -%}
+
+    {%- if products != blank and products.size > 0 -%}
+      <ul class="cgv2__grid cgv2__grid--cols-{{ columns }}" role="list">
+        {%- for product in products limit: limit -%}
+          {%- assign featured_image = product.featured_image -%}
+          <li class="cgv2__item">
+            <a class="cgv2__card" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+              <span class="cgv2__media">
+                {%- if featured_image != blank -%}
+                  <img
+                    class="cgv2__img"
+                    src="{{ featured_image | image_url: width: 800 }}"
+                    srcset="{{ featured_image | image_url: width: 400 }} 400w, {{ featured_image | image_url: width: 800 }} 800w, {{ featured_image | image_url: width: 1200 }} 1200w"
+                    sizes="(min-width: 990px) 25vw, (min-width: 720px) 33vw, 50vw"
+                    alt="{{ featured_image.alt | default: product.title | escape }}"
+                    loading="lazy"
+                    decoding="async"
+                    width="{{ featured_image.width }}"
+                    height="{{ featured_image.height }}"
+                  >
+                {%- else -%}
+                  <span class="cgv2__placeholder">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+                {%- endif -%}
+                {%- if product.compare_at_price > product.price -%}
+                  <span class="cgv2__badge cgv2__badge--sale font-mono-2030">Sale</span>
+                {%- elsif product.available == false -%}
+                  <span class="cgv2__badge cgv2__badge--sold font-mono-2030">Ausverkauft</span>
+                {%- endif -%}
+              </span>
+              <span class="cgv2__body">
+                <span class="cgv2__name font-display-2030">{{ product.title | escape }}</span>
+                <span class="cgv2__price font-hand-2030">
+                  {%- if product.compare_at_price > product.price -%}
+                    <s class="cgv2__price-old">{{ product.compare_at_price | money }}</s>
+                  {%- endif -%}
+                  {{ product.price | money }}
+                </span>
+              </span>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      {%- if target.products_count > limit and target != collection -%}
+        {%- comment -%} Standalone-Modus: Link zur vollen Collection {%- endcomment -%}
+        <div class="cgv2__view-all">
+          <a class="cgv2__btn cgv2__btn--ghost" href="{{ target.url }}">Alle {{ target.products_count }} ansehen</a>
+        </div>
+      {%- endif -%}
+
+      {%- if template contains 'collection' and paginate_by != blank -%}
+        {%- comment -%} Pagination handled by parent paginate tag in collection template {%- endcomment -%}
+      {%- endif -%}
+
+    {%- else -%}
+      <div class="cgv2__empty">
+        <p class="font-body-2030">Keine Produkte gefunden.</p>
+        {%- if target.url != blank -%}
+          <a class="cgv2__btn cgv2__btn--ghost" href="{{ target.url }}">Filter zurücksetzen</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  .cgv2 {
+    padding-top: var(--PT, 60px);
+    padding-bottom: var(--PB, 60px);
+  }
+  .cgv2__header {
+    max-width: 60ch;
+    margin: 0 0 clamp(1.4rem, 1rem + 1.2vw, 2.4rem);
+    display: grid;
+    gap: 0.5rem;
+  }
+  .cgv2__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    margin: 0;
+  }
+  .cgv2__title {
+    font-size: clamp(1.7rem, 1.2rem + 1.8vw, 2.6rem);
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .cgv2__subtitle {
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    font-size: clamp(0.95rem, 0.85rem + 0.3vw, 1.05rem);
+  }
+  .cgv2__subtitle p { margin: 0; }
+
+  /* Filters */
+  .cgv2__filters {
+    margin: 0 0 1.6rem;
+    padding: 0.8rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .cgv2__filters-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.8rem;
+    align-items: flex-start;
+  }
+  .cgv2__filter {
+    position: relative;
+    min-width: 0;
+  }
+  .cgv2__filter-trigger {
+    cursor: pointer;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.04);
+    list-style: none;
+    transition: background 150ms ease;
+  }
+  .cgv2__filter-trigger::-webkit-details-marker { display: none; }
+  .cgv2__filter[open] .cgv2__filter-trigger { background: rgba(0, 0, 0, 0.09); }
+  .cgv2__filter-options,
+  .cgv2__filter-range {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.4rem;
+    background: var(--COLOR-BG, #fff);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    padding: 0.6rem;
+    min-width: 220px;
+    list-style: none;
+    z-index: 3;
+    display: grid;
+    gap: 0.3rem;
+  }
+  .cgv2__filter-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.55rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.92rem;
+  }
+  .cgv2__filter-option:hover { background: rgba(0, 0, 0, 0.04); }
+  .cgv2__filter-option small { opacity: 0.6; margin-left: auto; }
+  .cgv2__filter-option input[type="checkbox"] { accent-color: var(--COLOR-ACCENT-COOL, #3aa77b); }
+  .cgv2__filter-range { grid-template-columns: 1fr 1fr; padding: 0.8rem; }
+  .cgv2__filter-range label { display: grid; gap: 0.25rem; font-size: 0.8rem; }
+  .cgv2__filter-range input {
+    padding: 0.45rem 0.6rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    width: 100%;
+    font: inherit;
+  }
+  .cgv2__filters-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+  }
+
+  /* Grid */
+  .cgv2__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 0.6rem + 1.2vw, 2rem) clamp(0.7rem, 0.4rem + 0.8vw, 1.4rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media (min-width: 720px) {
+    .cgv2__grid--cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cgv2__grid--cols-4 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cgv2__grid--cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 990px) {
+    .cgv2__grid--cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .cgv2__grid--cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .cgv2__item { margin: 0; }
+  .cgv2__card {
+    display: grid;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 220ms ease;
+  }
+  .cgv2__card:hover { transform: translateY(-2px); }
+  .cgv2__media {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: var(--RADIUS-LG, 14px);
+    background: var(--COLOR-BODY-TEXT-A05, #f2efe9);
+    aspect-ratio: 4 / 5;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  }
+  .cgv2__img, .cgv2__placeholder {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 520ms ease;
+  }
+  .cgv2__card:hover .cgv2__img { transform: scale(1.04); }
+  .cgv2__badge {
+    position: absolute;
+    top: 0.7rem;
+    left: 0.7rem;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: #1a1a1a;
+    color: #fff;
+  }
+  .cgv2__badge--sale { background: var(--COLOR-ACCENT-WARM, #a73a3a); }
+  .cgv2__badge--sold { background: rgba(0, 0, 0, 0.6); }
+
+  .cgv2__body {
+    display: grid;
+    gap: 0.2rem;
+    padding: 0 0.1rem;
+  }
+  .cgv2__name {
+    font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+  }
+  .cgv2__price {
+    font-size: var(--r2030-price-grid, clamp(1.5rem, 1.3rem + 0.8vw, 1.85rem));
+    color: var(--r2030-price-color, #1a1a1a);
+    line-height: 1;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+  }
+  .cgv2__price-old {
+    font-family: var(--font-2030-body, 'Inter VF', system-ui);
+    font-size: 0.65em;
+    color: var(--COLOR-BODY-TEXT-A75, #6a6a6a);
+    text-decoration: line-through;
+  }
+
+  .cgv2__view-all,
+  .cgv2__empty {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 0.6rem;
+  }
+  .cgv2__empty { flex-direction: column; align-items: center; text-align: center; }
+  .cgv2__empty p { margin: 0 0 0.8rem; }
+
+  .cgv2__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.7rem 1.15rem;
+    border-radius: 999px;
+    background: var(--COLOR-BODY-TEXT, #1a1a1a);
+    color: #fff;
+    font-family: var(--font-2030-body, 'Inter VF', system-ui);
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+    transition: filter 180ms ease, transform 180ms ease;
+  }
+  .cgv2__btn:hover { transform: translateY(-1px); filter: brightness(0.95); }
+  .cgv2__btn--ghost {
+    background: transparent;
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+    border: 1px solid rgba(0, 0, 0, 0.18);
+  }
+  .cgv2__btn--ghost:hover { background: rgba(0, 0, 0, 0.04); filter: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cgv2__card, .cgv2__img { transition: none; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Collection Grid v2",
+  "tag": "section",
+  "class": "section-section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "header", "content": "Header (optional)" },
+    { "type": "text", "id": "kicker", "label": "Kicker (klein, oben)" },
+    { "type": "text", "id": "title", "label": "Überschrift (H2)" },
+    { "type": "richtext", "id": "subtitle", "label": "Untertitel" },
+
+    { "type": "header", "content": "Quelle" },
+    { "type": "paragraph", "content": "Auf einem Collection-Template wird automatisch die aktuelle Collection genutzt. Optional: hier manuell eine Collection wählen (z. B. für Page-Einbau)." },
+    { "type": "collection", "id": "collection", "label": "Collection (optional)" },
+    { "type": "range", "id": "limit", "label": "Max. Produkte (pro Seite)", "min": 4, "max": 48, "step": 4, "default": 12 },
+
+    { "type": "header", "content": "Filter" },
+    { "type": "checkbox", "id": "show_filters", "label": "Shopify-Filter anzeigen (nur auf Collection-Templates)", "default": true },
+
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select", "id": "columns", "label": "Spalten (Desktop)", "default": "3",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ]
+    },
+    {
+      "type": "select", "id": "width", "label": "Breite", "default": "wrapper",
+      "options": [
+        { "value": "wrapper",         "label": "Standard" },
+        { "value": "wrapper--narrow", "label": "Schmal" },
+        { "value": "wrapper--full",   "label": "Volle Breite" }
+      ]
+    },
+    {
+      "type": "select", "id": "color_bg", "label": "Hintergrund", "default": "bg--neutral",
+      "options": [
+        { "value": "bg--neutral",             "label": "Neutral" },
+        { "value": "bg--accent",              "label": "Akzent" },
+        { "value": "bg--invert palette--dark","label": "Dunkel" }
+      ]
+    },
+    { "type": "range", "id": "padding_top",    "label": "Abstand oben",  "min": 0, "max": 180, "step": 4, "unit": "px", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "label": "Abstand unten", "min": 0, "max": 180, "step": 4, "unit": "px", "default": 60 }
+  ],
+  "presets": [
+    { "name": "Collection Grid v2" }
+  ]
+}
+{% endschema %}
