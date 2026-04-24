@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -395,6 +386,32 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "reels": {
+      "type": "section-reels",
+      "blocks": {
+        "r-1": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=cKMN3kIIqJE",
+            "label": "Kapstadt",
+            "caption": "Kapstadt Highlights – die schönsten Orte und Aktivitäten"
+          }
+        }
+      },
+      "block_order": [
+        "r-1"
+      ],
+      "settings": {
+        "kicker": "Live vor Ort",
+        "title": "So sieht es dort wirklich aus.",
+        "subtitle": "<p>Ein Video aus unseren Aufenthalten vor Ort – Play drücken, läuft direkt hier.</p>",
+        "text_size": "medium",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
@@ -405,6 +422,7 @@
     "section_row_nFGMMr",
     "section_reviews_ECUnCA",
     "section_accordion_7E7iHh",
+    "reels",
     "recent",
     "related"
   ]

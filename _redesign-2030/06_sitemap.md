@@ -51,11 +51,13 @@ Alle anderen Seiten sollen dieses Muster visuell/strukturell matchen:
 
 **Hero-Bilder:** Nutzen `shopify://shop_images/thailand.jpg` / `suedafrika.jpg` / `australien.jpg` / `DSC02014-3.jpg` (bereits im Shop hochgeladen). Bali nutzt interim `DSC04341-5.jpg` — im Admin auf einen besseren Landscape-Shot stellen.
 
-### ⚠️ Nur P0-Trust-Signals, sonst Alt-Look
+### 🟡 PDPs teilweise redesignt
 
-| Seite | Template | Gap |
-|---|---|---|
-| PDPs (alle ~18) | [product.*.json](../templates/) + [sections/product.liquid](../sections/product.liquid) | Before/After + Reels nicht eingebaut, keine Editorial-Hülle, alte Galerie |
+| PDP-Gruppe | Status |
+|---|---|
+| Map- & Bundle-PDPs (9 Templates) | ✅ P0-Trust-Signals + `section-reels` mit 1–3 themenpassenden YouTube-Videos, eingehängt vor related/recent-Produkten. Betroffen: bali-maps, bali-starter-kit, bali-bundle, bangkok-maps, samui-maps, kapstadt-maps, kapstadt-maps-2, sudafrika-guide, sudafrika-bundle |
+| Preset-PDPs (preset-ocean, preset-tropical, preset-vintage, preset-bundle, preset-collab, preseet-oceanbeach, presets) | ⚠️ Nur P0-Trust-Signals, Before/After-Slider noch nicht eingebaut — braucht Before/After-Bildpaare pro Preset |
+| Travelplanner | ⚠️ Nur P0-Trust-Signals |
 
 ### ✅ Welle B — Trust- und Branding-Seiten
 
@@ -67,16 +69,21 @@ Alle anderen Seiten sollen dieses Muster visuell/strukturell matchen:
 | Team | [page.team.json](../templates/page.team.json) | ✅ Hero + Intro + Laura/Finn/Tilda-Blocks + Lead-Magnet |
 | Lookbook | [page.lookbook.json](../templates/page.lookbook.json) | ✅ Placeholder-Stack weg, neu: Hero + Intro + 8-Bild-Gallery + Presets-Collection + Lead-Magnet |
 
-### ❌ Alt-Look / komplett unangetastet
+### ✅ Welle D — Support-Seiten
+
+| Seite | Template | Status |
+|---|---|---|
+| FAQ | [page.faq.json](../templates/page.faq.json) | ✅ Hero + Intro oben, Accordions darunter unverändert. Accordion-Content ist noch auf Englisch / physisches-Produkt-Default — Übersetzung + Digital-Anpassung im Admin nötig |
+| Contact | [page.contact.json](../templates/page.contact.json) | ✅ Hero + Intro oben, Formular + Policies darunter unverändert. Policy-Accordions noch auf Englisch |
+
+### ❌ Alt-Look / bewusst später (Phase 2)
 
 | Seite | Template | Aktueller Zustand |
 |---|---|---|
-| FAQ | [page.faq.json](../templates/page.faq.json) | Default-Page (Welle D) |
-| Contact | [page.contact.json](../templates/page.contact.json) | Default-Page (Welle D) |
-| Collections (alle) | [collection.json](../templates/collection.json) | Alte Facetten, keine unified Grid (Phase 2) |
-| Blog | [blog.json](../templates/blog.json) + 2 Varianten | Unverändert (Phase 2) |
-| Articles | [article.json](../templates/article.json) + 7 Varianten | Unverändert (Phase 2) |
-| Cart | [cart.json](../templates/cart.json) | Unverändert (Phase 2) |
+| Collections (alle) | [collection.json](../templates/collection.json) | Alte Facetten, keine unified Grid |
+| Blog | [blog.json](../templates/blog.json) + 2 Varianten | Unverändert |
+| Articles | [article.json](../templates/article.json) + 7 Varianten | Unverändert |
+| Cart | [cart.json](../templates/cart.json) | Unverändert |
 | Search / 404 / Customer-Area | — | Unverändert |
 
 ### 🧭 Geplant, existiert noch nicht
