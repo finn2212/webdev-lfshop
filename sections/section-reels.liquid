@@ -1,14 +1,14 @@
 {%- comment -%}
-  section-reels.liquid — 9:16 Vertical-Video-Grid mit Fullscreen-Lightbox.
+  section-reels.liquid — YouTube-Cinema-Gallery für Destination-Hubs.
 
-  Pure HTML/CSS/Vanilla-JS. Nutzt:
-    - native <dialog> für Fullscreen-Lightbox (a11y, ESC schließt)
-    - IntersectionObserver für autoplay/pause beim Scroll
-    - prefers-reduced-motion stoppt Auto-Play
-    - Pointer-Events für Tap-to-Sound + Swipe-Navigation in Fullscreen
+  YouTube-Pfad (Standard): 16:9-Kachel mit echtem YouTube-Thumbnail +
+  rotem Play-Button. Klick ersetzt die Kachel durch ein eingebettetes
+  youtube-nocookie-Iframe (lite-youtube-Pattern). Inline-Playback mit
+  nativen YouTube-Controls inkl. Fullscreen & Ton.
 
-  Block enthält Video-File (Shopify File-Reference), Poster-Image,
-  optional ein verlinktes Produkt für Tag-Overlay, und Destination-Label.
+  MP4-Pfad (optional): 9:16-Kachel, Auto-Play im Grid (stumm), Lightbox
+  öffnet das Video im Vollbild. Reste der Dialog-Logik bleiben dafür
+  erhalten.
 
   Verwendung: PDP "More from this trip" / Homepage / Destination-Pages.
 {%- endcomment -%}
@@ -76,63 +76,87 @@
             {%- endif -%}
             {{ block.shopify_attributes }}
           >
-            <button class="reels__tile" type="button" data-reel-open aria-label="Video {{ label | default: caption | escape }} in Vollbild öffnen">
-              <span class="reels__media">
-                {%- if poster != blank -%}
-                  <img
-                    class="reels__poster"
-                    src="{{ poster | image_url: width: 720 }}"
-                    srcset="{{ poster | image_url: width: 360 }} 360w, {{ poster | image_url: width: 720 }} 720w, {{ poster | image_url: width: 1080 }} 1080w"
-                    sizes="(min-width: 990px) 25vw, 50vw"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    width="{{ poster.width }}"
-                    height="{{ poster.height }}"
-                  >
-                {%- elsif reel_type == 'youtube' -%}
-                  <img
-                    class="reels__poster"
-                    src="https://i.ytimg.com/vi/{{ yt_id }}/hqdefault.jpg"
-                    srcset="https://i.ytimg.com/vi/{{ yt_id }}/hqdefault.jpg 480w, https://i.ytimg.com/vi/{{ yt_id }}/maxresdefault.jpg 1280w"
-                    sizes="(min-width: 990px) 25vw, 50vw"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  >
-                {%- endif -%}
+            <article class="reels__card">
+              <button class="reels__tile" type="button" data-reel-open aria-label="Video {{ label | default: caption | escape }} abspielen">
+                <span class="reels__media">
+                  {%- if poster != blank -%}
+                    <img
+                      class="reels__poster"
+                      src="{{ poster | image_url: width: 1280 }}"
+                      srcset="{{ poster | image_url: width: 640 }} 640w, {{ poster | image_url: width: 1280 }} 1280w, {{ poster | image_url: width: 1920 }} 1920w"
+                      sizes="(min-width: 990px) 33vw, (min-width: 720px) 50vw, 100vw"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      width="{{ poster.width }}"
+                      height="{{ poster.height }}"
+                    >
+                  {%- elsif reel_type == 'youtube' -%}
+                    <img
+                      class="reels__poster"
+                      src="https://i.ytimg.com/vi/{{ yt_id }}/hqdefault.jpg"
+                      srcset="https://i.ytimg.com/vi/{{ yt_id }}/hqdefault.jpg 480w, https://i.ytimg.com/vi/{{ yt_id }}/sddefault.jpg 640w, https://i.ytimg.com/vi/{{ yt_id }}/maxresdefault.jpg 1280w"
+                      sizes="(min-width: 990px) 33vw, (min-width: 720px) 50vw, 100vw"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      width="1280"
+                      height="720"
+                    >
+                  {%- endif -%}
 
-                {%- if reel_type == 'file' and video != blank -%}
-                  <video
-                    class="reels__video"
-                    data-reel-video
-                    {%- if poster != blank %} poster="{{ poster | image_url: width: 720 }}"{% endif %}
-                    muted
-                    loop
-                    playsinline
-                    preload="none"
-                    aria-hidden="true"
-                  >
-                    {%- for source in video.sources -%}
-                      <source src="{{ source.url }}" type="{{ source.mime_type }}">
-                    {%- endfor -%}
-                  </video>
-                {%- elsif poster == blank and reel_type != 'youtube' -%}
-                  <span class="reels__placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</span>
-                {%- endif -%}
+                  {%- if reel_type == 'file' and video != blank -%}
+                    <video
+                      class="reels__video"
+                      data-reel-video
+                      {%- if poster != blank %} poster="{{ poster | image_url: width: 1280 }}"{% endif %}
+                      muted
+                      loop
+                      playsinline
+                      preload="none"
+                      aria-hidden="true"
+                    >
+                      {%- for source in video.sources -%}
+                        <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                      {%- endfor -%}
+                    </video>
+                  {%- elsif poster == blank and reel_type != 'youtube' -%}
+                    <span class="reels__placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+                  {%- endif -%}
 
-                <span class="reels__play" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <span class="reels__gradient" aria-hidden="true"></span>
+
+                  <span class="reels__play reels__play--{{ reel_type }}" aria-hidden="true">
+                    {%- if reel_type == 'youtube' -%}
+                      <svg viewBox="0 0 68 48" width="68" height="48" focusable="false">
+                        <path class="reels__play-bg" d="M66.52 7.74a8 8 0 0 0-5.64-5.66C55.93.8 34 .8 34 .8s-21.93 0-26.88 1.28A8 8 0 0 0 1.48 7.74 83.2 83.2 0 0 0 0 24a83.2 83.2 0 0 0 1.48 16.26 8 8 0 0 0 5.64 5.66C12.07 47.2 34 47.2 34 47.2s21.93 0 26.88-1.28a8 8 0 0 0 5.64-5.66A83.2 83.2 0 0 0 68 24a83.2 83.2 0 0 0-1.48-16.26Z"/>
+                        <path d="M45 24 27 14v20z" fill="#fff"/>
+                      </svg>
+                    {%- else -%}
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    {%- endif -%}
+                  </span>
+
+                  {%- if label != blank -%}
+                    <span class="reels__pin font-mono-2030" aria-hidden="true">{{ label | escape }}</span>
+                  {%- endif -%}
                 </span>
+              </button>
 
-                {%- if label != blank -%}
-                  <span class="reels__pin font-mono-2030" aria-hidden="true">{{ label | escape }}</span>
-                {%- endif -%}
-              </span>
-              {%- if caption != blank -%}
-                <span class="reels__caption font-body-2030">{{ caption | escape }}</span>
+              {%- if caption != blank or reel_type == 'youtube' -%}
+                <div class="reels__meta">
+                  {%- if reel_type == 'youtube' -%}
+                    <p class="reels__channel font-mono-2030">
+                      <span class="reels__channel-dot" aria-hidden="true"></span>
+                      Laura &amp; Finn · YouTube
+                    </p>
+                  {%- endif -%}
+                  {%- if caption != blank -%}
+                    <p class="reels__caption font-body-2030">{{ caption | escape }}</p>
+                  {%- endif -%}
+                </div>
               {%- endif -%}
-            </button>
+            </article>
           </li>
         {%- endfor -%}
       </ul>
@@ -168,7 +192,7 @@
 
 <style>
   .section-reels { padding-top: var(--PT, 60px); padding-bottom: var(--PB, 60px); }
-  .reels__header { text-align: center; max-width: 720px; margin: 0 auto 2.2rem; }
+  .reels__header { text-align: center; max-width: 720px; margin: 0 auto 2.6rem; }
   .reels__kicker {
     text-transform: uppercase; letter-spacing: 0.18em;
     font-size: 0.78rem; color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
@@ -183,56 +207,105 @@
     color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
   }
 
+  /* Grid: 1 → 2 → 3 Spalten (passt zu typisch 3 Videos pro Hub) */
   .reels__grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.9rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.6rem;
     list-style: none; padding: 0; margin: 0;
   }
-  @media (min-width: 720px) { .reels__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media (min-width: 990px) { .reels__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; } }
+  @media (min-width: 720px) { .reels__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; } }
+  @media (min-width: 990px) { .reels__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; } }
 
   .reels__item { margin: 0; }
+  .reels__card {
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
   .reels__tile {
     width: 100%; padding: 0; border: 0; background: transparent;
-    cursor: pointer; display: flex; flex-direction: column; gap: 0.55rem;
-    text-align: left; color: inherit;
-    font: inherit;
+    cursor: pointer; display: block; text-align: left; color: inherit;
+    font: inherit; position: relative;
   }
   .reels__media {
     position: relative; display: block; overflow: hidden;
     border-radius: var(--RADIUS-LG, 14px);
-    background: var(--COLOR-BODY-TEXT-A05, #f0eee9);
-    aspect-ratio: 9 / 16;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+    background: #111;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.16);
+    transition: transform 320ms ease, box-shadow 320ms ease;
   }
+  /* MP4-Kachel behält das Reel-Format (9:16) */
+  .reels__item--file .reels__media { aspect-ratio: 9 / 16; }
+
+  .reels__tile:hover .reels__media,
+  .reels__tile:focus-visible .reels__media {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.22);
+  }
+
   .reels__poster, .reels__video, .reels__placeholder {
     position: absolute; inset: 0;
     width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 600ms ease;
   }
+  .reels__tile:hover .reels__poster { transform: scale(1.03); }
   .reels__video { opacity: 0; transition: opacity 240ms ease; }
   [data-reel].is-playing .reels__video { opacity: 1; }
-  .reels__play {
-    position: absolute; right: 0.7rem; bottom: 0.7rem;
-    width: 36px; height: 36px; border-radius: 50%;
-    background: rgba(255,255,255,0.92); color: #1a1a1a;
-    display: grid; place-items: center;
-    backdrop-filter: blur(6px);
-    transition: transform 200ms ease;
+
+  .reels__gradient {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.00) 55%, rgba(0,0,0,0.38) 100%);
+    pointer-events: none;
   }
-  .reels__tile:hover .reels__play,
-  .reels__tile:focus-visible .reels__play { transform: scale(1.08); }
+
+  /* Play-Button — YouTube-Style (rot) für YouTube, kompakt für MP4 */
+  .reels__play {
+    position: absolute; inset: 0; margin: auto;
+    display: grid; place-items: center;
+    pointer-events: none;
+    transition: transform 220ms ease, filter 220ms ease;
+  }
+  .reels__play--youtube {
+    width: 68px; height: 48px;
+  }
+  .reels__play--youtube .reels__play-bg { fill: #f00; transition: fill 200ms ease; }
+  .reels__tile:hover .reels__play--youtube { transform: scale(1.08); }
+  .reels__tile:hover .reels__play--youtube .reels__play-bg { fill: #ff0033; }
+
+  .reels__play--file {
+    position: absolute; inset: auto 0.7rem 0.7rem auto; margin: 0;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.94); color: #1a1a1a;
+    backdrop-filter: blur(6px);
+    display: grid; place-items: center;
+  }
+  .reels__tile:hover .reels__play--file,
+  .reels__tile:focus-visible .reels__play--file { transform: scale(1.08); }
+
   .reels__pin {
-    position: absolute; top: 0.7rem; left: 0.7rem;
-    background: rgba(0,0,0,0.55); color: #fff;
-    padding: 0.22rem 0.55rem; border-radius: 999px;
+    position: absolute; top: 0.8rem; left: 0.8rem;
+    background: rgba(0,0,0,0.62); color: #fff;
+    padding: 0.28rem 0.65rem; border-radius: 999px;
     font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
     backdrop-filter: blur(6px);
   }
+
+  .reels__meta { display: grid; gap: 0.35rem; }
+  .reels__channel {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin: 0;
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--COLOR-BODY-TEXT-A75, #6a6a6a);
+  }
+  .reels__channel-dot {
+    width: 0.55rem; height: 0.55rem; border-radius: 50%;
+    background: #f00;
+    box-shadow: 0 0 0 3px rgba(255,0,0,0.14);
+  }
   .reels__caption {
-    font-size: 0.92rem;
+    margin: 0;
+    font-size: 1.02rem; line-height: 1.38;
     color: var(--COLOR-BODY-TEXT, #1a1a1a);
-    line-height: 1.35;
   }
 
   .reels__tile:focus-visible {
@@ -241,7 +314,22 @@
     border-radius: var(--RADIUS-LG, 14px);
   }
 
-  /* Dialog ============================================================ */
+  /* In-Place YouTube-Embed — ersetzt Tile beim Klick */
+  .reels__embed {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--RADIUS-LG, 14px);
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.22);
+  }
+  .reels__embed iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+
+  /* Dialog (nur noch für MP4-Reels) ==================================== */
   .reels__dialog[open] {
     border: 0; padding: 0; background: transparent;
     inset: 0; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh;
@@ -310,7 +398,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .reels__video { transition: none; }
+    .reels__video, .reels__media, .reels__poster, .reels__play { transition: none; }
   }
 </style>
 
@@ -342,6 +430,28 @@
     return Array.from((scope || document).querySelectorAll('[data-reel]'));
   }
 
+  function embedYouTubeInline(reel) {
+    var ytId = reel.dataset.youtubeId;
+    if (!ytId) return;
+    var card = reel.querySelector('.reels__card');
+    var tile = reel.querySelector('.reels__tile');
+    if (!card || !tile) return;
+
+    var wrap = document.createElement('div');
+    wrap.className = 'reels__embed';
+
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(ytId) + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('title', reel.dataset.caption || reel.dataset.label || 'YouTube-Video');
+    iframe.setAttribute('loading', 'eager');
+
+    wrap.appendChild(iframe);
+    tile.replaceWith(wrap);
+    reel.dataset.embedded = '1';
+  }
+
   function openDialog(allReels, idx) {
     var dlg = document.querySelector('[data-reels-dialog]');
     var stage = document.querySelector('[data-reels-dialog-stage]');
@@ -352,9 +462,7 @@
     var ctaPriceEl = document.querySelector('[data-reels-dialog-cta-price]');
     if (!dlg || !stage) return;
 
-    function clearStage() {
-      stage.innerHTML = '';
-    }
+    function clearStage() { stage.innerHTML = ''; }
 
     function show(i) {
       var reel = allReels[i];
@@ -362,30 +470,17 @@
 
       clearStage();
 
-      var type = reel.dataset.reelType || 'file';
-      if (type === 'youtube') {
-        var ytId = reel.dataset.youtubeId;
-        if (ytId) {
-          var iframe = document.createElement('iframe');
-          iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(ytId) + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-          iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
-          iframe.setAttribute('allowfullscreen', '');
-          iframe.setAttribute('title', reel.dataset.caption || reel.dataset.label || 'YouTube-Video');
-          stage.appendChild(iframe);
-        }
-      } else {
-        var srcVideo = reel.querySelector('[data-reel-video]');
-        if (srcVideo) {
-          var v = document.createElement('video');
-          v.controls = true;
-          v.playsInline = true;
-          v.autoplay = true;
-          v.preload = 'metadata';
-          v.innerHTML = srcVideo.innerHTML;
-          stage.appendChild(v);
-          v.load();
-          v.play().catch(function () {});
-        }
+      var srcVideo = reel.querySelector('[data-reel-video]');
+      if (srcVideo) {
+        var v = document.createElement('video');
+        v.controls = true;
+        v.playsInline = true;
+        v.autoplay = true;
+        v.preload = 'metadata';
+        v.innerHTML = srcVideo.innerHTML;
+        stage.appendChild(v);
+        v.load();
+        v.play().catch(function () {});
       }
 
       labelEl.textContent = reel.dataset.label || '';
@@ -413,8 +508,13 @@
 
     function nav(delta) {
       var i = parseInt(dlg.dataset.currentIndex, 10) || 0;
-      i = (i + delta + allReels.length) % allReels.length;
-      show(i);
+      var fileReels = allReels.filter(function (r) { return r.dataset.reelType !== 'youtube'; });
+      if (fileReels.length === 0) return;
+      var currentIdxInFile = fileReels.indexOf(allReels[i]);
+      if (currentIdxInFile < 0) currentIdxInFile = 0;
+      var nextIdxInFile = (currentIdxInFile + delta + fileReels.length) % fileReels.length;
+      var nextReel = fileReels[nextIdxInFile];
+      show(allReels.indexOf(nextReel));
     }
     prevBtn.onclick = function () { nav(-1); };
     nextBtn.onclick = function () { nav(1); };
@@ -427,7 +527,6 @@
     }
     document.addEventListener('keydown', onKey);
 
-    // swipe (MP4-reels only — iframes swallow touch events)
     var startX = null;
     function ts(e) { startX = e.touches[0].clientX; }
     function te(e) {
@@ -452,13 +551,17 @@
     reels.forEach(function (reel) {
       if (observer) observer.observe(reel);
       var btn = reel.querySelector('[data-reel-open]');
-      if (btn) {
-        btn.addEventListener('click', function () {
-          var allReels = getReels(reel.closest('[data-reels-section]'));
-          var idx = allReels.indexOf(reel);
-          openDialog(allReels, Math.max(0, idx));
-        });
-      }
+      if (!btn) return;
+
+      btn.addEventListener('click', function () {
+        if (reel.dataset.reelType === 'youtube') {
+          embedYouTubeInline(reel);
+          return;
+        }
+        var allReels = getReels(reel.closest('[data-reels-section]'));
+        var idx = allReels.indexOf(reel);
+        openDialog(allReels, Math.max(0, idx));
+      });
     });
   }
 
@@ -523,18 +626,18 @@
           "type": "text",
           "id": "youtube_url",
           "label": "YouTube-URL (Alternative zur Video-Datei)",
-          "info": "Beispiel: https://www.youtube.com/watch?v=… — Grid zeigt das YouTube-Thumbnail (9:16 cropped), Lightbox öffnet den YouTube-Player in 16:9. Hat Vorrang vor einer Video-Datei."
+          "info": "Beispiel: https://www.youtube.com/watch?v=… — Grid zeigt das YouTube-Thumbnail in 16:9, Klick bettet das YouTube-Iframe inline ein (Autoplay, native Controls inkl. Fullscreen). Hat Vorrang vor einer Video-Datei."
         },
         {
           "type": "image_picker",
           "id": "poster",
-          "label": "Poster-Bild (9:16 empfohlen, optional)",
-          "info": "Überschreibt das YouTube-Thumbnail bzw. das Video-Poster im Grid."
+          "label": "Poster-Bild (optional)",
+          "info": "Überschreibt das YouTube-Thumbnail bzw. das Video-Poster im Grid. Für YouTube-Kacheln 16:9 empfohlen, für MP4-Kacheln 9:16."
         },
         {
           "type": "text",
           "id": "label",
-          "label": "Pin-Label (z. B. „Bali · Sunset\")",
+          "label": "Pin-Label (z. B. „Bali · Sunset“)",
           "default": "Bali"
         },
         {
@@ -562,7 +665,6 @@
     {
       "name": "Reels",
       "blocks": [
-        { "type": "reel" },
         { "type": "reel" },
         { "type": "reel" },
         { "type": "reel" }
