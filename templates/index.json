@@ -12,9 +12,9 @@
     "hero": {
       "type": "section-editorial-hero",
       "settings": {
-        "image": "shopify://shop_images/Hero_Banner_Promo_5_c64e8416-7350-46ce-8745-a38817f73bc8.png",
+        "image": "shopify://shop_images/DSC00484.jpg",
         "image_mobile": "shopify://shop_images/Hero_Banner_Mobile_3.png",
-        "overlay_opacity": 30,
+        "overlay_opacity": 10,
         "overlay_color": "#181929",
         "eyebrow": "Reisen mit Kind, gut recherchiert",
         "heading": "<p>Weil Reisen mit Kind nur schöner wird.</p>",
@@ -73,7 +73,14 @@
           }
         }
       },
-      "block_order": ["h-1", "h-2", "h-3", "h-4", "h-5", "h-6"],
+      "block_order": [
+        "h-1",
+        "h-2",
+        "h-3",
+        "h-4",
+        "h-5",
+        "h-6"
+      ],
       "settings": {
         "eyebrow": "Wer wir sind",
         "heading": "<p>Reisen ist persönlich. Unser Shop ist es auch.</p>",
@@ -89,8 +96,9 @@
         "d-1": {
           "type": "card",
           "settings": {
-            "title": "Südafrika",
+            "image": "shopify://shop_images/suedafrika.jpg",
             "eyebrow": "Kapstadt & Garden Route",
+            "title": "Südafrika",
             "subtitle": "Slow-Travel mit Kind durch die Garden Route – ohne Selbstfahr-Stress.",
             "url": "/pages/suedafrika"
           }
@@ -98,8 +106,9 @@
         "d-2": {
           "type": "card",
           "settings": {
-            "title": "Bali",
+            "image": "shopify://shop_images/bali.jpg",
             "eyebrow": "Indonesien",
+            "title": "Bali",
             "subtitle": "Drei Inseln, lange Aufenthalte, kindertaugliche Routen jenseits von Seminyak.",
             "url": "/pages/bali"
           }
@@ -107,8 +116,9 @@
         "d-3": {
           "type": "card",
           "settings": {
-            "title": "Thailand",
+            "image": "shopify://shop_images/thailand.jpg",
             "eyebrow": "Bangkok & Inseln",
+            "title": "Thailand",
             "subtitle": "Bangkok mit Kind, Koh Samui zur Ruhe – zwei Welten, eine Reise.",
             "url": "/pages/thailand"
           }
@@ -116,18 +126,25 @@
         "d-4": {
           "type": "card",
           "settings": {
-            "title": "Australien",
+            "image": "shopify://shop_images/australien.jpg",
             "eyebrow": "Westküste",
+            "title": "Australien",
             "subtitle": "Was wir über Einreise, Versicherungen und Slow-Travel mit Kind gelernt haben.",
             "url": "/pages/australien"
           }
         }
       },
-      "block_order": ["d-1", "d-2", "d-3", "d-4"],
+      "block_order": [
+        "d-1",
+        "d-2",
+        "d-3",
+        "d-4"
+      ],
       "settings": {
         "kicker": "Wo wir waren",
         "title": "Vier Länder mit eigener Geschichte.",
         "subtitle": "<p>Destinationen, in denen wir lange genug waren, um konkret etwas dazu zu sagen.</p>",
+        "text_size": "medium",
         "columns": "4",
         "width": "wrapper",
         "color_bg": "bg--neutral",
@@ -168,25 +185,32 @@
           "type": "principle",
           "settings": {
             "title": "Selbst gewesen",
-            "body": "<p>Jeder empfohlene Spot wurde von uns persönlich besucht – meist mehrfach. Wenn wir nicht da waren, kommt er nicht in den Guide.</p>"
+            "body": "<p>Jeder empfohlene Spot wurde von uns persönlich besucht – meist mehrfach. Wenn wir nicht da waren, kommt er nicht in den Guide.</p>",
+            "example": ""
           }
         },
         "p-2": {
           "type": "principle",
           "settings": {
             "title": "Updates inklusive",
-            "body": "<p>Reise-Content veraltet schnell. Käufer mit aktivem Konto bekommen jede neue Version automatisch per E-Mail – kostenlos, mindestens einmal jährlich.</p>"
+            "body": "<p>Reise-Content veraltet schnell. Käufer mit aktivem Konto bekommen jede neue Version automatisch per E-Mail – kostenlos, mindestens einmal jährlich.</p>",
+            "example": ""
           }
         },
         "p-3": {
           "type": "principle",
           "settings": {
             "title": "14 Tage Geld zurück",
-            "body": "<p>Bringt der Guide dich nicht weiter, bekommst du dein Geld zurück. Ohne Wenn und Aber, ohne Begründung, ohne Formular.</p>"
+            "body": "<p>Bringt der Guide dich nicht weiter, bekommst du dein Geld zurück. Ohne Wenn und Aber, ohne Begründung, ohne Formular.</p>",
+            "example": ""
           }
         }
       },
-      "block_order": ["p-1", "p-2", "p-3"],
+      "block_order": [
+        "p-1",
+        "p-2",
+        "p-3"
+      ],
       "settings": {
         "kicker": "Methode",
         "title": "Drei Punkte, auf die wir uns festlegen.",
@@ -238,14 +262,57 @@
     "gallery": {
       "type": "section-gallery",
       "blocks": {
-        "g-1": { "type": "image", "settings": { "image": "shopify://shop_images/janan-OoW1DMDCV1Y-unsplash.jpg", "link": "" } },
-        "g-2": { "type": "image", "settings": { "image": "shopify://shop_images/DSC01849-2.jpg",       "link": "" } },
-        "g-3": { "type": "image", "settings": { "image": "shopify://shop_images/DSC01168-2.jpg",       "link": "" } },
-        "g-4": { "type": "image", "settings": { "image": "shopify://shop_images/DSC02020-3.jpg",       "link": "" } },
-        "g-5": { "type": "image", "settings": { "image": "shopify://shop_images/DSC02014-3.jpg",       "link": "" } },
-        "g-6": { "type": "image", "settings": { "image": "shopify://shop_images/DSC04341-5.jpg",       "link": "" } }
+        "g-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/janan-OoW1DMDCV1Y-unsplash.jpg",
+            "link": ""
+          }
+        },
+        "g-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC01849-2.jpg",
+            "link": ""
+          }
+        },
+        "g-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC01168-2.jpg",
+            "link": ""
+          }
+        },
+        "g-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC02020-3.jpg",
+            "link": ""
+          }
+        },
+        "g-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC02014-3.jpg",
+            "link": ""
+          }
+        },
+        "g-6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC04341-5.jpg",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["g-1", "g-2", "g-3", "g-4", "g-5", "g-6"],
+      "block_order": [
+        "g-1",
+        "g-2",
+        "g-3",
+        "g-4",
+        "g-5",
+        "g-6"
+      ],
       "settings": {
         "scale_image": true,
         "aspect_ratio": 1,
