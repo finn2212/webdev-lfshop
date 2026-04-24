@@ -39,17 +39,17 @@ Alle anderen Seiten sollen dieses Muster visuell/strukturell matchen:
 | Homepage | [index.json](../templates/index.json) | editorial-hero, editorial-text, link-cards, principles, collection-row, gallery, lead-magnet, row, collection | **Referenz-Seite** |
 | Redaktionsprinzipien | [page.redaktionsprinzipien.json](../templates/page.redaktionsprinzipien.json) | principles | Trust-Page, neu |
 
-### 🟡 Redesigned, aber inkonsistent zur Startseite
+### ✅ Alle Destination-Hubs auf Homepage-Muster
 
-| Seite | Template | Gap zur Baseline |
+| Seite | Template | Status |
 |---|---|---|
-| Bali (Destination-Hub) | [page.bali.json](../templates/page.bali.json) | ✅ Hero + Intro + Lead-Magnet + 3 YouTube-Reels (Commit `8ef70b7`). Hero-Bild im Admin noch auf besseren Landscape-Shot stellen. |
-| Südafrika | [page.suedafrika.json](../templates/page.suedafrika.json) | ⚠️ Kein Hero, kein Intro, keine Reels befüllt |
-| Thailand | [page.thailand.json](../templates/page.thailand.json) | ⚠️ Kein Hero, kein Intro, keine Reels befüllt |
-| Australien | [page.australien.json](../templates/page.australien.json) | ⚠️ Kein Hero, keine Reels-Section |
-| Familienreisen | [page.familienreisen.json](../templates/page.familienreisen.json) | ⚠️ Kein Hero |
+| Bali | [page.bali.json](../templates/page.bali.json) | ✅ Hero + Intro + Spotlight + Principles + 3 YouTube-Reels + Lead-Magnet |
+| Südafrika | [page.suedafrika.json](../templates/page.suedafrika.json) | ✅ Hero + Intro + Spotlight + Principles + 3 YouTube-Reels + Lead-Magnet |
+| Thailand | [page.thailand.json](../templates/page.thailand.json) | ✅ Hero + Intro + Spotlight + Principles + 3 YouTube-Reels + Lead-Magnet |
+| Australien | [page.australien.json](../templates/page.australien.json) | ✅ Hero + Intro + Stories + Principles + 3 YouTube-Reels + Lead-Magnet (Australien-Wartelist statt Preset) |
+| Familienreisen | [page.familienreisen.json](../templates/page.familienreisen.json) | ✅ Hero + Intro + Destinations + Principles + 3 YouTube-Reels + Story-Articles + Lead-Magnet |
 
-**Fix-Muster für alle 4 verbleibenden:** `section-editorial-hero` + `section-editorial-text` davor, YouTube-Reels in `section-reels` einhängen (Section unterstützt ab `a2f16d7` YouTube-URLs), Lead-Magnet ans Ende. Rest bleibt.
+**Hero-Bilder:** Nutzen `shopify://shop_images/thailand.jpg` / `suedafrika.jpg` / `australien.jpg` / `DSC02014-3.jpg` (bereits im Shop hochgeladen). Bali nutzt interim `DSC04341-5.jpg` — im Admin auf einen besseren Landscape-Shot stellen.
 
 ### ⚠️ Nur P0-Trust-Signals, sonst Alt-Look
 

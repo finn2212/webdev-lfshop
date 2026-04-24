@@ -1,14 +1,59 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/suedafrika.jpg",
+        "overlay_opacity": 35,
+        "overlay_color": "#181929",
+        "eyebrow": "Südafrika · Kapstadt & Garden Route",
+        "heading": "<p>Kapstadt langsam. Garden Route ehrlich.</p>",
+        "lead": "<p>Mehrere Wochen mit Tilda im Mietwagen, ohne Resort – Slow-Travel durch die Garden Route, mit offenen Karten zu Sicherheit und Saison.</p>",
+        "cta_primary_label": "Südafrika-Bundle ansehen",
+        "cta_primary_url": "/products/sudafrika-bundle",
+        "cta_secondary_label": "Wie wir arbeiten",
+        "cta_secondary_url": "/pages/redaktionsprinzipien",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Mehrere Wochen mit Tilda im Mietwagen, ohne Resort – das hat unseren Südafrika-Blick geformt. Wir haben gelernt, wann Sicherheit ein echtes Thema ist und wann Klischee. Diese Karten und der Guide sind kuratiert für Reisende, die selbst fahren wollen, ohne dauernd nervös zu sein.</p>"
+          }
+        },
+        "b-2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Wir reden über Sicherheit dort, wo sie ehrlich gemeint ist – und sparen uns das Alarmismus-Register.",
+            "attribution": "",
+            "style": "display"
+          }
+        },
+        "b-3": {
+          "type": "signature",
+          "settings": {
+            "signature": "— Laura & Finn"
+          }
+        }
+      },
+      "block_order": ["b-1", "b-2", "b-3"],
+      "settings": {
+        "eyebrow": "Wie wir Südafrika kennengelernt haben",
+        "heading": "<p>Weniger Spots, mehr echte Begegnungen.</p>",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 56,
+        "padding_bottom": 32
+      }
+    },
     "spotlight": {
       "type": "section-bundle-spotlight",
       "blocks": {
@@ -27,10 +72,7 @@
           }
         }
       },
-      "block_order": [
-        "i-1",
-        "i-2"
-      ],
+      "block_order": ["i-1", "i-2"],
       "settings": {
         "kicker": "Südafrika · Kapstadt & Garden Route",
         "title": "Kapstadt langsam. Garden Route ehrlich.",
@@ -72,11 +114,7 @@
           }
         }
       },
-      "block_order": [
-        "p-1",
-        "p-2",
-        "p-3"
-      ],
+      "block_order": ["p-1", "p-2", "p-3"],
       "settings": {
         "kicker": "Versprechen",
         "title": "Drei Punkte, auf die wir uns festlegen.",
@@ -90,21 +128,62 @@
     },
     "reels": {
       "type": "section-reels",
+      "blocks": {
+        "r-1": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=cKMN3kIIqJE",
+            "label": "Kapstadt",
+            "caption": "Kapstadt Highlights – die schönsten Orte und Aktivitäten"
+          }
+        },
+        "r-2": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=w6atGDaZkwk",
+            "label": "Hermanus",
+            "caption": "Hermanus – Wale, Traumstrände und Geheimtipps"
+          }
+        },
+        "r-3": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=vgf5YlLSo6A",
+            "label": "Mit Familie",
+            "caption": "Familien-Abenteuer in Südafrika – Kurztrip Westküste"
+          }
+        }
+      },
+      "block_order": ["r-1", "r-2", "r-3"],
       "settings": {
-        "kicker": "Live aus Südafrika",
-        "title": "Eindrücke von der Garden Route.",
-        "subtitle": "<p>Tap das Video an für Vollbild und Ton.</p>",
+        "kicker": "Live vor Ort",
+        "title": "Eindrücke von Kapstadt und der Garden Route.",
+        "subtitle": "<p>Drei Videos aus unseren Südafrika-Wochen – tap an für Vollbild und Ton.</p>",
         "text_size": "medium",
         "width": "wrapper",
         "color_bg": "bg--neutral",
         "padding_top": 60,
         "padding_bottom": 100
       }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Geschenk für dich",
+        "title": "Hol dir unser Mini-Preset.",
+        "subtitle": "<p>Ein kostenloses Lightroom-Preset – warm, körnig, gemacht für Sonnenuntergangs-Szenen. Plus gelegentliche Mails über neue Karten und Guides.</p>",
+        "button_label": "Mini-Preset holen",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – der Download-Link ist unterwegs.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_suedafrika"
+      }
     }
   },
-  "order": [
-    "spotlight",
-    "principles",
-    "reels"
-  ]
+  "order": ["hero", "intro", "spotlight", "principles", "reels", "lead-magnet"]
 }

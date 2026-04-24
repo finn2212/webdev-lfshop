@@ -1,27 +1,57 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "intro": {
-      "type": "section-bundle-spotlight",
+    "hero": {
+      "type": "section-editorial-hero",
       "settings": {
-        "kicker": "Australien · Westküste",
-        "title": "Drei Monate Australien. Was uns dazu wirklich geholfen hat.",
-        "lead": "<p>Australien war für uns das längste zusammenhängende Reise-Kapitel als Familie – mit Camper, Westküste, langen Strecken. Wir haben dazu noch keine Karte veröffentlicht, weil wir das Material erst sortieren wollen. Bis dahin findet ihr hier unsere drei wichtigsten Praxis-Artikel.</p>",
-        "trust_promise": "",
-        "contents_kicker": "",
-        "contents_title": "",
+        "image": "shopify://shop_images/australien.jpg",
+        "overlay_opacity": 35,
+        "overlay_color": "#181929",
+        "eyebrow": "Australien · Westküste",
+        "heading": "<p>Drei Monate Westküste. Noch keine Karte.</p>",
+        "lead": "<p>Perth bis Broome im Camper, mit Kind, mit Staub, mit wenig Empfang – und dem Vorsatz, nichts zu drucken, bevor wir es wirklich meinen.</p>",
+        "cta_primary_label": "Aus dem Blog",
+        "cta_primary_url": "#stories",
+        "cta_secondary_label": "Wie wir arbeiten",
+        "cta_secondary_url": "/pages/redaktionsprinzipien",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Australien war für uns das längste zusammenhängende Reise-Kapitel als Familie – mit Camper, Westküste, langen Strecken. Wir haben dazu noch keine Karte veröffentlicht, weil wir das Material erst sortieren wollen. Bis dahin findet ihr hier unsere drei wichtigsten Praxis-Artikel.</p>"
+          }
+        },
+        "b-2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Wir drucken nichts, solange wir nicht genug Aufenthalt hatten, um es wirklich zu meinen.",
+            "attribution": "",
+            "style": "display"
+          }
+        },
+        "b-3": {
+          "type": "signature",
+          "settings": {
+            "signature": "— Laura & Finn"
+          }
+        }
+      },
+      "block_order": ["b-1", "b-2", "b-3"],
+      "settings": {
+        "eyebrow": "Warum Australien hier ein Sonderfall ist",
+        "heading": "<p>Drei Monate Australien. Was uns dazu wirklich geholfen hat.</p>",
         "width": "wrapper",
         "color_bg": "bg--neutral",
-        "padding_top": 100,
-        "padding_bottom": 60
+        "padding_top": 56,
+        "padding_bottom": 32
       }
     },
     "stories": {
@@ -55,11 +85,7 @@
           }
         }
       },
-      "block_order": [
-        "a-1",
-        "a-2",
-        "a-3"
-      ],
+      "block_order": ["a-1", "a-2", "a-3"],
       "settings": {
         "kicker": "Aus dem Blog",
         "title": "Drei Geschichten, die helfen.",
@@ -89,10 +115,7 @@
           }
         }
       },
-      "block_order": [
-        "p-1",
-        "p-2"
-      ],
+      "block_order": ["p-1", "p-2"],
       "settings": {
         "kicker": "Status",
         "title": "Warum hier (noch) keine Karte ist.",
@@ -101,13 +124,67 @@
         "width": "wrapper--narrow",
         "color_bg": "bg--accent",
         "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "reels": {
+      "type": "section-reels",
+      "blocks": {
+        "r-1": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=06xoebE37LQ",
+            "label": "Westküste",
+            "caption": "Best of Australien Westküste – die Abenteuer-Highlights"
+          }
+        },
+        "r-2": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=y2Wk7zFESXc",
+            "label": "Van Life",
+            "caption": "Erstes Mal Van Life in Australien – Abenteuer Westküste"
+          }
+        },
+        "r-3": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=h4FhC10a4U8",
+            "label": "Planung",
+            "caption": "Plane deinen Trip an die Westküste von Australien"
+          }
+        }
+      },
+      "block_order": ["r-1", "r-2", "r-3"],
+      "settings": {
+        "kicker": "Live vor Ort",
+        "title": "Eindrücke von der Westküste.",
+        "subtitle": "<p>Drei Videos aus unseren Australien-Monaten – tap an für Vollbild und Ton.</p>",
+        "text_size": "medium",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 60,
         "padding_bottom": 100
+      }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Newsletter",
+        "title": "Sei dabei, wenn die Australien-Karte kommt.",
+        "subtitle": "<p>Wir schicken eine kurze Mail, sobald die erste Australien-Karte fertig ist. Dazu gelegentliche Updates zu neuen Karten und Guides.</p>",
+        "button_label": "Anmelden",
+        "tag": "australien-wartelist",
+        "success_text": "Bitte bestätige deine E-Mail – wir melden uns.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_australien"
       }
     }
   },
-  "order": [
-    "intro",
-    "stories",
-    "principles"
-  ]
+  "order": ["hero", "intro", "stories", "principles", "reels", "lead-magnet"]
 }

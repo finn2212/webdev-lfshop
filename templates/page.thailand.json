@@ -1,14 +1,59 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/thailand.jpg",
+        "overlay_opacity": 35,
+        "overlay_color": "#181929",
+        "eyebrow": "Thailand · Bangkok & Inseln",
+        "heading": "<p>Bangkok mit Kind. Koh Samui zur Ruhe.</p>",
+        "lead": "<p>Zwei Welten, eine Reise – Stadtkapitel und Ruhepol, jeweils mit eigener Karte und ehrlicher Saison-Ansage.</p>",
+        "cta_primary_label": "Zu den Thailand-Karten",
+        "cta_primary_url": "/products/bangkok-maps",
+        "cta_secondary_label": "Wie wir arbeiten",
+        "cta_secondary_url": "/pages/redaktionsprinzipien",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Unsere erste längere Thailand-Etappe war ein Test: Bangkok mit Kleinkind, danach Koh Samui zur Entschleunigung. Was wir mitgenommen haben: die beiden Welten brauchen jeweils eine andere Art Karte – und ein ehrliches Wort zur Saison.</p>"
+          }
+        },
+        "b-2": {
+          "type": "quote",
+          "settings": {
+            "quote": "In Bangkok essen wir dort, wo Einheimische einkaufen. Nicht dort, wo die Speisekarte auf Deutsch steht.",
+            "attribution": "",
+            "style": "display"
+          }
+        },
+        "b-3": {
+          "type": "signature",
+          "settings": {
+            "signature": "— Laura & Finn"
+          }
+        }
+      },
+      "block_order": ["b-1", "b-2", "b-3"],
+      "settings": {
+        "eyebrow": "Wie wir Thailand kennengelernt haben",
+        "heading": "<p>Stadt und Insel als Paar – mit Puffer.</p>",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 56,
+        "padding_bottom": 32
+      }
+    },
     "spotlight": {
       "type": "section-bundle-spotlight",
       "blocks": {
@@ -27,10 +72,7 @@
           }
         }
       },
-      "block_order": [
-        "i-1",
-        "i-2"
-      ],
+      "block_order": ["i-1", "i-2"],
       "settings": {
         "kicker": "Thailand · Bangkok & Inseln",
         "title": "Bangkok mit Kind. Koh Samui zur Ruhe.",
@@ -69,11 +111,7 @@
           }
         }
       },
-      "block_order": [
-        "p-1",
-        "p-2",
-        "p-3"
-      ],
+      "block_order": ["p-1", "p-2", "p-3"],
       "settings": {
         "kicker": "Versprechen",
         "title": "Drei Punkte, auf die wir uns festlegen.",
@@ -87,21 +125,62 @@
     },
     "reels": {
       "type": "section-reels",
+      "blocks": {
+        "r-1": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=HFIHLJxT3zw",
+            "label": "Thailand · Planung",
+            "caption": "Perfekter Thailand-Urlaub – Planung, Routen, Budget"
+          }
+        },
+        "r-2": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=c-qumoAVpmA",
+            "label": "Mit Kind",
+            "caption": "Thailand mit Baby und Kleinkind – unsere Highlights und Tipps"
+          }
+        },
+        "r-3": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=KXGxSWmMryw",
+            "label": "Reisezeit",
+            "caption": "Thailand Reiseplanung – Budget, Reisezeit, Geheimtipps"
+          }
+        }
+      },
+      "block_order": ["r-1", "r-2", "r-3"],
       "settings": {
-        "kicker": "Live aus Thailand",
+        "kicker": "Live vor Ort",
         "title": "Eindrücke aus Bangkok und Koh Samui.",
-        "subtitle": "<p>Tap das Video an für Vollbild und Ton.</p>",
+        "subtitle": "<p>Drei Videos aus unseren Thailand-Etappen – tap an für Vollbild und Ton.</p>",
         "text_size": "medium",
         "width": "wrapper",
         "color_bg": "bg--neutral",
         "padding_top": 60,
         "padding_bottom": 100
       }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Geschenk für dich",
+        "title": "Hol dir unser Mini-Preset.",
+        "subtitle": "<p>Ein kostenloses Lightroom-Preset – warm, körnig, für tropische Szenen. Plus gelegentliche Mails über neue Karten und Guides.</p>",
+        "button_label": "Mini-Preset holen",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – der Download-Link ist unterwegs.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_thailand"
+      }
     }
   },
-  "order": [
-    "spotlight",
-    "principles",
-    "reels"
-  ]
+  "order": ["hero", "intro", "spotlight", "principles", "reels", "lead-magnet"]
 }

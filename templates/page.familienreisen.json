@@ -1,27 +1,57 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "intro": {
-      "type": "section-bundle-spotlight",
+    "hero": {
+      "type": "section-editorial-hero",
       "settings": {
-        "kicker": "Familienreisen",
-        "title": "Reisen mit Kind. Hier ist was wir gelernt haben.",
-        "lead": "<p>Wir reisen seit 2022 als Familie – mit Tilda, mittlerweile drei Jahren. Was anfangs naiv geplant war, hat sich über drei Kontinente und mehrere Reisepässe zu einer Methode entwickelt: weniger Spots pro Tag, mehr Pausen, bessere Routen. Diese Seite ist die Sammelstelle dafür – mit konkreten Karten und Guides aus den Ländern, in denen wir lange genug waren, um etwas dazu zu sagen.</p>",
-        "trust_promise": "14 Tage Geld zurück · Updates für 12 Monate · Sofort-Download als PDF + Google-Maps-Liste",
-        "contents_kicker": "",
-        "contents_title": "",
+        "image": "shopify://shop_images/DSC02014-3.jpg",
+        "overlay_opacity": 35,
+        "overlay_color": "#181929",
+        "eyebrow": "Familienreisen",
+        "heading": "<p>Weil Reisen mit Kind nur schöner wird.</p>",
+        "lead": "<p>Drei Kontinente, mehrere Reisepässe, eine Methode: weniger Spots pro Tag, mehr Pausen, bessere Routen – alles getestet mit Tilda.</p>",
+        "cta_primary_label": "Destinationen ansehen",
+        "cta_primary_url": "#destinations",
+        "cta_secondary_label": "Wie wir arbeiten",
+        "cta_secondary_url": "/pages/redaktionsprinzipien",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Wir reisen seit 2022 als Familie – mit Tilda, mittlerweile drei Jahren. Was anfangs naiv geplant war, hat sich über drei Kontinente und mehrere Reisepässe zu einer Methode entwickelt: weniger Spots pro Tag, mehr Pausen, bessere Routen. Diese Seite ist die Sammelstelle dafür – mit konkreten Karten und Guides aus den Ländern, in denen wir lange genug waren, um etwas dazu zu sagen.</p>"
+          }
+        },
+        "b-2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Was 2024 mit Tilda als Baby ging, geht mit ihr als Dreijähriger oft ganz anders. Wir schreiben beides auf.",
+            "attribution": "",
+            "style": "display"
+          }
+        },
+        "b-3": {
+          "type": "signature",
+          "settings": {
+            "signature": "— Laura, Finn & Tilda"
+          }
+        }
+      },
+      "block_order": ["b-1", "b-2", "b-3"],
+      "settings": {
+        "eyebrow": "Reisen mit Kind, Stand heute",
+        "heading": "<p>Weniger Bucket-List. Mehr Puffer. Mehr Ehrlichkeit.</p>",
         "width": "wrapper",
         "color_bg": "bg--neutral",
-        "padding_top": 100,
-        "padding_bottom": 60
+        "padding_top": 56,
+        "padding_bottom": 32
       }
     },
     "destinations": {
@@ -30,6 +60,7 @@
         "d-bali": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/bali.jpg",
             "eyebrow": "Indonesien",
             "title": "Bali",
             "subtitle": "Drei Inseln, lange Aufenthalte, kindertaugliche Routen jenseits von Seminyak.",
@@ -39,6 +70,7 @@
         "d-suedafrika": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/suedafrika.jpg",
             "eyebrow": "Kapstadt & Garden Route",
             "title": "Südafrika",
             "subtitle": "Slow-Travel mit Kind durch die Garden Route – ohne Selbstfahr-Stress.",
@@ -48,6 +80,7 @@
         "d-thailand": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/thailand.jpg",
             "eyebrow": "Bangkok & Inseln",
             "title": "Thailand",
             "subtitle": "Bangkok mit Kind, Koh Samui zur Ruhe – zwei Welten, eine Reise.",
@@ -57,6 +90,7 @@
         "d-australien": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/australien.jpg",
             "eyebrow": "Westküste",
             "title": "Australien",
             "subtitle": "Was wir über Einreise, Versicherungen und Slow-Travel mit Kind gelernt haben.",
@@ -64,12 +98,7 @@
           }
         }
       },
-      "block_order": [
-        "d-bali",
-        "d-suedafrika",
-        "d-thailand",
-        "d-australien"
-      ],
+      "block_order": ["d-bali", "d-suedafrika", "d-thailand", "d-australien"],
       "settings": {
         "kicker": "Wo wir waren",
         "title": "Länder mit eigener Geschichte.",
@@ -106,11 +135,7 @@
           }
         }
       },
-      "block_order": [
-        "p-1",
-        "p-2",
-        "p-3"
-      ],
+      "block_order": ["p-1", "p-2", "p-3"],
       "settings": {
         "kicker": "Methode",
         "title": "Drei Dinge, die unsere Familienkarten anders machen.",
@@ -120,6 +145,46 @@
         "color_bg": "bg--accent",
         "padding_top": 80,
         "padding_bottom": 80
+      }
+    },
+    "reels": {
+      "type": "section-reels",
+      "blocks": {
+        "r-1": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=72HOF4SbkLA",
+            "label": "Bali mit Baby",
+            "caption": "Mit Baby auf Bali – unsere ersten Wochen"
+          }
+        },
+        "r-2": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=9BeMKzRv4pc",
+            "label": "Packliste",
+            "caption": "Packliste Baby & Kleinkind – Top-Produkte für stressfreies Reisen"
+          }
+        },
+        "r-3": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=WaYtDOo61jk",
+            "label": "Erster Flug",
+            "caption": "Erster Flug mit Baby – unsere Tipps"
+          }
+        }
+      },
+      "block_order": ["r-1", "r-2", "r-3"],
+      "settings": {
+        "kicker": "Live vor Ort",
+        "title": "Reisen mit Kind – wie wir das machen.",
+        "subtitle": "<p>Drei Videos aus unserer Familien-Reise-Praxis – tap an für Vollbild und Ton.</p>",
+        "text_size": "medium",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 60,
+        "padding_bottom": 100
       }
     },
     "story-articles": {
@@ -153,11 +218,7 @@
           }
         }
       },
-      "block_order": [
-        "a-1",
-        "a-2",
-        "a-3"
-      ],
+      "block_order": ["a-1", "a-2", "a-3"],
       "settings": {
         "kicker": "Geschichten dazu",
         "title": "Aus unserer eigenen Praxis.",
@@ -166,14 +227,28 @@
         "width": "wrapper",
         "color_bg": "bg--neutral",
         "padding_top": 80,
-        "padding_bottom": 100
+        "padding_bottom": 80
+      }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Geschenk für dich",
+        "title": "Hol dir unser Mini-Preset.",
+        "subtitle": "<p>Ein kostenloses Lightroom-Preset aus unseren Familien-Reisen. Plus gelegentliche Mails über neue Karten und Guides – kein Spam, versprochen.</p>",
+        "image": "shopify://shop_images/DSC04341-5.jpg",
+        "button_label": "Mini-Preset holen",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – der Download-Link ist unterwegs.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_family"
       }
     }
   },
-  "order": [
-    "intro",
-    "destinations",
-    "principles",
-    "story-articles"
-  ]
+  "order": ["hero", "intro", "destinations", "principles", "reels", "story-articles", "lead-magnet"]
 }
