@@ -1,89 +1,136 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "default-banner": {
-      "type": "section-hero",
-      "blocks": {
-        "banner-heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "text_size": 10
-          }
-        },
-        "banner-text": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_size": 5,
-            "text_columns": 1
-          }
-        }
-      },
-      "block_order": [
-        "banner-heading",
-        "banner-text"
-      ],
+    "hero": {
+      "type": "section-editorial-hero",
       "settings": {
         "image": "shopify://shop_images/Hero_Banner_Promo_5_c64e8416-7350-46ce-8745-a38817f73bc8.png",
-        "mobile_image": "shopify://shop_images/Hero_Banner_Mobile_3.png",
-        "collection": "",
-        "height": "use_screen_three_quarters",
-        "overlay_opacity": 0,
+        "image_mobile": "shopify://shop_images/Hero_Banner_Mobile_3.png",
+        "overlay_opacity": 30,
         "overlay_color": "#181929",
-        "flex_align": "align--middle-center",
-        "align_text": "text-center",
-        "color": "text--white",
-        "color_bg": "hero__content--transparent",
-        "width": "wrapper--none",
+        "eyebrow": "Reisen, gut recherchiert",
+        "heading": "<p>Reisen, die wirklich passen.</p>",
+        "lead": "<p>Karten, Guides und Stories von zwei, die selbst da waren – und mit ihrer Tochter durch drei Kontinente.</p>",
+        "cta_primary_label": "Reiseziele entdecken",
+        "cta_primary_url": "/pages/familienreisen",
+        "cta_secondary_label": "Über uns",
+        "cta_secondary_url": "/pages/ueber-uns",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
         "padding_top": 0,
         "padding_bottom": 0
       }
     },
-    "section_text_yprYxk": {
-      "type": "section-text",
+    "intro": {
+      "type": "section-editorial-text",
       "blocks": {
-        "heading_KwimHz": {
-          "type": "heading",
+        "h-1": {
+          "type": "body",
           "settings": {
-            "heading": "<p>Unterwegs als Familie – und zuhause in der Welt</p>",
-            "text_size": 7
+            "body": "<p>Seit 2022 reisen wir als Familie durch die Welt – Laura, Finn und Tilda. Manchmal monatelang im Camper durch Australien, dann wieder mehrere Wochen in Indonesien. Immer mit Kind, immer mit der Frage: Was hätte uns vor unserer ersten Reise wirklich geholfen?</p>"
           }
         },
-        "kicker_VhxKM4": {
-          "type": "kicker",
+        "h-2": {
+          "type": "body",
           "settings": {
-            "kicker": "",
-            "enable_caps": false,
-            "text_size": 5
+            "body": "<p>Aus dieser Frage sind unsere Karten, Guides und Lightroom-Presets entstanden. Keine Bucket-List-Tipps, keine Top-10-Listen, die seit drei Jahren nicht mehr aktualisiert wurden. Sondern Material, das wir selbst dabei hatten – vom ruhigen Café in Kapstadt bis zur kindertauglichen Bucht auf Koh Samui.</p>"
+          }
+        },
+        "h-3": {
+          "type": "quote",
+          "settings": {
+            "quote": "Wir veröffentlichen nur Karten zu Orten, an denen wir lange genug waren, um etwas dazu zu sagen.",
+            "attribution": "",
+            "style": "display"
+          }
+        },
+        "h-4": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Wir teilen ehrlich, was funktioniert hat und was nicht. Wir aktualisieren mindestens einmal im Jahr – kostenlos für alle, die einmal gekauft haben. Und wenn ein Guide dich nicht weiterbringt, bekommst du dein Geld zurück. Ohne Wenn und Aber.</p>"
+          }
+        },
+        "h-5": {
+          "type": "signature",
+          "settings": {
+            "signature": "— Laura, Finn & Tilda"
+          }
+        },
+        "h-6": {
+          "type": "cta",
+          "settings": {
+            "cta_label": "Mehr über uns",
+            "cta_url": "/pages/ueber-uns"
           }
         }
       },
-      "block_order": [
-        "heading_KwimHz",
-        "kicker_VhxKM4"
-      ],
+      "block_order": ["h-1", "h-2", "h-3", "h-4", "h-5", "h-6"],
       "settings": {
-        "align_text": "text-left",
-        "color_bg": "palette--light bg--neutral",
+        "eyebrow": "Wer wir sind",
+        "heading": "<p>Reisen ist persönlich. Unser Shop ist es auch.</p>",
         "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_bg": "bg--neutral",
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
-    "section_collection_row_R3GW43": {
-      "type": "section-collection-row",
-      "name": "Collection row",
+    "destinations": {
+      "type": "section-link-cards",
+      "blocks": {
+        "d-1": {
+          "type": "card",
+          "settings": {
+            "title": "Südafrika",
+            "eyebrow": "Kapstadt & Garden Route",
+            "subtitle": "Slow-Travel mit Kind durch die Garden Route – ohne Selbstfahr-Stress.",
+            "url": "/pages/suedafrika"
+          }
+        },
+        "d-2": {
+          "type": "card",
+          "settings": {
+            "title": "Bali",
+            "eyebrow": "Indonesien",
+            "subtitle": "Drei Inseln, lange Aufenthalte, kindertaugliche Routen jenseits von Seminyak.",
+            "url": "/pages/bali"
+          }
+        },
+        "d-3": {
+          "type": "card",
+          "settings": {
+            "title": "Thailand",
+            "eyebrow": "Bangkok & Inseln",
+            "subtitle": "Bangkok mit Kind, Koh Samui zur Ruhe – zwei Welten, eine Reise.",
+            "url": "/pages/thailand"
+          }
+        },
+        "d-4": {
+          "type": "card",
+          "settings": {
+            "title": "Australien",
+            "eyebrow": "Westküste",
+            "subtitle": "Was wir über Einreise, Versicherungen und Slow-Travel mit Kind gelernt haben.",
+            "url": "/pages/australien"
+          }
+        }
+      },
+      "block_order": ["d-1", "d-2", "d-3", "d-4"],
       "settings": {
-        "heading": "",
+        "kicker": "Wo wir waren",
+        "title": "Vier Länder mit eigener Geschichte.",
+        "subtitle": "<p>Destinationen, in denen wir lange genug waren, um konkret etwas dazu zu sagen.</p>",
+        "columns": "4",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "bestseller": {
+      "type": "section-collection-row",
+      "name": "Bestseller",
+      "settings": {
+        "heading": "Unsere Bestseller",
         "collection": "",
         "product_list": [
           "suedafrika-guide",
@@ -101,122 +148,87 @@
         "scrollbar_track_color": "#e0e0e0",
         "scrollbar_progress_color": "#000000",
         "width": "wrapper--full",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
-    "section_blog_9p7rAX": {
-      "type": "section-blog",
-      "disabled": true,
-      "name": "Blog posts",
-      "settings": {
-        "title": "Reiseblog",
-        "index_blog": "travel",
-        "limit": 6,
-        "grid": 3,
-        "aspect_ratio": 1,
-        "show_meta": true,
-        "show_excerpt": false,
-        "show_tags": false,
-        "show_view_all": false,
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "section_text_Q47ECw": {
-      "type": "section-text",
+    "method": {
+      "type": "section-principles",
       "blocks": {
-        "kicker_GNebLq": {
-          "type": "kicker",
+        "p-1": {
+          "type": "principle",
           "settings": {
-            "kicker": "<p>Introducing</p>",
-            "enable_caps": false,
-            "text_size": 5
+            "title": "Selbst gewesen",
+            "body": "<p>Jeder empfohlene Spot wurde von uns persönlich besucht – meist mehrfach. Wenn wir nicht da waren, kommt er nicht in den Guide.</p>"
           }
         },
-        "heading_CERXVa": {
-          "type": "heading",
+        "p-2": {
+          "type": "principle",
           "settings": {
-            "heading": "<p>Rich text</p>",
-            "text_size": 9
+            "title": "Updates inklusive",
+            "body": "<p>Reise-Content veraltet schnell. Käufer mit aktivem Konto bekommen jede neue Version automatisch per E-Mail – kostenlos, mindestens einmal jährlich.</p>"
           }
         },
-        "text_86tzeW": {
-          "type": "text",
+        "p-3": {
+          "type": "principle",
           "settings": {
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "text_size": 5,
-            "text_columns": 1
-          }
-        },
-        "button_3rN6M7": {
-          "type": "button",
-          "settings": {
-            "button_text": "Learn More",
-            "button_url": "",
-            "button_size": "btn--large",
-            "button_style": "hero__btn btn--soft",
-            "button_color": "btn--primary"
+            "title": "14 Tage Geld zurück",
+            "body": "<p>Bringt der Guide dich nicht weiter, bekommst du dein Geld zurück. Ohne Wenn und Aber, ohne Begründung, ohne Formular.</p>"
           }
         }
       },
-      "block_order": [
-        "kicker_GNebLq",
-        "heading_CERXVa",
-        "text_86tzeW",
-        "button_3rN6M7"
-      ],
-      "disabled": true,
-      "name": "Rich text",
+      "block_order": ["p-1", "p-2", "p-3"],
       "settings": {
-        "align_text": "text-left",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "kicker": "Methode",
+        "title": "Drei Punkte, auf die wir uns festlegen.",
+        "lead": "",
+        "signature": "",
+        "width": "wrapper--narrow",
+        "color_bg": "bg--accent",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
-    "section_collection_split_CG3phx": {
+    "family-hub": {
       "type": "section-collection-split",
       "blocks": {
-        "heading_GB7fwp": {
+        "fh-heading": {
           "type": "heading",
           "settings": {
-            "heading": "",
-            "text_size": 10
+            "heading": "<p>Reisen mit Kind. Hier ist was wir gelernt haben.</p>",
+            "text_size": 9
           }
         },
-        "button_BjwhBN": {
+        "fh-text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Eine eigene Sammelstelle für Familien-Reisende – mit allen Karten, Routen und Geschichten, die wir aus drei Jahren mit Tilda zusammengetragen haben.</p>",
+            "text_size": 5
+          }
+        },
+        "fh-cta": {
           "type": "button",
           "settings": {
-            "button_text": "Zum E-Guide",
-            "button_url": "shopify://products/suedafrika-guide",
+            "button_text": "Zum Familien-Hub",
+            "button_url": "/pages/familienreisen",
             "button_size": "btn--large",
             "button_style": "hero__btn btn",
             "button_color": "btn--white"
           }
         }
       },
-      "block_order": [
-        "heading_GB7fwp",
-        "button_BjwhBN"
-      ],
+      "block_order": ["fh-heading", "fh-text", "fh-cta"],
       "settings": {
-        "collection": "bali",
-        "product_list": [
-          "suedafrika-guide",
-          "bali-starterkit"
-        ],
-        "image": "shopify://shop_images/Bali_Starter_Kit_PDP_2048_x_2048_px_124a9541-59be-452f-a75b-ffa66ca2d979.png",
+        "collection": "",
+        "product_list": [],
+        "image": "shopify://shop_images/DSC02014-3.jpg",
         "sticky_image_enable": false,
         "swap": false,
-        "overlay_opacity": 15,
-        "overlay_color": "#000000",
+        "overlay_opacity": 25,
+        "overlay_color": "#181929",
         "grid_large": 2,
         "grid_small": 1.5,
-        "limit": 4,
+        "limit": 0,
         "bg": "palette--light bg--neutral",
         "video_link_bg": "",
         "object_position": "center-center",
@@ -225,180 +237,75 @@
         "color": "text--white",
         "width": "wrapper",
         "padding_top": 0,
-        "padding_bottom": 76
+        "padding_bottom": 0
       }
     },
-    "section_gallery_fHthRT": {
+    "presets": {
+      "type": "section-collection",
+      "settings": {
+        "title": "Edit like a Pro",
+        "description": "<p>Unsere Lightroom-Presets aus drei Kontinenten – warm, körnig, ohne überschärften Insta-Look.</p>",
+        "collection": "presets",
+        "grid": 4,
+        "limit": 8,
+        "enable_slider": true,
+        "color_bg": "palette--light bg--neutral",
+        "show_view_all": true,
+        "width": "wrapper",
+        "padding_top": 80,
+        "padding_bottom": 60
+      }
+    },
+    "gallery": {
       "type": "section-gallery",
       "blocks": {
-        "image_fwweVh": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/janan-OoW1DMDCV1Y-unsplash.jpg",
-            "link": ""
-          }
-        },
-        "image_L7UezA": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC01849-2.jpg",
-            "link": ""
-          }
-        },
-        "image_DFG4Up": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC01168-2.jpg",
-            "link": ""
-          }
-        },
-        "image_qDgjbK": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC02020-3.jpg",
-            "link": ""
-          }
-        },
-        "image_ztUkKU": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC02014-3.jpg",
-            "link": ""
-          }
-        },
-        "image_hzVmg8": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC04341-5.jpg",
-            "link": ""
-          }
-        }
+        "g-1": { "type": "image", "settings": { "image": "shopify://shop_images/janan-OoW1DMDCV1Y-unsplash.jpg", "link": "" } },
+        "g-2": { "type": "image", "settings": { "image": "shopify://shop_images/DSC01849-2.jpg",       "link": "" } },
+        "g-3": { "type": "image", "settings": { "image": "shopify://shop_images/DSC01168-2.jpg",       "link": "" } },
+        "g-4": { "type": "image", "settings": { "image": "shopify://shop_images/DSC02020-3.jpg",       "link": "" } },
+        "g-5": { "type": "image", "settings": { "image": "shopify://shop_images/DSC02014-3.jpg",       "link": "" } },
+        "g-6": { "type": "image", "settings": { "image": "shopify://shop_images/DSC04341-5.jpg",       "link": "" } }
       },
-      "block_order": [
-        "image_fwweVh",
-        "image_L7UezA",
-        "image_DFG4Up",
-        "image_qDgjbK",
-        "image_ztUkKU",
-        "image_hzVmg8"
-      ],
+      "block_order": ["g-1", "g-2", "g-3", "g-4", "g-5", "g-6"],
       "settings": {
         "scale_image": true,
         "aspect_ratio": 1,
         "padding": true,
         "bg": "palette--light bg--neutral",
         "width": "wrapper--full",
-        "padding_top": 72,
-        "padding_bottom": 20
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
-    "section_text_egAHJT": {
-      "type": "section-text",
-      "blocks": {
-        "heading_rrae6X": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Lieber nach Bali oder Thailand?</p>",
-            "text_size": 9
-          }
-        }
-      },
-      "block_order": [
-        "heading_rrae6X"
-      ],
+    "lead-magnet": {
+      "type": "section-lead-magnet",
       "settings": {
-        "align_text": "text-left",
-        "color_bg": "palette--light bg--neutral",
-        "width": "wrapper",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "default-split-collection": {
-      "type": "section-collection-split",
-      "blocks": {
-        "default-first-split-block-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Digitale Reise Karte</p>",
-            "text_size": 10
-          }
-        },
-        "default-first-split-block-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Plane deine Bali Reise</p>",
-            "text_size": 6
-          }
-        },
-        "default-first-split-block-2": {
-          "type": "button",
-          "settings": {
-            "button_text": "Zur Bali Map",
-            "button_url": "shopify://products/bali-digitale-karte",
-            "button_size": "btn--large",
-            "button_style": "hero__btn btn",
-            "button_color": "btn--white"
-          }
-        }
-      },
-      "block_order": [
-        "default-first-split-block-0",
-        "default-first-split-block-1",
-        "default-first-split-block-2"
-      ],
-      "settings": {
-        "collection": "digitale-karten",
-        "product_list": [
-          "bali-bundle-starterkit-digitale-karte",
-          "koh-samui-phangan-tao-karten"
-        ],
-        "image": "shopify://shop_images/FCC5983.jpg",
-        "sticky_image_enable": false,
-        "swap": true,
-        "overlay_opacity": 30,
-        "overlay_color": "#181929",
-        "grid_large": 2,
-        "grid_small": 1.5,
-        "limit": 4,
-        "bg": "palette--light bg--neutral",
-        "video_link_bg": "",
-        "object_position": "center-center",
-        "flex_align": "align--middle-center",
-        "align_text": "text-center",
-        "color": "text--white",
-        "width": "wrapper",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "default-collection": {
-      "type": "section-collection",
-      "settings": {
-        "title": "Edit like a PRO",
-        "description": "<p>Unsere Lightroom Presets</p>",
-        "collection": "presets",
-        "grid": 4,
-        "limit": 8,
-        "enable_slider": true,
-        "color_bg": "palette--light bg--neutral",
-        "show_view_all": false,
-        "width": "wrapper",
-        "padding_top": 72,
-        "padding_bottom": 36
+        "kicker": "Geschenk für dich",
+        "title": "Hol dir unser Mini-Preset.",
+        "subtitle": "<p>Ein kostenloses Lightroom-Preset aus unserem Bali-Sommer. Plus gelegentliche Mails über neue Karten und Guides – kein Spam, versprochen.</p>",
+        "image": "shopify://shop_images/DSC04341-5.jpg",
+        "button_label": "Mini-Preset holen",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – der Download-Link ist unterwegs.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_home"
       }
     }
   },
   "order": [
-    "default-banner",
-    "section_text_yprYxk",
-    "section_collection_row_R3GW43",
-    "section_blog_9p7rAX",
-    "section_text_Q47ECw",
-    "section_collection_split_CG3phx",
-    "section_gallery_fHthRT",
-    "section_text_egAHJT",
-    "default-split-collection",
-    "default-collection"
+    "hero",
+    "intro",
+    "destinations",
+    "bestseller",
+    "method",
+    "family-hub",
+    "presets",
+    "gallery",
+    "lead-magnet"
   ]
 }
