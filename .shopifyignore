@@ -1,0 +1,10 @@
+# Auto-generated assets that Shopify rebuilds from their .liquid sources.
+# Pushing them manually fails with "Cannot overwrite generated asset".
+# The .liquid versions are still synced.
+assets/font-settings.css
+assets/hero.svg
+assets/icon-arrow-left.svg
+assets/icon-arrow-right.svg
+
+# Working folder for the redesign analysis (markdown only, never deploys)
+_redesign-2030/
