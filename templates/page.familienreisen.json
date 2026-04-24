@@ -1,9 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "intro": {
       "type": "section-bundle-spotlight",
-      "blocks": {},
-      "block_order": [],
       "settings": {
         "kicker": "Familienreisen",
         "title": "Reisen mit Kind. Hier ist was wir gelernt haben.",
@@ -23,8 +30,8 @@
         "d-bali": {
           "type": "card",
           "settings": {
-            "title": "Bali",
             "eyebrow": "Indonesien",
+            "title": "Bali",
             "subtitle": "Drei Inseln, lange Aufenthalte, kindertaugliche Routen jenseits von Seminyak.",
             "url": "/pages/bali"
           }
@@ -32,8 +39,8 @@
         "d-suedafrika": {
           "type": "card",
           "settings": {
-            "title": "Südafrika",
             "eyebrow": "Kapstadt & Garden Route",
+            "title": "Südafrika",
             "subtitle": "Slow-Travel mit Kind durch die Garden Route – ohne Selbstfahr-Stress.",
             "url": "/pages/suedafrika"
           }
@@ -41,8 +48,8 @@
         "d-thailand": {
           "type": "card",
           "settings": {
-            "title": "Thailand",
             "eyebrow": "Bangkok & Inseln",
+            "title": "Thailand",
             "subtitle": "Bangkok mit Kind, Koh Samui zur Ruhe – zwei Welten, eine Reise.",
             "url": "/pages/thailand"
           }
@@ -50,14 +57,19 @@
         "d-australien": {
           "type": "card",
           "settings": {
-            "title": "Australien",
             "eyebrow": "Westküste",
+            "title": "Australien",
             "subtitle": "Was wir über Einreise, Versicherungen und Slow-Travel mit Kind gelernt haben.",
             "url": "/pages/australien"
           }
         }
       },
-      "block_order": ["d-bali", "d-suedafrika", "d-thailand", "d-australien"],
+      "block_order": [
+        "d-bali",
+        "d-suedafrika",
+        "d-thailand",
+        "d-australien"
+      ],
       "settings": {
         "kicker": "Wo wir waren",
         "title": "Länder mit eigener Geschichte.",
@@ -94,7 +106,11 @@
           }
         }
       },
-      "block_order": ["p-1", "p-2", "p-3"],
+      "block_order": [
+        "p-1",
+        "p-2",
+        "p-3"
+      ],
       "settings": {
         "kicker": "Methode",
         "title": "Drei Dinge, die unsere Familienkarten anders machen.",
@@ -112,8 +128,8 @@
         "a-1": {
           "type": "card",
           "settings": {
-            "title": "Erste Reise mit Kind",
             "eyebrow": "Aus dem Blog",
+            "title": "Erste Reise mit Kind",
             "subtitle": "Was wir vor Tildas erster Fernreise wirklich gebraucht haben – und was wir uns sparen konnten.",
             "url": "/blogs/news/erste-reise-mit-kind"
           }
@@ -121,8 +137,8 @@
         "a-2": {
           "type": "card",
           "settings": {
-            "title": "Reise-Essentials",
             "eyebrow": "Packliste",
+            "title": "Reise-Essentials",
             "subtitle": "Die Sachen, die nach drei Kontinenten in unserem Koffer geblieben sind.",
             "url": "/blogs/news/reise-essentials"
           }
@@ -130,14 +146,18 @@
         "a-3": {
           "type": "card",
           "settings": {
-            "title": "Auslandskrankenversicherung",
             "eyebrow": "Praxis",
+            "title": "Auslandskrankenversicherung",
             "subtitle": "Welche wir mit Kind gewählt haben und warum die billige nicht reicht.",
             "url": "/blogs/news/auslandskrankenversicherung"
           }
         }
       },
-      "block_order": ["a-1", "a-2", "a-3"],
+      "block_order": [
+        "a-1",
+        "a-2",
+        "a-3"
+      ],
       "settings": {
         "kicker": "Geschichten dazu",
         "title": "Aus unserer eigenen Praxis.",
@@ -150,5 +170,10 @@
       }
     }
   },
-  "order": ["intro", "destinations", "principles", "story-articles"]
+  "order": [
+    "intro",
+    "destinations",
+    "principles",
+    "story-articles"
+  ]
 }

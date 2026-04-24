@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "spotlight": {
@@ -18,7 +27,10 @@
           }
         }
       },
-      "block_order": ["i-1", "i-2"],
+      "block_order": [
+        "i-1",
+        "i-2"
+      ],
       "settings": {
         "kicker": "Thailand · Bangkok & Inseln",
         "title": "Bangkok mit Kind. Koh Samui zur Ruhe.",
@@ -57,7 +69,11 @@
           }
         }
       },
-      "block_order": ["p-1", "p-2", "p-3"],
+      "block_order": [
+        "p-1",
+        "p-2",
+        "p-3"
+      ],
       "settings": {
         "kicker": "Versprechen",
         "title": "Drei Punkte, auf die wir uns festlegen.",
@@ -71,8 +87,6 @@
     },
     "reels": {
       "type": "section-reels",
-      "blocks": {},
-      "block_order": [],
       "settings": {
         "kicker": "Live aus Thailand",
         "title": "Eindrücke aus Bangkok und Koh Samui.",
@@ -85,5 +99,9 @@
       }
     }
   },
-  "order": ["spotlight", "principles", "reels"]
+  "order": [
+    "spotlight",
+    "principles",
+    "reels"
+  ]
 }

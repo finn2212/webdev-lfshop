@@ -1,9 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "intro": {
       "type": "section-bundle-spotlight",
-      "blocks": {},
-      "block_order": [],
       "settings": {
         "kicker": "Australien · Westküste",
         "title": "Drei Monate Australien. Was uns dazu wirklich geholfen hat.",
@@ -23,8 +30,8 @@
         "a-1": {
           "type": "card",
           "settings": {
-            "title": "Einreise nach Australien",
             "eyebrow": "Praxis",
+            "title": "Einreise nach Australien",
             "subtitle": "Visa, Zollformulare, was wirklich kontrolliert wird – und wie es mit Kind aussieht.",
             "url": "/blogs/news/einreise-australien"
           }
@@ -32,8 +39,8 @@
         "a-2": {
           "type": "card",
           "settings": {
-            "title": "Westküste Australiens",
             "eyebrow": "Route",
+            "title": "Westküste Australiens",
             "subtitle": "Perth bis Broome im Camper – was funktioniert, wo es hakt, was wir das nächste Mal anders machen.",
             "url": "/blogs/news/westkuste-von-australien"
           }
@@ -41,14 +48,18 @@
         "a-3": {
           "type": "card",
           "settings": {
-            "title": "Australien-Reise insgesamt",
             "eyebrow": "Rückblick",
+            "title": "Australien-Reise insgesamt",
             "subtitle": "Was wir vor der Reise unterschätzt haben und was wir mit Tilda gelernt haben.",
             "url": "/blogs/news/australien-reise"
           }
         }
       },
-      "block_order": ["a-1", "a-2", "a-3"],
+      "block_order": [
+        "a-1",
+        "a-2",
+        "a-3"
+      ],
       "settings": {
         "kicker": "Aus dem Blog",
         "title": "Drei Geschichten, die helfen.",
@@ -78,7 +89,10 @@
           }
         }
       },
-      "block_order": ["p-1", "p-2"],
+      "block_order": [
+        "p-1",
+        "p-2"
+      ],
       "settings": {
         "kicker": "Status",
         "title": "Warum hier (noch) keine Karte ist.",
@@ -91,5 +105,9 @@
       }
     }
   },
-  "order": ["intro", "stories", "principles"]
+  "order": [
+    "intro",
+    "stories",
+    "principles"
+  ]
 }
