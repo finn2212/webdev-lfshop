@@ -121,8 +121,9 @@ Alle anderen Seiten sollen dieses Muster visuell/strukturell matchen:
 
 ### ⏳ Noch zu bauen (laut [02_final_proposal §5](02_final_proposal.md#5--sections-bibliothek-8-core--4-wow))
 
-Phase 2 Core: `destination-card`, `product-glass`, `collection-grid-v2`, `bundle-builder`, `mega-footer`
-Phase 3 Wow: `cinematic-hero`, echtes `reels-grid`, `itinerary-ai`, `product-showcase-pin`
+Phase 2 Core: ✅ `collection-grid-v2` gebaut (inkl. Snippet `cgv2-card`, Paginate, Sort, Filter) — genutzt auf [collection.json](../templates/collection.json) + [page.shop.json](../templates/page.shop.json). Rest bewusst skipped (content/design-blockiert): `destination-card`, `product-glass`, `bundle-builder`, `mega-footer`.
+
+Phase 3 Wow: bewusst **nicht gebaut**, alle spekulativ/content-blockiert — `cinematic-hero`, echtes `reels-grid`, `itinerary-ai` (braucht Cloudflare Worker + Anthropic-AVV), `product-showcase-pin`.
 
 ### 🗑 Abzuschalten nach P2/P3 (aktuell 75 Section-Files → Ziel ~12)
 
@@ -156,13 +157,19 @@ Reihenfolge optimiert auf sichtbare Einheitlichkeit pro Aufwand:
 10. Cart, Collections, Article, Blog — warten bewusst auf Phase 2
 
 ### Welle E — Neu bauen (Phase 2/3)
-11. `/reiseziele` Index
-12. `/planer` (AI-Itinerary)
-13. `/support`
+11. ✅ `/reiseziele` Index (page.reiseziele.json)
+12. 🚫 `/planer` (AI-Itinerary) — content + infra-blockiert
+13. 🚫 `/support` — Schnittmenge mit FAQ, kein klarer Bedarf mehr
 
 ---
 
-## 5 — Pflege dieses Dokuments
+## 5 — Abschluss-Status (2026-04-24)
+
+Nach Review #3 ist der Template-seitige Migrations-Scope abgeschlossen. Alle Pages haben einen editorial-konsistenten Eingang (Hero oder Intro), alle PDPs sind auf dem Homepage-Look (Bundle/Map mit Reels, Preset mit Before/After-Placeholder), Collection + Blog + Cart + alle Support-Seiten sind migriert.
+
+**Offene Aufgaben siehe [07_todos_content.md](07_todos_content.md)** — ausschließlich Content-Pflege (Bilder, Übersetzungen, Admin-Integrationen).
+
+## 6 — Pflege dieses Dokuments
 
 - Nach jedem Feature-Merge: Status-Emoji (✅ / 🟡 / ⚠️ / ❌) in Abschnitt 2 anpassen.
 - Welle-Schritte in Abschnitt 4 abhaken, wenn gemergt.
