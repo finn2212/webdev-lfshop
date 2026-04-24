@@ -1,0 +1,290 @@
+{%- comment -%}
+  section-editorial-hero.liquid — Editorial-Hero für die Homepage und ggf.
+  andere Top-of-Page-Stellen.
+
+  Unterscheidet sich vom Story-section-hero:
+    - Editorial-Headline (Fraunces, sehr groß), bewusst H1 (für SEO)
+    - Eyebrow (Mono) als Brand-Marker
+    - 2-spaltiger Lead-Text in lesbarer Breite
+    - Bis zu 2 CTAs (primary + sekundär)
+    - Foto-First mit kontrolliertem Overlay (kein Auto-Dunkler-Mehltau)
+    - Mobile-first, Headline scaliert sauber via clamp()
+
+  Sollte einmal pro Page maximal genutzt werden (H1-Regel).
+{%- endcomment -%}
+
+{%- liquid
+  assign img       = section.settings.image
+  assign img_mobile = section.settings.image_mobile
+  if img_mobile == blank
+    assign img_mobile = img
+  endif
+  assign overlay_opacity = section.settings.overlay_opacity | default: 25
+  assign overlay_color   = section.settings.overlay_color | default: '#000000'
+  assign align = section.settings.align | default: 'left'
+  assign theme = section.settings.color_scheme | default: 'on-image'
+-%}
+
+<section
+  class="ed-hero ed-hero--align-{{ align }} ed-hero--{{ theme }}"
+  style="--PT: {{ section.settings.padding_top | default: 0 }}px; --PB: {{ section.settings.padding_bottom | default: 0 }}px;"
+>
+  <div class="ed-hero__media">
+    {%- if img != blank -%}
+      <picture>
+        {%- if img_mobile != blank -%}
+          <source media="(max-width: 749px)"
+            srcset="{{ img_mobile | image_url: width: 800 }} 800w, {{ img_mobile | image_url: width: 1200 }} 1200w"
+            sizes="100vw">
+        {%- endif -%}
+        <img
+          class="ed-hero__img"
+          src="{{ img | image_url: width: 2000 }}"
+          srcset="{{ img | image_url: width: 1200 }} 1200w, {{ img | image_url: width: 1800 }} 1800w, {{ img | image_url: width: 2400 }} 2400w, {{ img | image_url: width: 3000 }} 3000w"
+          sizes="100vw"
+          alt="{{ img.alt | default: section.settings.heading | default: shop.name | escape }}"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="{{ img.width }}"
+          height="{{ img.height }}"
+        >
+      </picture>
+    {%- else -%}
+      <span class="ed-hero__placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+    {%- endif -%}
+    {%- if overlay_opacity > 0 -%}
+      <span class="ed-hero__overlay" aria-hidden="true" style="background:{{ overlay_color }}; opacity:{{ overlay_opacity | divided_by: 100.0 }};"></span>
+    {%- endif -%}
+  </div>
+
+  <div class="ed-hero__inner wrapper">
+    <div class="ed-hero__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ed-hero__eyebrow font-mono-2030">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h1 class="ed-hero__heading font-display-2030">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+
+      {%- if section.settings.lead != blank -%}
+        <div class="ed-hero__lead font-body-2030">{{ section.settings.lead }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.cta_primary_label != blank or section.settings.cta_secondary_label != blank -%}
+        <div class="ed-hero__ctas">
+          {%- if section.settings.cta_primary_label != blank -%}
+            <a class="ed-hero__cta ed-hero__cta--primary" href="{{ section.settings.cta_primary_url | default: '#' }}">
+              {{ section.settings.cta_primary_label | escape }}
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          {%- endif -%}
+          {%- if section.settings.cta_secondary_label != blank -%}
+            <a class="ed-hero__cta ed-hero__cta--secondary" href="{{ section.settings.cta_secondary_url | default: '#' }}">
+              {{ section.settings.cta_secondary_label | escape }}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_scroll_hint -%}
+      <a class="ed-hero__scroll-hint" href="#after-hero" aria-label="Mehr">
+        <span></span>
+      </a>
+    {%- endif -%}
+  </div>
+  <span id="after-hero" aria-hidden="true"></span>
+</section>
+
+<style>
+  .ed-hero {
+    position: relative;
+    display: grid;
+    isolation: isolate;
+    width: 100%;
+    min-height: clamp(540px, 70vh, 880px);
+    padding-top: var(--PT, 0);
+    padding-bottom: var(--PB, 0);
+    color: #fff;
+    overflow: hidden;
+  }
+  .ed-hero--on-light  { color: var(--COLOR-BODY-TEXT, #1a1a1a); }
+  .ed-hero--on-image  { color: #fff; }
+
+  .ed-hero__media {
+    position: absolute; inset: 0; z-index: -1;
+  }
+  .ed-hero__img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .ed-hero__placeholder {
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    background: var(--COLOR-BODY-TEXT-A05, #f0eee9);
+  }
+  .ed-hero__overlay {
+    position: absolute; inset: 0;
+    pointer-events: none;
+  }
+
+  .ed-hero__inner {
+    position: relative;
+    width: 100%;
+    display: grid;
+    align-items: end;
+    padding: clamp(2.5rem, 1.5rem + 4vw, 5rem) 0;
+  }
+  .ed-hero--align-left   .ed-hero__inner { justify-items: start; text-align: left; }
+  .ed-hero--align-center .ed-hero__inner { justify-items: center; text-align: center; }
+  .ed-hero--align-right  .ed-hero__inner { justify-items: end;   text-align: right;  }
+
+  .ed-hero__content {
+    max-width: 56ch;
+    display: grid;
+    gap: clamp(0.7rem, 0.5rem + 0.6vw, 1.1rem);
+  }
+  .ed-hero--align-center .ed-hero__content { max-width: 64ch; }
+
+  .ed-hero__eyebrow {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    opacity: 0.85;
+  }
+  .ed-hero__heading {
+    margin: 0;
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.018em;
+    /* Editorial: deliberately big on desktop, sane on mobile */
+    font-size: clamp(2.5rem, 1.6rem + 4.4vw, 5.6rem);
+    text-wrap: balance;
+  }
+  .ed-hero__lead {
+    margin: 0;
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+    line-height: 1.5;
+    opacity: 0.92;
+    max-width: 50ch;
+  }
+  .ed-hero__lead p { margin: 0 0 0.5em; }
+  .ed-hero__lead p:last-child { margin: 0; }
+
+  .ed-hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+  }
+  .ed-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    font-family: var(--font-2030-body, 'Inter VF', system-ui);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 200ms ease, filter 200ms ease, background 200ms ease;
+  }
+  .ed-hero__cta:hover { transform: translateY(-1px); }
+  .ed-hero__cta--primary {
+    background: #fff;
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+  }
+  .ed-hero__cta--primary:hover { filter: brightness(0.96); }
+  .ed-hero__cta--secondary {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.35);
+  }
+  .ed-hero--on-light .ed-hero__cta--primary {
+    background: var(--COLOR-BODY-TEXT, #1a1a1a);
+    color: #fff;
+  }
+  .ed-hero--on-light .ed-hero__cta--secondary {
+    background: rgba(0,0,0,0.05);
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+    border-color: rgba(0,0,0,0.15);
+  }
+  .ed-hero__cta--secondary:hover { background: rgba(255,255,255,0.22); }
+  .ed-hero--on-light .ed-hero__cta--secondary:hover { background: rgba(0,0,0,0.10); }
+
+  .ed-hero__scroll-hint {
+    position: absolute;
+    bottom: clamp(0.8rem, 0.5rem + 1vw, 1.4rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px; height: 42px;
+    border: 1.5px solid currentColor;
+    border-radius: 14px;
+    opacity: 0.6;
+    transition: opacity 200ms ease;
+  }
+  .ed-hero__scroll-hint:hover { opacity: 1; }
+  .ed-hero__scroll-hint span {
+    position: absolute;
+    top: 6px; left: 50%;
+    width: 3px; height: 8px;
+    background: currentColor;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    animation: edHeroScroll 1.6s ease-in-out infinite;
+  }
+  @keyframes edHeroScroll {
+    0%, 20%   { transform: translate(-50%, 0); opacity: 1; }
+    80%, 100% { transform: translate(-50%, 14px); opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ed-hero__scroll-hint span { animation: none; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Editorial Hero",
+  "tag": "section",
+  "class": "section-section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "header", "content": "Bild" },
+    { "type": "image_picker", "id": "image", "label": "Hintergrundbild (Desktop)" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Hintergrundbild (Mobile, optional)" },
+    { "type": "range", "id": "overlay_opacity", "label": "Overlay-Stärke", "min": 0, "max": 80, "step": 5, "unit": "%", "default": 25 },
+    { "type": "color", "id": "overlay_color", "label": "Overlay-Farbe", "default": "#000000" },
+    { "type": "header", "content": "Inhalt" },
+    { "type": "text", "id": "eyebrow", "label": "Kicker (klein, oben)", "default": "Reisen, gut recherchiert" },
+    { "type": "richtext", "id": "heading", "label": "Überschrift (H1)", "default": "<p>Reisen, die wirklich passen.</p>" },
+    { "type": "richtext", "id": "lead", "label": "Lead-Text", "default": "<p>Karten, Guides und Stories von zwei, die selbst da waren – und mit ihrer Tochter durch drei Kontinente.</p>" },
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "cta_primary_label", "label": "Primärer CTA-Text", "default": "Reiseziele entdecken" },
+    { "type": "url",  "id": "cta_primary_url",   "label": "Primärer CTA-Link" },
+    { "type": "text", "id": "cta_secondary_label", "label": "Sekundärer CTA-Text", "default": "Familie unterwegs" },
+    { "type": "url",  "id": "cta_secondary_url",   "label": "Sekundärer CTA-Link" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select", "id": "align", "label": "Ausrichtung", "default": "left",
+      "options": [
+        { "value": "left",   "label": "Links" },
+        { "value": "center", "label": "Mitte" },
+        { "value": "right",  "label": "Rechts" }
+      ]
+    },
+    {
+      "type": "select", "id": "color_scheme", "label": "Farbschema", "default": "on-image",
+      "options": [
+        { "value": "on-image", "label": "Hell (Text auf Bild)" },
+        { "value": "on-light", "label": "Dunkel (Text auf hellem Bild)" }
+      ]
+    },
+    { "type": "checkbox", "id": "show_scroll_hint", "label": "Scroll-Hinweis anzeigen", "default": true },
+    { "type": "range", "id": "padding_top",    "label": "Abstand oben",  "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Abstand unten", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 0 }
+  ],
+  "presets": [ { "name": "Editorial Hero" } ]
+}
+{% endschema %}
