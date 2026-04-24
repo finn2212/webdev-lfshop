@@ -128,12 +128,37 @@
     },
     "reels": {
       "type": "section-reels",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "r-1": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=g9CfL4t8p6k",
+            "label": "Bali · Best of",
+            "caption": "Diese Highlights gehören in jede Bali-Reise – das echte Bali"
+          }
+        },
+        "r-2": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=0xD3E6_2VSs",
+            "label": "Ubud",
+            "caption": "Diese Orte musst du auf deiner Bali-Reise besuchen – Ubud-Highlights"
+          }
+        },
+        "r-3": {
+          "type": "reel",
+          "settings": {
+            "youtube_url": "https://www.youtube.com/watch?v=wExSTX-HAGM",
+            "label": "Gilis · Lombok",
+            "caption": "Welche Gili-Island ist die richtige für dich?"
+          }
+        }
+      },
+      "block_order": ["r-1", "r-2", "r-3"],
       "settings": {
-        "kicker": "Live aus Bali",
+        "kicker": "Live vor Ort",
         "title": "Wie es vor Ort wirklich aussieht.",
-        "subtitle": "<p>Tap das Video an für Vollbild und Ton.</p>",
+        "subtitle": "<p>Drei Videos aus unseren Bali-Aufenthalten – tap an für Vollbild und Ton.</p>",
         "text_size": "medium",
         "width": "wrapper",
         "color_bg": "bg--neutral",
