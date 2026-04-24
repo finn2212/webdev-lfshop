@@ -1,0 +1,340 @@
+{%- comment -%}
+  section-lead-magnet.liquid — Modaler Newsletter-Popup mit Lead-Magnet.
+
+  Erscheint nur wenn:
+    - Marketing-Consent ist erteilt (Event 'cc:marketing-granted' aus
+      snippets/cookie-consent.liquid)
+    - Trigger erfüllt: scroll-depth %, time-on-page, oder exit-intent
+    - User noch nicht abonniert oder vor < cooldown_days dismissed
+
+  Implementation: native <dialog>, A11y inkl. focus-trap und ESC-close.
+  Form: Shopify customer-form; Klaviyo (falls installiert) liest neue Customers
+  automatisch und triggert Welcome-Flow mit Lead-Magnet-Download-Link.
+
+  In den Theme-Editor: in der "Overlay"-Sektionsgruppe als zusätzliche Section
+  hinzufügen.
+{%- endcomment -%}
+
+{%- liquid
+  assign trigger      = section.settings.trigger | default: 'scroll'
+  assign scroll_pct   = section.settings.scroll_pct | default: 50
+  assign time_seconds = section.settings.time_seconds | default: 30
+  assign cooldown     = section.settings.cooldown_days | default: 30
+  assign storage_key  = section.settings.storage_key | default: 'lf_lead_magnet'
+  assign require_marketing_consent = section.settings.require_marketing_consent
+-%}
+
+<div
+  data-lead-magnet
+  data-trigger="{{ trigger }}"
+  data-scroll-pct="{{ scroll_pct }}"
+  data-time-seconds="{{ time_seconds }}"
+  data-cooldown-days="{{ cooldown }}"
+  data-storage-key="{{ storage_key }}"
+  data-require-consent="{{ require_marketing_consent }}"
+  hidden
+></div>
+
+<dialog class="lm-dialog" data-lead-magnet-dialog aria-labelledby="lmTitle">
+  <form method="dialog" class="lm-dialog__close-form">
+    <button type="submit" class="lm-dialog__close" aria-label="Schließen" value="dismiss">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </form>
+
+  <div class="lm-dialog__inner">
+    {%- if section.settings.image != blank -%}
+      <div class="lm-dialog__media">
+        <img
+          src="{{ section.settings.image | image_url: width: 800 }}"
+          srcset="{{ section.settings.image | image_url: width: 400 }} 400w, {{ section.settings.image | image_url: width: 800 }} 800w, {{ section.settings.image | image_url: width: 1200 }} 1200w"
+          sizes="(min-width: 720px) 380px, 90vw"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+        >
+      </div>
+    {%- endif -%}
+
+    <div class="lm-dialog__body">
+      {%- if section.settings.kicker != blank -%}
+        <p class="lm-dialog__kicker font-mono-2030">{{ section.settings.kicker | escape }}</p>
+      {%- endif -%}
+      <h2 class="lm-dialog__title font-display-2030" id="lmTitle">{{ section.settings.title | escape | default: 'Hol dir unser Mini-Preset.' }}</h2>
+      {%- if section.settings.subtitle != blank -%}
+        <div class="lm-dialog__subtitle font-body-2030">{{ section.settings.subtitle }}</div>
+      {%- endif -%}
+
+      {% form 'customer', class: 'lm-form', novalidate: true, data-lead-magnet-form: '' %}
+        <input type="hidden" name="contact[tags]" value="newsletter, lead-magnet, {{ section.settings.tag | default: 'mini-preset' }}">
+        {% if form.errors %}
+          <p class="lm-form__error" role="alert">
+            {{ form.errors | default_errors }}
+          </p>
+        {% endif %}
+        {% if form.posted_successfully? %}
+          <p class="lm-form__success" role="status" data-lead-magnet-success>
+            {{ section.settings.success_text | default: 'Bitte bestätige deine E-Mail – der Download-Link ist unterwegs.' }}
+          </p>
+        {% else %}
+          <label class="lm-form__field">
+            <span class="visually-hidden">{{ 'general.newsletter_form.email' | t | default: 'E-Mail' }}</span>
+            <input
+              type="email"
+              name="contact[email]"
+              autocomplete="email"
+              required
+              placeholder="{{ 'general.newsletter_form.email_placeholder' | t | default: 'Deine E-Mail' }}"
+            >
+            <button type="submit" class="lm-form__submit">
+              {{ section.settings.button_label | default: 'Mini-Preset holen' }}
+            </button>
+          </label>
+          <p class="lm-form__hint font-body-2030">
+            {{ section.settings.legal_hint | default: 'Du kannst dich jederzeit abmelden. Datenschutz: siehe unten.' }}
+          </p>
+        {% endif %}
+      {% endform %}
+    </div>
+  </div>
+</dialog>
+
+<style>
+  .lm-dialog[open] {
+    border: 0; padding: 0; background: transparent;
+    inset: 0; max-width: 100vw; max-height: 100vh;
+    width: 100vw; height: 100vh;
+    display: grid; place-items: center;
+  }
+  .lm-dialog::backdrop { background: rgba(10, 12, 16, 0.55); backdrop-filter: blur(6px); }
+  .lm-dialog__inner {
+    background: var(--COLOR-BG, #fff);
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+    border-radius: var(--RADIUS-LG, 14px);
+    box-shadow: 0 28px 80px rgba(0,0,0,0.30);
+    width: min(92vw, 720px);
+    max-height: 92vh;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+  @media (min-width: 720px) {
+    .lm-dialog__inner { grid-template-columns: 320px 1fr; }
+  }
+  .lm-dialog__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--COLOR-BODY-TEXT-A05, #f0eee9);
+  }
+  @media (min-width: 720px) {
+    .lm-dialog__media { aspect-ratio: auto; height: 100%; }
+  }
+  .lm-dialog__media img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .lm-dialog__body {
+    padding: 1.6rem 1.4rem 1.4rem;
+  }
+  @media (min-width: 720px) {
+    .lm-dialog__body { padding: 2.2rem 2rem; }
+  }
+  .lm-dialog__close-form { margin: 0; }
+  .lm-dialog__close {
+    position: absolute; top: 0.6rem; right: 0.6rem;
+    width: 36px; height: 36px; border-radius: 50%; border: 0;
+    background: rgba(255,255,255,0.92); color: #1a1a1a; cursor: pointer;
+    display: grid; place-items: center; backdrop-filter: blur(6px);
+    z-index: 2;
+  }
+  .lm-dialog__kicker {
+    text-transform: uppercase; letter-spacing: 0.16em;
+    font-size: 0.74rem; color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    margin: 0 0 0.6rem;
+  }
+  .lm-dialog__title {
+    font-weight: 500; line-height: 1.05; margin: 0 0 0.7rem;
+    font-size: clamp(1.4rem, 1rem + 1.2vw, 1.95rem);
+  }
+  .lm-dialog__subtitle {
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
+  .lm-form__field {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+  }
+  .lm-form__field input[type="email"] {
+    flex: 1 1 14rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--COLOR-BODY-TEXT-A20, rgba(0,0,0,0.2));
+    border-radius: var(--RADIUS, 6px);
+    font: inherit; font-family: var(--font-2030-body, system-ui);
+    background: var(--COLOR-BG, #fff);
+    color: inherit;
+  }
+  .lm-form__submit {
+    padding: 0.7rem 1.2rem;
+    background: var(--COLOR-ACCENT-WARM, #a73a3a);
+    color: #fff; border: 0; border-radius: var(--RADIUS, 6px);
+    font: inherit; font-family: var(--font-2030-body, system-ui);
+    font-weight: 500; cursor: pointer;
+  }
+  .lm-form__submit:hover { filter: brightness(1.08); }
+  .lm-form__hint {
+    margin-top: 0.7rem;
+    font-size: 0.78rem;
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+  }
+  .lm-form__error, .lm-form__success {
+    padding: 0.7rem 0.9rem;
+    border-radius: var(--RADIUS, 6px);
+    margin: 0 0 0.8rem;
+    font-size: 0.95rem;
+  }
+  .lm-form__error   { background: #fde7e7; color: #862020; }
+  .lm-form__success { background: #e7f4ec; color: #185b3a; }
+
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+</style>
+
+<script>
+(function () {
+  if (window.__lmInit) return;
+  window.__lmInit = true;
+
+  var marker = document.querySelector('[data-lead-magnet]');
+  var dlg    = document.querySelector('[data-lead-magnet-dialog]');
+  if (!marker || !dlg) return;
+
+  var trigger    = marker.dataset.trigger || 'scroll';
+  var scrollPct  = parseInt(marker.dataset.scrollPct, 10) || 50;
+  var timeSec    = parseInt(marker.dataset.timeSeconds, 10) || 30;
+  var cooldown   = parseInt(marker.dataset.cooldownDays, 10) || 30;
+  var storageKey = marker.dataset.storageKey || 'lf_lead_magnet';
+  var requireConsent = marker.dataset.requireConsent === 'true';
+  var DAY_MS = 86400000;
+
+  function getState() {
+    try { return JSON.parse(localStorage.getItem(storageKey)) || {}; } catch (e) { return {}; }
+  }
+  function setState(patch) {
+    try { localStorage.setItem(storageKey, JSON.stringify(Object.assign(getState(), patch))); } catch (e) {}
+  }
+
+  var state = getState();
+  var now = Date.now();
+
+  // Already subscribed
+  if (state.subscribed) return;
+
+  // Within cooldown
+  if (state.dismissed && (now - state.dismissed) < cooldown * DAY_MS) return;
+
+  function consentOk() {
+    if (!requireConsent) return true;
+    if (window.CookieConsent && typeof window.CookieConsent.acceptedCategory === 'function') {
+      return window.CookieConsent.acceptedCategory('marketing');
+    }
+    return false;
+  }
+
+  var fired = false;
+  function open() {
+    if (fired) return;
+    if (!consentOk()) return;
+    fired = true;
+    if (typeof dlg.showModal === 'function') dlg.showModal();
+    else dlg.setAttribute('open', '');
+
+    dlg.addEventListener('close', function () {
+      var reason = (dlg.returnValue === 'subscribed') ? 'subscribed' : 'dismissed';
+      setState(reason === 'subscribed' ? { subscribed: now } : { dismissed: now });
+    }, { once: true });
+  }
+
+  // If user submits successfully on a reload → mark subscribed
+  if (document.querySelector('[data-lead-magnet-success]')) {
+    setState({ subscribed: now });
+    if (typeof dlg.showModal === 'function') dlg.showModal();
+    return;
+  }
+
+  function setupScroll() {
+    var pct = scrollPct / 100;
+    var onScroll = function () {
+      var h = document.documentElement;
+      var scrolled = (h.scrollTop || document.body.scrollTop) / Math.max(1, h.scrollHeight - h.clientHeight);
+      if (scrolled >= pct) {
+        window.removeEventListener('scroll', onScroll);
+        open();
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+  function setupTime() {
+    setTimeout(open, timeSec * 1000);
+  }
+  function setupExit() {
+    document.addEventListener('mouseout', function (e) {
+      if (!e.relatedTarget && e.clientY <= 0) open();
+    });
+    // Mobile fallback: time-based at 1.5x timeSec
+    setTimeout(open, timeSec * 1500);
+  }
+
+  function start() {
+    if (trigger === 'time')   setupTime();
+    if (trigger === 'exit')   setupExit();
+    if (trigger === 'scroll') setupScroll();
+  }
+
+  if (consentOk() || !requireConsent) start();
+  else document.addEventListener('cc:marketing-granted', start, { once: true });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Lead-Magnet-Popup",
+  "tag": "section",
+  "class": "section-section",
+  "settings": [
+    { "type": "header", "content": "Inhalt" },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Geschenk für dich" },
+    { "type": "text", "id": "title", "label": "Überschrift", "default": "Hol dir unser Mini-Preset." },
+    { "type": "richtext", "id": "subtitle", "label": "Untertitel", "default": "<p>Ein kostenloses Lightroom-Preset aus unserem Bali-Sommer. Plus gelegentliche Mails über neue Karten und Guides – kein Spam, versprochen.</p>" },
+    { "type": "image_picker", "id": "image", "label": "Bild" },
+    { "type": "header", "content": "Formular" },
+    { "type": "text", "id": "button_label", "label": "Button-Text", "default": "Mini-Preset holen" },
+    { "type": "text", "id": "tag", "label": "Customer-Tag (für Klaviyo-Flow)", "default": "mini-preset" },
+    { "type": "text", "id": "success_text", "label": "Erfolgs-Meldung", "default": "Bitte bestätige deine E-Mail – der Download-Link ist unterwegs." },
+    { "type": "text", "id": "legal_hint", "label": "Rechtlicher Hinweis", "default": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung." },
+    { "type": "header", "content": "Verhalten" },
+    {
+      "type": "select", "id": "trigger", "label": "Auslöser", "default": "scroll",
+      "options": [
+        { "value": "scroll", "label": "Bei Scroll-Tiefe" },
+        { "value": "time",   "label": "Nach Zeit" },
+        { "value": "exit",   "label": "Bei Verlassen-Absicht" }
+      ]
+    },
+    { "type": "range", "id": "scroll_pct", "label": "Scroll-Tiefe", "min": 20, "max": 90, "step": 5, "unit": "%", "default": 50 },
+    { "type": "range", "id": "time_seconds", "label": "Zeit auf Seite (Sek)", "min": 10, "max": 120, "step": 5, "unit": "s", "default": 30 },
+    { "type": "range", "id": "cooldown_days", "label": "Cooldown nach Schließen", "min": 1, "max": 90, "step": 1, "unit": "d", "default": 30 },
+    { "type": "checkbox", "id": "require_marketing_consent", "label": "Nur bei Marketing-Consent zeigen", "default": true },
+    { "type": "text", "id": "storage_key", "label": "LocalStorage-Schlüssel", "default": "lf_lead_magnet" }
+  ],
+  "presets": [
+    { "name": "Lead-Magnet-Popup" }
+  ]
+}
+{% endschema %}
