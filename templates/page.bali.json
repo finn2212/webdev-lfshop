@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "spotlight": {
+      "type": "section-bundle-spotlight",
+      "blocks": {
+        "i-1": {
+          "type": "item",
+          "settings": {
+            "product": "bali-starter-kit",
+            "reason": "Für die ersten Tage zur Orientierung – damit ihr nicht jeden Abend Google-Maps-Listen baut."
+          }
+        },
+        "i-2": {
+          "type": "item",
+          "settings": {
+            "product": "bali-maps",
+            "reason": "Die Detail-Karte mit unseren Lieblings-Spots, Insider-Strände und Restaurants jenseits der Postkarten-Liste."
+          }
+        }
+      },
+      "block_order": [
+        "i-1",
+        "i-2"
+      ],
+      "settings": {
+        "kicker": "Bali · Indonesien",
+        "title": "Drei Inseln, vier Wochen, eine Karte.",
+        "lead": "<p>Wir haben Bali, Lombok und die Gilis über mehrere Aufenthalte zwischen 2022 und 2025 erkundet – mit Tilda, mit Kamera, mit dem Roller. Diese Auswahl ist das Ergebnis: konkrete Spots, getestete Routen, ehrliche Empfehlungen abseits dessen, was bei TripAdvisor ganz oben steht.</p>",
+        "bundle_product": "bali-bundle",
+        "cta_label": "Komplett-Bundle ansehen",
+        "savings_label": "Spart 20 %",
+        "trust_promise": "14 Tage Geld zurück · Updates für 12 Monate · Sofort-Download als PDF + Google-Maps-Liste",
+        "contents_kicker": "Was drin ist",
+        "contents_title": "Komponenten im Bundle",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 100,
+        "padding_bottom": 80
+      }
+    },
+    "principles": {
+      "type": "section-principles",
+      "blocks": {
+        "p-1": {
+          "type": "principle",
+          "settings": {
+            "title": "Selbst gewesen",
+            "body": "<p>Jeder Spot in unseren Bali-Karten wurde von uns persönlich besucht – meist mehrfach, in unterschiedlichen Saisons.</p>"
+          }
+        },
+        "p-2": {
+          "type": "principle",
+          "settings": {
+            "title": "Familientauglich, wenn drauf",
+            "body": "<p>Wo wir mit Kind gewesen sind, steht das dabei – inklusive Wickel-Optionen, schattigen Pausen und Notausgängen für Wettertage.</p>"
+          }
+        },
+        "p-3": {
+          "type": "principle",
+          "settings": {
+            "title": "Updates aus der Saison",
+            "body": "<p>Bali verändert sich schnell. Was Anfang 2025 ein Geheimtipp war, ist Ende 2025 Foto-Spot. Wir aktualisieren mindestens einmal jährlich – kostenlos für Käufer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "p-1",
+        "p-2",
+        "p-3"
+      ],
+      "settings": {
+        "kicker": "Versprechen",
+        "title": "Drei Punkte, auf die wir uns festlegen.",
+        "lead": "",
+        "signature": "— Laura & Finn",
+        "width": "wrapper--narrow",
+        "color_bg": "bg--accent",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "reels": {
+      "type": "section-reels",
+      "settings": {
+        "kicker": "Live aus Bali",
+        "title": "Wie es vor Ort wirklich aussieht.",
+        "subtitle": "<p>Tap das Video an für Vollbild und Ton.</p>",
+        "text_size": "medium",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 60,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "spotlight",
+    "principles",
+    "reels"
+  ]
+}

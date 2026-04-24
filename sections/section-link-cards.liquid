@@ -1,0 +1,242 @@
+{%- comment -%}
+  section-link-cards.liquid — Multi-Purpose Hub-Section.
+
+  Zeigt 2–6 Karten mit Bild + Titel + Untertitel + Link. Im Gegensatz zu
+  Bundle-Spotlight (Produkt-getrieben) ist das hier Page-/Article-/URL-getrieben
+  und damit perfekt für Hub-Pages: Familienreisen, Destination-Übersicht,
+  Australien-Storys etc.
+
+  Pro Block: image_picker, title, subtitle, kicker, url, eyebrow.
+{%- endcomment -%}
+
+<section
+  class="section-link-cards {{ section.settings.color_bg }}"
+  style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="{{ section.settings.width }} section-padding">
+
+    {%- if section.settings.title != blank or section.settings.kicker != blank -%}
+      <header class="link-cards__header">
+        {%- if section.settings.kicker != blank -%}
+          <p class="link-cards__kicker font-mono-2030">{{ section.settings.kicker | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="link-cards__title font-display-2030 heading-size-{{ section.settings.text_size | default: 'medium' }}">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subtitle != blank -%}
+          <div class="link-cards__subtitle font-editorial-2030">{{ section.settings.subtitle }}</div>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ul class="link-cards__grid link-cards__grid--cols-{{ section.settings.columns | default: 3 }}" role="list">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign img      = block.settings.image
+            assign title    = block.settings.title
+            assign subtitle = block.settings.subtitle
+            assign eyebrow  = block.settings.eyebrow
+            assign url      = block.settings.url
+          -%}
+          <li class="link-card" {{ block.shopify_attributes }}>
+            <a class="link-card__inner" href="{{ url | default: '#' }}">
+              <div class="link-card__media">
+                {%- if img != blank -%}
+                  <img
+                    src="{{ img | image_url: width: 1200 }}"
+                    srcset="{{ img | image_url: width: 600 }} 600w, {{ img | image_url: width: 1000 }} 1000w, {{ img | image_url: width: 1400 }} 1400w"
+                    sizes="(min-width: 990px) 33vw, 90vw"
+                    alt="{{ img.alt | default: title | escape }}"
+                    loading="lazy"
+                    decoding="async"
+                    width="{{ img.width }}"
+                    height="{{ img.height }}"
+                  >
+                {%- else -%}
+                  <span class="link-card__placeholder">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</span>
+                {%- endif -%}
+                {%- if eyebrow != blank -%}
+                  <span class="link-card__eyebrow font-mono-2030">{{ eyebrow | escape }}</span>
+                {%- endif -%}
+              </div>
+              <div class="link-card__body">
+                <h3 class="link-card__title font-display-2030">{{ title | escape }}</h3>
+                {%- if subtitle != blank -%}
+                  <p class="link-card__subtitle font-body-2030">{{ subtitle | escape }}</p>
+                {%- endif -%}
+                <span class="link-card__more font-body-2030" aria-hidden="true">
+                  Ansehen
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<style>
+  .section-link-cards { padding-top: var(--PT, 80px); padding-bottom: var(--PB, 80px); }
+  .link-cards__header { max-width: 720px; margin: 0 auto 2.5rem; text-align: center; }
+  .link-cards__kicker {
+    text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 0.78rem; color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    margin: 0 0 0.6rem;
+  }
+  .link-cards__title {
+    font-weight: 500; line-height: 1.05; margin: 0 0 0.6rem;
+  }
+  .link-cards__subtitle {
+    font-family: var(--font-2030-body, system-ui);
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+  }
+
+  .link-cards__grid {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 1.4rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 720px) {
+    .link-cards__grid--cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .link-cards__grid--cols-3 { grid-template-columns: repeat(2, 1fr); }
+    .link-cards__grid--cols-4 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 990px) {
+    .link-cards__grid--cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .link-cards__grid--cols-4 { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .link-card { margin: 0; }
+  .link-card__inner {
+    display: grid; gap: 0; text-decoration: none; color: inherit;
+    border-radius: var(--RADIUS-LG, 16px); overflow: hidden;
+    background: var(--COLOR-BG, #fff);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+    transition: transform 240ms ease, box-shadow 240ms ease;
+    height: 100%;
+  }
+  .link-card__inner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.10);
+  }
+  .link-card__media {
+    position: relative; aspect-ratio: 4 / 5;
+    overflow: hidden; background: var(--COLOR-BODY-TEXT-A05, #f0eee9);
+  }
+  .link-card__media img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 600ms ease;
+  }
+  .link-card__inner:hover .link-card__media img { transform: scale(1.04); }
+  .link-card__placeholder {
+    position: absolute; inset: 0; display: grid; place-items: center;
+  }
+  .link-card__eyebrow {
+    position: absolute; top: 0.7rem; left: 0.7rem;
+    background: rgba(0,0,0,0.55); color: #fff;
+    padding: 0.22rem 0.55rem; border-radius: 999px;
+    font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+    backdrop-filter: blur(6px);
+  }
+  .link-card__body {
+    padding: 1.1rem 1.2rem 1.3rem;
+    display: grid; gap: 0.4rem;
+  }
+  .link-card__title {
+    margin: 0; font-weight: 500; line-height: 1.18;
+    font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);
+  }
+  .link-card__subtitle {
+    margin: 0; font-size: 0.92rem; line-height: 1.45;
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+  }
+  .link-card__more {
+    margin-top: 0.4rem;
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    color: var(--COLOR-ACCENT-WARM, #a73a3a);
+    font-size: 0.92rem; font-weight: 500;
+  }
+
+  .link-card__inner:focus-visible {
+    outline: 2px solid var(--COLOR-ACCENT-COOL, #3aa77b);
+    outline-offset: 3px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Link-Karten",
+  "tag": "section",
+  "class": "section-section",
+  "settings": [
+    { "type": "header", "content": "Inhalt" },
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Wo wir waren" },
+    { "type": "text", "id": "title", "label": "Überschrift", "default": "Destinationen" },
+    { "type": "richtext", "id": "subtitle", "label": "Untertitel", "default": "<p>Ländern, in denen wir lange genug waren, um etwas dazu zu sagen.</p>" },
+    {
+      "type": "select", "id": "text_size", "label": "Textgröße", "default": "medium",
+      "options": [
+        { "value": "small",  "label": "Klein" },
+        { "value": "medium", "label": "Mittel" },
+        { "value": "large",  "label": "Groß" }
+      ]
+    },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select", "id": "columns", "label": "Spalten (Desktop)", "default": "3",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ]
+    },
+    {
+      "type": "select", "id": "width", "label": "Breite", "default": "wrapper",
+      "options": [
+        { "value": "wrapper",         "label": "Standard" },
+        { "value": "wrapper--narrow", "label": "Schmal" },
+        { "value": "wrapper--full",   "label": "Volle Breite" }
+      ]
+    },
+    {
+      "type": "select", "id": "color_bg", "label": "Hintergrund", "default": "bg--neutral",
+      "options": [
+        { "value": "bg--neutral", "label": "Neutral" },
+        { "value": "bg--accent",  "label": "Akzent" }
+      ]
+    },
+    { "type": "range", "id": "padding_top",    "label": "Abstand oben",  "min": 0, "max": 200, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Abstand unten", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Karte",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Bild" },
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow-Tag (optional)" },
+        { "type": "text", "id": "title", "label": "Titel", "default": "Bali" },
+        { "type": "text", "id": "subtitle", "label": "Untertitel", "default": "Drei Inseln, vier Wochen, eine Karte." },
+        { "type": "url", "id": "url", "label": "Link" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Link-Karten",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}

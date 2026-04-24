@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "spotlight": {
+      "type": "section-bundle-spotlight",
+      "blocks": {
+        "i-1": {
+          "type": "item",
+          "settings": {
+            "product": "sudafrika-guide",
+            "reason": "Tagesrouten von Kapstadt entlang der Garden Route bis Port Elizabeth – mit Pausen, Stops und Plan B."
+          }
+        },
+        "i-2": {
+          "type": "item",
+          "settings": {
+            "product": "kapstadt-maps",
+            "reason": "Detail-Karte für Kapstadt selbst – Cafés, Aussichtspunkte, Sundowner-Spots, alles mit GPS-Pin."
+          }
+        }
+      },
+      "block_order": [
+        "i-1",
+        "i-2"
+      ],
+      "settings": {
+        "kicker": "Südafrika · Kapstadt & Garden Route",
+        "title": "Kapstadt langsam. Garden Route ehrlich.",
+        "lead": "<p>Wir waren mit Tilda mehrere Wochen in Südafrika unterwegs – mit dem Mietwagen, ohne Resort. Was wir mitgenommen haben: weniger Spots pro Tag, dafür echte Begegnungen. Diese Karten und der Guide sind das Resultat – kuratiert für Reisende, die sich auch trauen, eine Township-Tour zu machen, ohne das Klischee zu bedienen.</p>",
+        "bundle_product": "sudafrika-bundle",
+        "cta_label": "Komplett-Bundle ansehen",
+        "savings_label": "Spart 25 %",
+        "trust_promise": "14 Tage Geld zurück · Updates nach jeder Reise · Sofort-Download als PDF + Google-Maps-Liste",
+        "contents_kicker": "Was drin ist",
+        "contents_title": "Komponenten im Bundle",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 100,
+        "padding_bottom": 80
+      }
+    },
+    "principles": {
+      "type": "section-principles",
+      "blocks": {
+        "p-1": {
+          "type": "principle",
+          "settings": {
+            "title": "Sicherheit ehrlich besprochen",
+            "body": "<p>Südafrika hat viele Vorurteile – wir reden offen darüber, wo wir uns wohl gefühlt haben, wo nicht, und wo Tipps anderer Reise-Sites unrealistisch sind.</p>"
+          }
+        },
+        "p-2": {
+          "type": "principle",
+          "settings": {
+            "title": "Selbstfahrer-tauglich",
+            "body": "<p>Alle Routen sind als Selbstfahrer durchplanbar. Wir notieren Tankstops, gute Straßen, Vorsicht-Strecken und Übernachtungs-Punkte ohne Sicherheits-Stress.</p>"
+          }
+        },
+        "p-3": {
+          "type": "principle",
+          "settings": {
+            "title": "Mit Kind getestet",
+            "body": "<p>Tilda war auf einem Großteil der empfohlenen Routen dabei. Wo das so war, steht das dabei – inklusive Pausen, Wickel-Stops und Wetter-Alternativen.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "p-1",
+        "p-2",
+        "p-3"
+      ],
+      "settings": {
+        "kicker": "Versprechen",
+        "title": "Drei Punkte, auf die wir uns festlegen.",
+        "lead": "",
+        "signature": "— Laura & Finn",
+        "width": "wrapper--narrow",
+        "color_bg": "bg--accent",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "reels": {
+      "type": "section-reels",
+      "settings": {
+        "kicker": "Live aus Südafrika",
+        "title": "Eindrücke von der Garden Route.",
+        "subtitle": "<p>Tap das Video an für Vollbild und Ton.</p>",
+        "text_size": "medium",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 60,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "spotlight",
+    "principles",
+    "reels"
+  ]
+}

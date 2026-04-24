@@ -1,0 +1,113 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "intro": {
+      "type": "section-bundle-spotlight",
+      "settings": {
+        "kicker": "Australien · Westküste",
+        "title": "Drei Monate Australien. Was uns dazu wirklich geholfen hat.",
+        "lead": "<p>Australien war für uns das längste zusammenhängende Reise-Kapitel als Familie – mit Camper, Westküste, langen Strecken. Wir haben dazu noch keine Karte veröffentlicht, weil wir das Material erst sortieren wollen. Bis dahin findet ihr hier unsere drei wichtigsten Praxis-Artikel.</p>",
+        "trust_promise": "",
+        "contents_kicker": "",
+        "contents_title": "",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 100,
+        "padding_bottom": 60
+      }
+    },
+    "stories": {
+      "type": "section-link-cards",
+      "blocks": {
+        "a-1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Praxis",
+            "title": "Einreise nach Australien",
+            "subtitle": "Visa, Zollformulare, was wirklich kontrolliert wird – und wie es mit Kind aussieht.",
+            "url": "/blogs/news/einreise-australien"
+          }
+        },
+        "a-2": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Route",
+            "title": "Westküste Australiens",
+            "subtitle": "Perth bis Broome im Camper – was funktioniert, wo es hakt, was wir das nächste Mal anders machen.",
+            "url": "/blogs/news/westkuste-von-australien"
+          }
+        },
+        "a-3": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Rückblick",
+            "title": "Australien-Reise insgesamt",
+            "subtitle": "Was wir vor der Reise unterschätzt haben und was wir mit Tilda gelernt haben.",
+            "url": "/blogs/news/australien-reise"
+          }
+        }
+      },
+      "block_order": [
+        "a-1",
+        "a-2",
+        "a-3"
+      ],
+      "settings": {
+        "kicker": "Aus dem Blog",
+        "title": "Drei Geschichten, die helfen.",
+        "subtitle": "<p>Reine Praxis aus unseren drei Monaten Westküste.</p>",
+        "columns": "3",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 40,
+        "padding_bottom": 80
+      }
+    },
+    "principles": {
+      "type": "section-principles",
+      "blocks": {
+        "p-1": {
+          "type": "principle",
+          "settings": {
+            "title": "Karte folgt – wenn das Material reif ist",
+            "body": "<p>Wir veröffentlichen Karten nur, wenn wir genug Aufenthalt vor Ort hatten, um echte Empfehlungen zu geben. Australien-Karten sind in Vorbereitung – wir melden uns über den Newsletter, sobald sie da sind.</p>"
+          }
+        },
+        "p-2": {
+          "type": "principle",
+          "settings": {
+            "title": "Bis dahin: Blog-Inhalte frei",
+            "body": "<p>Was wir an Praxis-Tipps zu Australien zusammengetragen haben, steht im Blog – nicht hinter einer Bezahlschranke.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "p-1",
+        "p-2"
+      ],
+      "settings": {
+        "kicker": "Status",
+        "title": "Warum hier (noch) keine Karte ist.",
+        "lead": "",
+        "signature": "— Laura & Finn",
+        "width": "wrapper--narrow",
+        "color_bg": "bg--accent",
+        "padding_top": 80,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "stories",
+    "principles"
+  ]
+}

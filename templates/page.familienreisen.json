@@ -1,0 +1,179 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "intro": {
+      "type": "section-bundle-spotlight",
+      "settings": {
+        "kicker": "Familienreisen",
+        "title": "Reisen mit Kind. Hier ist was wir gelernt haben.",
+        "lead": "<p>Wir reisen seit 2022 als Familie – mit Tilda, mittlerweile drei Jahren. Was anfangs naiv geplant war, hat sich über drei Kontinente und mehrere Reisepässe zu einer Methode entwickelt: weniger Spots pro Tag, mehr Pausen, bessere Routen. Diese Seite ist die Sammelstelle dafür – mit konkreten Karten und Guides aus den Ländern, in denen wir lange genug waren, um etwas dazu zu sagen.</p>",
+        "trust_promise": "14 Tage Geld zurück · Updates für 12 Monate · Sofort-Download als PDF + Google-Maps-Liste",
+        "contents_kicker": "",
+        "contents_title": "",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 100,
+        "padding_bottom": 60
+      }
+    },
+    "destinations": {
+      "type": "section-link-cards",
+      "blocks": {
+        "d-bali": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Indonesien",
+            "title": "Bali",
+            "subtitle": "Drei Inseln, lange Aufenthalte, kindertaugliche Routen jenseits von Seminyak.",
+            "url": "/pages/bali"
+          }
+        },
+        "d-suedafrika": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Kapstadt & Garden Route",
+            "title": "Südafrika",
+            "subtitle": "Slow-Travel mit Kind durch die Garden Route – ohne Selbstfahr-Stress.",
+            "url": "/pages/suedafrika"
+          }
+        },
+        "d-thailand": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Bangkok & Inseln",
+            "title": "Thailand",
+            "subtitle": "Bangkok mit Kind, Koh Samui zur Ruhe – zwei Welten, eine Reise.",
+            "url": "/pages/thailand"
+          }
+        },
+        "d-australien": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Westküste",
+            "title": "Australien",
+            "subtitle": "Was wir über Einreise, Versicherungen und Slow-Travel mit Kind gelernt haben.",
+            "url": "/pages/australien"
+          }
+        }
+      },
+      "block_order": [
+        "d-bali",
+        "d-suedafrika",
+        "d-thailand",
+        "d-australien"
+      ],
+      "settings": {
+        "kicker": "Wo wir waren",
+        "title": "Länder mit eigener Geschichte.",
+        "subtitle": "<p>Vier Destinationen, in denen wir mehrere Wochen oder Monate verbracht haben – mit allem, was dazu gehört: gute Tage und Wackel-Tage.</p>",
+        "columns": "4",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 40,
+        "padding_bottom": 80
+      }
+    },
+    "principles": {
+      "type": "section-principles",
+      "blocks": {
+        "p-1": {
+          "type": "principle",
+          "settings": {
+            "title": "Weniger Spots pro Tag",
+            "body": "<p>Mit Kind funktioniert eine Bucket-List nicht. Wir empfehlen weniger Stationen, dafür mit echtem Puffer. Lieber zwei Strände in Ruhe als sechs im Sprint.</p>"
+          }
+        },
+        "p-2": {
+          "type": "principle",
+          "settings": {
+            "title": "Pausen einplanen, nicht reagieren",
+            "body": "<p>Jeder Tagesplan in unseren Family-Karten hat eingebaute Wickel-, Schlaf- und Snack-Stops. Damit ihr nicht jedes Mal improvisieren müsst.</p>"
+          }
+        },
+        "p-3": {
+          "type": "principle",
+          "settings": {
+            "title": "Ehrlich über Wackeliges",
+            "body": "<p>Was 2024 mit Tilda als Baby ging, geht mit ihr als Dreijähriger oft anders. Wir aktualisieren Family-Inhalte nach jeder Reise neu und schreiben dazu, wann etwas funktioniert hat – und wann nicht.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "p-1",
+        "p-2",
+        "p-3"
+      ],
+      "settings": {
+        "kicker": "Methode",
+        "title": "Drei Dinge, die unsere Familienkarten anders machen.",
+        "lead": "<p>Was uns von generischen Family-Travel-Listen unterscheidet.</p>",
+        "signature": "— Laura, Finn & Tilda",
+        "width": "wrapper--narrow",
+        "color_bg": "bg--accent",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "story-articles": {
+      "type": "section-link-cards",
+      "blocks": {
+        "a-1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Aus dem Blog",
+            "title": "Erste Reise mit Kind",
+            "subtitle": "Was wir vor Tildas erster Fernreise wirklich gebraucht haben – und was wir uns sparen konnten.",
+            "url": "/blogs/news/erste-reise-mit-kind"
+          }
+        },
+        "a-2": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Packliste",
+            "title": "Reise-Essentials",
+            "subtitle": "Die Sachen, die nach drei Kontinenten in unserem Koffer geblieben sind.",
+            "url": "/blogs/news/reise-essentials"
+          }
+        },
+        "a-3": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Praxis",
+            "title": "Auslandskrankenversicherung",
+            "subtitle": "Welche wir mit Kind gewählt haben und warum die billige nicht reicht.",
+            "url": "/blogs/news/auslandskrankenversicherung"
+          }
+        }
+      },
+      "block_order": [
+        "a-1",
+        "a-2",
+        "a-3"
+      ],
+      "settings": {
+        "kicker": "Geschichten dazu",
+        "title": "Aus unserer eigenen Praxis.",
+        "subtitle": "",
+        "columns": "3",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 80,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "destinations",
+    "principles",
+    "story-articles"
+  ]
+}

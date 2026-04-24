@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "principles": {
+      "type": "section-principles",
+      "blocks": {
+        "p-1": {
+          "type": "principle",
+          "settings": {
+            "title": "Selbst gewesen",
+            "body": "<p>Jeder empfohlene Spot wurde von uns persönlich besucht. Wenn wir nicht da waren, kommt er nicht in den Guide. Karten zeigen nur Orte, die wir mindestens einmal mit eigenen Augen geprüft haben.</p>",
+            "example": "Für den Bali-Guide haben wir 11 Wochen vor Ort recherchiert, 312 Spots besucht und 168 in den finalen Guide aufgenommen."
+          }
+        },
+        "p-2": {
+          "type": "principle",
+          "settings": {
+            "title": "Keine bezahlten Top-Listen",
+            "body": "<p>Hotels, Restaurants oder Aktivitäten landen niemals in einer Empfehlung, weil sie dafür gezahlt haben. Punkt. Wenn ein Ort in einer Top-Liste auftaucht, dann weil er dort hingehört.</p>",
+            "example": "Wir haben in den letzten 24 Monaten 41 Anfragen für „Featured Spot\"-Plätze abgelehnt."
+          }
+        },
+        "p-3": {
+          "type": "principle",
+          "settings": {
+            "title": "Affiliates kennzeichnen wir",
+            "body": "<p>Manche Links bringen uns eine kleine Provision (Buchungsplattformen, Versicherungen). Wenn das so ist, sagen wir das. An der Empfehlung ändert es nichts – aber du sollst es wissen.</p>",
+            "example": ""
+          }
+        },
+        "p-4": {
+          "type": "principle",
+          "settings": {
+            "title": "Updates statt Re-Releases",
+            "body": "<p>Käufer mit aktivem Konto bekommen jede neue Version automatisch per E-Mail. Wir veröffentlichen keine \"Bali-Guide 2026\" als neues Produkt – wir aktualisieren das Bestehende und liefern nach. Mindestens einmal pro Jahr, transparent dokumentiert.</p>",
+            "example": "Den Bali-Guide haben wir seit Erstauflage 2022 sechs Mal überarbeitet, alle Updates kostenlos für Bestandskäufer."
+          }
+        },
+        "p-5": {
+          "type": "principle",
+          "settings": {
+            "title": "Trennung von Social und Shop",
+            "body": "<p>Sponsored Content auf Instagram oder TikTok ist immer als solcher gekennzeichnet und beeinflusst niemals Empfehlungen im Shop. Marken, mit denen wir auf Social kooperieren, bekommen keinen Bonus in unseren Karten oder Guides.</p>",
+            "example": ""
+          }
+        },
+        "p-6": {
+          "type": "principle",
+          "settings": {
+            "title": "14 Tage Geld zurück",
+            "body": "<p>Bringt der Guide dich nicht weiter, schreib uns eine E-Mail und du bekommst dein Geld zurück. Ohne Wenn und Aber, ohne Begründung, ohne Formular.</p>",
+            "example": ""
+          }
+        }
+      },
+      "block_order": ["p-1", "p-2", "p-3", "p-4", "p-5", "p-6"],
+      "settings": {
+        "kicker": "Wofür wir stehen",
+        "title": "Unsere Redaktionsprinzipien",
+        "lead": "<p>Wir verkaufen Karten und Guides, in denen wir selbst gewesen sind. Damit das so bleibt, gelten folgende Regeln – für uns, nicht für unsere Leser.</p>",
+        "signature": "— Laura & Finn",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": ["principles"]
+}
