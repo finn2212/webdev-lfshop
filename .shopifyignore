@@ -7,4 +7,4 @@ assets/icon-arrow-left.svg
 assets/icon-arrow-right.svg
 
 # Working folder for the redesign analysis (markdown only, never deploys)
-_redesign-2030/
+_redesign-2030/*
