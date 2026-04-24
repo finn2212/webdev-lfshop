@@ -12,6 +12,7 @@ Mehragenten-Analyse und Redesign-Vorschlag für laurandfinn.com.
 | 3 | [03_content_checklist.md](03_content_checklist.md) | Was Finn an Content / Zugängen / Antworten liefert |
 | 4 | [04_metafields.md](04_metafields.md) | Shopify-Admin-Metafields für Trust-Signals |
 | 5 | [05_localization.md](05_localization.md) | DE → EN Übersetzungs-Plan + Vorab-Übersetzungen aller neuen Strings |
+| 6 | [06_sitemap.md](06_sitemap.md) | Laufende Sitemap + Redesign-Status pro Seite/Section, Prioritätenliste für einheitliches Look & Feel |
 
 ## Code-Stand auf `redesign-2030`-Branch
 

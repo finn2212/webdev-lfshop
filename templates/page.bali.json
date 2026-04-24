@@ -1,5 +1,59 @@
 {
   "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/DSC04341-5.jpg",
+        "overlay_opacity": 40,
+        "overlay_color": "#181929",
+        "eyebrow": "Bali · Lombok · Gilis",
+        "heading": "<p>Drei Inseln, vier Wochen, eine Karte.</p>",
+        "lead": "<p>Bali, Lombok und die Gilis, wie wir sie nach mehreren Aufenthalten zwischen 2022 und 2025 kennen – mit Tilda, mit Roller, ohne Postkarten-Tipps.</p>",
+        "cta_primary_label": "Bali-Bundle ansehen",
+        "cta_primary_url": "/products/bali-bundle",
+        "cta_secondary_label": "Wie wir arbeiten",
+        "cta_secondary_url": "/pages/redaktionsprinzipien",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Jedes Mal länger als vier Wochen, jedes Mal mit Kind. Erst Canggu und Ubud, dann die ruhigeren Ecken im Osten, zuletzt Lombok und die Gilis. Aus diesen Monaten sind unsere Bali-Karten entstanden: was wirklich für Familien funktioniert, welche Strände auch im Oktober noch baden lassen, und wo man abends isst, ohne in der Instagram-Schlange zu stehen.</p>"
+          }
+        },
+        "b-2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Wir empfehlen keinen Ort, an dem wir nicht selbst frühstücken würden.",
+            "attribution": "",
+            "style": "display"
+          }
+        },
+        "b-3": {
+          "type": "signature",
+          "settings": {
+            "signature": "— Laura & Finn"
+          }
+        }
+      },
+      "block_order": ["b-1", "b-2", "b-3"],
+      "settings": {
+        "eyebrow": "Wie diese Karte entstanden ist",
+        "heading": "<p>Mehrere Aufenthalte. Ein Kind. Keine Bucket-List.</p>",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 56,
+        "padding_bottom": 32
+      }
+    },
     "spotlight": {
       "type": "section-bundle-spotlight",
       "blocks": {
@@ -86,7 +140,26 @@
         "padding_top": 60,
         "padding_bottom": 100
       }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Geschenk für dich",
+        "title": "Hol dir unser Bali-Mini-Preset.",
+        "subtitle": "<p>Ein kostenloses Lightroom-Preset aus unserem letzten Bali-Sommer. Plus gelegentliche Mails über neue Karten und Guides – kein Spam, versprochen.</p>",
+        "image": "shopify://shop_images/DSC04341-5.jpg",
+        "button_label": "Mini-Preset holen",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – der Download-Link ist unterwegs.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_bali"
+      }
     }
   },
-  "order": ["spotlight", "principles", "reels"]
+  "order": ["hero", "intro", "spotlight", "principles", "reels", "lead-magnet"]
 }
