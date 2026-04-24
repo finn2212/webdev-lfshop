@@ -190,54 +190,24 @@
       }
     },
     "family-hub": {
-      "type": "section-collection-split",
-      "blocks": {
-        "fh-heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Reisen mit Kind. Hier ist was wir gelernt haben.</p>",
-            "text_size": 9
-          }
-        },
-        "fh-text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Eine eigene Sammelstelle für Familien-Reisende – mit allen Karten, Routen und Geschichten, die wir aus drei Jahren mit Tilda zusammengetragen haben.</p>",
-            "text_size": 5
-          }
-        },
-        "fh-cta": {
-          "type": "button",
-          "settings": {
-            "button_text": "Zum Familien-Hub",
-            "button_url": "/pages/familienreisen",
-            "button_size": "btn--large",
-            "button_style": "hero__btn btn",
-            "button_color": "btn--white"
-          }
-        }
-      },
-      "block_order": ["fh-heading", "fh-text", "fh-cta"],
+      "type": "section-row",
       "settings": {
-        "collection": "",
-        "product_list": [],
         "image": "shopify://shop_images/DSC02014-3.jpg",
-        "sticky_image_enable": false,
-        "swap": false,
-        "overlay_opacity": 25,
-        "overlay_color": "#181929",
-        "grid_large": 2,
-        "grid_small": 1.5,
-        "limit": 0,
-        "bg": "palette--light bg--neutral",
-        "video_link_bg": "",
-        "object_position": "center-center",
-        "flex_align": "align--middle-center",
-        "align_text": "text-center",
-        "color": "text--white",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Reisen mit Kind. Hier ist was wir gelernt haben.",
+        "text_size": 7,
+        "text": "<p>Eine eigene Sammelstelle für Familien-Reisende – mit allen Karten, Routen und Geschichten, die wir aus drei Jahren mit Tilda zusammengetragen haben.</p>",
+        "color_text_bg": "palette--light bg--neutral",
+        "button_label": "Zum Familien-Hub",
+        "button_link": "/pages/familienreisen",
+        "button_style": "btn",
+        "button_color": "btn--primary",
+        "color_bg": "palette--light bg--neutral",
         "width": "wrapper",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "presets": {
