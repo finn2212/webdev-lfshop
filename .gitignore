@@ -1,0 +1,10 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Generated AI images — uploaded to Shopify Files manually, no need to track binaries in git
+_redesign-2030/generated-images/
+
+# OS
+.DS_Store
