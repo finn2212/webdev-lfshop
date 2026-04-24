@@ -1,0 +1,214 @@
+/* ==========================================================================
+   redesign-2030.css — Central style override layer for the Travel-2030 brief.
+
+   Loaded AFTER theme.css in layout/theme.liquid, so any selector here
+   wins in the CSS cascade without having to bump specificity. Keep all
+   redesign tweaks in this single file so we don't bleed into the Story
+   theme files (which can be re-uploaded by Groupthought updates).
+
+   Sections:
+     1. Tokens (redesign-specific scales / numbers)
+     2. Prices  — PDP + grid card  (BIG, tabular nums, editorial tone)
+     3. Headings — tighter line-height, optical kerning where Fraunces helps
+     4. Buttons / CTAs — softer radius, smoother hover
+     5. Product cards (grid) — subtle hover lift
+     6. Misc small lifts
+   ========================================================================== */
+
+/* 1 — Local tokens ========================================================= */
+:root {
+  /* Caveat optically reads ~30% smaller than Inter at the same pixel
+     size, so values are scaled up to compensate. */
+  --r2030-price-pdp:        clamp(2.6rem, 1.9rem + 2.4vw, 4rem);
+  --r2030-price-pdp-strike: clamp(1.4rem, 1.15rem + 0.8vw, 1.8rem);
+  --r2030-price-grid:       clamp(1.5rem, 1.3rem + 0.8vw, 1.85rem);
+  --r2030-price-color:      var(--COLOR-BODY-TEXT, #1a1a1a);
+  --r2030-price-sale-color: var(--COLOR-ACCENT-WARM, #a73a3a);
+  --r2030-radius-soft:      14px;
+  --r2030-card-shadow:      0 6px 22px rgba(0,0,0,0.06);
+  --r2030-card-shadow-hi:   0 14px 32px rgba(0,0,0,0.10);
+}
+
+/* 2 — Prices =============================================================== */
+/* Brand decision: prices stay in Caveat (handwriting) for the personal
+   creator-shop tone. We only enlarge them and improve the visual hierarchy
+   between main price / strike / sale-badge / per-unit. */
+
+/* PDP main price */
+.product__price {
+  font-family: var(--font-2030-hand, 'Caveat VF', cursive);
+  font-size: var(--r2030-price-pdp);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--r2030-price-color);
+}
+
+.product__price--sale {
+  color: var(--r2030-price-sale-color);
+  font-weight: 700;
+}
+
+.product__price--strike {
+  font-family: var(--font-2030-hand, 'Caveat VF', cursive);
+  font-size: var(--r2030-price-pdp-strike);
+  font-weight: 500;
+  color: var(--COLOR-BODY-TEXT-A55, rgba(0,0,0,0.5));
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  margin-right: 0.4em;
+}
+
+.product__price--off {
+  display: inline-block;
+  margin-left: 0.6em;
+  padding: 0.2em 0.7em;
+  background: color-mix(in oklch, var(--r2030-price-sale-color) 18%, transparent);
+  color: var(--r2030-price-sale-color);
+  border-radius: 999px;
+  font-family: var(--font-2030-mono, ui-monospace, monospace);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.product__price--unit {
+  font-family: var(--font-2030-hand, 'Caveat VF', cursive);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--COLOR-BODY-TEXT-A75, rgba(0,0,0,0.6));
+  margin-left: 0.7em;
+}
+
+/* Grid product card price */
+.price_wrapper {
+  font-family: var(--font-2030-hand, 'Caveat VF', cursive);
+  font-size: var(--r2030-price-grid);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+  color: var(--r2030-price-color);
+  margin-top: 0.4rem;
+}
+
+.price_wrapper.on-sale {
+  color: var(--r2030-price-sale-color);
+}
+
+.price_wrapper.on-sale s,
+.price_wrapper s {
+  font-family: var(--font-2030-hand, 'Caveat VF', cursive);
+  font-weight: 500;
+  color: var(--COLOR-BODY-TEXT-A55, rgba(0,0,0,0.5));
+  margin-right: 0.35em;
+  text-decoration-thickness: 2px;
+}
+
+.price-per-unit {
+  font-family: var(--font-2030-hand, 'Caveat VF', cursive);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--COLOR-BODY-TEXT-A75, rgba(0,0,0,0.6));
+}
+
+/* 3 — Headings ============================================================= */
+
+/* Where Story uses --FONT-STACK-HEADING (now Fraunces) — tighten + refine */
+h1, h2, h3,
+.h1, .h2, .h3,
+[class*="heading-size"] {
+  font-family: var(--font-2030-display, 'Fraunces VF', ui-serif, serif);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  font-feature-settings: "ss01" 1, "ss02" 1;
+}
+
+/* Smaller headings keep tighter line-height too */
+h4, h5, h6,
+.h4, .h5, .h6 {
+  font-family: var(--font-2030-display, 'Fraunces VF', ui-serif, serif);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+}
+
+/* 4 — Buttons / CTAs ====================================================== */
+
+.btn,
+.button,
+button.btn,
+input[type="submit"].btn,
+.product__form button[type="submit"],
+.product-form__submit {
+  border-radius: var(--r2030-radius-soft) !important;
+  font-family: var(--font-2030-body, 'Inter VF', system-ui, sans-serif);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.btn:hover,
+.button:hover,
+.product__form button[type="submit"]:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* 5 — Product grid cards =================================================== */
+
+.product-grid-item {
+  border-radius: var(--r2030-radius-soft);
+  overflow: hidden;
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-grid-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--r2030-card-shadow-hi);
+}
+
+/* Image-zoom on card hover (subtle — 3 % only) */
+.product-grid-item .product-grid-image,
+.product-grid-item--link picture img,
+.product-grid-item--link img {
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-grid-item:hover .product-grid-image,
+.product-grid-item:hover .product-grid-item--link picture img,
+.product-grid-item:hover .product-grid-item--link img {
+  transform: scale(1.03);
+}
+
+/* Product title in grid — Fraunces, slightly tighter */
+.grid__cutline,
+.product-grid-item .product-grid-item__title,
+.product-grid-item .grid__title {
+  font-family: var(--font-2030-display, 'Fraunces VF', ui-serif, serif);
+  font-weight: 500;
+  font-size: clamp(1rem, 0.92rem + 0.4vw, 1.15rem);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--COLOR-BODY-TEXT, #1a1a1a);
+}
+
+/* 6 — Misc small lifts ===================================================== */
+
+/* Body links: subtle underline-on-hover instead of always-on */
+.rte a:not(.btn):not(.button) {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Make the Story-theme "compare-at" strike behave consistently with our redesign */
+.compare-at,
+s {
+  font-weight: 400;
+}
+
+/* Number of crossed lines for legacy elements that pick up wrong fonts */
+.product__price-block * {
+  font-family: var(--font-2030-body, 'Inter VF', system-ui, sans-serif);
+}
