@@ -253,22 +253,44 @@ s {
 .header__menu {
   font-family: var(--font-2030-body, 'Inter VF', system-ui, sans-serif);
 }
+
+/* Container: gap-based spacing if it's a flex container, fallback via item margin */
+.header__menu__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(1.4rem, 0.9rem + 1.5vw, 2.4rem);
+}
+
 .header__menu .navlink,
-.header__menu__inner a {
+.header__menu__inner > a,
+.header__menu__inner > li > a {
   position: relative;
+  display: inline-block;
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
   padding: 0.4rem 0;
+  /* kill any Story-theme baseline underline so only our animated one shows */
+  text-decoration: none !important;
+  border-bottom: 0 !important;
   transition: color 200ms ease;
 }
+/* Hover-state shouldn't bring the underline back either */
+.header__menu .navlink:hover,
+.header__menu__inner > a:hover,
+.header__menu__inner > li > a:hover {
+  text-decoration: none !important;
+}
+
 .header__menu .navlink::after,
-.header__menu__inner > a::after {
+.header__menu__inner > a::after,
+.header__menu__inner > li > a::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -2px;
   height: 1.5px;
   background: currentColor;
   transform: scaleX(0);
@@ -278,7 +300,9 @@ s {
 .header__menu .navlink:hover::after,
 .header__menu .navlink:focus-visible::after,
 .header__menu__inner > a:hover::after,
-.header__menu__inner > a:focus-visible::after {
+.header__menu__inner > a:focus-visible::after,
+.header__menu__inner > li > a:hover::after,
+.header__menu__inner > li > a:focus-visible::after {
   transform: scaleX(1);
 }
 
