@@ -1,24 +1,69 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/DSC00859-2.jpg",
+        "overlay_opacity": 35,
+        "overlay_color": "#181929",
+        "eyebrow": "Laura, Finn & Tilda",
+        "heading": "<p>Ein Oneway-Ticket nach Bali. Und was daraus wurde.</p>",
+        "lead": "<p>Seit 2020 unterwegs, seit 2022 auf YouTube, seit 2024 Eltern – und seit einem Jahr neu in Südafrika zuhause.</p>",
+        "cta_primary_label": "Zu den Destinationen",
+        "cta_primary_url": "/pages/familienreisen",
+        "cta_secondary_label": "Wie wir arbeiten",
+        "cta_secondary_url": "/pages/redaktionsprinzipien",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Wir sind Laura, Finn und Tilda. Seit einem Oneway-Ticket nach Bali im Jahr 2020 ist aus unserem Reisen eine Lebensform geworden – mit Kamera, mit Kind, mit einem neuen Zuhause in einer südafrikanischen Kleinstadt am Meer.</p>"
+          }
+        },
+        "b-2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Mit dem Reisen ist es nicht vorbei, wenn man Kinder hat. Eigentlich fangen die wahren Abenteuer dann erst an.",
+            "attribution": "",
+            "style": "display"
+          }
+        },
+        "b-3": {
+          "type": "signature",
+          "settings": {
+            "signature": "— Laura, Finn & Tilda"
+          }
+        }
+      },
+      "block_order": ["b-1", "b-2", "b-3"],
+      "settings": {
+        "eyebrow": "Wer wir sind",
+        "heading": "<p>Reisen ist persönlich. Unser Shop ist es auch.</p>",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 56,
+        "padding_bottom": 32
+      }
+    },
     "main": {
       "type": "page-default",
       "settings": {
-        "show_title": true,
+        "show_title": false,
         "show_content": true,
         "alignment": "text-center",
         "page_nav": "",
         "bg": "palette--light bg--neutral",
         "width": "wrapper",
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 0
       }
     },
@@ -30,9 +75,9 @@
         "shape": "none",
         "aspect_ratio": 1,
         "layout": "left",
-        "title": "Hey There :)",
+        "title": "Die lange Version",
         "text_size": 7,
-        "text": "<p>Unsere Reise begann 2020 – mit einem <strong>Oneway-Ticket nach Bali</strong>. Damals wussten wir noch nicht, dass aus diesem Schritt ein ganz neues Leben entstehen würde. Bali wurde zu unserer Base, von wo aus wir die Welt erkundeten: neue Länder entdecken, Abenteuer erleben, Geschichten sammeln.</p><p>Im August 2020 starteten wir unseren<a href=\"https://www.instagram.com/Laurandfinn\" target=\"_blank\" title=\"Instagram Kanal\"><strong> Instagram-Kanal</strong></a>, zunächst als kleines Reisetagebuch für Freunde und Familie. Doch schnell merkten wir, dass unsere Erfahrungen auch anderen helfen konnten. Seit 2022 teilen wir zusätzlich auf<strong> </strong><a href=\"https://www.youtube.com/@Laurandfinn\" target=\"_blank\" title=\"Youtube Kanal\"><strong>YouTube</strong></a> unsere Abenteuer und unseren Alltag – noch persönlicher, noch näher dran.</p><p>Warum wir das machen? <br/>Ganz einfach: Wir möchten Menschen <strong>das Reisen näherbringen</strong>. Wir wollen zeigen,<strong> wie schön und vielseitig die Welt ist</strong>, Inspiration für die <strong>Reiseplanung</strong> geben und Destinationen <strong>durch unsere Augen erlebbar machen</strong>. Gleichzeitig ist es uns wichtig, uns mit Menschen zu <strong>verbinden</strong>, die die gleiche Leidenschaft teilen wie wir.</p><p>Unsere Wege führten uns schon nach Indonesien, die Philippinen, Thailand, Kambodscha, Vietnam, Australien, Dubai, Südafrika, Namibia, Griechenland, Spanien, Island, die Seychellen und Japan. Jede dieser Reisen hat uns geprägt – und jede Destination hat uns ein Stück mehr gezeigt, wie großartig die Welt ist.</p><p>Ein ganz besonderer Meilenstein war dann die Schwangerschaft und die Geburt unserer Tochter Tilda. Mit ihr an unserer Seite hat sich unser Fokus verändert: Reisen bedeutet für uns heute vor allem <strong>familienfreundlich unterwegs sein</strong> – Abenteuer erleben, die auch mit Kind möglich sind. Denn mit dem Reisen ist es nicht vorbei, wenn man Kinder hat! Eigentlich fangen die wahren Abenteuer dann erst an.</p><p>2024 folgte die vielleicht größte Entscheidung:  <strong>die Auswanderung nach Südafrika</strong>. Hier haben wir in einer Kleinstadt am Meer unser neues Zuhause gefunden – und gleichzeitig einen Ort, von dem aus wir weiterhin die Welt entdecken.</p><p>Mit unserem Blog und unseren Kanälen möchten wir euch mitnehmen: auf unsere Reisen, durch  unsere <strong>Guides</strong>, <strong>Maps</strong>, <strong>Geheimtipps</strong> und natürlich auch in unsere Erfahrungen rund um die Themen <strong>Reisen mit Kind & Auswandern</strong>.</p><p>Wir sind Laura, Finn & Tilda – und wir freuen uns, wenn ihr uns auf dieser Reise begleitet.</p>",
+        "text": "<p>Unsere Reise begann 2020 – mit einem <strong>Oneway-Ticket nach Bali</strong>. Damals wussten wir noch nicht, dass aus diesem Schritt ein ganz neues Leben entstehen würde. Bali wurde zu unserer Base, von wo aus wir die Welt erkundeten: neue Länder entdecken, Abenteuer erleben, Geschichten sammeln.</p><p>Im August 2020 starteten wir unseren<a href=\"https://www.instagram.com/Laurandfinn\" target=\"_blank\" title=\"Instagram Kanal\"><strong> Instagram-Kanal</strong></a>, zunächst als kleines Reisetagebuch für Freunde und Familie. Doch schnell merkten wir, dass unsere Erfahrungen auch anderen helfen konnten. Seit 2022 teilen wir zusätzlich auf<strong> </strong><a href=\"https://www.youtube.com/@Laurandfinn\" target=\"_blank\" title=\"Youtube Kanal\"><strong>YouTube</strong></a> unsere Abenteuer und unseren Alltag – noch persönlicher, noch näher dran.</p><p>Warum wir das machen? <br/>Ganz einfach: Wir möchten Menschen <strong>das Reisen näherbringen</strong>. Wir wollen zeigen,<strong> wie schön und vielseitig die Welt ist</strong>, Inspiration für die <strong>Reiseplanung</strong> geben und Destinationen <strong>durch unsere Augen erlebbar machen</strong>. Gleichzeitig ist es uns wichtig, uns mit Menschen zu <strong>verbinden</strong>, die die gleiche Leidenschaft teilen wie wir.</p><p>Unsere Wege führten uns schon nach Indonesien, die Philippinen, Thailand, Kambodscha, Vietnam, Australien, Dubai, Südafrika, Namibia, Griechenland, Spanien, Island, die Seychellen und Japan. Jede dieser Reisen hat uns geprägt – und jede Destination hat uns ein Stück mehr gezeigt, wie großartig die Welt ist.</p><p>Ein ganz besonderer Meilenstein war dann die Schwangerschaft und die Geburt unserer Tochter Tilda. Mit ihr an unserer Seite hat sich unser Fokus verändert: Reisen bedeutet für uns heute vor allem <strong>familienfreundlich unterwegs sein</strong> – Abenteuer erleben, die auch mit Kind möglich sind. Denn mit dem Reisen ist es nicht vorbei, wenn man Kinder hat! Eigentlich fangen die wahren Abenteuer dann erst an.</p><p>2024 folgte die vielleicht größte Entscheidung: <strong>die Auswanderung nach Südafrika</strong>. Hier haben wir in einer Kleinstadt am Meer unser neues Zuhause gefunden – und gleichzeitig einen Ort, von dem aus wir weiterhin die Welt entdecken.</p><p>Mit unserem Blog und unseren Kanälen möchten wir euch mitnehmen: auf unsere Reisen, durch unsere <strong>Guides</strong>, <strong>Maps</strong>, <strong>Geheimtipps</strong> und natürlich auch in unsere Erfahrungen rund um die Themen <strong>Reisen mit Kind & Auswandern</strong>.</p>",
         "color_text_bg": "palette--light bg--accent",
         "button_label": "",
         "button_link": "",
@@ -43,10 +88,63 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "principles": {
+      "type": "section-principles",
+      "blocks": {
+        "p-1": {
+          "type": "principle",
+          "settings": {
+            "title": "Selbst gewesen",
+            "body": "<p>Wir empfehlen keinen Ort, an dem wir nicht selbst waren – meist mehrfach, in unterschiedlichen Saisons.</p>"
+          }
+        },
+        "p-2": {
+          "type": "principle",
+          "settings": {
+            "title": "Familientauglich gedacht",
+            "body": "<p>Seit 2024 ist Tilda mit dabei. Was wir empfehlen, ist auf Slow-Travel mit Kind hin getestet – inklusive Wickel-Stops und Wetter-Alternativen.</p>"
+          }
+        },
+        "p-3": {
+          "type": "principle",
+          "settings": {
+            "title": "Keine Werbe-Kooperationen im Guide",
+            "body": "<p>Unsere Karten und Guides sind frei von Sponsoring. Was drin ist, haben wir bezahlt, erlebt, dokumentiert.</p>"
+          }
+        }
+      },
+      "block_order": ["p-1", "p-2", "p-3"],
+      "settings": {
+        "kicker": "Unsere Arbeitsweise",
+        "title": "Wie wir Karten und Guides machen.",
+        "lead": "",
+        "signature": "— Laura & Finn",
+        "width": "wrapper--narrow",
+        "color_bg": "bg--accent",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Geschenk für dich",
+        "title": "Hol dir unser Mini-Preset.",
+        "subtitle": "<p>Ein kostenloses Lightroom-Preset aus unserem Bali-Sommer. Plus gelegentliche Mails, wenn es wirklich etwas Neues gibt.</p>",
+        "image": "shopify://shop_images/DSC04341-5.jpg",
+        "button_label": "Mini-Preset holen",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – der Download-Link ist unterwegs.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_about"
+      }
     }
   },
-  "order": [
-    "main",
-    "section_row_TJTpJQ"
-  ]
+  "order": ["hero", "intro", "main", "section_row_TJTpJQ", "principles", "lead-magnet"]
 }

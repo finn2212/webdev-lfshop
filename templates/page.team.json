@@ -1,1 +1,107 @@
-{"sections":{"main":{"type":"page-default","settings":{}},"team":{"type":"section-team","blocks":{"team-0":{"type":"person","settings":{}},"team-1":{"type":"person","settings":{}},"team-2":{"type":"person","settings":{}}},"block_order":["team-0","team-1","team-2"],"settings":{"title":"","description":""}}},"order":["main","team"]}
+{
+  "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/DSC02014-3.jpg",
+        "overlay_opacity": 35,
+        "overlay_color": "#181929",
+        "eyebrow": "Team",
+        "heading": "<p>Zwei Reisende, eine Tochter, ein kleiner Shop.</p>",
+        "lead": "<p>Hinter den Karten, Guides und Presets stehen genau drei Menschen. Keine Redaktion, keine Ghostwriter, kein Stockphoto.</p>",
+        "cta_primary_label": "Wie wir arbeiten",
+        "cta_primary_url": "/pages/redaktionsprinzipien",
+        "cta_secondary_label": "Unsere Reisen",
+        "cta_secondary_url": "/pages/familienreisen",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Alles, was hier im Shop liegt, ist in Handarbeit entstanden. Laura macht die Bilder, Finn schreibt die Karten und Texte, Tilda testet die Kinderverträglichkeit aller Spots (und gibt dabei ehrliches Feedback).</p>"
+          }
+        },
+        "b-2": {
+          "type": "signature",
+          "settings": {
+            "signature": "— Laura, Finn & Tilda"
+          }
+        }
+      },
+      "block_order": ["b-1", "b-2"],
+      "settings": {
+        "eyebrow": "Wer das hier macht",
+        "heading": "<p>Klein, direkt, persönlich.</p>",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 56,
+        "padding_bottom": 32
+      }
+    },
+    "team": {
+      "type": "section-team",
+      "blocks": {
+        "team-laura": {
+          "type": "person",
+          "settings": {
+            "title": "Laura",
+            "job": "Fotografie · Presets · Gründerin",
+            "text": "<p>Hinter der Kamera bei fast jedem Bild, das du hier siehst. Macht auch unsere Lightroom-Presets – warm, körnig, ohne Insta-Überschärfung.</p>",
+            "social_instagram_link": "https://instagram.com/Laurandfinn"
+          }
+        },
+        "team-finn": {
+          "type": "person",
+          "settings": {
+            "title": "Finn",
+            "job": "Karten · Guides · Videos · Gründer",
+            "text": "<p>Schreibt die Guides, setzt die Karten, schneidet die YouTube-Videos. Kümmert sich um alles, was am Ende in deinem Download-Ordner landet.</p>",
+            "social_instagram_link": "https://instagram.com/Laurandfinn",
+            "social_tiktok_link": "https://www.youtube.com/@Laurandfinn"
+          }
+        },
+        "team-tilda": {
+          "type": "person",
+          "settings": {
+            "title": "Tilda",
+            "job": "Test-Pilotin",
+            "text": "<p>Seit 2024 bei jedem Reise-Test dabei. Entscheidet ohne Kompromisse, ob ein Strand kindertauglich ist und welche Pausen nötig sind.</p>"
+          }
+        }
+      },
+      "block_order": ["team-laura", "team-finn", "team-tilda"],
+      "settings": {
+        "title": "Laura, Finn & Tilda",
+        "description": "<p>Alle Inhalte auf dieser Seite sind von uns selbst erstellt – Fotografie, Text, Recherche und das, was eine Dreijährige dazu beiträgt.</p>"
+      }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Geschenk für dich",
+        "title": "Hol dir unser Mini-Preset.",
+        "subtitle": "<p>Ein kostenloses Lightroom-Preset von Laura – damit du den Look ausprobieren kannst.</p>",
+        "image": "shopify://shop_images/DSC04341-5.jpg",
+        "button_label": "Mini-Preset holen",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – der Download-Link ist unterwegs.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_team"
+      }
+    }
+  },
+  "order": ["hero", "intro", "team", "lead-magnet"]
+}

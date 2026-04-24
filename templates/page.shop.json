@@ -1,49 +1,22 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "default-banner": {
-      "type": "section-hero",
-      "blocks": {
-        "banner-heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "text_size": 10
-          }
-        },
-        "banner-text": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_size": 5,
-            "text_columns": 1
-          }
-        }
-      },
-      "block_order": [
-        "banner-heading",
-        "banner-text"
-      ],
+    "hero": {
+      "type": "section-editorial-hero",
       "settings": {
         "image": "shopify://shop_images/Hero_Banner_Promo_6.png",
-        "mobile_image": "shopify://shop_images/Hero_Banner_Mobile_1.png",
-        "collection": "sudafrika",
-        "height": "use_screen_three_quarters",
-        "overlay_opacity": 0,
+        "image_mobile": "shopify://shop_images/Hero_Banner_Mobile_1.png",
+        "overlay_opacity": 35,
         "overlay_color": "#181929",
-        "flex_align": "align--middle-center",
-        "align_text": "text-center",
-        "color": "text--white",
-        "color_bg": "hero__content--transparent",
-        "width": "wrapper--none",
+        "eyebrow": "Shop · Karten, Guides, Presets",
+        "heading": "<p>Alles, was wir aus drei Kontinenten mitgebracht haben.</p>",
+        "lead": "<p>Digitale Karten, E-Guides und Lightroom-Presets – sofort zum Download, mit 14 Tagen Geld-zurück und kostenlosen Updates.</p>",
+        "cta_primary_label": "Zu den Karten",
+        "cta_primary_url": "/collections/digitale-karten",
+        "cta_secondary_label": "Presets ansehen",
+        "cta_secondary_url": "/collections/presets",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -67,10 +40,7 @@
           }
         }
       },
-      "block_order": [
-        "kicker_VhxKM4",
-        "heading_KwimHz"
-      ],
+      "block_order": ["kicker_VhxKM4", "heading_KwimHz"],
       "settings": {
         "align_text": "text-left",
         "color_bg": "palette--light bg--neutral",
@@ -100,16 +70,10 @@
           }
         }
       },
-      "block_order": [
-        "heading_GB7fwp",
-        "button_BjwhBN"
-      ],
+      "block_order": ["heading_GB7fwp", "button_BjwhBN"],
       "settings": {
         "collection": "bali",
-        "product_list": [
-          "suedafrika-guide",
-          "sudafrika-kaptstadt"
-        ],
+        "product_list": ["suedafrika-guide", "sudafrika-kaptstadt"],
         "image": "shopify://shop_images/Bali_Starter_Kit_PDP_2048_x_2048_px_124a9541-59be-452f-a75b-ffa66ca2d979.png",
         "sticky_image_enable": false,
         "swap": false,
@@ -132,57 +96,14 @@
     "section_gallery_fHthRT": {
       "type": "section-gallery",
       "blocks": {
-        "image_fwweVh": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/janan-OoW1DMDCV1Y-unsplash.jpg",
-            "link": ""
-          }
-        },
-        "image_L7UezA": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC01849-2.jpg",
-            "link": ""
-          }
-        },
-        "image_DFG4Up": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC01168-2.jpg",
-            "link": ""
-          }
-        },
-        "image_qDgjbK": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC02020-3.jpg",
-            "link": ""
-          }
-        },
-        "image_ztUkKU": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC02014-3.jpg",
-            "link": ""
-          }
-        },
-        "image_hzVmg8": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC04341-5.jpg",
-            "link": ""
-          }
-        }
+        "image_fwweVh": { "type": "image", "settings": { "image": "shopify://shop_images/janan-OoW1DMDCV1Y-unsplash.jpg", "link": "" } },
+        "image_L7UezA": { "type": "image", "settings": { "image": "shopify://shop_images/DSC01849-2.jpg", "link": "" } },
+        "image_DFG4Up": { "type": "image", "settings": { "image": "shopify://shop_images/DSC01168-2.jpg", "link": "" } },
+        "image_qDgjbK": { "type": "image", "settings": { "image": "shopify://shop_images/DSC02020-3.jpg", "link": "" } },
+        "image_ztUkKU": { "type": "image", "settings": { "image": "shopify://shop_images/DSC02014-3.jpg", "link": "" } },
+        "image_hzVmg8": { "type": "image", "settings": { "image": "shopify://shop_images/DSC04341-5.jpg", "link": "" } }
       },
-      "block_order": [
-        "image_fwweVh",
-        "image_L7UezA",
-        "image_DFG4Up",
-        "image_qDgjbK",
-        "image_ztUkKU",
-        "image_hzVmg8"
-      ],
+      "block_order": ["image_fwweVh", "image_L7UezA", "image_DFG4Up", "image_qDgjbK", "image_ztUkKU", "image_hzVmg8"],
       "settings": {
         "scale_image": true,
         "aspect_ratio": 1,
@@ -204,9 +125,7 @@
           }
         }
       },
-      "block_order": [
-        "heading_rrae6X"
-      ],
+      "block_order": ["heading_rrae6X"],
       "settings": {
         "align_text": "text-left",
         "color_bg": "palette--light bg--neutral",
@@ -243,17 +162,10 @@
           }
         }
       },
-      "block_order": [
-        "default-first-split-block-0",
-        "default-first-split-block-1",
-        "default-first-split-block-2"
-      ],
+      "block_order": ["default-first-split-block-0", "default-first-split-block-1", "default-first-split-block-2"],
       "settings": {
         "collection": "digitale-karten",
-        "product_list": [
-          "bali-bundle-starterkit-digitale-karte",
-          "koh-samui-phangan-tao-karten"
-        ],
+        "product_list": ["bali-bundle-starterkit-digitale-karte", "koh-samui-phangan-tao-karten"],
         "image": "shopify://shop_images/FCC5983.jpg",
         "sticky_image_enable": false,
         "swap": true,
@@ -288,16 +200,35 @@
         "padding_top": 72,
         "padding_bottom": 36
       }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Geschenk für dich",
+        "title": "Hol dir unser Mini-Preset.",
+        "subtitle": "<p>Ein kostenloses Lightroom-Preset – damit du unseren Look ausprobieren kannst, bevor du etwas kaufst.</p>",
+        "image": "shopify://shop_images/DSC04341-5.jpg",
+        "button_label": "Mini-Preset holen",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – der Download-Link ist unterwegs.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_shop"
+      }
     }
   },
   "order": [
-    "default-banner",
+    "hero",
     "section_text_yprYxk",
     "section_collection_split_CG3phx",
     "section_gallery_fHthRT",
     "section_text_egAHJT",
     "default-split-collection",
-    "default-collection"
+    "default-collection",
+    "lead-magnet"
   ]
 }
-

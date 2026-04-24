@@ -1,1 +1,148 @@
-{"sections":{"main":{"type":"page-default","settings":{}},"time":{"type":"section-timeline-tree","blocks":{"default-timeline-0":{"type":"episode","settings":{}},"default-timeline-1":{"type":"episode","settings":{}},"default-timeline-2":{"type":"episode","settings":{}},"default-timeline-3":{"type":"episode","settings":{}},"default-timeline-4":{"type":"episode","settings":{}}},"block_order":["default-timeline-0","default-timeline-1","default-timeline-2","default-timeline-3","default-timeline-4"],"settings":{"padding_top":36,"padding_bottom":64}}},"order":["main","time"]}
+{
+  "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/DSC01849-2.jpg",
+        "overlay_opacity": 40,
+        "overlay_color": "#181929",
+        "eyebrow": "Stories",
+        "heading": "<p>Geschichten aus unseren Reisen.</p>",
+        "lead": "<p>Lange Texte aus unserem Blog – Praxis, Rückblicke, kleine Momente aus dem Alltag unterwegs.</p>",
+        "cta_primary_label": "Zum Blog",
+        "cta_primary_url": "/blogs/news",
+        "cta_secondary_label": "Zu den Destinationen",
+        "cta_secondary_url": "/pages/familienreisen",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Karten und Guides helfen beim Planen. Stories helfen beim Verstehen. Hier versammeln wir die Langform-Texte, die nicht in eine GPS-Pin-Liste passen: was es heißt, mit Kleinkind zu fliegen, welche Versicherung am Ende wirklich gezahlt hat, warum wir nach Südafrika ausgewandert sind und was uns Australien gelehrt hat.</p>"
+          }
+        },
+        "b-2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Wir schreiben Reise-Texte, die wir uns selbst vor der ersten Reise gewünscht hätten.",
+            "attribution": "",
+            "style": "display"
+          }
+        },
+        "b-3": {
+          "type": "signature",
+          "settings": {
+            "signature": "— Laura & Finn"
+          }
+        }
+      },
+      "block_order": ["b-1", "b-2", "b-3"],
+      "settings": {
+        "eyebrow": "Was hier liegt",
+        "heading": "<p>Reise-Langform. Ohne Clickbait.</p>",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 56,
+        "padding_bottom": 32
+      }
+    },
+    "featured-stories": {
+      "type": "section-link-cards",
+      "blocks": {
+        "a-1": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Praxis",
+            "title": "Erste Reise mit Kind",
+            "subtitle": "Was wir vor Tildas erster Fernreise wirklich gebraucht haben – und was wir uns sparen konnten.",
+            "url": "/blogs/news/erste-reise-mit-kind"
+          }
+        },
+        "a-2": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Packliste",
+            "title": "Reise-Essentials",
+            "subtitle": "Die Sachen, die nach drei Kontinenten in unserem Koffer geblieben sind.",
+            "url": "/blogs/news/reise-essentials"
+          }
+        },
+        "a-3": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Praxis",
+            "title": "Auslandskrankenversicherung",
+            "subtitle": "Welche wir mit Kind gewählt haben und warum die billige nicht reicht.",
+            "url": "/blogs/news/auslandskrankenversicherung"
+          }
+        },
+        "a-4": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Route",
+            "title": "Westküste Australiens",
+            "subtitle": "Perth bis Broome im Camper – was funktioniert, wo es hakt, was wir das nächste Mal anders machen.",
+            "url": "/blogs/news/westkuste-von-australien"
+          }
+        },
+        "a-5": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Praxis",
+            "title": "Einreise nach Australien",
+            "subtitle": "Visa, Zollformulare, was wirklich kontrolliert wird – und wie es mit Kind aussieht.",
+            "url": "/blogs/news/einreise-australien"
+          }
+        },
+        "a-6": {
+          "type": "card",
+          "settings": {
+            "eyebrow": "Rückblick",
+            "title": "Australien-Reise insgesamt",
+            "subtitle": "Was wir vor der Reise unterschätzt haben und was wir mit Tilda gelernt haben.",
+            "url": "/blogs/news/australien-reise"
+          }
+        }
+      },
+      "block_order": ["a-1", "a-2", "a-3", "a-4", "a-5", "a-6"],
+      "settings": {
+        "kicker": "Aus dem Blog",
+        "title": "Die wichtigsten Geschichten.",
+        "subtitle": "<p>Sechs Texte, die öfter gelesen werden als der Rest – und die einen guten Einstieg geben.</p>",
+        "columns": "3",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 40,
+        "padding_bottom": 80
+      }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Newsletter",
+        "title": "Neue Stories direkt in dein Postfach.",
+        "subtitle": "<p>Wenn wir etwas Längeres veröffentlichen, schicken wir es dir per Mail. Dazu manchmal eine neue Karte. Sonst Ruhe.</p>",
+        "image": "shopify://shop_images/DSC02014-3.jpg",
+        "button_label": "Anmelden",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – wir melden uns, wenn eine neue Story online ist.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_stories"
+      }
+    }
+  },
+  "order": ["hero", "intro", "featured-stories", "lead-magnet"]
+}

@@ -57,21 +57,26 @@ Alle anderen Seiten sollen dieses Muster visuell/strukturell matchen:
 |---|---|---|
 | PDPs (alle ~18) | [product.*.json](../templates/) + [sections/product.liquid](../sections/product.liquid) | Before/After + Reels nicht eingebaut, keine Editorial-Hülle, alte Galerie |
 
+### ✅ Welle B — Trust- und Branding-Seiten
+
+| Seite | Template | Status |
+|---|---|---|
+| Über uns | [page.uber-uns.json](../templates/page.uber-uns.json) | ✅ Hero + Intro + Story-Row (lange Version) + Principles + Lead-Magnet |
+| Shop | [page.shop.json](../templates/page.shop.json) | ✅ Alter Banner durch Editorial-Hero ersetzt, Promo-Stack live belassen, Lead-Magnet am Ende |
+| Story | [page.story.json](../templates/page.story.json) | ✅ Hero + Intro + 6 Blog-Story-Cards + Lead-Magnet (leerer Timeline-Placeholder entfernt) |
+| Team | [page.team.json](../templates/page.team.json) | ✅ Hero + Intro + Laura/Finn/Tilda-Blocks + Lead-Magnet |
+| Lookbook | [page.lookbook.json](../templates/page.lookbook.json) | ✅ Placeholder-Stack weg, neu: Hero + Intro + 8-Bild-Gallery + Presets-Collection + Lead-Magnet |
+
 ### ❌ Alt-Look / komplett unangetastet
 
 | Seite | Template | Aktueller Zustand |
 |---|---|---|
-| Shop | [page.shop.json](../templates/page.shop.json) | Alt: section-hero + collection-split + gallery + text |
-| Über uns | [page.uber-uns.json](../templates/page.uber-uns.json) | Nur `section-row` — kein Hero, keine Signatur |
-| Story | [page.story.json](../templates/page.story.json) | Default-Page |
-| Team | [page.team.json](../templates/page.team.json) | Default-Page |
-| Lookbook | [page.lookbook.json](../templates/page.lookbook.json) | Default-Page |
-| FAQ | [page.faq.json](../templates/page.faq.json) | Default-Page |
-| Contact | [page.contact.json](../templates/page.contact.json) | Default-Page |
-| Collections (alle) | [collection.json](../templates/collection.json) | Alte Facetten, keine unified Grid |
-| Blog | [blog.json](../templates/blog.json) + 2 Varianten | Unverändert |
-| Articles | [article.json](../templates/article.json) + 7 Varianten | Unverändert |
-| Cart | [cart.json](../templates/cart.json) | Unverändert |
+| FAQ | [page.faq.json](../templates/page.faq.json) | Default-Page (Welle D) |
+| Contact | [page.contact.json](../templates/page.contact.json) | Default-Page (Welle D) |
+| Collections (alle) | [collection.json](../templates/collection.json) | Alte Facetten, keine unified Grid (Phase 2) |
+| Blog | [blog.json](../templates/blog.json) + 2 Varianten | Unverändert (Phase 2) |
+| Articles | [article.json](../templates/article.json) + 7 Varianten | Unverändert (Phase 2) |
+| Cart | [cart.json](../templates/cart.json) | Unverändert (Phase 2) |
 | Search / 404 / Customer-Area | — | Unverändert |
 
 ### 🧭 Geplant, existiert noch nicht
