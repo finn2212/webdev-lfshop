@@ -173,7 +173,7 @@
         "scrollbar_btn_color": "#000000",
         "scrollbar_track_color": "#e0e0e0",
         "scrollbar_progress_color": "#000000",
-        "width": "wrapper--full",
+        "width": "wrapper",
         "padding_top": 40,
         "padding_bottom": 40
       }
