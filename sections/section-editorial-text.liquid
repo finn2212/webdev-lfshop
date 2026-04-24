@@ -1,0 +1,256 @@
+{%- comment -%}
+  section-editorial-text.liquid — Editorial Long-Form-Block.
+
+  Für Brand-Manifestos, Story-Statements, Methode-Erklärungen.
+  Skalierbar: kann auf Homepage, About, Destination-Pages eingehängt werden.
+
+  Block-Modell
+    - body      : reicher Long-Form-Text (richtext)
+    - quote     : Pull-Quote als visuelles Highlight (Caveat oder Fraunces)
+    - signature : Hand-Schrift-Unterschrift am Ende ("— Laura & Finn")
+
+  Diese Struktur erlaubt mehrere Body-Blocks und mehrere Quotes durchmischt.
+{%- endcomment -%}
+
+<section
+  class="ed-text {{ section.settings.color_bg }}"
+  style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="{{ section.settings.width }} section-padding">
+
+    <header class="ed-text__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ed-text__eyebrow font-mono-2030">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ed-text__heading font-display-2030">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </header>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="ed-text__flow">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'body' -%}
+              <div class="ed-text__body font-body-2030" {{ block.shopify_attributes }}>
+                {{ block.settings.body }}
+              </div>
+
+            {%- when 'quote' -%}
+              <blockquote class="ed-text__quote" {{ block.shopify_attributes }}>
+                <p class="ed-text__quote-text {% if block.settings.style == 'hand' %}font-hand-2030{% else %}font-display-2030{% endif %}">
+                  „{{ block.settings.quote | escape }}"
+                </p>
+                {%- if block.settings.attribution != blank -%}
+                  <cite class="ed-text__quote-cite font-mono-2030">— {{ block.settings.attribution | escape }}</cite>
+                {%- endif -%}
+              </blockquote>
+
+            {%- when 'signature' -%}
+              <p class="ed-text__signature font-hand-2030" {{ block.shopify_attributes }}>
+                {{ block.settings.signature | escape }}
+              </p>
+
+            {%- when 'cta' -%}
+              <div class="ed-text__cta-wrap" {{ block.shopify_attributes }}>
+                <a class="ed-text__cta" href="{{ block.settings.cta_url | default: '#' }}">
+                  {{ block.settings.cta_label | escape }}
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<style>
+  .ed-text {
+    padding-top: var(--PT, 80px);
+    padding-bottom: var(--PB, 80px);
+  }
+
+  .ed-text__header {
+    max-width: 720px;
+    margin: 0 auto 2.4rem;
+    text-align: center;
+  }
+  .ed-text__eyebrow {
+    margin: 0 0 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+  }
+  .ed-text__heading {
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.012em;
+    font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.8rem);
+  }
+
+  .ed-text__flow {
+    max-width: 64ch;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .ed-text__body {
+    font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.22rem);
+    line-height: 1.65;
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+  }
+  .ed-text__body p { margin: 0 0 1em; }
+  .ed-text__body p:last-child { margin: 0; }
+  .ed-text__body a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .ed-text__quote {
+    margin: 1.4rem 0;
+    padding: 1.4rem 1.6rem;
+    border-left: 3px solid var(--COLOR-ACCENT-WARM, #a73a3a);
+    background: var(--COLOR-BODY-TEXT-A05, rgba(0,0,0,0.035));
+    border-radius: 4px;
+  }
+  .ed-text__quote-text {
+    margin: 0;
+    font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+  }
+  .ed-text__quote-text.font-hand-2030 {
+    font-size: clamp(1.7rem, 1.3rem + 1.5vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.15;
+  }
+  .ed-text__quote-cite {
+    display: block;
+    margin-top: 0.7rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--COLOR-BODY-TEXT-A75, #5a5a5a);
+    font-style: normal;
+  }
+
+  .ed-text__signature {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(1.4rem, 1.1rem + 1vw, 1.95rem);
+    color: var(--COLOR-BODY-TEXT, #1a1a1a);
+  }
+
+  .ed-text__cta-wrap {
+    text-align: center;
+    margin-top: 0.6rem;
+  }
+  .ed-text__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1.3rem;
+    border-radius: 999px;
+    background: var(--COLOR-ACCENT-WARM, #a73a3a);
+    color: #fff;
+    font-family: var(--font-2030-body, 'Inter VF', system-ui);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 200ms ease, filter 200ms ease;
+  }
+  .ed-text__cta:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Editorial Text",
+  "tag": "section",
+  "class": "section-section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "header", "content": "Header" },
+    { "type": "text", "id": "eyebrow", "label": "Kicker", "default": "Wer wir sind" },
+    { "type": "richtext", "id": "heading", "label": "Überschrift" },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select", "id": "width", "label": "Breite", "default": "wrapper",
+      "options": [
+        { "value": "wrapper",         "label": "Standard" },
+        { "value": "wrapper--narrow", "label": "Schmal" }
+      ]
+    },
+    {
+      "type": "select", "id": "color_bg", "label": "Hintergrund", "default": "bg--neutral",
+      "options": [
+        { "value": "bg--neutral", "label": "Neutral" },
+        { "value": "bg--accent",  "label": "Akzent" }
+      ]
+    },
+    { "type": "range", "id": "padding_top",    "label": "Abstand oben",  "min": 0, "max": 200, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Abstand unten", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "body",
+      "name": "Text-Absatz",
+      "settings": [
+        { "type": "richtext", "id": "body", "label": "Text", "default": "<p>Hier kommt ein Absatz Long-Form-Text.</p>" }
+      ]
+    },
+    {
+      "type": "quote",
+      "name": "Pull-Quote",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Zitat" },
+        { "type": "text", "id": "attribution", "label": "Quelle (optional)" },
+        {
+          "type": "select", "id": "style", "label": "Stil", "default": "display",
+          "options": [
+            { "value": "display", "label": "Editorial (Fraunces)" },
+            { "value": "hand",    "label": "Hand-Schrift (Caveat)" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "signature",
+      "name": "Unterschrift",
+      "settings": [
+        { "type": "text", "id": "signature", "label": "Unterschrift", "default": "— Laura & Finn" }
+      ]
+    },
+    {
+      "type": "cta",
+      "name": "Button",
+      "settings": [
+        { "type": "text", "id": "cta_label", "label": "Button-Text", "default": "Mehr erfahren" },
+        { "type": "url",  "id": "cta_url",   "label": "Link" }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Editorial Text",
+      "blocks": [
+        { "type": "body" },
+        { "type": "quote" },
+        { "type": "body" },
+        { "type": "signature" }
+      ]
+    }
+  ]
+}
+{% endschema %}
