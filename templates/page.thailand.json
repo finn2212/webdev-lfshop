@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "spotlight": {
+      "type": "section-bundle-spotlight",
+      "blocks": {
+        "i-1": {
+          "type": "item",
+          "settings": {
+            "product": "bangkok-maps",
+            "reason": "Bangkok jenseits des Khao San Roads – mit Familien-tauglichen Vierteln, Märkten und Cafés zum Aushalten."
+          }
+        },
+        "i-2": {
+          "type": "item",
+          "settings": {
+            "product": "samui-maps",
+            "reason": "Koh Samui ist groß und gemischt. Diese Karte hilft, die ruhigen Buchten und kindertauglichen Strände zu finden."
+          }
+        }
+      },
+      "block_order": ["i-1", "i-2"],
+      "settings": {
+        "kicker": "Thailand · Bangkok & Inseln",
+        "title": "Bangkok mit Kind. Koh Samui zur Ruhe.",
+        "lead": "<p>Thailand war für uns kein Backpacker-Trip, sondern eine längere Familien-Etappe – mit Bangkok als Stadtkapitel und Koh Samui als Ruhepol. Beides verlangt eine andere Art Karte. Hier sind sie.</p>",
+        "trust_promise": "14 Tage Geld zurück · Updates für 12 Monate · Sofort-Download als PDF + Google-Maps-Liste",
+        "contents_kicker": "Karten zur Reise",
+        "contents_title": "Zwei Welten, zwei Karten.",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 100,
+        "padding_bottom": 80
+      }
+    },
+    "principles": {
+      "type": "section-principles",
+      "blocks": {
+        "p-1": {
+          "type": "principle",
+          "settings": {
+            "title": "Stadt + Insel als Paar",
+            "body": "<p>Wir kombinieren in unseren Empfehlungen meist Bangkok mit einer Insel – als Kontrastprogramm, das gut funktioniert wenn man drei oder mehr Wochen Zeit hat.</p>"
+          }
+        },
+        "p-2": {
+          "type": "principle",
+          "settings": {
+            "title": "Streetfood ohne Magenkrämpfe",
+            "body": "<p>Bei Streetfood-Empfehlungen sind wir vorsichtig. Was wir in Bangkok empfehlen, haben wir mehrfach gegessen, ohne Folgen – inklusive Family-Verträglichkeit-Hinweis wo nötig.</p>"
+          }
+        },
+        "p-3": {
+          "type": "principle",
+          "settings": {
+            "title": "Saison ehrlich",
+            "body": "<p>Thailand hat klare Regenzeiten. Wir schreiben dazu, wann welche Insel funktioniert – und wann ihr besser woanders hin solltet.</p>"
+          }
+        }
+      },
+      "block_order": ["p-1", "p-2", "p-3"],
+      "settings": {
+        "kicker": "Versprechen",
+        "title": "Drei Punkte, auf die wir uns festlegen.",
+        "lead": "",
+        "signature": "— Laura & Finn",
+        "width": "wrapper--narrow",
+        "color_bg": "bg--accent",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "reels": {
+      "type": "section-reels",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "kicker": "Live aus Thailand",
+        "title": "Eindrücke aus Bangkok und Koh Samui.",
+        "subtitle": "<p>Tap das Video an für Vollbild und Ton.</p>",
+        "text_size": "medium",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 60,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": ["spotlight", "principles", "reels"]
+}
