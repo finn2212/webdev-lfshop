@@ -1,1 +1,28 @@
-{"sections":{"main":{"type":"article","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "settings": {}
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Newsletter",
+        "title": "Mehr aus unseren Reisen.",
+        "subtitle": "<p>Wenn wir eine neue Karte, einen neuen Guide oder eine längere Story veröffentlichen, schicken wir dir eine Mail. Sonst Ruhe.</p>",
+        "image": "shopify://shop_images/DSC02014-3.jpg",
+        "button_label": "Anmelden",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – wir melden uns.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 70,
+        "time_seconds": 45,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_article"
+      }
+    }
+  },
+  "order": ["main", "lead-magnet"]
+}

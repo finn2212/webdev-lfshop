@@ -1,1 +1,103 @@
-{"sections":{"blog-title":{"type":"section-text","blocks":{"blog-text-block-1":{"type":"heading","settings":{"heading":"<p>News<\/p>","text_size":9}}},"block_order":["blog-text-block-1"],"settings":{"align_text":"text-left","color_bg":"palette--light bg--neutral","width":"wrapper","padding_top":36,"padding_bottom":36}},"blog-custom":{"type":"section-custom-content","blocks":{"blog-custom-img":{"type":"image","settings":{"overlay_opacity":0,"kicker":"","title":"","richtext":"","link_text":"","link":""}},"blog-custom-article":{"type":"article","settings":{"article":"","show_tag":true,"show_date":false,"text_size":5,"show_excerpt":true,"align_text":"text-left","placement_text":"middle","show_author_name":true,"show_author_image":true,"button_text":"Read more","button_size":"","button_style":"text-link","button_color":"btn--neutral","text_color":"text--neutral","bg_color":"#f7f7f7"}}},"block_order":["blog-custom-img","blog-custom-article"],"settings":{"height":"use_screen_one_half","padding":false,"width":"wrapper","padding_top":0,"padding_bottom":0}},"main":{"type":"blog","blocks":{"blog-pin-0":{"type":"pinned_post","disabled":true,"settings":{"pinned_post":""}},"blog-pin-1":{"type":"pinned_post","disabled":true,"settings":{"pinned_post":""}}},"block_order":["blog-pin-0","blog-pin-1"],"settings":{"show_tag_navigation":true,"align_nav":"inline-nav","show_title":false,"show_rss":false,"pagination_count":12,"aspect_ratio":1,"color_bg":"palette--light bg--neutral","show_meta":true,"show_comments":true,"show_excerpt":false,"show_tags":false,"width":"wrapper","padding_top":36,"padding_bottom":36}}},"order":["blog-title","blog-custom","main"]}
+{
+  "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/DSC01849-2.jpg",
+        "overlay_opacity": 40,
+        "overlay_color": "#181929",
+        "eyebrow": "Blog",
+        "heading": "<p>Geschichten, Praxis, Routen.</p>",
+        "lead": "<p>Lange Texte aus unseren Reisen – Packlisten, Einreise, Versicherungen, Routenberichte, Rückblicke.</p>",
+        "cta_primary_label": "Zu den Destinationen",
+        "cta_primary_url": "/pages/familienreisen",
+        "cta_secondary_label": "Wie wir arbeiten",
+        "cta_secondary_url": "/pages/redaktionsprinzipien",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Hier sammeln wir alles, was nicht in eine Google-Maps-Pin-Liste passt: Erfahrungen aus der Praxis, längere Rückblicke, Packlisten, Reisevorbereitungs-Themen wie Visa und Versicherung. Ehrlich, aus eigener Erfahrung, ohne Sponsoring.</p>"
+          }
+        }
+      },
+      "block_order": ["b-1"],
+      "settings": {
+        "eyebrow": "Was hier steht",
+        "heading": "<p>Reise-Langform. Ohne Clickbait.</p>",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 56,
+        "padding_bottom": 32
+      }
+    },
+    "blog-custom": {
+      "type": "section-custom-content",
+      "blocks": {
+        "blog-custom-img": { "type": "image", "settings": { "overlay_opacity": 0, "kicker": "", "title": "", "richtext": "", "link_text": "", "link": "" } },
+        "blog-custom-article": { "type": "article", "settings": { "article": "", "show_tag": true, "show_date": false, "text_size": 5, "show_excerpt": true, "align_text": "text-left", "placement_text": "middle", "show_author_name": true, "show_author_image": true, "button_text": "Weiterlesen", "button_size": "", "button_style": "text-link", "button_color": "btn--neutral", "text_color": "text--neutral", "bg_color": "#f7f7f7" } }
+      },
+      "block_order": ["blog-custom-img", "blog-custom-article"],
+      "settings": {
+        "height": "use_screen_one_half",
+        "padding": false,
+        "width": "wrapper",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "blog",
+      "blocks": {
+        "blog-pin-0": { "type": "pinned_post", "disabled": true, "settings": { "pinned_post": "" } },
+        "blog-pin-1": { "type": "pinned_post", "disabled": true, "settings": { "pinned_post": "" } }
+      },
+      "block_order": ["blog-pin-0", "blog-pin-1"],
+      "settings": {
+        "show_tag_navigation": true,
+        "align_nav": "inline-nav",
+        "show_title": false,
+        "show_rss": false,
+        "pagination_count": 12,
+        "aspect_ratio": 1,
+        "color_bg": "palette--light bg--neutral",
+        "show_meta": true,
+        "show_comments": true,
+        "show_excerpt": true,
+        "show_tags": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Newsletter",
+        "title": "Neue Stories direkt in dein Postfach.",
+        "subtitle": "<p>Wenn wir etwas Längeres veröffentlichen, schicken wir es dir per Mail. Dazu manchmal eine neue Karte.</p>",
+        "image": "shopify://shop_images/DSC02014-3.jpg",
+        "button_label": "Anmelden",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – wir melden uns.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_blog"
+      }
+    }
+  },
+  "order": ["hero", "intro", "blog-custom", "main", "lead-magnet"]
+}

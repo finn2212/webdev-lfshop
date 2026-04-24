@@ -1,1 +1,25 @@
-{"sections":{"main":{"type":"search","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/DSC01168-2.jpg",
+        "overlay_opacity": 50,
+        "overlay_color": "#181929",
+        "eyebrow": "Suche",
+        "heading": "<p>Was suchst du?</p>",
+        "lead": "<p>Such nach einer Destination, einem Produkt oder einem Blog-Artikel.</p>",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "search",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "main"]
+}

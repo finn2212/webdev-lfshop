@@ -1,0 +1,192 @@
+{
+  "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/DSC02014-3.jpg",
+        "overlay_opacity": 35,
+        "overlay_color": "#181929",
+        "eyebrow": "Reiseziele",
+        "heading": "<p>Vier Länder, die wir lange genug kennen, um etwas dazu zu sagen.</p>",
+        "lead": "<p>Bali, Thailand, Südafrika, Australien – überall mehrere Wochen oder Monate mit Tilda unterwegs gewesen. Hier ist das Dach über allem.</p>",
+        "cta_primary_label": "Shop durchstöbern",
+        "cta_primary_url": "/pages/shop",
+        "cta_secondary_label": "Wie wir arbeiten",
+        "cta_secondary_url": "/pages/redaktionsprinzipien",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "intro": {
+      "type": "section-editorial-text",
+      "blocks": {
+        "b-1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Wir empfehlen keine Destination, an der wir nicht mindestens ein paar Wochen waren. Das heißt: unser Shop ist schmaler als der anderer Reise-Shops, aber was drin ist, ist ehrlich. Jede Destination hat ihren eigenen Hub – mit Karten, Guides, Principles und Videos direkt vor Ort.</p>"
+          }
+        },
+        "b-2": {
+          "type": "quote",
+          "settings": {
+            "quote": "Lieber vier Länder mit echter Tiefe als zwanzig aus der Bucket-List.",
+            "attribution": "",
+            "style": "display"
+          }
+        },
+        "b-3": {
+          "type": "signature",
+          "settings": {
+            "signature": "— Laura & Finn"
+          }
+        }
+      },
+      "block_order": ["b-1", "b-2", "b-3"],
+      "settings": {
+        "eyebrow": "Unser Prinzip",
+        "heading": "<p>Weniger Länder, dafür mit Tiefe.</p>",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 56,
+        "padding_bottom": 32
+      }
+    },
+    "destinations": {
+      "type": "section-link-cards",
+      "blocks": {
+        "d-bali": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/bali.jpg",
+            "eyebrow": "Indonesien",
+            "title": "Bali",
+            "subtitle": "Drei Inseln, lange Aufenthalte, kindertaugliche Routen jenseits von Seminyak.",
+            "url": "/pages/bali"
+          }
+        },
+        "d-suedafrika": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/suedafrika.jpg",
+            "eyebrow": "Kapstadt & Garden Route",
+            "title": "Südafrika",
+            "subtitle": "Slow-Travel mit Kind durch die Garden Route – ohne Selbstfahr-Stress.",
+            "url": "/pages/suedafrika"
+          }
+        },
+        "d-thailand": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/thailand.jpg",
+            "eyebrow": "Bangkok & Inseln",
+            "title": "Thailand",
+            "subtitle": "Bangkok mit Kind, Koh Samui zur Ruhe – zwei Welten, eine Reise.",
+            "url": "/pages/thailand"
+          }
+        },
+        "d-australien": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/australien.jpg",
+            "eyebrow": "Westküste",
+            "title": "Australien",
+            "subtitle": "Was wir über Einreise, Versicherungen und Slow-Travel mit Kind gelernt haben.",
+            "url": "/pages/australien"
+          }
+        }
+      },
+      "block_order": ["d-bali", "d-suedafrika", "d-thailand", "d-australien"],
+      "settings": {
+        "kicker": "Wo wir waren",
+        "title": "Vier Destinationen mit eigener Geschichte.",
+        "subtitle": "",
+        "columns": "4",
+        "width": "wrapper",
+        "color_bg": "bg--neutral",
+        "padding_top": 40,
+        "padding_bottom": 80
+      }
+    },
+    "family-hub": {
+      "type": "section-row",
+      "settings": {
+        "image": "shopify://shop_images/DSC02014-3.jpg",
+        "shape": "none",
+        "aspect_ratio": 1,
+        "layout": "right",
+        "title": "Alles für Familien gesammelt.",
+        "text_size": 7,
+        "text": "<p>Du willst primär Inhalte für Reisen mit Kind? Auf dem Familien-Hub findest du alles querbeet nach Kriterien zusammengestellt, die wirklich zählen: Puffer, Pausen, kindertaugliche Stops.</p>",
+        "color_text_bg": "palette--light bg--neutral",
+        "button_label": "Zum Familien-Hub",
+        "button_link": "/pages/familienreisen",
+        "button_style": "btn",
+        "button_color": "btn--primary",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "principles": {
+      "type": "section-principles",
+      "blocks": {
+        "p-1": {
+          "type": "principle",
+          "settings": {
+            "title": "Nur Orte, an denen wir waren",
+            "body": "<p>Wir nehmen keine Destination in den Shop, die wir nicht selbst kennen – mit mindestens ein paar Wochen Aufenthalt, nicht mit drei Tagen Städtetrip.</p>"
+          }
+        },
+        "p-2": {
+          "type": "principle",
+          "settings": {
+            "title": "Tiefe statt Breite",
+            "body": "<p>Lieber Bali in drei Facetten (Karte, Starter-Kit, Bundle) als zwanzig Länder oberflächlich.</p>"
+          }
+        },
+        "p-3": {
+          "type": "principle",
+          "settings": {
+            "title": "Aktualisiert, wenn wir zurück sind",
+            "body": "<p>Wenn wir erneut in einer Destination sind, wird der zugehörige Inhalt aktualisiert – kostenlos für Käufer.</p>"
+          }
+        }
+      },
+      "block_order": ["p-1", "p-2", "p-3"],
+      "settings": {
+        "kicker": "Wie wir auswählen",
+        "title": "Drei Regeln für neue Destinationen.",
+        "lead": "",
+        "signature": "— Laura & Finn",
+        "width": "wrapper--narrow",
+        "color_bg": "bg--accent",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "lead-magnet": {
+      "type": "section-lead-magnet",
+      "settings": {
+        "kicker": "Newsletter",
+        "title": "Wenn eine neue Destination kommt – du hörst es zuerst.",
+        "subtitle": "<p>Wir reisen weiter. Wenn die nächste Karte reif zur Veröffentlichung ist, schicken wir dir eine Mail.</p>",
+        "image": "shopify://shop_images/DSC02014-3.jpg",
+        "button_label": "Anmelden",
+        "tag": "mini-preset",
+        "success_text": "Bitte bestätige deine E-Mail – wir melden uns.",
+        "legal_hint": "Du kannst dich jederzeit abmelden. Details in unserer Datenschutzerklärung.",
+        "trigger": "scroll",
+        "scroll_pct": 60,
+        "time_seconds": 30,
+        "cooldown_days": 30,
+        "require_marketing_consent": true,
+        "storage_key": "lf_lead_magnet_reiseziele"
+      }
+    }
+  },
+  "order": ["hero", "intro", "destinations", "family-hub", "principles", "lead-magnet"]
+}

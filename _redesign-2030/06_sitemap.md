@@ -76,15 +76,23 @@ Alle anderen Seiten sollen dieses Muster visuell/strukturell matchen:
 | FAQ | [page.faq.json](../templates/page.faq.json) | ✅ Hero + Intro oben, Accordions darunter unverändert. Accordion-Content ist noch auf Englisch / physisches-Produkt-Default — Übersetzung + Digital-Anpassung im Admin nötig |
 | Contact | [page.contact.json](../templates/page.contact.json) | ✅ Hero + Intro oben, Formular + Policies darunter unverändert. Policy-Accordions noch auf Englisch |
 
-### ❌ Alt-Look / bewusst später (Phase 2)
+### ✅ Batch 1 der Phase-2-Migration (Template-Rewrites)
+
+| Seite | Template | Status |
+|---|---|---|
+| Blog | [blog.json](../templates/blog.json) | ✅ Editorial-Hero + Intro + bestehende Blog-Liste + Lead-Magnet |
+| Article (default + 9 Varianten) | [article.json](../templates/article.json) | ✅ Main-Article-Section unangetastet, Lead-Magnet am Ende |
+| Search | [search.json](../templates/search.json) | ✅ Editorial-Hero über Suche |
+| 404 | [templates/404.json](../templates/404.json) | ✅ Editorial-Hero "Hier ist nichts." mit Zurück-CTAs |
+| List-Collections | [list-collections.json](../templates/list-collections.json) | ✅ Editorial-Hero "Alle Kollektionen auf einen Blick." |
+| `/pages/reiseziele` | [page.reiseziele.json](../templates/page.reiseziele.json) | ✅ **NEU** — Destination-Index: Hero + Intro + 4 Destination-Cards + Family-Hub-CTA + Principles + Lead-Magnet |
+
+### ❌ Alt-Look / wartet auf Phase-2-Section-Builds
 
 | Seite | Template | Aktueller Zustand |
 |---|---|---|
-| Collections (alle) | [collection.json](../templates/collection.json) | Alte Facetten, keine unified Grid |
-| Blog | [blog.json](../templates/blog.json) + 2 Varianten | Unverändert |
-| Articles | [article.json](../templates/article.json) + 7 Varianten | Unverändert |
-| Cart | [cart.json](../templates/cart.json) | Unverändert |
-| Search / 404 / Customer-Area | — | Unverändert |
+| Collections (alle) | [collection.json](../templates/collection.json) | Alte Facetten — wartet auf `section-collection-grid-v2` |
+| Cart | [cart.json](../templates/cart.json) | Unverändert (Phase 2) |
 
 ### 🧭 Geplant, existiert noch nicht
 

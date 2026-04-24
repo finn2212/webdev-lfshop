@@ -1,1 +1,29 @@
-{"sections":{"main":{"type":"list-collections","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/Hero_Banner_Promo_6.png",
+        "overlay_opacity": 40,
+        "overlay_color": "#181929",
+        "eyebrow": "Shop · Kollektionen",
+        "heading": "<p>Alle Kollektionen auf einen Blick.</p>",
+        "lead": "<p>Karten, Guides, Presets – nach Region und Typ sortiert.</p>",
+        "cta_primary_label": "Zur Shop-Übersicht",
+        "cta_primary_url": "/pages/shop",
+        "cta_secondary_label": "Zu den Destinationen",
+        "cta_secondary_url": "/pages/familienreisen",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "list-collections",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "main"]
+}

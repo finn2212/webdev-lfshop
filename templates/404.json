@@ -1,1 +1,29 @@
-{"sections":{"main":{"type":"404","settings":{}}},"order":["main"]}
+{
+  "sections": {
+    "hero": {
+      "type": "section-editorial-hero",
+      "settings": {
+        "image": "shopify://shop_images/DSC02020-3.jpg",
+        "overlay_opacity": 50,
+        "overlay_color": "#181929",
+        "eyebrow": "404",
+        "heading": "<p>Hier ist nichts.</p>",
+        "lead": "<p>Diese Seite gibt es nicht – oder nicht mehr. Zurück zur Startseite oder direkt zu den Destinationen.</p>",
+        "cta_primary_label": "Zur Startseite",
+        "cta_primary_url": "/",
+        "cta_secondary_label": "Zu den Destinationen",
+        "cta_secondary_url": "/pages/familienreisen",
+        "align": "left",
+        "color_scheme": "on-image",
+        "show_scroll_hint": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "404",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "main"]
+}
