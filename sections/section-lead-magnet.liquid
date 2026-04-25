@@ -220,24 +220,31 @@
   var timeSec    = parseInt(marker.dataset.timeSeconds, 10) || 30;
   var cooldown   = parseInt(marker.dataset.cooldownDays, 10) || 30;
   var storageKey = marker.dataset.storageKey || 'lf_lead_magnet';
+  var GLOBAL_KEY = 'lf_lead_magnet_global';
   var requireConsent = marker.dataset.requireConsent === 'true';
   var DAY_MS = 86400000;
 
-  function getState() {
-    try { return JSON.parse(localStorage.getItem(storageKey)) || {}; } catch (e) { return {}; }
+  function readKey(key) {
+    try { return JSON.parse(localStorage.getItem(key)) || {}; } catch (e) { return {}; }
   }
-  function setState(patch) {
-    try { localStorage.setItem(storageKey, JSON.stringify(Object.assign(getState(), patch))); } catch (e) {}
+  function writeKey(key, patch) {
+    try { localStorage.setItem(key, JSON.stringify(Object.assign(readKey(key), patch))); } catch (e) {}
   }
+  function getState()       { return readKey(storageKey); }
+  function setState(patch)  { writeKey(storageKey, patch); writeKey(GLOBAL_KEY, patch); }
 
   var state = getState();
+  var globalState = readKey(GLOBAL_KEY);
   var now = Date.now();
 
-  // Already subscribed
-  if (state.subscribed) return;
+  // Already subscribed (per-page or globally on any page)
+  if (state.subscribed || globalState.subscribed) return;
 
-  // Within cooldown
-  if (state.dismissed && (now - state.dismissed) < cooldown * DAY_MS) return;
+  // Within cooldown — check both per-page and global so a dismiss on
+  // one page silences the popup on every other page for cooldown_days.
+  var pageDismissedRecently   = state.dismissed && (now - state.dismissed) < cooldown * DAY_MS;
+  var globalDismissedRecently = globalState.dismissed && (now - globalState.dismissed) < cooldown * DAY_MS;
+  if (pageDismissedRecently || globalDismissedRecently) return;
 
   function consentOk() {
     if (!requireConsent) return true;
@@ -246,6 +253,14 @@
     }
     return false;
   }
+
+  // Klick auf Backdrop (also direkt aufs <dialog>-Element, nicht
+  // auf den Inner-Card) schließt das Popup mit returnValue='dismissed'.
+  dlg.addEventListener('click', function (e) {
+    if (e.target === dlg && dlg.open) {
+      dlg.close('dismissed');
+    }
+  });
 
   var fired = false;
   function open() {
@@ -257,7 +272,8 @@
 
     dlg.addEventListener('close', function () {
       var reason = (dlg.returnValue === 'subscribed') ? 'subscribed' : 'dismissed';
-      setState(reason === 'subscribed' ? { subscribed: now } : { dismissed: now });
+      var ts = Date.now();
+      setState(reason === 'subscribed' ? { subscribed: ts } : { dismissed: ts });
     }, { once: true });
   }
 
